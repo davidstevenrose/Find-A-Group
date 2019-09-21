@@ -1,3 +1,3 @@
 # Find-A-Group
-<h6>We are in the requirements workflow!</h6>
-<p>Make sure to repeat the process of elicitating the requirements to<br />better refine our requirements. It will help prevent faults in<br />the furture.</p>
+<h6>You will create software that helps people get together and form groups. </h6>
+<p>Users  can  create  a  profile,  thensearch  for  interesting  groupsbased  on  theiractivities,  hobbies,  etc.  A group leader can create a group, add meetings, andadd tags for users to find this group. User shall also be able to view meetings for specific dates/locations.</p>
