@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -44,7 +43,7 @@ public class loginController {
     Scene primaryScreen = new Scene(primaryScreenParent);
 
     // Getting the stage
-    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
     window.setScene(primaryScreen);
     window.show();

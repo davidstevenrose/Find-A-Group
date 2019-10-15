@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Creating new branch">
-      <change afterPath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/loginController.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="added login screen fxml and controller, added primary screen fxml">
+      <change afterPath="$PROJECT_DIR$/src/sample/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,6 +65,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -101,6 +101,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -207,7 +208,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1569854052256" duration="47000" />
       <workItem from="1570124407562" duration="6981000" />
-      <workItem from="1571094373762" duration="5709000" />
+      <workItem from="1571094373762" duration="11455000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -216,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570126820853</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added login screen fxml and controller, added primary screen fxml">
+      <created>1571107646107</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571107646108</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +247,7 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Creating new branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating new branch" />
+    <MESSAGE value="added login screen fxml and controller, added primary screen fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="added login screen fxml and controller, added primary screen fxml" />
   </component>
 </project>
