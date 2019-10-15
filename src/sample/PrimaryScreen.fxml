@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="676.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab text="Search for groups">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="searchGroupsButton" layoutX="548.0" layoutY="103.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="94.0" text="Search" />
+                  <ChoiceBox fx:id="searchTag1" layoutX="14.0" layoutY="43.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="searchTag3" layoutX="331.0" layoutY="43.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="searchTag4" layoutX="492.0" layoutY="43.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="searchTag2" layoutX="173.0" layoutY="43.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="10.0" prefHeight="33.0" prefWidth="184.0" text="Select Tags to Search For" />
+                  <Button fx:id="joinGroupsButton" layoutX="548.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#joinGroupButtonClick" prefHeight="31.0" prefWidth="94.0" text="Join Group" />
+                  <Label layoutX="14.0" layoutY="141.0" prefHeight="33.0" prefWidth="170.0" text="Available Groups" />
+                  <TableView fx:id="searchGroupTable" layoutX="14.0" layoutY="174.0" prefHeight="333.0" prefWidth="649.0">
+                    <columns>
+                      <TableColumn fx:id="searchGroupsGroupNameCol" prefWidth="166.0" text="Group Name" />
+                      <TableColumn fx:id="searchGroupsDescriptionCol" prefWidth="482.0" text="Description" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Find Meetings">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="searchLocationTextbox" layoutX="232.0" layoutY="25.0" prefHeight="31.0" prefWidth="217.0" promptText="Enter Location" />
+                  <DatePicker fx:id="searchDataPicker" layoutX="14.0" layoutY="25.0" prefHeight="31.0" prefWidth="217.0" promptText="Select Date" />
+                  <Label layoutX="14.0" layoutY="4.0" prefHeight="21.0" prefWidth="175.0" text="View By Date / Location" />
+                  <Button fx:id="searchMeetingsDateLocationButton" layoutX="449.0" layoutY="25.0" mnemonicParsing="false" text="Search" />
+                  <Button fx:id="searchByGroupsButton" layoutX="232.0" layoutY="84.0" mnemonicParsing="false" text="Search" />
+                  <Label layoutX="14.0" layoutY="135.0" />
+                  <Label layoutX="14.0" layoutY="125.0" text="Meetings" />
+                  <Label layoutX="14.0" layoutY="135.0" />
+                  <Label layoutX="14.0" layoutY="135.0" prefHeight="21.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="groupsPicker" layoutX="14.0" layoutY="84.0" prefHeight="31.0" prefWidth="218.0" />
+                  <Label layoutX="13.0" layoutY="63.0" text="View By Groups You Are In" />
+                  <TableView layoutX="13.0" layoutY="156.0" prefHeight="345.0" prefWidth="653.0">
+                    <columns>
+                      <TableColumn prefWidth="164.0" text="Group Name" />
+                      <TableColumn prefWidth="116.0" text="Date" />
+                        <TableColumn prefWidth="107.0" text="Time" />
+                        <TableColumn prefWidth="265.0" text="Location" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="add" text="Create or Edit Group">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="98.0" prefHeight="21.0" prefWidth="158.0" text="Add or Remove Tags" />
+                  <ChoiceBox layoutX="15.0" layoutY="125.0" prefWidth="150.0" />
+                  <ChoiceBox layoutX="173.0" layoutY="125.0" prefWidth="150.0" />
+                  <ChoiceBox layoutX="333.0" layoutY="125.0" prefWidth="150.0" />
+                  <ChoiceBox layoutX="492.0" layoutY="125.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="171.0" prefHeight="21.0" prefWidth="139.0" text="Add Meetings" />
+                  <DatePicker layoutX="14.0" layoutY="205.0" prefHeight="31.0" prefWidth="184.0" promptText="Select Date" />
+                  <TextField layoutX="348.0" layoutY="205.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" />
+                  <Button layoutX="555.0" layoutY="500.0" mnemonicParsing="false" text="Save Changes" />
+                  <TextArea layoutX="14.0" layoutY="242.0" prefHeight="213.0" prefWidth="652.0" promptText="Add Description (optional)" />
+                  <ComboBox layoutX="198.0" layoutY="205.0" prefWidth="150.0" promptText="Select Time" />
+                  <ChoiceBox layoutX="10.0" layoutY="51.0" prefWidth="325.0" />
+                  <TextField layoutX="340.0" layoutY="51.0" prefHeight="31.0" prefWidth="325.0" promptText="Enter Group Name Here" />
+                  <Label layoutX="10.0" layoutY="25.0" prefHeight="21.0" prefWidth="135.0" text="Edit Group" />
+                  <Label layoutX="346.0" layoutY="25.0" text="Create New Group" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
