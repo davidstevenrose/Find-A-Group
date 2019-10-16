@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class loginController {
 
@@ -26,25 +27,57 @@ public class loginController {
 
   @FXML private Label errorLabel;
 
-  @FXML private Label confirmPasswordLabel;
-
-  @FXML private PasswordField confirmPasswordField;
+  // fix later with logic after testing
+  public static ArrayList<User> users = new ArrayList<>();
 
   /**
    * This method allows the user to log into their account and will change the scene to the primary
    * scene
    *
-   * @param event
+   * @param event The mouse click event
    */
   @FXML
   void loginClicked(MouseEvent event) throws IOException {
+    boolean validLogin = false;
+    String username = usernameField.getText();
+    String password = passwordField.getText();
+    System.out.println(username); // remove when done testing
+    System.out.println(password); // remove when done testing
+    users.add(new User("example", "pass", "example@example.net")); // remove when done testing
+
+    // Checking if the login matches any on record
+    for (User u : users) {
+      if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
+        validLogin = true;
+      }
+    }
+    if (validLogin == false) {
+      // Displaying message for user
+      errorLabel.setText("Invalid Username or Password");
+    } else {
+      // Creating the new scene
+      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
+      Scene primaryScreen = new Scene(primaryScreenParent);
+
+      // Getting the stage
+      Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+      // Setting stage
+      window.setScene(primaryScreen);
+      window.show();
+    }
+  }
+
+  @FXML
+  void createAccountClicked(MouseEvent event) throws IOException {
     // Creating the new scene
-    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("createAccount.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
 
     // Getting the stage
-    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+    // Setting the stage
     window.setScene(primaryScreen);
     window.show();
   }

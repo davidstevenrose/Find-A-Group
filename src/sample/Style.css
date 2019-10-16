@@ -7,3 +7,16 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
+
+.text-field {
+    /*
+    mess around with later
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 4, 4);
+     */
+}
+
+#errorLabel {
+    -fx-text-fill: firebrick;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt
+}

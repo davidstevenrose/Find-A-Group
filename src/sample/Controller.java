@@ -79,7 +79,7 @@ public class Controller {
 
   @FXML private TextField createGroupTextfield;
 
-  private String[] tags = {"Gaming", "Sports", "Fitness", "Reading", "Study", "Social"};
+  private String[] tags = {"Gaming", "Sports", "Fitness", "Reading", "Study", "Social","Fun"};
 
   @FXML
   public void initialize() {
@@ -93,25 +93,6 @@ public class Controller {
       addTag3.getItems().add(tag);
       addTag4.getItems().add(tag);
     }
-
-    /*
-    // Adding values to they type choice box
-    for (ItemType it : ItemType.values()) {
-        productType.getItems().add(it);
-    }
-
-    // Adding numbers to the quantity selector
-    for (int i = 1; i < 11; i++) {
-        String number = "" + i;
-        chooseQuantity.getItems().add(number);
-    }
-    chooseQuantity.getSelectionModel().selectFirst();
-    chooseQuantity.setEditable(true);
-    testMultimedia();
-    connectToDatabase();
-    populateProductLine();
-    */
-
   }
 
   @FXML

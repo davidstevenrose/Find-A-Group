@@ -26,8 +26,8 @@
       <Label alignment="CENTER" prefWidth="115.0" stylesheets="@Style.css" text="Password" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <PasswordField fx:id="passwordField" stylesheets="@Style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <TextField fx:id="usernameField" prefHeight="31.0" prefWidth="337.0" stylesheets="@Style.css" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
-      <Button fx:id="createAccountButton" mnemonicParsing="false" stylesheets="@Style.css" text="Create Account" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-      <Label fx:id="errorLabel" prefHeight="21.0" prefWidth="222.0" stylesheets="@Style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="createAccountButton" mnemonicParsing="false" onMouseClicked="#createAccountClicked" stylesheets="@Style.css" text="Create Account" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label fx:id="errorLabel" prefHeight="25.0" prefWidth="317.0" styleClass="errorLabel" stylesheets="@Style.css" text=" " GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Label alignment="CENTER" prefHeight="21.0" prefWidth="332.0" stylesheets="@Style.css" text="Login" GridPane.columnSpan="2" GridPane.halignment="CENTER">
          <font>
             <Font size="36.0" />
