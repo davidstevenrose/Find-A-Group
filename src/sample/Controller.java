@@ -18,6 +18,8 @@ public class Controller {
 
   @FXML private Button searchGroupsButton;
 
+  @FXML private Button createGroupsButton;
+
   @FXML private ChoiceBox<String> searchTag1;
 
   @FXML private ChoiceBox<String> searchTag3;
@@ -60,6 +62,14 @@ public class Controller {
 
   @FXML private ChoiceBox<String> addTag4;
 
+  @FXML private ChoiceBox<String> editTag1;
+
+  @FXML private ChoiceBox<String> editTag2;
+
+  @FXML private ChoiceBox<String> editTag3;
+
+  @FXML private ChoiceBox<String> editTag4;
+
   @FXML private DatePicker addMeetingDatePicker;
 
   @FXML private TextField addMeetingLocationTextfield;
@@ -76,7 +86,9 @@ public class Controller {
 
   @FXML private Label joinLabel;
 
-  private String[] tags = {"", "Gaming", "Sports", "Fitness", "Reading", "Study", "Social", "Fun"};
+  private final String[] tags = {
+    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Social", "Fun"
+  };
 
   private ArrayList<Group> groups = new ArrayList<>();
 
@@ -88,6 +100,8 @@ public class Controller {
   public void initialize() {
     // Putting values in the tags boxes
     for (String tag : tags) {
+
+      // Shorten late with fancy stuffs
       searchTag1.getItems().add(tag);
       searchTag2.getItems().add(tag);
       searchTag3.getItems().add(tag);
@@ -96,6 +110,11 @@ public class Controller {
       addTag2.getItems().add(tag);
       addTag3.getItems().add(tag);
       addTag4.getItems().add(tag);
+      editTag1.getItems().add(tag);
+      editTag2.getItems().add(tag);
+      editTag3.getItems().add(tag);
+      editTag4.getItems().add(tag);
+
     }
     // Updating the meetings ArrayList
     updateMeetings();
@@ -105,9 +124,6 @@ public class Controller {
       addMeetingTimePicker.getItems().add(i + ":00 AM");
       addMeetingTimePicker.getItems().add(i + ":00 PM");
     }
-
-    // Adding values to group selectors
-    populateGroupSelectors();
 
     // values used for testing and demo, remove later
     allMeetings.add(new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group"));
@@ -122,6 +138,20 @@ public class Controller {
     groups.add(exampleGroup1);
     groups.add(exampleGroup2);
     // remove later
+
+    // Adding values to group display on startup
+    // preparing columns
+    searchGroupsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+    searchGroupsDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+    searchGroupTable.setItems(FXCollections.observableArrayList(groups));
+
+    // Adding meetings to display on startup
+    // preparing columns
+    meetingsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("groupName"));
+    meetingsDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+    meetingsTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
+    meetingsLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+    findMeetingsTable.setItems(FXCollections.observableArrayList(allMeetings));
   }
 
   @FXML
@@ -139,9 +169,6 @@ public class Controller {
 
   @FXML
   void searchGroupsButtonClicked(MouseEvent event) {
-    // preparing columns
-    searchGroupsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-    searchGroupsDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
@@ -164,65 +191,65 @@ public class Controller {
   }
 
   @FXML
-  void createEditGroupsButtonClicked(MouseEvent event) {
-    // If they are creating a new group
-    if (editGroupSelector.getValue() == null && !createGroupTextfield.getText().isEmpty()) {
+  void createGroupsButtonClicked(MouseEvent event) {
+    try {
+      // Get the values they entered
+      String name = createGroupTextfield.getText();
+      String description =
+          ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
 
-      try {
-        // Get the values they entered
-        String name = createGroupTextfield.getText();
-        String description =
-            ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
-
-        // Create an array list for the tags
-        ArrayList<String> tags = new ArrayList<>();
-        // ternary to set the tag to "" if empty instead of null
-        String tag1 = ((addTag1.getValue() == null) ? "" : addTag1.getValue());
-        String tag2 = ((addTag2.getValue() == null) ? "" : addTag2.getValue());
-        String tag3 = ((addTag3.getValue() == null) ? "" : addTag3.getValue());
-        String tag4 = ((addTag4.getValue() == null) ? "" : addTag4.getValue());
-        // Adding tags to tags array
-        tags.add(tag1);
-        tags.add(tag2);
-        tags.add(tag3);
-        tags.add(tag4);
-        // Creating new group with parameters from user
-        Group group = new Group(name, description, tags);
-        // Adding to groups ArrayList
-        groups.add(group);
-        // Making the current user group leader
-        currentUser.addGroupLeader(group);
-        // Updating the selectors
-        populateGroupSelectors();
-        // creating a new meeting if all information entered
-        if (addMeetingDatePicker.getValue() != null
-            && addMeetingLocationTextfield.getText() != null
-            && addMeetingTimePicker.getValue() != null) {
-          // getting values from user
-          LocalDate meetingDate = addMeetingDatePicker.getValue();
-          String meetingLocation = addMeetingLocationTextfield.getText();
-          String meetingTime = addMeetingTimePicker.getValue();
-          // creating new meeting
-          Meeting meeting = new Meeting(meetingDate, meetingLocation, meetingTime, name);
-          // updating all meetings and group meetings
-          allMeetings.add(meeting);
-          group.addMeeting(meeting);
-        }
-        // displaying information to the user
-        savedChangesLabel.setText("Saved Changes");
-
-        // Resetting fields
-        createGroupTextfield.setPromptText("Enter Group Name Here");
-        addDescriptionTextarea.setPromptText("Add or Edit Description (optional)");
-        addTag1.setValue("");
-        addTag2.setValue("");
-        addTag3.setValue("");
-        addTag4.setValue("");
-      } catch (Exception e) {
-        savedChangesLabel.setText("Please enter all non-optional fields");
+      // Create an array list for the tags
+      ArrayList<String> tags = new ArrayList<>();
+      // ternary to set the tag to "" if empty instead of null
+      String tag1 = ((addTag1.getValue() == null) ? "" : addTag1.getValue());
+      String tag2 = ((addTag2.getValue() == null) ? "" : addTag2.getValue());
+      String tag3 = ((addTag3.getValue() == null) ? "" : addTag3.getValue());
+      String tag4 = ((addTag4.getValue() == null) ? "" : addTag4.getValue());
+      // Adding tags to tags array
+      tags.add(tag1);
+      tags.add(tag2);
+      tags.add(tag3);
+      tags.add(tag4);
+      // Creating new group with parameters from user
+      Group group = new Group(name, description, tags);
+      // Adding to groups ArrayList
+      groups.add(group);
+      // Making the current user group leader
+      currentUser.addGroupLeader(group);
+      // Updating the selectors
+      populateGroupSelectors();
+      // creating a new meeting if all information entered
+      if (addMeetingDatePicker.getValue() != null
+          && addMeetingLocationTextfield.getText() != null
+          && addMeetingTimePicker.getValue() != null) {
+        // getting values from user
+        LocalDate meetingDate = addMeetingDatePicker.getValue();
+        String meetingLocation = addMeetingLocationTextfield.getText();
+        String meetingTime = addMeetingTimePicker.getValue();
+        // creating new meeting
+        Meeting meeting = new Meeting(meetingDate, meetingLocation, meetingTime, name);
+        // updating all meetings and group meetings
+        allMeetings.add(meeting);
+        group.addMeeting(meeting);
       }
+      // displaying information to the user
+      savedChangesLabel.setText("Saved Changes");
 
-    } else if (editGroupSelector.getValue() != null){
+      // Resetting fields
+      createGroupTextfield.clear();
+      addDescriptionTextarea.clear();
+      addTag1.setValue("");
+      addTag2.setValue("");
+      addTag3.setValue("");
+      addTag4.setValue("");
+    } catch (Exception e) {
+      savedChangesLabel.setText("Please enter all non-optional fields");
+    }
+  }
+
+  @FXML
+  void editGroupsButtonClicked() {
+    try {
       Group selectedGroup = new Group("error", "error");
       for (Group g : currentUser.getGroupLeader()) {
         if (g.getName() == editGroupSelector.getValue()) {
@@ -235,10 +262,10 @@ public class Controller {
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
       // ternary to set the tag to "" if empty instead of null
-      String tag1 = ((addTag1.getValue() == null) ? "" : addTag1.getValue());
-      String tag2 = ((addTag2.getValue() == null) ? "" : addTag2.getValue());
-      String tag3 = ((addTag3.getValue() == null) ? "" : addTag3.getValue());
-      String tag4 = ((addTag4.getValue() == null) ? "" : addTag4.getValue());
+      String tag1 = ((editTag1.getValue() == null) ? "" : editTag1.getValue());
+      String tag2 = ((editTag2.getValue() == null) ? "" : editTag2.getValue());
+      String tag3 = ((editTag3.getValue() == null) ? "" : editTag3.getValue());
+      String tag4 = ((editTag4.getValue() == null) ? "" : editTag4.getValue());
       // Adding tags to tags array
       tags.add(tag1);
       tags.add(tag2);
@@ -261,19 +288,8 @@ public class Controller {
 
       // displaying information to the user
       savedChangesLabel.setText("Saved Changes");
-
-
-    } else {
-      System.out.println("askdjflkjasdkjdf");
-    }
-  }
-
-  void updateMeetings() {
-    // adding all of the meetings into the all meetings array
-    for (Group g : groups) {
-      for (Meeting m : g.getMeetings()) {
-        allMeetings.add(m);
-      }
+    } catch (Exception e) {
+      System.out.println("Please enter all non-optional fields");
     }
   }
 
@@ -317,6 +333,15 @@ public class Controller {
     }
     for (Group g : currentUser.getGroupLeader()) {
       groupsPicker.getItems().add(g.getName());
+    }
+  }
+
+  void updateMeetings() {
+    // adding all of the meetings into the all meetings array
+    for (Group g : groups) {
+      for (Meeting m : g.getMeetings()) {
+        allMeetings.add(m);
+      }
     }
   }
 }
