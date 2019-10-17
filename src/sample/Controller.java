@@ -38,7 +38,7 @@ public class Controller {
 
   @FXML private TextField searchLocationTextbox;
 
-  @FXML private DatePicker searchDataPicker;
+  @FXML private DatePicker searchDatePicker;
 
   @FXML private Button searchMeetingsButton;
 
@@ -87,7 +87,7 @@ public class Controller {
   @FXML private Label joinLabel;
 
   private final String[] tags = {
-    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Social", "Fun"
+    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Social", "Fun", "Music", "Movies"
   };
 
   private ArrayList<Group> groups = new ArrayList<>();
@@ -114,7 +114,6 @@ public class Controller {
       editTag2.getItems().add(tag);
       editTag3.getItems().add(tag);
       editTag4.getItems().add(tag);
-
     }
     // Updating the meetings ArrayList
     updateMeetings();
@@ -127,6 +126,8 @@ public class Controller {
 
     // values used for testing and demo, remove later
     allMeetings.add(new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group"));
+    allMeetings.add(new Meeting(LocalDate.of(2019,10,20), "FGCU", "5:00 PM", "FGCU Running Group"));
+    allMeetings.add(new Meeting(LocalDate.of(2019,10,25), "not FGCU", "5:00 PM", "FGCU Book Club"));
     Group exampleGroup1 =
         new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
     exampleGroup1.addTag("Gaming");
@@ -135,8 +136,13 @@ public class Controller {
             "FGCU Running Group", "A group of FGCU students who like to get together and run");
     exampleGroup2.addTag("Fitness");
     exampleGroup2.addTag("Sports");
+    Group exampleGroup3 =
+            new Group(
+                    "FGCU Book Club", "A group of FGCU students who like to get together and read");
+    exampleGroup3.addTag("Reading");
     groups.add(exampleGroup1);
     groups.add(exampleGroup2);
+    groups.add(exampleGroup3);
     // remove later
 
     // Adding values to group display on startup
@@ -295,14 +301,50 @@ public class Controller {
 
   @FXML
   void searchMeetingsButtonClicked(MouseEvent event) {
-    // preparing columns
-    meetingsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("groupName"));
-    meetingsDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-    meetingsTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
-    meetingsLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
 
-    // adding all meetings to table, change later for search functionality
-    findMeetingsTable.setItems(FXCollections.observableArrayList(allMeetings));
+    // Creating ArrayList to hold meetings and giving it all the meetings
+    ArrayList<Meeting> foundMeetings = new ArrayList<>();
+    foundMeetings.addAll(allMeetings);
+    System.out.println(allMeetings.get(0));
+    ArrayList<Meeting> meetingsToRemove = new ArrayList<>();
+    // If there is a date selected
+    if (searchDatePicker.getValue() != null) {
+      System.out.println(searchDatePicker.getValue());
+      for (Meeting m : foundMeetings) {
+        // If not the data selected
+        if (!m.getDate().equals(searchDatePicker.getValue())) {
+          // Adding meeting to list of meetings to remove
+          meetingsToRemove.add(m);
+        }
+      }
+    }
+    // Removing meetings not fitting criteria
+    foundMeetings.removeAll(meetingsToRemove);
+    // If there is a location specified
+    if (!searchLocationTextbox.getText().isEmpty()) {
+      System.out.println(searchLocationTextbox.getText());
+      for (Meeting m : foundMeetings) {
+        // If not the data selected
+        if (!m.getLocation().equals(searchLocationTextbox.getText())) {
+          meetingsToRemove.add(m);
+        }
+      }
+    }
+    // Removing meetings not fitting criteria
+    foundMeetings.removeAll(meetingsToRemove);
+    if (groupsPicker.getValue() != null) {
+      System.out.println(groupsPicker.getValue());
+      for (Meeting m : foundMeetings) {
+        // If not the data selected
+        if (!m.getGroupName().equals(groupsPicker.getValue())) {
+          meetingsToRemove.add(m);
+        }
+      }
+    }
+    // Removing meetings not fitting criteria
+    foundMeetings.removeAll(meetingsToRemove);
+    // Displaying results
+    findMeetingsTable.setItems(FXCollections.observableArrayList(foundMeetings));
   }
 
   @FXML
