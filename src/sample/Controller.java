@@ -82,7 +82,11 @@ public class Controller {
 
   @FXML private TextArea addDescriptionTextarea;
 
+  @FXML private TextArea addDescriptionTextarea1;
+
   @FXML private Label savedChangesLabel;
+
+  @FXML private Label savedChangesLabel1;
 
   @FXML private Label joinLabel;
 
@@ -143,7 +147,6 @@ public class Controller {
     exampleGroup1.addTag("Gaming");
     exampleGroup2.addTag("Fitness");
     exampleGroup2.addTag("Sports");
-
     exampleGroup3.addTag("Reading");
     groups.add(exampleGroup1);
     groups.add(exampleGroup2);
@@ -268,7 +271,8 @@ public class Controller {
         }
       }
       // updating description
-      selectedGroup.setDescription(addDescriptionTextarea.getText());
+      selectedGroup.setDescription(addDescriptionTextarea1.getText());
+
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -287,18 +291,15 @@ public class Controller {
       selectedGroup.setTags(tags);
 
       // displaying information to the user
-      savedChangesLabel.setText("Saved Changes");
+      savedChangesLabel1.setText("Saved Changes");
 
       // Resetting fields
-      createGroupTextfield.clear();
-      addDescriptionTextarea.clear();
-      addTag1.setValue("");
-      addTag2.setValue("");
-      addTag3.setValue("");
-      addTag4.setValue("");
+      addDescriptionTextarea1.clear();
+      editTag1.setValue("");
+      editTag2.setValue("");
+      editTag3.setValue("");
+      editTag4.setValue("");
 
-      // displaying information to the user
-      savedChangesLabel.setText("Saved Changes");
     } catch (Exception e) {
       System.out.println("Please enter all non-optional fields");
     }
