@@ -27,7 +27,7 @@ public class loginController {
 
   @FXML private Label errorLabel;
 
-  // fix later with logic after testing
+  // fix later with database after testing
   public static ArrayList<User> users = new ArrayList<>();
 
   /**
@@ -44,17 +44,25 @@ public class loginController {
     System.out.println(username); // remove when done testing
     System.out.println(password); // remove when done testing
     users.add(new User("example", "pass", "example@example.net")); // remove when done testing
+    users.add(new User("","","")); // remove after testing
 
+    // Creating user to hold login user
+    User userToLogIn = new User();
     // Checking if the login matches any on record
     for (User u : users) {
       if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
         validLogin = true;
+        // Setting userToLogIn to user logging in
+        userToLogIn = u;
       }
     }
     if (validLogin == false) {
       // Displaying message for user
       errorLabel.setText("Invalid Username or Password");
     } else {
+      // setting the user in the controller
+      Controller.currentUser = userToLogIn;
+
       // Creating the new scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
       Scene primaryScreen = new Scene(primaryScreenParent);

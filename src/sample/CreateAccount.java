@@ -32,24 +32,29 @@ public class CreateAccount {
 
   @FXML
   void createAccountButtonClicked(MouseEvent event) throws IOException {
+    // get user input data
     String username = usernameField.getText();
     String password = passwordField.getText();
     String confirmPassword = confirmPasswordField.getText();
     String email = emailField.getText();
     String confirmEmail = confirmEmailField.getText();
+    // check if information added correctly
     if (!password.equals(confirmPassword)) {
       errorLabel.setText("Password do not match");
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
     } else if (username != null && password != null && email != null) {
+      //write to database later
       loginController.users.add(new User(username, password, email));
+
+      // Creating scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("Sample.fxml"));
       Scene primaryScreen = new Scene(primaryScreenParent);
 
       // Getting the stage
       Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-      // Setting stage
+      // Setting stage and displaying
       window.setScene(primaryScreen);
       window.show();
     }

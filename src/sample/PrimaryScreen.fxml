@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
@@ -34,6 +36,8 @@
                       <TableColumn fx:id="searchGroupsDescriptionCol" prefWidth="482.0" text="Description" />
                     </columns>
                   </TableView>
+                  <Hyperlink fx:id="logOut" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
+                  <Label fx:id="joinLabel" layoutX="362.0" layoutY="528.0" prefHeight="21.0" prefWidth="144.0" />
                </children>
             </AnchorPane>
       </content>
@@ -45,21 +49,22 @@
                   <TextField fx:id="searchLocationTextbox" layoutX="297.0" layoutY="25.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
                   <DatePicker fx:id="searchDataPicker" layoutX="14.0" layoutY="25.0" prefHeight="31.0" prefWidth="281.0" promptText="Select Date" stylesheets="@Style.css" />
                   <Label layoutX="14.0" layoutY="4.0" prefHeight="21.0" prefWidth="175.0" text="View By Date / Location" />
-                  <Button fx:id="searchMeetingsButton" layoutX="424.0" layoutY="84.0" mnemonicParsing="false" stylesheets="@Style.css" text="Search" />
+                  <Button fx:id="searchMeetingsButton" layoutX="424.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#searchMeetingsButtonClicked" stylesheets="@Style.css" text="Search" />
                   <Label layoutX="14.0" layoutY="135.0" />
                   <Label layoutX="14.0" layoutY="125.0" text="Meetings" />
                   <Label layoutX="14.0" layoutY="135.0" />
                   <Label layoutX="14.0" layoutY="135.0" prefHeight="21.0" prefWidth="159.0" />
                   <ChoiceBox fx:id="groupsPicker" layoutX="14.0" layoutY="84.0" prefHeight="31.0" prefWidth="282.0" stylesheets="@Style.css" />
                   <Label layoutX="13.0" layoutY="63.0" text="View By Groups You Are In" />
-                  <TableView layoutX="13.0" layoutY="156.0" prefHeight="345.0" prefWidth="653.0" stylesheets="@Style.css">
+                  <TableView fx:id="findMeetingsTable" layoutX="13.0" layoutY="156.0" prefHeight="345.0" prefWidth="653.0" stylesheets="@Style.css">
                     <columns>
-                      <TableColumn prefWidth="164.0" text="Group Name" />
-                      <TableColumn prefWidth="116.0" text="Date" />
-                        <TableColumn prefWidth="107.0" text="Time" />
-                        <TableColumn prefWidth="265.0" text="Location" />
+                      <TableColumn fx:id="meetingsGroupNameCol" prefWidth="164.0" text="Group Name" />
+                      <TableColumn fx:id="meetingsDateCol" prefWidth="116.0" text="Date" />
+                        <TableColumn fx:id="meetingsTimeCol" prefWidth="107.0" text="Time" />
+                        <TableColumn fx:id="meetingsLocationCol" prefWidth="265.0" text="Location" />
                     </columns>
                   </TableView>
+                  <Hyperlink fx:id="logOut1" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
                </children>
             </AnchorPane>
       </content>
@@ -73,16 +78,22 @@
                   <ChoiceBox fx:id="addTag2" layoutX="173.0" layoutY="125.0" prefWidth="150.0" stylesheets="@Style.css" />
                   <ChoiceBox fx:id="addTag3" layoutX="333.0" layoutY="125.0" prefWidth="150.0" stylesheets="@Style.css" />
                   <ChoiceBox fx:id="addTag4" layoutX="492.0" layoutY="125.0" prefWidth="150.0" stylesheets="@Style.css" />
-                  <Label layoutX="14.0" layoutY="171.0" prefHeight="21.0" prefWidth="139.0" stylesheets="@Style.css" text="Add Meetings" />
-                  <DatePicker layoutX="14.0" layoutY="205.0" prefHeight="31.0" prefWidth="184.0" promptText="Select Date" stylesheets="@Style.css" />
-                  <TextField layoutX="348.0" layoutY="205.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
-                  <Button layoutX="555.0" layoutY="500.0" mnemonicParsing="false" stylesheets="@Style.css" text="Save Changes" />
-                  <TextArea layoutX="14.0" layoutY="242.0" prefHeight="213.0" prefWidth="652.0" promptText="Add Description (optional)" stylesheets="@Style.css" />
-                  <ComboBox layoutX="198.0" layoutY="205.0" prefWidth="150.0" promptText="Select Time" stylesheets="@Style.css" />
-                  <ChoiceBox layoutX="10.0" layoutY="51.0" prefWidth="325.0" stylesheets="@Style.css" />
-                  <TextField layoutX="340.0" layoutY="51.0" prefHeight="31.0" prefWidth="325.0" promptText="Enter Group Name Here" stylesheets="@Style.css" />
+                  <Label layoutX="21.0" layoutY="411.0" prefHeight="21.0" prefWidth="139.0" stylesheets="@Style.css" text="Add Meetings" />
+                  <DatePicker fx:id="addMeetingDatePicker" layoutX="14.0" layoutY="442.0" prefHeight="31.0" prefWidth="184.0" promptText="Select Date" stylesheets="@Style.css" />
+                  <TextField fx:id="addMeetingLocationTextfield" layoutX="348.0" layoutY="442.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
+                  <Button fx:id="createEditGroupsButton" layoutX="555.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#createEditGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
+                  <TextArea fx:id="addDescriptionTextarea" layoutX="14.0" layoutY="178.0" prefHeight="213.0" prefWidth="652.0" promptText="Add or Edit Description (optional)" stylesheets="@Style.css" />
+                  <ComboBox fx:id="addMeetingTimePicker" layoutX="198.0" layoutY="442.0" prefWidth="150.0" promptText="Select Time" stylesheets="@Style.css" />
+                  <ChoiceBox fx:id="editGroupSelector" layoutX="10.0" layoutY="51.0" prefWidth="325.0" stylesheets="@Style.css" />
+                  <TextField fx:id="createGroupTextfield" layoutX="340.0" layoutY="51.0" prefHeight="31.0" prefWidth="325.0" promptText="Enter Group Name Here" stylesheets="@Style.css" />
                   <Label layoutX="10.0" layoutY="25.0" prefHeight="21.0" prefWidth="135.0" stylesheets="@Style.css" text="Edit Group" />
                   <Label layoutX="346.0" layoutY="25.0" stylesheets="@Style.css" text="Create New Group" />
+                  <Label fx:id="savedChangesLabel" layoutX="299.0" layoutY="498.0" text="           ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="logOut2" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
                </children>
             </AnchorPane>
         </content>

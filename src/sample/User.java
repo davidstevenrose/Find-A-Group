@@ -1,9 +1,15 @@
 package sample;
 
+import java.util.ArrayList;
+
 public class User {
     private String username;
     private String password;
     private String email;
+    private ArrayList<Group> groupMember = new ArrayList<>();
+    private ArrayList<Group> groupLeader = new ArrayList<>();
+
+    public User(){};
 
     public User (String username, String password, String email) {
         this.username = username;
@@ -34,4 +40,21 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public ArrayList<Group> getGroupMember(){
+        return groupMember;
+    }
+
+    public void addGroupMember(Group group) {
+        groupMember.add(group);
+    }
+
+    public ArrayList<Group> getGroupLeader() {
+        return groupLeader;
+    }
+
+    public void addGroupLeader(Group group) {
+        groupLeader.add(group);
+    }
+
 }
