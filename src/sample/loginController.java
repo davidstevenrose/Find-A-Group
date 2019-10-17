@@ -43,7 +43,7 @@ public class loginController {
     System.out.println(username); // remove when done testing
     System.out.println(password); // remove when done testing
     users.add(new User("example", "pass", "example@example.net")); // remove when done testing
-    users.add(new User("","","")); // remove after testing
+    //users.add(new User("","","")); // remove after testing
 
     // Creating user to hold login user
     User userToLogIn = new User();

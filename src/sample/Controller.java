@@ -96,6 +96,18 @@ public class Controller {
 
   static User currentUser;
 
+  //testing remove after
+  Group exampleGroup1 =
+          new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
+  Group exampleGroup2 =
+          new Group(
+                  "FGCU Running Group", "A group of FGCU students who like to get together and run");
+  Group exampleGroup3 =
+          new Group(
+                  "FGCU Book Club", "A group of FGCU students who like to get together and read");
+  Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
+  Meeting exampleMeeting2 = new Meeting(LocalDate.of(2019,10,20), "FGCU", "5:00 PM", "FGCU Running Group");
+  Meeting exampleMeeting3 = new Meeting(LocalDate.of(2019,10,25), "not FGCU", "5:00 PM", "FGCU Book Club");
   @FXML
   public void initialize() {
     // Putting values in the tags boxes
@@ -125,20 +137,13 @@ public class Controller {
     }
 
     // values used for testing and demo, remove later
-    allMeetings.add(new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group"));
-    allMeetings.add(new Meeting(LocalDate.of(2019,10,20), "FGCU", "5:00 PM", "FGCU Running Group"));
-    allMeetings.add(new Meeting(LocalDate.of(2019,10,25), "not FGCU", "5:00 PM", "FGCU Book Club"));
-    Group exampleGroup1 =
-        new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
+    allMeetings.add(exampleMeeting1);
+    allMeetings.add(exampleMeeting2);
+    allMeetings.add(exampleMeeting3);
     exampleGroup1.addTag("Gaming");
-    Group exampleGroup2 =
-        new Group(
-            "FGCU Running Group", "A group of FGCU students who like to get together and run");
     exampleGroup2.addTag("Fitness");
     exampleGroup2.addTag("Sports");
-    Group exampleGroup3 =
-            new Group(
-                    "FGCU Book Club", "A group of FGCU students who like to get together and read");
+
     exampleGroup3.addTag("Reading");
     groups.add(exampleGroup1);
     groups.add(exampleGroup2);
@@ -258,7 +263,7 @@ public class Controller {
     try {
       Group selectedGroup = new Group("error", "error");
       for (Group g : currentUser.getGroupLeader()) {
-        if (g.getName() == editGroupSelector.getValue()) {
+        if (g.getName().equals(editGroupSelector.getValue())) {
           selectedGroup = g;
         }
       }

@@ -113,6 +113,7 @@
                   <TextField fx:id="addMeetingLocationTextfield" layoutX="348.0" layoutY="442.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
                   <ComboBox fx:id="addMeetingTimePicker" layoutX="198.0" layoutY="442.0" prefWidth="150.0" promptText="Select Time" stylesheets="@Style.css" />
                   <Button fx:id="EditGroupsButton" layoutX="555.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#editGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
+                  <Hyperlink fx:id="logOut11" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
                </children>
             </AnchorPane>
         </content>
