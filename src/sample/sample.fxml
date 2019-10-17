@@ -1,8 +1,40 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab fx:id="tabLogin" text="Login">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="userNAME" layoutX="151.0" layoutY="84.0" />
+                  <TextField fx:id="passWORD" layoutX="151.0" layoutY="160.0" />
+                  <ToggleButton fx:id="daENTERbutton" layoutX="199.0" layoutY="214.0" mnemonicParsing="false" text="ENTER" textFill="#d52525" />
+                  <Label layoutX="96.0" layoutY="88.0" text="Username" />
+                  <Label layoutX="97.0" layoutY="164.0" text="Password" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Search Groups">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="123.0" layoutY="85.0" text="Group Tags" />
+                  <Label layoutX="210.0" layoutY="14.0" text="Search for groups here!" />
+                  <TextField layoutX="185.0" layoutY="81.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Profileeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
