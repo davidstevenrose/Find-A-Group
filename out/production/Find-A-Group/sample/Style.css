@@ -1,0 +1,22 @@
+.button:hover {
+    -fx-background-color: linear-gradient(#0474bf, #0098ff);
+}
+
+.button {
+    -fx-background-color: linear-gradient(#0098ff, #42b3ff);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    /*
+    mess around with later
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 4, 4);
+     */
+}
+
+#errorLabel {
+    -fx-text-fill: firebrick;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt
+}
