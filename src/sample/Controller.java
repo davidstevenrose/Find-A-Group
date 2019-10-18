@@ -16,10 +16,6 @@ import java.util.ArrayList;
 
 public class Controller {
 
-  @FXML private Button searchGroupsButton;
-
-  @FXML private Button createGroupsButton;
-
   @FXML private ChoiceBox<String> searchTag1;
 
   @FXML private ChoiceBox<String> searchTag3;
@@ -91,7 +87,7 @@ public class Controller {
   @FXML private Label joinLabel;
 
   private final String[] tags = {
-    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Social", "Fun", "Music", "Movies"
+    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
 
   private ArrayList<Group> groups = new ArrayList<>();
@@ -117,7 +113,7 @@ public class Controller {
     // Putting values in the tags boxes
     for (String tag : tags) {
 
-      // Shorten late with fancy stuffs
+      // Shorten later with fancy stuffs
       searchTag1.getItems().add(tag);
       searchTag2.getItems().add(tag);
       searchTag3.getItems().add(tag);
@@ -232,20 +228,6 @@ public class Controller {
       currentUser.addGroupLeader(group);
       // Updating the selectors
       populateGroupSelectors();
-      // creating a new meeting if all information entered
-      if (addMeetingDatePicker.getValue() != null
-          && addMeetingLocationTextfield.getText() != null
-          && addMeetingTimePicker.getValue() != null) {
-        // getting values from user
-        LocalDate meetingDate = addMeetingDatePicker.getValue();
-        String meetingLocation = addMeetingLocationTextfield.getText();
-        String meetingTime = addMeetingTimePicker.getValue();
-        // creating new meeting
-        Meeting meeting = new Meeting(meetingDate, meetingLocation, meetingTime, name);
-        // updating all meetings and group meetings
-        allMeetings.add(meeting);
-        group.addMeeting(meeting);
-      }
       // displaying information to the user
       savedChangesLabel.setText("Saved Changes");
 
@@ -290,6 +272,21 @@ public class Controller {
       // setting the tags to the selected ones
       selectedGroup.setTags(tags);
 
+      // creating a new meeting if all information entered
+      if (addMeetingDatePicker.getValue() != null
+              && addMeetingLocationTextfield.getText() != null
+              && addMeetingTimePicker.getValue() != null) {
+        // getting values from user
+        LocalDate meetingDate = addMeetingDatePicker.getValue();
+        String meetingLocation = addMeetingLocationTextfield.getText();
+        String meetingTime = addMeetingTimePicker.getValue();
+        // creating new meeting
+        Meeting meeting = new Meeting(meetingDate, meetingLocation, meetingTime, selectedGroup.getName());
+        // updating all meetings and group meetings
+        allMeetings.add(meeting);
+        selectedGroup.addMeeting(meeting);
+      }
+
       // displaying information to the user
       savedChangesLabel1.setText("Saved Changes");
 
@@ -311,11 +308,9 @@ public class Controller {
     // Creating ArrayList to hold meetings and giving it all the meetings
     ArrayList<Meeting> foundMeetings = new ArrayList<>();
     foundMeetings.addAll(allMeetings);
-    System.out.println(allMeetings.get(0));
     ArrayList<Meeting> meetingsToRemove = new ArrayList<>();
     // If there is a date selected
     if (searchDatePicker.getValue() != null) {
-      System.out.println(searchDatePicker.getValue());
       for (Meeting m : foundMeetings) {
         // If not the data selected
         if (!m.getDate().equals(searchDatePicker.getValue())) {
@@ -328,7 +323,7 @@ public class Controller {
     foundMeetings.removeAll(meetingsToRemove);
     // If there is a location specified
     if (!searchLocationTextbox.getText().isEmpty()) {
-      System.out.println(searchLocationTextbox.getText());
+
       for (Meeting m : foundMeetings) {
         // If not the data selected
         if (!m.getLocation().equals(searchLocationTextbox.getText())) {
@@ -339,7 +334,6 @@ public class Controller {
     // Removing meetings not fitting criteria
     foundMeetings.removeAll(meetingsToRemove);
     if (groupsPicker.getValue() != null) {
-      System.out.println(groupsPicker.getValue());
       for (Meeting m : foundMeetings) {
         // If not the data selected
         if (!m.getGroupName().equals(groupsPicker.getValue())) {

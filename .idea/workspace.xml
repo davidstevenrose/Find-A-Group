@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed minor issues">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed bug in edit groups method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +211,7 @@
       <workItem from="1570124407562" duration="6981000" />
       <workItem from="1571094373762" duration="13935000" />
       <workItem from="1571165151448" duration="34314000" />
-      <workItem from="1571348990088" duration="2282000" />
+      <workItem from="1571348990088" duration="4859000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -272,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571350850169</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed bug in edit groups method">
+      <created>1571351947395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571351947395</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,17 +313,7 @@
     <MESSAGE value="Added new tab for create account and edit account. Fixed logic to &#10;work with new tab." />
     <MESSAGE value="Fixed search for meetings demo functionality" />
     <MESSAGE value="Fixed minor issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed minor issues" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
-          <line>266</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed bug in edit groups method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in edit groups method" />
   </component>
 </project>
