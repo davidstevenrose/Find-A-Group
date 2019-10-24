@@ -43,7 +43,7 @@ public class CreateAccount {
       errorLabel.setText("Password do not match");
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
-    } else if (username != null && password != null && email != null) {
+    } else if (usernameField != null && passwordField != null && emailField != null) {
       //write to database later
       loginController.users.add(new User(username, password, email));
 
