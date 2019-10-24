@@ -1,0 +1,175 @@
+.root {
+    /*    -fx-light-text-color: #9fff82;*/
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#0474bf, #b000e0);
+}
+
+.button {
+    -fx-background-color: linear-gradient(#0098ff, #42b3ff);
+    -fx-text-fill: #d6fffc;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    /*
+    mess around with later
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 4, 4);
+     */
+}
+
+
+#errorLabel {
+    -fx-text-fill: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt
+}
+
+
+.tab-header-background {
+    -fx-base: #e2920a;
+    -fx-background-color: orange;
+    -fx-outer-border: transparent;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:top {
+    -fx-base: mediumpurple;
+}
+
+.tab-pane .tab-header-area .headers-region .tab:selected .tab-container .tab-label {
+    -fx-text-fill: black;
+}
+
+.tab-pane .tab-header-area .headers-region .tab .tab-container .tab-label {
+    -fx-text-fill: whitesmoke;
+    -fx-color: green;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    /* -fx-background-color: -fx-outer-border, purple, -fx-background;*/
+    -fx-base: mediumseagreen;
+}
+
+/*This changes the background of the anchor panes within the tabview*/
+.anchor-pane {
+    -fx-background-color: khaki;
+    /*-fx-background-color: derive(goldenrod,80%);*/
+}
+
+/** The following CSS is for the Date picker element***/
+.date-picker {
+    -fx-base: orange;
+    -fx-background-color: coral;
+}
+
+.date-picker .button {
+    -fx-background-color: linear-gradient(#fff, #ffb566);
+}
+
+.date-picker:editable .arrow-button .arrow {
+    -fx-base: #20ff10;
+}
+
+.date-picker:editable:hover {
+    -fx-background-color: red;
+}
+
+/*Changes the color of today's bgc on the datepicker*/
+.today {
+    -fx-base: violet;
+}
+
+/*******************************/
+
+.hyperlink{
+    -fx-background-color: indianred;
+    -fx-background-radius: 5 5 5 5;
+    -fx-effect: dropshadow(one-pass-box, darkblue, .5, 15, 5,5);
+    -fx-text-fill:gold;
+
+}
+.choice-box .open-button .arrow {
+    -fx-base: green, white;
+    -fx-background-color: red, green;
+}
+
+.choice-box {
+    /*-fx-base: #ffcc5c;*/
+    -fx-base: violet;
+}
+
+.choice-box .label {
+    -fx-text-fill: maroon;
+}
+
+.text-area *.content {
+    -fx-base: gold;
+    /*    -fx-background-color: goldenrod;*/
+}
+
+/** The following block of code pertains to the tables *****/
+
+/*Code for odd rows of a table*/
+.table-row-cell:odd {
+    /*-fx-base: #ee4466;*/
+    -fx-base: coral;
+    /*-fx-background-color: #ffb871;*/
+    -fx-table-cell-border-color: #a2662a;
+    -fx-border-color: brown, -fx-table-cell-border-color, tan, tan;
+}
+
+/*Code for even rows of a table*/
+.table-row-cell:even {
+    /*-fx-base: purple;
+    -fx-background-color: #f6a2b3;*/
+    -fx-border-color: white, tan, tan;
+}
+
+.table-row-cell {
+    -fx-base: hotpink;
+}
+
+.table-view:row-selection {
+    -fx-table-cell-border-color: #cd6d16;
+    -fx-light-text-color: brown;
+    -fx-font: white;
+    -fx-base: pink;
+
+}
+
+/*This ALSO must be transparent to make the table look nice*/
+.table-view .column-header-background {
+    /*-fx-background-color: transparent;*/
+    -fx-background-radius:  10 10 0 0;
+}
+
+/*This changes the color of when you have a row selected in a table*/
+.table-row-cell:focused, .table-row-cell:selected {
+    -fx-background-color: #89ffb7;
+}
+
+/*This makes the area behind table tabs transparent*/
+.table-view:row-selection {
+    -fx-background-color: transparent;
+}
+
+/*This changes the color of the table header columns*/
+.column-header {
+    -fx-background-color: derive(darkred, 40%);
+    -fx-background-radius: 10 10 0 0;
+}
+
+/*This changes the color of the text on column headers in tables.*/
+/*Don't ask why.*/
+.table-view:row-selection .column-header-background .nested-column-header .label .text {
+    -fx-fill: derive(tan, 50%);
+}
+
+/*This changes the color of the scrollbars.*/
+.thumb {
+    -fx-color: linear-gradient(lime, pink);
+    -fx-background-color: linear-gradient(orangered, indianred);
+}
+
+/**********************************/
