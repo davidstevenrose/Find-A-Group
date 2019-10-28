@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Controller {
+public class MainScreenController {
 
   @FXML private ChoiceBox<String> searchTag1;
 
@@ -354,7 +354,7 @@ public class Controller {
   @FXML
   void logoutClicked(MouseEvent event) throws IOException {
     // Creating the new scene
-    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
 
     // Getting the stage

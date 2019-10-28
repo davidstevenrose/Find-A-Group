@@ -48,7 +48,7 @@ public class CreateAccount {
       loginController.users.add(new User(username, password, email));
 
       // Creating scene
-      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
       Scene primaryScreen = new Scene(primaryScreenParent);
 
       // Getting the stage

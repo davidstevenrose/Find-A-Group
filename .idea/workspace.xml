@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed bug in edit groups method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Meeting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Meeting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CreateAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Meeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginController.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added comments to specify where database will be queried when searching &#10;for groups and meetings." />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +207,7 @@
       <workItem from="1571422378205" duration="1386000" />
       <workItem from="1571684702909" duration="7710000" />
       <workItem from="1571863238094" duration="19000" />
-      <workItem from="1571938842629" duration="5168000" />
+      <workItem from="1571938842629" duration="5904000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -288,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571351947395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added comments to specify where database will be queried when searching &#10;for groups and meetings.">
+      <created>1571951636792</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571951636792</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +317,7 @@
     <MESSAGE value="Fixed search for meetings demo functionality" />
     <MESSAGE value="Fixed minor issues" />
     <MESSAGE value="Fixed bug in edit groups method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in edit groups method" />
+    <MESSAGE value="Added comments to specify where database will be queried when searching &#10;for groups and meetings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments to specify where database will be queried when searching &#10;for groups and meetings." />
   </component>
 </project>
