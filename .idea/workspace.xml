@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MeetDetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MeetingDetails.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +211,7 @@
       <workItem from="1571165151448" duration="34314000" />
       <workItem from="1571348990088" duration="4859000" />
       <workItem from="1571939839409" duration="1742000" />
-      <workItem from="1572376220451" duration="844000" />
+      <workItem from="1572376220451" duration="1834000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -281,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571351947395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed bug in edit groups method">
+      <created>1572378792688</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1572378792688</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

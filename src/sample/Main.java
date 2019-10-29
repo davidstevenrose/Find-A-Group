@@ -24,7 +24,7 @@ public class Main extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("MeetingDetails.fxml"));
         primaryStage.setTitle("2sday's Find A Group");
-        primaryStage.setScene(new Scene(root, 675, 600));
+        primaryStage.setScene(new Scene(root, 383, 469));
         primaryStage.show();
     }
     public static void main(String[] args) {
