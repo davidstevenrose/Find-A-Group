@@ -1,7 +1,6 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 
 public class MeetDetController {
@@ -12,8 +11,12 @@ public class MeetDetController {
 
   @FXML
   public void attendMeetingClicked(MouseEvent mouseEvent) {
-    meetingAttend = true;
-    System.out.printf("Meeting Attended");
+    if (meetingAttend == false) {
+      meetingAttend = true;
+      System.out.printf("Meeting Attended");
+    } else {
+      System.out.println("You are already attending this meeting");
+    }
   }
 
   public void cancelAttendanceClicked(MouseEvent mouseEvent) {
@@ -25,11 +28,8 @@ public class MeetDetController {
     }
   }
 
-  public void meetingName(InputMethodEvent inputMethodEvent) {
-    System.out.println("Meeting Name");
-  }
-
   public void closeClicked(MouseEvent mouseEvent) {
+    System.out.println("Closing Program");
     System.exit(1);
   }
 }
