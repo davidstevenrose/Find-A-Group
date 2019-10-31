@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import java.util.ArrayList;
 
@@ -61,6 +61,7 @@ public class Group {
   public ArrayList<Meeting> getMeetings() {
     return meetings;
   }
+
   public void addMeeting(Meeting meeting) {
     meetings.add(meeting);
   }

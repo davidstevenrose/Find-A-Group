@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -86,6 +86,10 @@ public class MainScreenController {
 
   @FXML private Label joinLabel;
 
+  @FXML private Tab editGroupTab;
+
+  @FXML private TabPane tabPane;
+
   private final String[] tags = {
     "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
@@ -163,6 +167,11 @@ public class MainScreenController {
     meetingsTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
     meetingsLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
     findMeetingsTable.setItems(FXCollections.observableArrayList(allMeetings));
+
+    // Hiding the editGroupsTab on startup
+    if (currentUser.getGroupLeader().size() == 0) {
+      tabPane.getTabs().remove(editGroupTab);
+    }
   }
 
   @FXML
@@ -241,6 +250,8 @@ public class MainScreenController {
       addTag2.setValue("");
       addTag3.setValue("");
       addTag4.setValue("");
+      // Displaying the group tab
+      tabPane.getTabs().add(editGroupTab);
     } catch (Exception e) {
       savedChangesLabel.setText("Please enter all non-optional fields");
     }
