@@ -14,10 +14,30 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
+      <Tab text="Profile">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="user" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name:" />
+                  <TextField fx:id="userName" layoutX="101.0" layoutY="14.0" />
+                  <Text layoutX="23.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group Learder:" />
+                  <TextArea fx:id="groupL" layoutX="123.0" layoutY="342.0" prefHeight="153.0" prefWidth="239.0" />
+                  <Button fx:id="editP" layoutX="448.0" layoutY="515.0" mnemonicParsing="false" text="Edit Profile" />
+                  <Button fx:id="logOutP" layoutX="569.0" layoutY="515.0" mnemonicParsing="false" text="Logout" />
+                  <TableView layoutX="23.0" layoutY="61.0" prefHeight="256.0" prefWidth="617.0">
+                    <columns>
+                      <TableColumn fx:id="displayGroup" prefWidth="75.0" text="Group" />
+                      <TableColumn fx:id="groupDes" prefWidth="541.0" text="Description" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
     <Tab text="Search for groups">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
