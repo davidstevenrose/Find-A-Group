@@ -21,7 +21,7 @@
 
 
 #errorLabel {
-    -fx-text-fill: transparent;
+    -fx-text-fill: black;
     -fx-font-weight: bold;
     -fx-font-size: 14pt
 }
@@ -133,7 +133,6 @@
 .table-view:row-selection {
     -fx-table-cell-border-color: #cd6d16;
     -fx-light-text-color: brown;
-    -fx-font: white;
     -fx-base: pink;
 
 }

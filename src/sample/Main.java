@@ -25,6 +25,8 @@ public class Main extends Application {
         primaryStage.setTitle("2sday's Find A Group");
         primaryStage.setScene(new Scene(root, 675, 600));
         primaryStage.show();
+        
+
     }
     public static void main(String[] args) {
         launch(args);

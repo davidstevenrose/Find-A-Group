@@ -1,7 +1,6 @@
 package sample;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Meeting {
     private LocalDate date;

@@ -55,9 +55,10 @@ public class loginController {
                 userToLogIn = u;
             }
         }
-        if (validLogin == false) {
+        if (!validLogin) {
             // Displaying message for user
             errorLabel.setText("Invalid Username or Password");
+            errorLabel.setVisible(true);
         } else {
             // setting the user in the controller
             Controller.currentUser = userToLogIn;
