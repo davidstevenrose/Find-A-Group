@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added 2 Stylesheets just to flex and show off some color theme ideas.">
-      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CreateAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FruitPunchStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FruitPunchStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Meeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/StarryStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StarryStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/createAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory.">
+      <change afterPath="$PROJECT_DIR$/src/sample/GreenStyle.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +222,7 @@
       <workItem from="1572386742219" duration="2982000" />
       <workItem from="1572396456175" duration="7893000" />
       <workItem from="1572467041655" duration="4347000" />
-      <workItem from="1572486792856" duration="13400000" />
+      <workItem from="1572486792856" duration="13685000" />
     </task>
     <task id="LOCAL-00001" summary="Added some VERY basic GUI elements and played around with some potential&#10;ideas.">
       <created>1571290457426</created>
@@ -256,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571898295454</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory.">
+      <created>1572500349975</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572500349975</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +276,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Added some VERY basic GUI elements and played around with some potential&#10;ideas." />
     <MESSAGE value="Added 2 Stylesheets just to flex and show off some color theme ideas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 2 Stylesheets just to flex and show off some color theme ideas." />
+    <MESSAGE value="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory." />
   </component>
 </project>

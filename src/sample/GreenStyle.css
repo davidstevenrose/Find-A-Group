@@ -1,0 +1,279 @@
+.root {
+    /*    -fx-light-text-color: #9fff82;*/
+    /*-fx-base: #04932e;*/
+    -fx-base: sandybrown;
+}
+
+.anchor-pane {
+    -fx-background-color: derive(-fx-base, 50%);
+    -fx-background-radius: 5 5 0 0;
+}
+
+.grid-pane {
+    -fx-background-color: black;
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(#0474bf, #b000e0);
+}
+
+.button {
+    -fx-background-color: linear-gradient(#0098ff, #42b3ff);
+    -fx-text-fill: #d6fffc;
+    -fx-font-weight: bold;
+
+}
+
+.text-field {
+    /*
+    mess around with later
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 4, 4);
+     */
+}
+
+
+#errorLabel {
+    -fx-text-fill: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt
+}
+
+.tab-header-background {
+    -fx-background-color: linear-gradient(skyblue, royalblue);
+    -fx-outer-border: transparent;
+}
+
+
+.tab-pane > .tab-header-area > .headers-region > .tab:top {
+    -fx-base: seagreen;
+    /*-fx-background-color: mediumpurple;*/
+}
+
+.tab-pane .tab-header-area .headers-region .tab .tab-container .tab-label {
+    -fx-text-fill: whitesmoke;
+    /*-fx-color: green;*/
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    /* -fx-background-color: -fx-outer-border, purple, -fx-background;*/
+    -fx-base: derive(mediumvioletred, 40%);
+}
+
+.tab-pane .tab-header-area .headers-region .tab:selected .tab-container .tab-label {
+    -fx-text-fill: black;
+}
+
+
+/** The following CSS is for the Date picker element***/
+
+.date-picker {
+    -fx-base: deepskyblue;
+    -fx-font-family: Verdana;
+}
+
+.date-picker:hover {
+    -fx-base: darkorchid;
+}
+
+.date-picker .button {
+    -fx-base: burlywood;
+    /*    -fx-background-color: linear-gradient(#fff, #ffb566);*/
+}
+
+.date-picker-popup > * > .day-cell {
+    /*   -fx-background-color: derive(violet, 10%);*/
+    -fx-base: derive(darkviolet, 40%);
+}
+
+.date-picker:editable .arrow-button .arrow {
+    /*   -fx-base: #20ff10;*/
+    -fx-background-color: blue, white;
+    /* -fx-background-color: white;*/
+    -fx-effect: dropshadow(one-pass-box, darkgray, 1, 1, 1, 1);
+}
+
+.date-picker-popup > * > .previous-month,
+.date-picker-popup > * > .next-month {
+    -fx-background-color: #39cfda;
+}
+
+.date-picker-popup > * > .previous-month.today,
+.date-picker-popup > * > .next-month.today {
+    -fx-background-color: darkorange;
+}
+
+.date-picker-popup > * > .previous-month:hover,
+.date-picker-popup > * > .next-month:hover {
+    -fx-background-color: lightskyblue;
+}
+
+.date-picker-popup > * > .spinner > .label {
+    -fx-text-fill: ghostwhite;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup > * > .spinner > .button > .left-arrow,
+.date-picker-popup > * > .spinner > .button > .right-arrow {
+    -fx-background-color: black;
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-background-color: linear-gradient(azure, skyblue);
+}
+
+.date-picker-popup > * > .spinner > .button:pressed {
+    -fx-background-color: linear-gradient(ghostwhite, plum);
+}
+
+.date-picker:editable:hover {
+    -fx-background-color: red;
+}
+
+.date-picker-popup > * > .today {
+    -fx-background-color: orange;
+}
+
+/*******************************/
+
+.label {
+    -fx-text-fill: brown;
+    -fx-font-family: Verdana;
+}
+
+.hyperlink {
+    -fx-background-color: derive(red, -40%);
+    -fx-text-fill: gold;
+    -fx-background-radius: 2 10 2 10;
+    -fx-effect: dropshadow(one-pass-box, white, 2, 2, 2, 2);
+    -fx-font-family: Verdana;
+}
+
+.choice-box .open-button .arrow {
+    -fx-background-color: red, green, white;
+}
+
+.choice-box {
+    -fx-base: deepskyblue;
+    -fx-background-radius: 2 10 2 10;
+}
+
+.choice-box .label {
+    -fx-text-fill: white;
+    -fx-font-size: 12.5;
+    -fx-font-family: Verdana;
+
+}
+
+.choice-box .context-menu {
+    -fx-base: powderblue;
+    -fx-text-fill: black;
+    -fx-background-radius: 2 10 2 10;
+}
+
+.choice-box .context-menu .label {
+    -fx-text-fill: black;
+
+}
+
+.combo-box {
+    -fx-base: lightskyblue;
+    -fx-background-radius: 3, 7, 4, 2;
+    -fx-font-family: Verdana;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: red, green, white;
+}
+
+.text-area {
+    /* -fx-background-color: #ff0a51;*/
+    -fx-border-color: black;
+    -fx-border-radius: 1 1 1 5;
+    -fx-highlight-fill: darkgreen;
+}
+
+.text-area *.content {
+    -fx-base: powderblue;
+    -fx-prompt-text-fill: darkred;
+    -fx-highlight-fill: #006400;
+}
+
+.text-field {
+    -fx-base: plum;
+    -fx-font-family: Verdana;
+}
+
+.text-field:focused {
+    -fx-border-color: black;
+    -fx-border-radius: 1 1 1 1;
+    -fx-highlight-fill: darkgreen;
+    -fx-prompt-text-fill: darkgray;
+}
+
+/** The following block of code pertains to the tables *****/
+
+/*Code for odd rows of cells on tables*/
+.table-row-cell:odd {
+    /*-fx-base: #ee4466;*/
+    -fx-base: coral;
+    /*-fx-background-color: #ffb871;*/
+    -fx-table-cell-border-color: #a2662a;
+    -fx-border-color: brown, -fx-table-cell-border-color, tan, tan;
+}
+
+/*Code for even rows of cells on tables*/
+.table-row-cell:even {
+    /*-fx-base: purple;
+    -fx-background-color: #f6a2b3;*/
+    -fx-border-color: white, tan, tan;
+}
+
+/*This changes the way the borders are colored inside of a table*/
+.table-view:row-selection {
+    -fx-table-cell-border-color: #cd6d16;
+    -fx-light-text-color: darkslateblue;
+    -fx-base: lightpink;
+
+}
+
+/*This changes the color of when you have a cell or row selected in a table*/
+.table-row-cell:focused, .table-row-cell:selected {
+    -fx-background-color: #6efff0;
+}
+
+.table-column {
+    -fx-background-color: transparent;
+}
+
+/*This changes the color of the column headers of tables*/
+.column-header {
+    -fx-background-color: derive(dodgerblue, 40%);
+    -fx-background-radius: 1 1 0 0;
+    -fx-background-insets: 0 0 0 1;
+}
+
+.table-view {
+    -fx-background-color: black;
+    -fx-background-size: 1 1 0 0;
+    -fx-font-family: Verdana;
+}
+
+/*This changes the color of the text for table headers*/
+.table-view:row-selection .column-header-background .nested-column-header .label {
+    -fx-text-fill: whitesmoke;
+    -fx-effect: innershadow(gaussian, black, 1, 1, 2, 2);
+    -fx-font-family: sans-serif;
+}
+
+.table-view .column-header-background,
+.tree-table-view > .column-header-background {
+    -fx-background-color: linear-gradient(azure, lightblue);
+}
+
+/*This changes the color of the scrollbars within the gui*/
+.thumb {
+    -fx-color: linear-gradient(lime, black);
+    -fx-background-color: linear-gradient(azure, lightskyblue, azure);
+}
+
+/**********************************/
