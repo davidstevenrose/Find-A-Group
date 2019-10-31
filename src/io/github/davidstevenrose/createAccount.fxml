@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="607.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.CreateAccount">
+<AnchorPane prefHeight="607.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@Style.css" fx:controller="io.github.davidstevenrose.CreateAccount">
    <children>
       <GridPane prefHeight="600.0" prefWidth="668.0" stylesheets="@Style.css">
         <columnConstraints>
