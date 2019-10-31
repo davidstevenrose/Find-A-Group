@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed bug in edit groups method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/createAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/sample/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/createAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updated to agreed upon naming conventions">
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/loginScreen.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +108,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="recentsLimit" value="5" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cam12\Fundementals\FindAGroup\res" />
+      <recent name="C:\Users\cam12\Fundementals\FindAGroup\src\io\github\davidstevenrose" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -123,7 +126,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -138,6 +141,20 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.Main" />
+      <module name="Find-A-Group" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.davidstevenrose.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,6 +212,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -212,6 +234,12 @@
       <workItem from="1571094373762" duration="13935000" />
       <workItem from="1571165151448" duration="34314000" />
       <workItem from="1571348990088" duration="4859000" />
+      <workItem from="1571422378205" duration="1386000" />
+      <workItem from="1571684702909" duration="7710000" />
+      <workItem from="1571863238094" duration="19000" />
+      <workItem from="1571938842629" duration="5904000" />
+      <workItem from="1572289023955" duration="3532000" />
+      <workItem from="1572543328656" duration="4532000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -283,7 +311,28 @@
       <option name="project" value="LOCAL" />
       <updated>1571351947395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added comments to specify where database will be queried when searching &#10;for groups and meetings.">
+      <created>1571951636792</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571951636792</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed the name of some files">
+      <created>1572289272988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572289272988</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated to agreed upon naming conventions">
+      <created>1572548404612</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572548404612</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +363,9 @@
     <MESSAGE value="Fixed search for meetings demo functionality" />
     <MESSAGE value="Fixed minor issues" />
     <MESSAGE value="Fixed bug in edit groups method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in edit groups method" />
+    <MESSAGE value="Added comments to specify where database will be queried when searching &#10;for groups and meetings." />
+    <MESSAGE value="Changed the name of some files" />
+    <MESSAGE value="Updated to agreed upon naming conventions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to agreed upon naming conventions" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Controller {
+public class MainScreenController {
 
   @FXML private ChoiceBox<String> searchTag1;
 
@@ -86,6 +86,10 @@ public class Controller {
 
   @FXML private Label joinLabel;
 
+  @FXML private Tab editGroupTab;
+
+  @FXML private TabPane tabPane;
+
   private final String[] tags = {
     "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
@@ -96,23 +100,24 @@ public class Controller {
 
   static User currentUser;
 
-  //testing remove after
+  // testing remove after
   Group exampleGroup1 =
-          new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
+      new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
   Group exampleGroup2 =
-          new Group(
-                  "FGCU Running Group", "A group of FGCU students who like to get together and run");
+      new Group("FGCU Running Group", "A group of FGCU students who like to get together and run");
   Group exampleGroup3 =
-          new Group(
-                  "FGCU Book Club", "A group of FGCU students who like to get together and read");
+      new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
   Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
-  Meeting exampleMeeting2 = new Meeting(LocalDate.of(2019,10,20), "FGCU", "5:00 PM", "FGCU Running Group");
-  Meeting exampleMeeting3 = new Meeting(LocalDate.of(2019,10,25), "not FGCU", "5:00 PM", "FGCU Book Club");
+  Meeting exampleMeeting2 =
+      new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
+  Meeting exampleMeeting3 =
+      new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
+  // remove
+
   @FXML
-  public void initialize() {
+  void initialize() {
     // Putting values in the tags boxes
     for (String tag : tags) {
-
       // Shorten later with fancy stuffs
       searchTag1.getItems().add(tag);
       searchTag2.getItems().add(tag);
@@ -162,6 +167,11 @@ public class Controller {
     meetingsTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
     meetingsLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
     findMeetingsTable.setItems(FXCollections.observableArrayList(allMeetings));
+
+    // Hiding the editGroupsTab on startup
+    if (currentUser.getGroupLeader().size() == 0) {
+      tabPane.getTabs().remove(editGroupTab);
+    }
   }
 
   @FXML
@@ -187,7 +197,9 @@ public class Controller {
     String tag2 = ((searchTag2.getValue() == null) ? "" : searchTag2.getValue());
     String tag3 = ((searchTag3.getValue() == null) ? "" : searchTag3.getValue());
     String tag4 = ((searchTag4.getValue() == null) ? "" : searchTag4.getValue());
+
     // checking if groups contain tags
+    // Later this will be done with a database search
     for (Group group : groups) {
       if (group.getTags().contains(tag1)
           && group.getTags().contains(tag2)
@@ -238,6 +250,8 @@ public class Controller {
       addTag2.setValue("");
       addTag3.setValue("");
       addTag4.setValue("");
+      // Displaying the group tab
+      tabPane.getTabs().add(editGroupTab);
     } catch (Exception e) {
       savedChangesLabel.setText("Please enter all non-optional fields");
     }
@@ -246,7 +260,7 @@ public class Controller {
   @FXML
   void editGroupsButtonClicked() {
     try {
-      Group selectedGroup = new Group("error", "error");
+      Group selectedGroup = new Group("error", "error"); // only if broken will happen
       for (Group g : currentUser.getGroupLeader()) {
         if (g.getName().equals(editGroupSelector.getValue())) {
           selectedGroup = g;
@@ -254,7 +268,6 @@ public class Controller {
       }
       // updating description
       selectedGroup.setDescription(addDescriptionTextarea1.getText());
-
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -274,14 +287,15 @@ public class Controller {
 
       // creating a new meeting if all information entered
       if (addMeetingDatePicker.getValue() != null
-              && addMeetingLocationTextfield.getText() != null
-              && addMeetingTimePicker.getValue() != null) {
+          && addMeetingLocationTextfield.getText() != null
+          && addMeetingTimePicker.getValue() != null) {
         // getting values from user
         LocalDate meetingDate = addMeetingDatePicker.getValue();
         String meetingLocation = addMeetingLocationTextfield.getText();
         String meetingTime = addMeetingTimePicker.getValue();
         // creating new meeting
-        Meeting meeting = new Meeting(meetingDate, meetingLocation, meetingTime, selectedGroup.getName());
+        Meeting meeting =
+            new Meeting(meetingDate, meetingLocation, meetingTime, selectedGroup.getName());
         // updating all meetings and group meetings
         allMeetings.add(meeting);
         selectedGroup.addMeeting(meeting);
@@ -309,6 +323,7 @@ public class Controller {
     ArrayList<Meeting> foundMeetings = new ArrayList<>();
     foundMeetings.addAll(allMeetings);
     ArrayList<Meeting> meetingsToRemove = new ArrayList<>();
+    // Later all of these will be replaced with a database search
     // If there is a date selected
     if (searchDatePicker.getValue() != null) {
       for (Meeting m : foundMeetings) {
@@ -350,7 +365,7 @@ public class Controller {
   @FXML
   void logoutClicked(MouseEvent event) throws IOException {
     // Creating the new scene
-    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
 
     // Getting the stage
@@ -365,15 +380,13 @@ public class Controller {
     editGroupSelector.getItems().clear();
     groupsPicker.getItems().clear();
 
-    // Populating edit group picker with groups the user is a leader of
+    // Populating edit group picker and groups picker with groups the user is a leader of
     for (Group g : currentUser.getGroupLeader()) {
       editGroupSelector.getItems().add(g.getName());
+      groupsPicker.getItems().add(g.getName());
     }
     // populate the group picker for meeting search
     for (Group g : currentUser.getGroupMember()) {
-      groupsPicker.getItems().add(g.getName());
-    }
-    for (Group g : currentUser.getGroupLeader()) {
       groupsPicker.getItems().add(g.getName());
     }
   }

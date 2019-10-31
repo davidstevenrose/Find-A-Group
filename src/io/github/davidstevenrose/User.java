@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import java.util.ArrayList;
 

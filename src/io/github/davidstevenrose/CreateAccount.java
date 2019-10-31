@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,12 +43,12 @@ public class CreateAccount {
       errorLabel.setText("Password do not match");
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
-    } else if (username != null && password != null && email != null) {
+    } else if (usernameField != null && passwordField != null && emailField != null) {
       //write to database later
       loginController.users.add(new User(username, password, email));
 
       // Creating scene
-      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
       Scene primaryScreen = new Scene(primaryScreenParent);
 
       // Getting the stage
