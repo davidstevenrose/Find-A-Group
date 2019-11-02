@@ -12,21 +12,24 @@ import javafx.stage.Stage;
  * <p>On application startup, this class will load the log-in fxml file and controller.
  *<br />
  * <i>Note: all non-java source files should be put into the resource folder.</i>
+ * <h1>Some Thoughts</h1>
+ * <p>Our SRS specifies that we must direct the client to the profile page after logon,
+ * but we have no fxml for the profile page (Statement 13). We also must revisit the 'group finding'
+ * mechanism the client will be using. I.E. should the user only search with up to four group tags?
+ *
  * </p>
  */
 public class Main extends Application {
 
+    private String fieldOne;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../../../res/loginPage.fxml"));
-        primaryStage.setTitle("2'sday Find-A-Group");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        //the log-in page is not resizable. bool literal should be stored as a constant.
-        primaryStage.setResizable(false);
+        Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        primaryStage.setTitle("2sday's Find A Group");
+        primaryStage.setScene(new Scene(root, 675, 600));
         primaryStage.show();
     }
-
-
     public static void main(String[] args) {
         launch(args);
     }
