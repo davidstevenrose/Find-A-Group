@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Group {
   private String name;
   private String description;
+  private String groupLeaderName;
   private ArrayList<String> tags;
   private ArrayList<Meeting> meetings;
 
@@ -21,6 +22,16 @@ public class Group {
     this.name = name;
     this.description = description;
     this.tags = tags;
+    // making sure the empty tag is always present
+    tags.add("");
+    this.meetings = new ArrayList<>();
+  }
+
+  public Group(String name, String description, ArrayList<String> tags, String leaderName) {
+    this.name = name;
+    this.description = description;
+    this.tags = tags;
+    this.groupLeaderName = leaderName;
     // making sure the empty tag is always present
     tags.add("");
     this.meetings = new ArrayList<>();
@@ -64,5 +75,13 @@ public class Group {
 
   public void addMeeting(Meeting meeting) {
     meetings.add(meeting);
+  }
+
+  /**
+   * Gets the name of the group's owner.
+   * @return a name
+   */
+  public String getGroupLeaderName() {
+    return groupLeaderName;
   }
 }
