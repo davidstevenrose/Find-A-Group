@@ -26,6 +26,8 @@ public class MainScreenController {
 
   @FXML private Button joinGroupsButton;
 
+  @FXML private CheckBox mustIncludeAllCheckBox;
+
   @FXML private TableView<Group> searchGroupTable;
 
   @FXML private TableColumn<?, ?> searchGroupsGroupNameCol;
@@ -192,20 +194,42 @@ public class MainScreenController {
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
-    // ternary to set the tag to "" if empty instead of null
-    String tag1 = ((searchTag1.getValue() == null) ? "" : searchTag1.getValue());
-    String tag2 = ((searchTag2.getValue() == null) ? "" : searchTag2.getValue());
-    String tag3 = ((searchTag3.getValue() == null) ? "" : searchTag3.getValue());
-    String tag4 = ((searchTag4.getValue() == null) ? "" : searchTag4.getValue());
 
-    // checking if groups contain tags
-    // Later this will be done with a database search
-    for (Group group : groups) {
-      if (group.getTags().contains(tag1)
-          && group.getTags().contains(tag2)
-          && group.getTags().contains(tag3)
-          && group.getTags().contains(tag4)) {
-        foundGroups.add(group);
+
+    // Testing the checkbox to see how groups will be displayed
+    if (mustIncludeAllCheckBox.isSelected()) {
+      // Getting the tags
+      String tag1 = searchTag1.getValue();
+      String tag2 = searchTag2.getValue();
+      String tag3 = searchTag3.getValue();
+      String tag4 = searchTag4.getValue();
+      // Looping through the groups and selecting ones where all of the tags are present
+      for (Group group : groups) {
+        if (group.getTags().contains(tag1)
+            && group.getTags().contains(tag2)
+            && group.getTags().contains(tag3)
+            && group.getTags().contains(tag4)) {
+          foundGroups.add(group);
+        }
+      }
+    } else {
+      // Getting the tags
+      String tag1 = searchTag1.getValue();
+      String tag2 = searchTag2.getValue();
+      String tag3 = searchTag3.getValue();
+      String tag4 = searchTag4.getValue();
+      // Making it so that if there are no tags selected, all of the groups will be shown
+      if (tag1 == null && tag2 == null && tag3 == null && tag4 ==null) {
+        tag1 = "";
+      }
+      // looping through the groups and returning ones that contain at least one of the specified tags
+      for (Group group : groups) {
+        if (group.getTags().contains(tag1)
+                || group.getTags().contains(tag2)
+                || group.getTags().contains(tag3)
+                || group.getTags().contains(tag4)) {
+          foundGroups.add(group);
+        }
       }
     }
     // displaying the groups matching search criteria
