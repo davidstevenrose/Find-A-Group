@@ -43,8 +43,10 @@ public class CreateAccount {
       errorLabel.setText("Password do not match");
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
-    } else if (usernameField != null && passwordField != null && emailField != null) {
-      //write to database later
+    } else if (!usernameField.getText().isEmpty()
+        && !passwordField.getText().isEmpty()
+        && !emailField.getText().isEmpty()) {
+      // write to database later
       loginController.users.add(new User(username, password, email));
 
       // Creating scene
@@ -57,6 +59,8 @@ public class CreateAccount {
       // Setting stage and displaying
       window.setScene(primaryScreen);
       window.show();
+    } else {
+      errorLabel.setText("Please complete all fields");
     }
   }
 }

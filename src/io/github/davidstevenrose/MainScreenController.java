@@ -96,10 +96,13 @@ public class MainScreenController {
     "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
 
-  private ArrayList<Group> groups = new ArrayList<>();
+  // Array list to store all of the groups in
+  private ArrayList<Group> allGroups = new ArrayList<>();
 
+  // Array list to store all of the meetings in
   private ArrayList<Meeting> allMeetings = new ArrayList<>();
 
+  // The user currently using the program
   static User currentUser;
 
   // testing remove after
@@ -151,16 +154,16 @@ public class MainScreenController {
     exampleGroup2.addTag("Fitness");
     exampleGroup2.addTag("Sports");
     exampleGroup3.addTag("Reading");
-    groups.add(exampleGroup1);
-    groups.add(exampleGroup2);
-    groups.add(exampleGroup3);
+    allGroups.add(exampleGroup1);
+    allGroups.add(exampleGroup2);
+    allGroups.add(exampleGroup3);
     // remove later
 
     // Adding values to group display on startup
     // preparing columns
     searchGroupsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
     searchGroupsDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
-    searchGroupTable.setItems(FXCollections.observableArrayList(groups));
+    searchGroupTable.setItems(FXCollections.observableArrayList(allGroups));
 
     // Adding meetings to display on startup
     // preparing columns
@@ -176,6 +179,13 @@ public class MainScreenController {
     }
   }
 
+  /**
+   * This method runs when the joinGroupButton button is clicked. This method gets the group
+   * selected in the searchGroupTable table and adds that group to the groupMember ArrayList in the
+   * user object.
+   *
+   * @param event The mouse click event created by the user clicking on the button
+   */
   @FXML
   void joinGroupButtonClick(MouseEvent event) {
     // Getting selected group from table
@@ -189,12 +199,18 @@ public class MainScreenController {
     joinLabel.setText("Join Successful");
   }
 
+  /**
+   * This method runs when the searchGroupsButton button is clicked. This method reads the tags
+   * selected by the user and displays groups to the searchGroupsTable based on the information that
+   * the user provides.
+   *
+   * @param event The mouse click event created by the user clicking on the button
+   */
   @FXML
   void searchGroupsButtonClicked(MouseEvent event) {
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
-
 
     // Testing the checkbox to see how groups will be displayed
     if (mustIncludeAllCheckBox.isSelected()) {
@@ -204,7 +220,7 @@ public class MainScreenController {
       String tag3 = searchTag3.getValue();
       String tag4 = searchTag4.getValue();
       // Looping through the groups and selecting ones where all of the tags are present
-      for (Group group : groups) {
+      for (Group group : allGroups) {
         if (group.getTags().contains(tag1)
             && group.getTags().contains(tag2)
             && group.getTags().contains(tag3)
@@ -219,15 +235,16 @@ public class MainScreenController {
       String tag3 = searchTag3.getValue();
       String tag4 = searchTag4.getValue();
       // Making it so that if there are no tags selected, all of the groups will be shown
-      if (tag1 == null && tag2 == null && tag3 == null && tag4 ==null) {
+      if (tag1 == null && tag2 == null && tag3 == null && tag4 == null) {
         tag1 = "";
       }
-      // looping through the groups and returning ones that contain at least one of the specified tags
-      for (Group group : groups) {
+      // looping through the groups and returning ones that contain at least one of the specified
+      // tags
+      for (Group group : allGroups) {
         if (group.getTags().contains(tag1)
-                || group.getTags().contains(tag2)
-                || group.getTags().contains(tag3)
-                || group.getTags().contains(tag4)) {
+            || group.getTags().contains(tag2)
+            || group.getTags().contains(tag3)
+            || group.getTags().contains(tag4)) {
           foundGroups.add(group);
         }
       }
@@ -259,7 +276,7 @@ public class MainScreenController {
       // Creating new group with parameters from user
       Group group = new Group(name, description, tags);
       // Adding to groups ArrayList
-      groups.add(group);
+      allGroups.add(group);
       // Making the current user group leader
       currentUser.addGroupLeader(group);
       // Updating the selectors
@@ -340,6 +357,13 @@ public class MainScreenController {
     }
   }
 
+  /**
+   * This method runs when the searchMeetingsButton button is clicked. This method checks the
+   * criteria selected by the user and provides meetings fitting those criteria.
+   *
+   * @param event The mouse click event created by the user clicking on the button
+   */
+  // This method runs when the searchMeetingsButton button is clicked.
   @FXML
   void searchMeetingsButtonClicked(MouseEvent event) {
 
@@ -400,7 +424,7 @@ public class MainScreenController {
     window.show();
   }
 
-  void populateGroupSelectors() {
+  private void populateGroupSelectors() {
     editGroupSelector.getItems().clear();
     groupsPicker.getItems().clear();
 
@@ -415,9 +439,9 @@ public class MainScreenController {
     }
   }
 
-  void updateMeetings() {
+  private void updateMeetings() {
     // adding all of the meetings into the all meetings array
-    for (Group g : groups) {
+    for (Group g : allGroups) {
       for (Meeting m : g.getMeetings()) {
         allMeetings.add(m);
       }
