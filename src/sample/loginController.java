@@ -61,7 +61,7 @@ public class loginController {
       errorLabel.setText("Invalid Username or Password");
     } else {
       // setting the user in the controller
-      Controller.currentUser = userToLogIn;
+      MainScreenController.currentUser = userToLogIn;
 
       // Creating the new scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
