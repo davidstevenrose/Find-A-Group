@@ -17,17 +17,18 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    private String fieldOne;
+  private String fieldOne;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("MeetingDetails.fxml"));
-        primaryStage.setTitle("2sday's Find A Group");
-        primaryStage.setScene(new Scene(root, 383, 469));
-        primaryStage.show();
-    }
-    public static void main(String[] args) {
-        launch(args);
-    }
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("MeetingDetails.fxml"));
+    primaryStage.setTitle("2sday's Find A Group");
+    primaryStage.setScene(new Scene(root, 383, 469));
+    primaryStage.show();
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
 }
