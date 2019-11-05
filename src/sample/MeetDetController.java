@@ -12,6 +12,9 @@ public class MeetDetController {
   ArrayList<String> attendees = new ArrayList<String>();
 
   @FXML
+  /**
+   * @author Jackson
+   */
   public void attendMeetingClicked(MouseEvent mouseEvent) {
     if (meetingAttend == false) {
       meetingAttend = true;
@@ -22,6 +25,11 @@ public class MeetDetController {
     }
   }
 
+  /**
+   *
+   * @param mouseEvent
+   * @author Jackson
+   */
   public void cancelAttendanceClicked(MouseEvent mouseEvent) {
     if (meetingAttend == true) {
       meetingAttend = false;
@@ -32,6 +40,11 @@ public class MeetDetController {
     }
   }
 
+  /**
+   *
+   * @param mouseEvent
+   * @author Jackson
+   */
   public void viewAttendeesClicked(MouseEvent mouseEvent) {
     System.out.println(attendees);
   }
