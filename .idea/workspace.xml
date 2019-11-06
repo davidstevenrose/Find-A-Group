@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b257145d-0c03-45c5-9409-05108b65b21f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CreateAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Meeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/createAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginScreen.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updated to agreed upon naming conventions" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +69,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="74658c9a851d0c77eb2a92f6cdad3a3c177f58b9" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -140,7 +128,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -237,7 +225,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b257145d-0c03-45c5-9409-05108b65b21f" name="Default Changelist" comment="" />
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
       <created>1359379246138</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -254,11 +242,8 @@
       <workItem from="1571938842629" duration="5904000" />
       <workItem from="1572289023955" duration="3532000" />
       <workItem from="1572543328656" duration="4532000" />
-      <workItem from="1572974440205" duration="1756000" />
-      <workItem from="1572978330399" duration="474000" />
-      <workItem from="1572978815091" duration="587000" />
-      <workItem from="1573000335752" duration="169000" />
-      <workItem from="1573000516254" duration="1263000" />
+      <workItem from="1573006195121" duration="239000" />
+      <workItem from="1573074339777" duration="818000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -352,13 +337,20 @@
       <updated>1572548404612</updated>
     </task>
     <task id="LOCAL-00014" summary="Updated to agreed upon naming conventions">
-      <created>1572978886318</created>
+      <created>1573074767952</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1572978886318</updated>
+      <updated>1573074767952</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Updated to agreed upon naming conventions">
+      <created>1573074897265</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1573074897265</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
