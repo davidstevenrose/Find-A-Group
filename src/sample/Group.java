@@ -2,6 +2,7 @@ package sample;
 
 import java.util.ArrayList;
 
+
 public class Group {
   private String name;
   private String description;
@@ -15,7 +16,7 @@ public class Group {
     // making sure the empty tag is always present
     tags.add("");
     this.meetings = new ArrayList<>();
-    }
+  }
 
   public Group(String name, String description, ArrayList<String> tags) {
     this.name = name;
@@ -55,12 +56,13 @@ public class Group {
   }
 
   public void setMeetings(ArrayList<Meeting> meetings) {
-  this.meetings = meetings;
+    this.meetings = meetings;
   }
 
   public ArrayList<Meeting> getMeetings() {
     return meetings;
   }
+
   public void addMeeting(Meeting meeting) {
     meetings.add(meeting);
   }

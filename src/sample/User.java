@@ -9,7 +9,9 @@ public class User {
     private ArrayList<Group> groupMember = new ArrayList<>();
     private ArrayList<Group> groupLeader = new ArrayList<>();
 
-    public User(){};
+    public User(){
+
+    }
 
     public User (String username, String password, String email) {
         this.username = username;

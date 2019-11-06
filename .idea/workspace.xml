@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b257145d-0c03-45c5-9409-05108b65b21f" name="Default Changelist" comment="Updated to agreed upon naming conventions">
+    <list default="true" id="b257145d-0c03-45c5-9409-05108b65b21f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/createAccount.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/loginScreen.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -249,6 +256,9 @@
       <workItem from="1572543328656" duration="4532000" />
       <workItem from="1572974440205" duration="1756000" />
       <workItem from="1572978330399" duration="474000" />
+      <workItem from="1572978815091" duration="587000" />
+      <workItem from="1573000335752" duration="169000" />
+      <workItem from="1573000516254" duration="1263000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -341,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572548404612</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated to agreed upon naming conventions">
+      <created>1572978886318</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572978886318</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

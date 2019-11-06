@@ -47,5 +47,4 @@ public class Meeting {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-
 }

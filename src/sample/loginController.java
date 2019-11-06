@@ -11,7 +11,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -41,8 +40,6 @@ public class loginController {
     boolean validLogin = false;
     String username = usernameField.getText();
     String password = passwordField.getText();
-    System.out.println(username); // remove when done testing
-    System.out.println(password); // remove when done testing
     users.add(new User("example", "pass", "example@example.net")); // remove when done testing
     users.add(new User("","","")); // remove after testing
 
@@ -52,7 +49,7 @@ public class loginController {
     for (User u : users) {
       if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
         validLogin = true;
-        // Setting userToLogIn to user logging in
+        // Setting userToLogIn to be the user logging in
         userToLogIn = u;
       }
     }
