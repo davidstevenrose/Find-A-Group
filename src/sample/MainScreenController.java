@@ -22,7 +22,7 @@ public class MainScreenController {
 
   @FXML private Button editPro;
 
-  @FXML private TextField userNameDisplay;
+  @FXML private Label userNameLabel;
 
   @FXML private TableColumn <?, ?> proGroupTable;
 
@@ -30,7 +30,6 @@ public class MainScreenController {
 
   @FXML private TableColumn <?, ?> pDescribed;
 
-  @FXML private TableColumn <?, ?> Date;
 
   @FXML private Text useNameText;
 
@@ -108,6 +107,8 @@ public class MainScreenController {
 
   @FXML private TabPane tabPane;
 
+
+
   private final String[] tags = {
           "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
@@ -134,6 +135,18 @@ public class MainScreenController {
 
   @FXML
   void initialize() {
+    /** ------------------------------------------------------
+     * Profile Code
+     * @author Darian
+     */
+    //Profile uses the user's input username (current user) and outputs it to the label.
+
+    userNameLabel.setText(currentUser.getUsername());
+
+    //Current Groups and Description
+
+    //--------------------------------------------------------
+
     // Putting values in the tags boxes
     for (String tag : tags) {
       // Shorten later with fancy stuffs
