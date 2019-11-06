@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory.">
-      <change afterPath="$PROJECT_DIR$/src/sample/GreenStyle.css" afterDir="false" />
+    <list default="true" id="1fa85185-f9d8-4f4c-b9f2-df611e61caaa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-A-Group.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Find-A-Group.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,78 +34,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
-    <ui_properties converted="true" />
-    <breakpoint_rules converted="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-        <option value="Class" />
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindManager">
-    <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="false" />
-    </FindUsagesManager>
-  </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="Nicholas-H" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -89,29 +42,17 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectId" id="1RYpnYOa83BmMuvPmPNlUShyhfw" />
+  <component name="ProjectId" id="1TDkqyhYZqexP3bDUazrrWbafmR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="recentsLimit" value="5" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/io/github/davidstevenrose" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nchansen7678\OneDrive - Florida Gulf Coast University\IDEA Projects\Find-A-Group\src\io\github\davidstevenrose" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -126,133 +67,40 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.Main" />
       <module name="Find-A-Group" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="io.github.davidstevenrose.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
-      <created>1359379246138</created>
+      <changelist id="1fa85185-f9d8-4f4c-b9f2-df611e61caaa" name="Default Changelist" comment="" />
+      <created>1573001800463</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1359379246138</updated>
-      <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1569854052256" duration="47000" />
-      <workItem from="1571282312667" duration="7306000" />
-      <workItem from="1571354978191" duration="72000" />
-      <workItem from="1571542704169" duration="3645000" />
-      <workItem from="1571792136161" duration="14953000" />
-      <workItem from="1571862393802" duration="1620000" />
-      <workItem from="1571876618440" duration="143000" />
-      <workItem from="1571891478373" duration="7585000" />
-      <workItem from="1572051200704" duration="324000" />
-      <workItem from="1572123449009" duration="272000" />
-      <workItem from="1572386742219" duration="2982000" />
-      <workItem from="1572396456175" duration="7893000" />
-      <workItem from="1572467041655" duration="4347000" />
-      <workItem from="1572486792856" duration="13685000" />
+      <updated>1573001800463</updated>
+      <workItem from="1573001801831" duration="445000" />
+      <workItem from="1573002248881" duration="10728000" />
+      <workItem from="1573015092218" duration="2697000" />
+      <workItem from="1573076156992" duration="3929000" />
     </task>
-    <task id="LOCAL-00001" summary="Added some VERY basic GUI elements and played around with some potential&#10;ideas.">
-      <created>1571290457426</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1571290457426</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added 2 Stylesheets just to flex and show off some color theme ideas.">
-      <created>1571897889253</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1571897889253</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added 2 Stylesheets just to flex and show off some color theme ideas.">
-      <created>1571898295454</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1571898295454</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory.">
-      <created>1572500349975</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1572500349975</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +109,23 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="HEAD..origin/Nicholas-H" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -270,13 +135,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Added some VERY basic GUI elements and played around with some potential&#10;ideas." />
-    <MESSAGE value="Added 2 Stylesheets just to flex and show off some color theme ideas." />
-    <MESSAGE value="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some imports, fixed some stuff. Added the GreenStyle sheet,&#10;which houses most if not all of the most current edits I've made.&#10;Note that I accidentally deleted the original GreenStyle sheet by accident&#10;so I had to make it all over again from memory." />
   </component>
 </project>
