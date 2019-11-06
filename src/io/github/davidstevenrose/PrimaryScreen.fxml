@@ -54,7 +54,7 @@
                   <TextField fx:id="searchLocationTextbox" layoutX="297.0" layoutY="25.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
                   <DatePicker fx:id="searchDatePicker" layoutX="14.0" layoutY="25.0" prefHeight="31.0" prefWidth="281.0" promptText="Select Date" stylesheets="@Style.css" />
                   <Label layoutX="14.0" layoutY="4.0" prefHeight="21.0" prefWidth="175.0" text="View By Date / Location" />
-                  <Button fx:id="searchMeetingsButton" layoutX="424.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#searchMeetingsButtonClicked" stylesheets="@Style.css" text="Search" />
+                  <Button fx:id="searchMeetingsButton" layoutX="548.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#searchMeetingsButtonClicked" stylesheets="@Style.css" text="Search" />
                   <Label layoutX="14.0" layoutY="135.0" />
                   <Label layoutX="14.0" layoutY="125.0" text="Meetings" />
                   <Label layoutX="14.0" layoutY="135.0" />
@@ -70,6 +70,7 @@
                     </columns>
                   </TableView>
                   <Hyperlink fx:id="logOut1" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
+                  <Button fx:id="viewMeetingDetailsButton" layoutX="403.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#viewMeetingDetailsButtonClicked" text="View Details" />
                </children>
             </AnchorPane>
       </content>

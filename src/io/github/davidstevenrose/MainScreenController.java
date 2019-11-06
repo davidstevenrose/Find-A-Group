@@ -137,8 +137,6 @@ public class MainScreenController {
       editTag3.getItems().add(tag);
       editTag4.getItems().add(tag);
     }
-    // Updating the meetings ArrayList
-    updateMeetings();
 
     // Putting values in the add meeting time picker
     for (int i = 1; i < 13; i++) {
@@ -177,6 +175,10 @@ public class MainScreenController {
     if (currentUser.getGroupLeader().size() == 0) {
       tabPane.getTabs().remove(editGroupTab);
     }
+
+    // Setting the first element as selected in the
+    searchGroupTable.getSelectionModel().selectFirst();
+    findMeetingsTable.getSelectionModel().selectFirst();
   }
 
   /**
@@ -184,6 +186,7 @@ public class MainScreenController {
    * selected in the searchGroupTable table and adds that group to the groupMember ArrayList in the
    * user object.
    *
+   * @author Cameron
    * @param event The mouse click event created by the user clicking on the button
    */
   @FXML
@@ -204,6 +207,7 @@ public class MainScreenController {
    * selected by the user and displays groups to the searchGroupsTable based on the information that
    * the user provides.
    *
+   * @author Cameron
    * @param event The mouse click event created by the user clicking on the button
    */
   @FXML
@@ -361,6 +365,7 @@ public class MainScreenController {
    * This method runs when the searchMeetingsButton button is clicked. This method checks the
    * criteria selected by the user and provides meetings fitting those criteria.
    *
+   * @author Cameron
    * @param event The mouse click event created by the user clicking on the button
    */
   // This method runs when the searchMeetingsButton button is clicked.
@@ -410,6 +415,39 @@ public class MainScreenController {
     findMeetingsTable.setItems(FXCollections.observableArrayList(foundMeetings));
   }
 
+  /**
+   * The button to direct the user to the meeting details page and give the selected meeting to the
+   * controller for the meeting details page.
+   *
+   * @author Cameron
+   * @param event The mouse click event created by the user clicking on the button
+   */
+  @FXML
+  void viewMeetingDetailsButtonClicked(MouseEvent event) throws IOException {
+    // Get selected meeting
+    Meeting selectedMeeting = findMeetingsTable.getSelectionModel().getSelectedItem();
+
+    // Make that the selected meeting in the MeetDetController class
+    MeetDetController.setMeeting(selectedMeeting);
+
+    // Creating the new scene
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("MeetingDetails.fxml"));
+    Scene primaryScreen = new Scene(primaryScreenParent);
+
+    // Getting the stage
+    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+    // Setting stage
+    window.setScene(primaryScreen);
+    window.show();
+  }
+
+  /**
+   * This logs the user out and returns them to the login screen.
+   * @param event The mouse click event created by the user clicking on the button
+   * @throws IOException An exception that can occur if the fxml file is not found
+   * @author Cameron
+   */
   @FXML
   void logoutClicked(MouseEvent event) throws IOException {
     // Creating the new scene
@@ -436,15 +474,6 @@ public class MainScreenController {
     // populate the group picker for meeting search
     for (Group g : currentUser.getGroupMember()) {
       groupsPicker.getItems().add(g.getName());
-    }
-  }
-
-  private void updateMeetings() {
-    // adding all of the meetings into the all meetings array
-    for (Group g : allGroups) {
-      for (Meeting m : g.getMeetings()) {
-        allMeetings.add(m);
-      }
     }
   }
 }

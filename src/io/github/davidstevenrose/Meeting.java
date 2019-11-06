@@ -1,18 +1,21 @@
 package io.github.davidstevenrose;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Meeting {
   private LocalDate date;
   private String location;
   private String time;
   private String groupName;
+  private ArrayList<String> attendees;
 
   Meeting(LocalDate date, String location, String time, String groupName) {
     this.time = time;
     this.date = date;
     this.location = location;
     this.groupName = groupName;
+    attendees = new ArrayList<>();
   }
 
   public LocalDate getDate() {
@@ -45,5 +48,13 @@ public class Meeting {
 
   public void setGroupName(String groupName) {
     this.groupName = groupName;
+  }
+
+  public void addAttendee(String attendee) {
+    attendees.add(attendee);
+  }
+
+  public ArrayList<String> getAttendees() {
+    return attendees;
   }
 }
