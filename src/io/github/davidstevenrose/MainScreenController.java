@@ -1,8 +1,5 @@
 package io.github.davidstevenrose;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.EnumSet;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -416,7 +413,7 @@ public class MainScreenController {
       tags.add(tag4);
 
       // setting the tags to the selected ones
-      selectedGroup.setTags(tags);
+      selectedGroup.replaceTags(tags);
 
       // creating a new meeting if all information entered
       if (addMeetingDatePicker.getValue() != null

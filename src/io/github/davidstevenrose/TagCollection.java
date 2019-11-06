@@ -1,21 +1,30 @@
 package io.github.davidstevenrose;
 
+/**
+ * List of premade tags
+ * @author drose
+ */
 public enum TagCollection {
   GAMING("Gaming"),
   SPORTS("Sports"),
   FITNESS("Fitness"),
   READING("Reading"),
-  STUDY("Study"), FUN("Fun"),
+  STUDY("Study"),
+  FUN("Fun"),
   MOVIES("Movies"),
   ART("Art");
 
   private String name;
 
-  TagCollection(String s){
+  TagCollection(String s) {
     name = s;
   }
 
-  public String getName(){
+  /**
+   * Gets the label in CamelCase
+   * @return the name
+   */
+  public String getName() {
     return name;
   }
 
