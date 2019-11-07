@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class MainScreenController {
 
+  @FXML private CheckBox mustIncludeAllCheckBox;
+
   @FXML private ChoiceBox<String> searchTag1;
 
   @FXML private ChoiceBox<String> searchTag3;
@@ -25,8 +27,6 @@ public class MainScreenController {
   @FXML private ChoiceBox<String> searchTag2;
 
   @FXML private Button joinGroupsButton;
-
-  @FXML private CheckBox mustIncludeAllCheckBox;
 
   @FXML private TableView<Group> searchGroupTable;
 
@@ -92,6 +92,8 @@ public class MainScreenController {
 
   @FXML private TabPane tabPane;
 
+  @FXML private Label userNameLabel;
+
   private final String[] tags = {
     "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
@@ -121,6 +123,21 @@ public class MainScreenController {
 
   @FXML
   void initialize() {
+    /** ------------------------------------------------------
+     * Profile Code
+     * @author Darian + Nicholas Hansen
+     */
+    //Profile uses the user's input username (current user) displays it on the profile tab.
+
+
+    userNameLabel.setText(currentUser.getUsername() + "!");
+
+    // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
+    // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
+
+    // Current Groups and Description
+
+    // --------------------------------------------------------
 
     // Putting values in the tags boxes
     for (String tag : tags) {
@@ -441,6 +458,25 @@ public class MainScreenController {
     // Setting stage
     window.setScene(primaryScreen);
     window.show();
+  }
+
+  /**
+   * This takes you to the edit profile screen.
+   * @param event click the button to engage
+   * @throws IOException
+   * @author Darian + Nicholas Hansen
+   */
+  @FXML
+  void editProfile(MouseEvent event) throws IOException{
+    //Goin to the edit profile page! Yeah!
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
+    Scene primaryScreen = new Scene(primaryScreenParent);
+
+    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+    window.setScene(primaryScreen);
+    window.show();
+
   }
 
   /**
