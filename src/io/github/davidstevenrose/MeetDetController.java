@@ -35,8 +35,6 @@ public class MeetDetController {
 
   @FXML private Button cancelAttendanceButton;
 
-  @FXML private Button viewRosterButton;
-
   @FXML private Hyperlink backButton;
 
   @FXML private ListView<String> attendeesList;
@@ -55,6 +53,13 @@ public class MeetDetController {
     // Getting the attendees for the meeting
     observableAttendees.addAll(currentMeeting.getAttendees());
 
+    // Values for testing remove after
+    observableAttendees.add("Person 1");
+    observableAttendees.add("Person 2");
+    observableAttendees.add("Person 3");
+    observableAttendees.add("Person 4");
+    // Remove
+
     groupNameLabel.setText(currentMeeting.getGroupName());
     dateLabel.setText(currentMeeting.getDate().toString());
     timeLabel.setText(currentMeeting.getTime());
@@ -72,6 +77,7 @@ public class MeetDetController {
   public void attendMeetingClicked(MouseEvent mouseEvent) {
     if (meetingAttend == false) {
       meetingAttend = true;
+      currentMeeting.addAttendee(MainScreenController.currentUser.getUsername());
       observableAttendees.add(MainScreenController.currentUser.getUsername());
       System.out.println("Meeting Attended");
       userMessageLabel.setText("Marked Attending");

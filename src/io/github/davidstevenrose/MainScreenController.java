@@ -1,6 +1,7 @@
 package io.github.davidstevenrose;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -33,6 +34,12 @@ public class MainScreenController {
   @FXML private TableColumn<?, ?> searchGroupsGroupNameCol;
 
   @FXML private TableColumn<?, ?> searchGroupsDescriptionCol;
+
+  @FXML private TableView<Group> pGroupTable;
+
+  @FXML private TableColumn<?, ?> pGroupName;
+
+  @FXML private TableColumn<?, ?> pDescription;
 
   @FXML private TextField searchLocationTextbox;
 
@@ -181,6 +188,12 @@ public class MainScreenController {
     searchGroupsDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
     searchGroupTable.setItems(FXCollections.observableArrayList(allGroups));
 
+    // Preparing columns
+    pGroupName.setCellValueFactory(new PropertyValueFactory<>("name"));
+    pDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+    // Adding value to display
+    displayGroupsInProfile();
+
     // Adding meetings to display on startup
     // preparing columns
     meetingsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("groupName"));
@@ -194,9 +207,14 @@ public class MainScreenController {
       tabPane.getTabs().remove(editGroupTab);
     }
 
-    // Setting the first element as selected in the
+    // Setting the first element as selected
     searchGroupTable.getSelectionModel().selectFirst();
     findMeetingsTable.getSelectionModel().selectFirst();
+    searchTag1.getSelectionModel().selectFirst();
+    searchTag2.getSelectionModel().selectFirst();
+    searchTag3.getSelectionModel().selectFirst();
+    searchTag4.getSelectionModel().selectFirst();
+
   }
 
   /**
@@ -215,6 +233,9 @@ public class MainScreenController {
     currentUser.addGroupMember(group);
     // Updating the selectors
     populateGroupSelectors();
+
+    // Adding to profile tab
+    displayGroupsInProfile();
 
     // Displaying result for the user
     joinLabel.setText("Join Successful");
@@ -271,8 +292,11 @@ public class MainScreenController {
         }
       }
     }
-    // displaying the groups matching search criteria
+    // Displaying the groups matching search criteria
     searchGroupTable.setItems(FXCollections.observableArrayList(foundGroups));
+
+    // Displaying that group in the user groups page
+
   }
 
   @FXML
@@ -315,6 +339,10 @@ public class MainScreenController {
       addTag4.setValue("");
       // Displaying the group tab
       tabPane.getTabs().add(editGroupTab);
+
+      // Adding to profile tab
+      displayGroupsInProfile();
+
     } catch (Exception e) {
       savedChangesLabel.setText("Please enter all non-optional fields");
     }
@@ -499,6 +527,22 @@ public class MainScreenController {
     window.show();
   }
 
+  /**
+   * This method displays the groups the user is in to the table view in the profile tab.
+   * @author Cameron
+   */
+  private void displayGroupsInProfile() {
+    ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
+    currentUserGroups.addAll(currentUser.getGroupLeader());
+    currentUserGroups.addAll(currentUser.getGroupMember());
+    pGroupTable.getItems().addAll(currentUserGroups);
+
+  }
+
+  /**
+   *
+   * @author Cameron
+   */
   private void populateGroupSelectors() {
     editGroupSelector.getItems().clear();
     groupsPicker.getItems().clear();

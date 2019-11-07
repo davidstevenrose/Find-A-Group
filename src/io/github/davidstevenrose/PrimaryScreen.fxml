@@ -23,7 +23,7 @@
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
-                        <Label fx:id="userNameLabel" layoutX="413.0" layoutY="18.0" prefHeight="35.0" prefWidth="194.0" text="CurrentUserName" />
+                        <Label fx:id="userNameLabel" layoutX="419.0" layoutY="18.0" prefHeight="35.0" prefWidth="194.0" text="CurrentUserName" />
                         <Hyperlink fx:id="logOutH" layoutX="62.0" layoutY="516.0" onMouseClicked="#logoutClicked" text="Log out" />
                         <Text fx:id="useNameText" fill="MEDIUMVIOLETRED" fontSmoothingType="LCD" layoutX="344.0" layoutY="41.0" scaleZ="88.0" text="Welcome,">
                             <font>
@@ -32,8 +32,8 @@
                         </Text>
                         <TableView fx:id="pGroupTable" layoutX="13.0" layoutY="85.0" prefHeight="333.0" prefWidth="649.0" stylesheets="@Style.css">
                             <columns>
-                                <TableColumn fx:id="groupName" prefWidth="136.0" text="Group Name" />
-                                <TableColumn fx:id="pDescried" prefWidth="505.0" text="Description" />
+                                <TableColumn fx:id="pGroupName" prefWidth="136.0" text="Group Name" />
+                                <TableColumn fx:id="pDescription" prefWidth="505.0" text="Description" />
                             </columns>
                         </TableView>
                         <Hyperlink fx:id="editPro" layoutX="534.0" layoutY="516.0" onMouseClicked="#editProfile" text="Edit Profile" />
