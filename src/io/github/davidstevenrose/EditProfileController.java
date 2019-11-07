@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**------------------------------------------------------
+ * @Darian
+ */
 public class EditProfileController {
     @FXML private Label editLabel;
 
@@ -65,5 +67,5 @@ public class EditProfileController {
         window.setScene(primaryScreen);
         window.show();
     }
-
+//-----------------------------------------------------------------------------------
 }
