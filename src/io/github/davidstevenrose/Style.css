@@ -41,6 +41,18 @@
     -fx-font-weight: bold;
     -fx-font-size: 14pt
 }
+#editTitle{
+    -fx-text-fill: midnightblue;
+}
+#password_Error{
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+#userNameLabel{
+    -fx-font-weight: bold;
+    -fx-text-fill: darkblue;
+    -fx-effect: dropshadow(one-pass-box,white,1,2,1,1);
+}
 
 .tab-header-background {
     -fx-background-color: linear-gradient(skyblue, royalblue);
@@ -147,7 +159,7 @@
 .hyperlink {
     -fx-background-color: derive(red, -40%);
     -fx-text-fill: gold;
-    -fx-background-radius: 2 10 2 10;
+    -fx-background-radius: 10 10 10 10;
     -fx-effect: dropshadow(one-pass-box, white, 2, 2, 2, 2);
     -fx-font-family: Verdana;
 }
@@ -244,7 +256,9 @@
 }
 
 .table-view {
-    -fx-background-color: transparent;
+    -fx-background-color: skyblue;
+    -fx-background-radius: 10 10 1 1;
+    -fx-background-insets: 10 2 0 2;
 }
 
 /*This changes the color of the column headers of tables*/
@@ -269,14 +283,17 @@
 }
 
 /*This changes the color of the scrollbars within the gui*/
-.thumb {
+.scroll-bar:vertical .thumb{
     -fx-base: royalblue;
     -fx-background-color: linear-gradient(deepskyblue, #add5ff, lightseagreen);
+}
+.scroll-bar:horizontal .thumb{
+    -fx-base:royalblue;
+    -fx-background-color: linear-gradient(to left, deepskyblue,#add5ff,lightseagreen);
 }
 
  .scroll-bar, .table-view .scroll-bar {
     -fx-base: derive(azure, -9%);
-
 }
 
 /**********************************/
