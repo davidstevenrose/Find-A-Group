@@ -50,4 +50,20 @@ public class EditProfileController {
         window.show();
     }
 
+    @FXML
+    void submitToProfile(MouseEvent event) throws IOException {
+        // Creating the new scene
+        Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
+        Scene primaryScreen = new Scene(primaryScreenParent);
+
+
+        // Getting the stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+        // Setting stage
+        window.setScene(primaryScreen);
+        window.show();
+    }
+
 }
