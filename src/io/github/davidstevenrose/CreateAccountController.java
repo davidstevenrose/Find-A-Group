@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CreateAccount {
+public class CreateAccountController {
 
   @FXML private PasswordField confirmPasswordField;
 
