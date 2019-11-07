@@ -2,8 +2,6 @@ package io.github.davidstevenrose;
 
 import java.time.LocalDate;
 
-import java.time.LocalDate;
-
 public class Meeting {
   private LocalDate date;
   private String location;

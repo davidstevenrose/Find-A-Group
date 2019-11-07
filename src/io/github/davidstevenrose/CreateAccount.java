@@ -11,11 +11,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import sun.security.util.Password;
 
 import java.io.IOException;
 
 public class CreateAccount {
+
   @FXML private PasswordField confirmPasswordField;
 
   @FXML private PasswordField passwordField;
