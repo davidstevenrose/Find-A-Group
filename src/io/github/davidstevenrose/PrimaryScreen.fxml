@@ -138,7 +138,7 @@
                         <ComboBox fx:id="addMeetingTimePicker" layoutX="198.0" layoutY="442.0" prefWidth="150.0" promptText="Select Time" stylesheets="@Style.css" />
                         <Button fx:id="EditGroupsButton" layoutX="492.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#editGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
                         <Hyperlink fx:id="logOut11" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
-                        <Label fx:id="savedChangesLabel1" alignment="CENTER" layoutX="213.0" layoutY="523.0" text="      " visible="false">
+                        <Label fx:id="savedChangesLabel1" alignment="CENTER" layoutX="213.0" layoutY="523.0" text="      ">
                             <font>
                                 <Font size="18.0" />
                             </font>
