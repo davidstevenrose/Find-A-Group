@@ -121,6 +121,7 @@ public class MainScreenController {
 
   @FXML
   void initialize() {
+
     // Putting values in the tags boxes
     for (String tag : tags) {
       // Shorten later with fancy stuffs
