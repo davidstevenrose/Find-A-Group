@@ -1,6 +1,7 @@
 package io.github.davidstevenrose;
 
 import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class User {
     private String username;

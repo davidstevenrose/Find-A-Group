@@ -2,7 +2,6 @@ package io.github.davidstevenrose;
 
 import java.util.ArrayList;
 
-
 public class Group {
   private String name;
   private String description;

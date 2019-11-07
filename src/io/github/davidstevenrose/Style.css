@@ -2,6 +2,7 @@
     /*    -fx-light-text-color: #9fff82;*/
     /*-fx-base: #04932e;*/
     -fx-base: sandybrown;
+    -fx-font-family: Verdana;
 }
 
 .anchor-pane {
@@ -18,8 +19,11 @@
 }
 
 .button {
-    -fx-background-color: linear-gradient(#0098ff, #42b3ff);
-    -fx-text-fill: #d6fffc;
+    /*    -fx-background-color: linear-gradient(#0098ff, #42b3ff);*//*
+        -fx-background-color: radial-gradient(center 50% 50%, radius 65%, royalblue,lightskyblue);*/
+    -fx-background-color: linear-gradient(to bottom right, royalblue,deepskyblue);
+    -fx-effect: innershadow(one-pass-box,coral,2,1,2,-1);
+    -fx-text-fill: white;
     -fx-font-weight: bold;
 
 }
@@ -36,6 +40,18 @@
     -fx-text-fill: transparent;
     -fx-font-weight: bold;
     -fx-font-size: 14pt
+}
+#editTitle{
+    -fx-text-fill: midnightblue;
+}
+#password_Error{
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+#userNameLabel{
+    -fx-font-weight: bold;
+    -fx-text-fill: darkblue;
+    -fx-effect: dropshadow(one-pass-box,white,1,2,1,1);
 }
 
 .tab-header-background {
@@ -82,7 +98,7 @@
 
 .date-picker-popup > * > .day-cell {
     /*   -fx-background-color: derive(violet, 10%);*/
-    -fx-base: derive(darkviolet, 40%);
+    -fx-base: derive(blueviolet, 20%);
 }
 
 .date-picker:editable .arrow-button .arrow {
@@ -94,7 +110,7 @@
 
 .date-picker-popup > * > .previous-month,
 .date-picker-popup > * > .next-month {
-    -fx-background-color: #39cfda;
+    -fx-background-color: #948de1;
 }
 
 .date-picker-popup > * > .previous-month.today,
@@ -143,13 +159,14 @@
 .hyperlink {
     -fx-background-color: derive(red, -40%);
     -fx-text-fill: gold;
-    -fx-background-radius: 2 10 2 10;
+    -fx-background-radius: 10 10 10 10;
     -fx-effect: dropshadow(one-pass-box, white, 2, 2, 2, 2);
     -fx-font-family: Verdana;
 }
 
 .choice-box .open-button .arrow {
-    -fx-background-color: red, green, white;
+    -fx-background-color: darkblue, white;
+    /*    -fx-effect: innershadow(one-pass-box, black,1,2,1,1);*/
 }
 
 .choice-box {
@@ -161,7 +178,6 @@
     -fx-text-fill: white;
     -fx-font-size: 12.5;
     -fx-font-family: Verdana;
-
 }
 
 .choice-box .context-menu {
@@ -182,7 +198,8 @@
 }
 
 .combo-box .arrow-button .arrow {
-    -fx-background-color: red, green, white;
+    -fx-background-color: darkblue, white;
+    /*    -fx-effect: dropshadow(one-pass-box,black,1,2,1,1);*/
 }
 
 .text-area {
@@ -217,63 +234,66 @@
     /*-fx-base: #ee4466;*/
     -fx-base: coral;
     /*-fx-background-color: #ffb871;*/
-    -fx-table-cell-border-color: #a2662a;
-    -fx-border-color: brown, -fx-table-cell-border-color, tan, tan;
+
 }
 
 /*Code for even rows of cells on tables*/
 .table-row-cell:even {
     /*-fx-base: purple;
     -fx-background-color: #f6a2b3;*/
-    -fx-border-color: white, tan, tan;
+    -fx-base: derive(mediumvioletred, 50%);
 }
 
 /*This changes the way the borders are colored inside of a table*/
-.table-view:row-selection {
-    -fx-table-cell-border-color: #cd6d16;
-    -fx-light-text-color: darkslateblue;
-    -fx-base: lightpink;
-
+.table-view:row-selection, .table-view:row-selection:selected {
+    -fx-light-text-color: derive(darkblue, 40%);
 }
 
 /*This changes the color of when you have a cell or row selected in a table*/
 .table-row-cell:focused, .table-row-cell:selected {
-    -fx-background-color: #6efff0;
+    -fx-background-color: lightskyblue;
+
 }
 
-.table-column {
-    -fx-background-color: transparent;
+.table-view {
+    -fx-background-color: skyblue;
+    -fx-background-radius: 10 10 1 1;
+    -fx-background-insets: 10 2 0 2;
 }
 
 /*This changes the color of the column headers of tables*/
 .column-header {
-    -fx-background-color: derive(dodgerblue, 40%);
-    -fx-background-radius: 1 1 0 0;
-    -fx-background-insets: 0 0 0 1;
+    -fx-background-color: derive(royalblue, 10%);
+    -fx-background-radius: 10 10 1 1;
+    -fx-effect: innershadow(one-pass-box, dimgray, 1, 1, 1, 1);
 }
 
-.table-view {
-    -fx-background-color: black;
-    -fx-background-size: 1 1 0 0;
-    -fx-font-family: Verdana;
+.table-view .column-header-background {
+    -fx-base: derive(mediumblue, -20%);
+    -fx-background-color: transparent;
+    -fx-background-radius: 10 10 1 1;
 }
 
 /*This changes the color of the text for table headers*/
 .table-view:row-selection .column-header-background .nested-column-header .label {
+    /*    -fx-text-fill: whitesmoke;*/
     -fx-text-fill: whitesmoke;
-    -fx-effect: innershadow(gaussian, black, 1, 1, 2, 2);
-    -fx-font-family: sans-serif;
-}
+    -fx-base: lightskyblue;
 
-.table-view .column-header-background,
-.tree-table-view > .column-header-background {
-    -fx-background-color: linear-gradient(azure, lightblue);
 }
 
 /*This changes the color of the scrollbars within the gui*/
-.thumb {
-    -fx-color: linear-gradient(lime, black);
-    -fx-background-color: linear-gradient(azure, lightskyblue, azure);
+.scroll-bar:vertical .thumb{
+    -fx-base: royalblue;
+    -fx-background-color: linear-gradient(deepskyblue, #add5ff, lightseagreen);
+}
+.scroll-bar:horizontal .thumb{
+    -fx-base:royalblue;
+    -fx-background-color: linear-gradient(to left, deepskyblue,#add5ff,lightseagreen);
+}
+
+.scroll-bar, .table-view .scroll-bar {
+    -fx-base: derive(azure, -9%);
 }
 
 /**********************************/

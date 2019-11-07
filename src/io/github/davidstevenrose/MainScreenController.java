@@ -1,5 +1,6 @@
 package io.github.davidstevenrose;
 
+
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,164 +10,98 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
 public class MainScreenController {
-
-  @FXML private Tab profileTab;
-
-
-  @FXML private Hyperlink logOutH;
-
-
-  @FXML private Hyperlink editPro;
-
-
-  @FXML private Label userNameLabel;
-
-
-  @FXML private TableColumn <?, ?> proGroupTable;
-
-
-  @FXML private TableColumn <?, ?> groupName;
-
-
-  @FXML private TableColumn <?, ?> pDescribed;
-
-
-  @FXML private Text useNameText;
-
 
   @FXML private ChoiceBox<String> searchTag1;
 
-
   @FXML private ChoiceBox<String> searchTag3;
-
 
   @FXML private ChoiceBox<String> searchTag4;
 
-
   @FXML private ChoiceBox<String> searchTag2;
-
 
   @FXML private Button joinGroupsButton;
 
-
   @FXML private TableView<Group> searchGroupTable;
-
 
   @FXML private TableColumn<?, ?> searchGroupsGroupNameCol;
 
-
   @FXML private TableColumn<?, ?> searchGroupsDescriptionCol;
-
 
   @FXML private TextField searchLocationTextbox;
 
-
   @FXML private DatePicker searchDatePicker;
-
 
   @FXML private Button searchMeetingsButton;
 
-
   @FXML private ChoiceBox<String> groupsPicker;
-
 
   @FXML private TableView<Meeting> findMeetingsTable;
 
-
   @FXML private TableColumn<?, ?> meetingsGroupNameCol;
-
 
   @FXML private TableColumn<?, ?> meetingsDateCol;
 
-
   @FXML private TableColumn<?, ?> meetingsTimeCol;
-
 
   @FXML private TableColumn<?, ?> meetingsLocationCol;
 
-
   @FXML private ChoiceBox<String> addTag1;
-
 
   @FXML private ChoiceBox<String> addTag2;
 
-
   @FXML private ChoiceBox<String> addTag3;
-
 
   @FXML private ChoiceBox<String> addTag4;
 
-
   @FXML private ChoiceBox<String> editTag1;
-
 
   @FXML private ChoiceBox<String> editTag2;
 
-
   @FXML private ChoiceBox<String> editTag3;
-
 
   @FXML private ChoiceBox<String> editTag4;
 
-
   @FXML private DatePicker addMeetingDatePicker;
-
 
   @FXML private TextField addMeetingLocationTextfield;
 
-
   @FXML private ComboBox<String> addMeetingTimePicker;
-
 
   @FXML private ChoiceBox<String> editGroupSelector;
 
-
   @FXML private TextField createGroupTextfield;
-
 
   @FXML private TextArea addDescriptionTextarea;
 
-
   @FXML private TextArea addDescriptionTextarea1;
-
 
   @FXML private Label savedChangesLabel;
 
-
   @FXML private Label savedChangesLabel1;
-
 
   @FXML private Label joinLabel;
 
-
   @FXML private Tab editGroupTab;
-
 
   @FXML private TabPane tabPane;
 
-
+  @FXML private Label userNameLabel;
 
   private final String[] tags = {
           "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
   };
 
-
   private ArrayList<Group> groups = new ArrayList<>();
-
 
   private ArrayList<Meeting> allMeetings = new ArrayList<>();
 
-
   static User currentUser;
-
 
   // testing remove after
   Group exampleGroup1 =
@@ -182,17 +117,23 @@ public class MainScreenController {
           new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
   // remove
 
-
   @FXML
   void initialize() {
     /** ------------------------------------------------------
      * Profile Code
-     * @author Darian
+     * @author Darian + Nicholas Hansen
      */
-    //Profile uses the user's input username (current user) and outputs it to the label.
-    userNameLabel.setText(currentUser.getUsername());
-    //--------------------------------------------------------
+    //Profile uses the user's input username (current user) displays it on the profile tab.
 
+
+    userNameLabel.setText(currentUser.getUsername() + "!");
+
+    // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
+    // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
+
+    // Current Groups and Description
+
+    // --------------------------------------------------------
 
     // Putting values in the tags boxes
     for (String tag : tags) {
@@ -213,13 +154,11 @@ public class MainScreenController {
     // Updating the meetings ArrayList
     updateMeetings();
 
-
     // Putting values in the add meeting time picker
     for (int i = 1; i < 13; i++) {
       addMeetingTimePicker.getItems().add(i + ":00 AM");
       addMeetingTimePicker.getItems().add(i + ":00 PM");
     }
-
 
     // values used for testing and demo, remove later
     allMeetings.add(exampleMeeting1);
@@ -234,13 +173,11 @@ public class MainScreenController {
     groups.add(exampleGroup3);
     // remove later
 
-
     // Adding values to group display on startup
     // preparing columns
     searchGroupsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
     searchGroupsDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
     searchGroupTable.setItems(FXCollections.observableArrayList(groups));
-
 
     // Adding meetings to display on startup
     // preparing columns
@@ -250,13 +187,11 @@ public class MainScreenController {
     meetingsLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
     findMeetingsTable.setItems(FXCollections.observableArrayList(allMeetings));
 
-
     // Hiding the editGroupsTab on startup
     if (currentUser.getGroupLeader().size() == 0) {
       tabPane.getTabs().remove(editGroupTab);
     }
   }
-
 
   @FXML
   void joinGroupButtonClick(MouseEvent event) {
@@ -267,15 +202,13 @@ public class MainScreenController {
     // Updating the selectors
     populateGroupSelectors();
 
-
     // Displaying result for the user
+
     joinLabel.setText("Join Successful");
   }
 
-
   @FXML
   void searchGroupsButtonClicked(MouseEvent event) {
-
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
@@ -284,7 +217,6 @@ public class MainScreenController {
     String tag2 = ((searchTag2.getValue() == null) ? "" : searchTag2.getValue());
     String tag3 = ((searchTag3.getValue() == null) ? "" : searchTag3.getValue());
     String tag4 = ((searchTag4.getValue() == null) ? "" : searchTag4.getValue());
-
 
     // checking if groups contain tags
     // Later this will be done with a database search
@@ -300,7 +232,6 @@ public class MainScreenController {
     searchGroupTable.setItems(FXCollections.observableArrayList(foundGroups));
   }
 
-
   @FXML
   void createGroupsButtonClicked(MouseEvent event) {
     try {
@@ -308,7 +239,6 @@ public class MainScreenController {
       String name = createGroupTextfield.getText();
       String description =
               ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
-
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -333,7 +263,6 @@ public class MainScreenController {
       // displaying information to the user
       savedChangesLabel.setText("Saved Changes");
 
-
       // Resetting fields
       createGroupTextfield.clear();
       addDescriptionTextarea.clear();
@@ -348,7 +277,6 @@ public class MainScreenController {
     }
   }
 
-
   @FXML
   void editGroupsButtonClicked() {
     try {
@@ -360,7 +288,6 @@ public class MainScreenController {
       }
       // updating description
       selectedGroup.setDescription(addDescriptionTextarea1.getText());
-
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -375,10 +302,8 @@ public class MainScreenController {
       tags.add(tag3);
       tags.add(tag4);
 
-
       // setting the tags to the selected ones
       selectedGroup.setTags(tags);
-
 
       // creating a new meeting if all information entered
       if (addMeetingDatePicker.getValue() != null
@@ -396,10 +321,9 @@ public class MainScreenController {
         selectedGroup.addMeeting(meeting);
       }
 
-
       // displaying information to the user
-      savedChangesLabel1.setText("Saved Changes");
 
+      savedChangesLabel1.setText("Saved Changes");
 
       // Resetting fields
       addDescriptionTextarea1.clear();
@@ -408,16 +332,13 @@ public class MainScreenController {
       editTag3.setValue("");
       editTag4.setValue("");
 
-
     } catch (Exception e) {
       System.out.println("Please enter all non-optional fields");
     }
   }
 
-
   @FXML
   void searchMeetingsButtonClicked(MouseEvent event) {
-
 
     // Creating ArrayList to hold meetings and giving it all the meetings
     ArrayList<Meeting> foundMeetings = new ArrayList<>();
@@ -438,7 +359,6 @@ public class MainScreenController {
     foundMeetings.removeAll(meetingsToRemove);
     // If there is a location specified
     if (!searchLocationTextbox.getText().isEmpty()) {
-
 
       for (Meeting m : foundMeetings) {
         // If not the data selected
@@ -463,49 +383,42 @@ public class MainScreenController {
     findMeetingsTable.setItems(FXCollections.observableArrayList(foundMeetings));
   }
 
-
   @FXML
   void logoutClicked(MouseEvent event) throws IOException {
     // Creating the new scene
     Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
 
-
     // Getting the stage
     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
 
     // Setting stage
     window.setScene(primaryScreen);
     window.show();
   }
 
-  /**----------------------------------------------------------------------------------------------
-     * @Darian
-     * @param event
-     * @throws IOException
-     */
+  /**
+   * This takes you to the edit profile screen.
+   * @param event click the button to engage
+   * @throws IOException
+   * @author Darian + Nicholas Hansen
+   */
   @FXML
-    void editScene(MouseEvent event) throws IOException{
-      // Creating the new scene
-      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
-      Scene primaryScreen = new Scene(primaryScreenParent);
+  void editScene(MouseEvent event) throws IOException{
+    //Goin to the edit profile page! Yeah!
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
+    Scene primaryScreen = new Scene(primaryScreenParent);
 
+    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-      // Getting the stage
-      Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    window.setScene(primaryScreen);
+    window.show();
 
-
-      // Setting stage
-      window.setScene(primaryScreen);
-      window.show();
-}
-//-------------------------------------------------------------------------------------------------
+  }
 
   void populateGroupSelectors() {
     editGroupSelector.getItems().clear();
     groupsPicker.getItems().clear();
-
 
     // Populating edit group picker and groups picker with groups the user is a leader of
     for (Group g : currentUser.getGroupLeader()) {
@@ -517,7 +430,6 @@ public class MainScreenController {
       groupsPicker.getItems().add(g.getName());
     }
   }
-
 
   void updateMeetings() {
     // adding all of the meetings into the all meetings array
