@@ -403,7 +403,7 @@ public class MainScreenController {
    * @author Darian + Nicholas Hansen
    */
   @FXML
-  void editScene(MouseEvent event) throws IOException{
+  void editProfile(MouseEvent event) throws IOException{
     //Goin to the edit profile page! Yeah!
     Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
