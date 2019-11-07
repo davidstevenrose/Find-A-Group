@@ -10,7 +10,7 @@ public class EditProfileController {
 
     static User currentUser;
 
-    @FXML
+   @FXML
     void initialize() {
 
         editLabel.setText(currentUser.getUsername());

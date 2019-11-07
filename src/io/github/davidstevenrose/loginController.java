@@ -59,6 +59,11 @@ public class loginController {
     } else {
       // setting the user in the controller
       MainScreenController.currentUser = userToLogIn;
+      /**----------------------------------------------
+       * @Darian
+       */
+      EditProfileController.currentUser = userToLogIn;
+      //------------------------------------------------
 
       // Creating the new scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));

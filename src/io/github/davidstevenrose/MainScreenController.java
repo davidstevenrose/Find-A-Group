@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 
 public class MainScreenController {
+
   @FXML private Tab profileTab;
 
 
@@ -189,14 +190,7 @@ public class MainScreenController {
      * @author Darian
      */
     //Profile uses the user's input username (current user) and outputs it to the label.
-
-
     userNameLabel.setText(currentUser.getUsername());
-
-
-    //Current Groups and Description
-
-
     //--------------------------------------------------------
 
 
@@ -486,21 +480,27 @@ public class MainScreenController {
     window.show();
   }
 
-@FXML
-void editScene(MouseEvent event) throws IOException{
-  // Creating the new scene
-  Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
-  Scene primaryScreen = new Scene(primaryScreenParent);
+  /**----------------------------------------------------------------------------------------------
+     * @Darian
+     * @param event
+     * @throws IOException
+     */
+  @FXML
+    void editScene(MouseEvent event) throws IOException{
+      // Creating the new scene
+      Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
+      Scene primaryScreen = new Scene(primaryScreenParent);
 
 
-  // Getting the stage
-  Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      // Getting the stage
+      Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 
-  // Setting stage
-  window.setScene(primaryScreen);
-  window.show();
+      // Setting stage
+      window.setScene(primaryScreen);
+      window.show();
 }
+//-------------------------------------------------------------------------------------------------
 
   void populateGroupSelectors() {
     editGroupSelector.getItems().clear();
