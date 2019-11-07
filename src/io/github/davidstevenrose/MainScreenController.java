@@ -23,7 +23,7 @@ public class MainScreenController {
   @FXML private Hyperlink logOutH;
 
 
-  @FXML private Button editPro;
+  @FXML private Hyperlink editPro;
 
 
   @FXML private Label userNameLabel;
@@ -36,8 +36,6 @@ public class MainScreenController {
 
 
   @FXML private TableColumn <?, ?> pDescribed;
-
-
 
 
   @FXML private Text useNameText;
@@ -152,9 +150,6 @@ public class MainScreenController {
 
 
   @FXML private TabPane tabPane;
-
-
-
 
 
 
@@ -491,6 +486,21 @@ public class MainScreenController {
     window.show();
   }
 
+@FXML
+void editScene(MouseEvent event) throws IOException{
+  // Creating the new scene
+  Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
+  Scene primaryScreen = new Scene(primaryScreenParent);
+
+
+  // Getting the stage
+  Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+  // Setting stage
+  window.setScene(primaryScreen);
+  window.show();
+}
 
   void populateGroupSelectors() {
     editGroupSelector.getItems().clear();
