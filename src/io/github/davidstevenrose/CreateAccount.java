@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
