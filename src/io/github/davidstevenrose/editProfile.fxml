@@ -30,7 +30,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="returnProfile" mnemonicParsing="false" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <Button fx:id="cancelAction" mnemonicParsing="false" onMouseClicked="#returnProfile" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="208.0" text="Comfirm Password" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <PasswordField fx:id="newPassword2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Label fx:id="editLabel" alignment="CENTER" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
