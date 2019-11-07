@@ -396,7 +396,7 @@ public class MainScreenController {
   @FXML
   void logoutClicked(MouseEvent event) throws IOException {
     // Creating the new scene
-    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("../io/github/davidstevenrose/loginScreen.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
 
     // Getting the stage
