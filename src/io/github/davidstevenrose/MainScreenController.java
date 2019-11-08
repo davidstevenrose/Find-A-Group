@@ -22,6 +22,50 @@ public class MainScreenController {
   @FXML private ChoiceBox<String> searchTag1;
 
   @FXML private ChoiceBox<String> searchTag3;
+  /**
+   * The tab to create a new group.
+   */
+  public Tab createGroupTab;
+  /**
+   * The button to submit user input to create a new group.
+   */
+  public Button createGroupsButton;
+  /**
+   * The tab to view meetings from groups the user has joined.
+   */
+  public Tab findMeetingsTab;
+  /**
+   * The tab to search and view groups for the user to join.
+   */
+  public Tab searchForGroupsTab;
+  /**
+   * The profile tab to allow the user to toggle between profile and group.
+   */
+  public Tab profileTabDriver;
+  /**
+   * The lable to print the user's username.
+   */
+  public Label profileUserNameLab;
+  /**
+   * The first of four tag choice boxes. Located in create group tab.
+   */
+  @FXML
+  private ChoiceBox<String> addTag1;
+  /**
+   * The second of four tag choice boxes. Located in create group tab.
+   */
+  @FXML
+  private ChoiceBox<String> addTag2;
+  /**
+   * The third of four tag choice boxes. Located in create group tab.
+   */
+  @FXML
+  private ChoiceBox<String> addTag3;
+  /**
+   * The fourth of four tag choice boxes. Located in create group tab.
+   */
+  @FXML
+  private ChoiceBox<String> addTag4;
 
   @FXML private ChoiceBox<String> searchTag4;
 
@@ -42,6 +86,8 @@ public class MainScreenController {
   @FXML private TableColumn<?, ?> pDescription;
 
   @FXML private TextField searchLocationTextbox;
+  @FXML
+  private Button searchMeetingsButton;
 
   @FXML private DatePicker searchDatePicker;
 
@@ -101,8 +147,11 @@ public class MainScreenController {
 
   @FXML private Label userNameLabel;
 
+  /**
+   * A string of premade tags. This artifact is temporary, as tags will be converted to objects.
+   */
   private final String[] tags = {
-    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies"
+      "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies", "Art"
   };
 
   // Array list to store all of the groups in
@@ -146,17 +195,37 @@ public class MainScreenController {
 
     // --------------------------------------------------------
 
+
+    //list of tag choice boxes
+    ArrayList<ComboBox<String>> tagBoxes = new ArrayList<>();//empty list
+    fillBoxesWithTags(tagBoxes);
+
+    //create new group
+    createGroupsButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+      @Override
+      public void handle(MouseEvent event) {
+        Group newGroup = createGroup();
+        groups.add(newGroup);
+        //return to searchForGroups tab
+        tabPane.getSelectionModel().select(searchForGroupsTab);
+        System.out.println("New group added to database.");
+      }
+    });
+
+    //add meeting
+
     // Putting values in the tags boxes
     for (String tag : tags) {
-      // Shorten later with fancy stuffs
       searchTag1.getItems().add(tag);
       searchTag2.getItems().add(tag);
       searchTag3.getItems().add(tag);
       searchTag4.getItems().add(tag);
+      //these lines are replaced - David======
       addTag1.getItems().add(tag);
       addTag2.getItems().add(tag);
       addTag3.getItems().add(tag);
       addTag4.getItems().add(tag);
+      //======================================
       editTag1.getItems().add(tag);
       editTag2.getItems().add(tag);
       editTag3.getItems().add(tag);
@@ -216,6 +285,32 @@ public class MainScreenController {
     searchTag4.getSelectionModel().selectFirst();
 
   }
+
+  /**
+   * Creates a group and returns a reference to a group object.
+   *
+   * @return a group object reference
+   */
+  private Group createGroup() {
+    String groupName = createGroupTextfield.getText();
+    ArrayList<String> tags = new ArrayList<>();
+    if (addTag1.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag1.getValue());
+    }
+    if (addTag2.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag2.getValue());
+    }
+    if (addTag3.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag3.getValue());
+    }
+    if (addTag4.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag4.getValue());
+    }
+    String desc = ((addDescriptionTextarea.getText() == null) ? ""
+        : addDescriptionTextarea.getText());
+    return new Group(groupName, desc, tags, currentUser.getUsername());
+  }
+
 
   /**
    * This method runs when the joinGroupButton button is clicked. This method gets the group
@@ -375,7 +470,7 @@ public class MainScreenController {
       tags.add(tag4);
 
       // setting the tags to the selected ones
-      selectedGroup.setTags(tags);
+      selectedGroup.replaceTags(tags);
 
       // creating a new meeting if all information entered
       if (addMeetingDatePicker.getValue() != null
@@ -557,5 +652,47 @@ public class MainScreenController {
     for (Group g : currentUser.getGroupMember()) {
       groupsPicker.getItems().add(g.getName());
     }
+  }
+
+  void updateMeetings() {
+    // adding all of the meetings into the all meetings array
+    for (Group g : groups) {
+      for (Meeting m : g.getMeetings()) {
+        allMeetings.add(m);
+      }
+    }
+  }
+
+  /**
+   * Fills the combo boxes by retrieving the current list of premade tags. The cbo uses tags, but
+   * may be converted to using enumerations of TagCollection. consult Cameron for further notes.
+   *
+   * @param tagBoxes the list of combo boxes to fill with group tags.
+   */
+  private void fillBoxesWithTags(ArrayList<ComboBox<String>> tagBoxes) {
+    ArrayList<String> tags = new ArrayList<>();
+    for (TagCollection tag : TagCollection.class.getEnumConstants()
+    ) {
+      tags.add(tag.getName());
+    }
+    for (ComboBox<String> cbo : tagBoxes) {
+      cbo.getItems().addAll(tags);
+    }
+  }
+
+  /**
+   * Creates a meeting and displays it under the search meeting table of all group members.
+   * Currently, there are no add/edit meeting controls, so method will be implemented with BUI in
+   * mind.
+   */
+  private void addMeeting() {
+    LocalDate meetingDate = addMeetingDatePicker.getValue();
+    //replace combo box with string regex
+    String meetingTime = addMeetingTimePicker.getSelectionModel().getSelectedItem();
+    meetingTime = "12:00PM";
+    String meetingLoc = addMeetingLocationTextfield.getText();
+    Meeting newMeeting = new Meeting(meetingLoc,meetingDate,meetingTime, "driver group", "Tom");
+    //add meeting to list of meetings for that meeting's group
+
   }
 }
