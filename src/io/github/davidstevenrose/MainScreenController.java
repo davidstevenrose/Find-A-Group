@@ -273,12 +273,13 @@ public class MainScreenController {
       }
     } else {
       // Getting the tags
-      String tag1 = searchTag1.getValue();
-      String tag2 = searchTag2.getValue();
-      String tag3 = searchTag3.getValue();
-      String tag4 = searchTag4.getValue();
+      // if tag is unselected don't include in search criteria
+      String tag1 = searchTag1.getValue().equals("") ? "unused" : searchTag1.getValue();
+      String tag2 = searchTag2.getValue().equals("") ? "unused" : searchTag2.getValue();
+      String tag3 = searchTag3.getValue().equals("") ? "unused" : searchTag3.getValue();
+      String tag4 = searchTag4.getValue().equals("") ? "unused" : searchTag4.getValue();
       // Making it so that if there are no tags selected, all of the groups will be shown
-      if (tag1 == null && tag2 == null && tag3 == null && tag4 == null) {
+      if (tag1.equals("unused") && tag2.equals("unused") && tag3.equals("unused") && tag4.equals("unused")) {
         tag1 = "";
       }
       // looping through the groups and returning ones that contain at least one of the specified

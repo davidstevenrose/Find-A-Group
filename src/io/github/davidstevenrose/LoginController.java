@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class loginController {
+public class LoginController {
 
   @FXML private PasswordField passwordField;
 
