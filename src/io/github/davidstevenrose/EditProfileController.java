@@ -51,15 +51,15 @@ public class EditProfileController {
   @FXML
   void submitChanges(MouseEvent event) throws IOException {
     if (oldPassword.getText().isEmpty()
-        && confirmPassword.getText().isEmpty()
-        && newPassword.getText().isEmpty()) {
+            && confirmPassword.getText().isEmpty()
+            && newPassword.getText().isEmpty()) {
       passwordError.setText("Please input your password to continue!");
       oldPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
       confirmPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
       passwordError.setVisible(true);
     } else if (oldPassword.getText().isEmpty()
-        || confirmPassword.getText().isEmpty()
-        || newPassword.getText().isEmpty()) {
+            || confirmPassword.getText().isEmpty()
+            || newPassword.getText().isEmpty()) {
       passwordError.setText("Fields cannot be empty");
       passwordError.setVisible(true);
       oldPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
@@ -73,16 +73,16 @@ public class EditProfileController {
       newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
     }
     if (editUsernameField.getText().isEmpty()
-        && userEmail.getText().isEmpty()
-        && newPassword.getText().isEmpty()) {
+            && userEmail.getText().isEmpty()
+            && newPassword.getText().isEmpty()) {
       passwordError.setText("Fields cannot be empty");
       passwordError.setVisible(true);
       editUsernameField.setStyle("-fx-border-color: red; -fx-border-width: 2");
       userEmail.setStyle("-fx-border-color: red; -fx-border-width: 2");
       newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
     } else if (editUsernameField.getText().isEmpty()
-        || userEmail.getText().isEmpty()
-        || newPassword.getText().isEmpty()) {
+            || userEmail.getText().isEmpty()
+            || newPassword.getText().isEmpty()) {
       passwordError.setText("Fields cannot be empty");
       passwordError.setVisible(true);
       editUsernameField.setStyle("-fx-border-color: red; -fx-border-width: 2");
@@ -90,10 +90,10 @@ public class EditProfileController {
       newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
     }
     if (oldPassword.getText().equals(MainScreenController.currentUser.getPassword())
-        && confirmPassword.getText().equals(MainScreenController.currentUser.getPassword())
-        && !newPassword.getText().isEmpty()
-        && !editUsernameField.getText().isEmpty()
-        && !userEmail.getText().isEmpty()) {
+            && confirmPassword.getText().equals(MainScreenController.currentUser.getPassword())
+            && !newPassword.getText().isEmpty()
+            && !editUsernameField.getText().isEmpty()
+            && !userEmail.getText().isEmpty()) {
 
       MainScreenController.currentUser.setPassword(newPassword.getText());
       MainScreenController.currentUser.setEmail(userEmail.getText());

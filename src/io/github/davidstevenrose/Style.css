@@ -19,8 +19,8 @@
 }
 
 .button {
-/*    -fx-background-color: linear-gradient(#0098ff, #42b3ff);*//*
-    -fx-background-color: radial-gradient(center 50% 50%, radius 65%, royalblue,lightskyblue);*/
+    /*    -fx-background-color: linear-gradient(#0098ff, #42b3ff);*//*
+        -fx-background-color: radial-gradient(center 50% 50%, radius 65%, royalblue,lightskyblue);*/
     -fx-background-color: linear-gradient(to bottom right, royalblue,deepskyblue);
     -fx-effect: innershadow(one-pass-box,coral,2,1,2,-1);
     -fx-text-fill: white;
@@ -165,7 +165,7 @@
 
 .choice-box .open-button .arrow {
     -fx-background-color: darkblue, white;
-/*    -fx-effect: innershadow(one-pass-box, black,1,2,1,1);*/
+    /*    -fx-effect: innershadow(one-pass-box, black,1,2,1,1);*/
 }
 
 .choice-box {
@@ -198,7 +198,7 @@
 
 .combo-box .arrow-button .arrow {
     -fx-background-color: darkblue, white;
-/*    -fx-effect: dropshadow(one-pass-box,black,1,2,1,1);*/
+    /*    -fx-effect: dropshadow(one-pass-box,black,1,2,1,1);*/
 }
 
 .text-area {
@@ -291,7 +291,7 @@
     -fx-background-color: linear-gradient(to left, deepskyblue,#add5ff,lightseagreen);
 }
 
- .scroll-bar, .table-view .scroll-bar {
+.scroll-bar, .table-view .scroll-bar {
     -fx-base: derive(azure, -9%);
 }
 

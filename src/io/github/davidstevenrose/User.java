@@ -1,5 +1,4 @@
 package io.github.davidstevenrose;
-
 import java.util.ArrayList;
 
 public class User {
