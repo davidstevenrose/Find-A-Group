@@ -70,7 +70,7 @@
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <CheckBox fx:id="mustIncludeAllCheckBox" layoutX="27.0" layoutY="108.0" mnemonicParsing="false" text="Must Include All" />
+                  <CheckBox fx:id="mustIncludeAllCheckBox" layoutX="27.0" layoutY="108.0" mnemonicParsing="false" text="Must Include All" />
                     </children>
                 </AnchorPane>
             </content>
@@ -95,7 +95,7 @@
                             </columns>
                         </TableView>
                         <Hyperlink fx:id="logOut1" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
-                        <Button fx:id="viewMeetingDetailsButton" layoutX="312.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#viewMeetingDetailsButtonClicked" prefHeight="32.0" prefWidth="144.0" text="View Details" />
+                  <Button fx:id="viewMeetingDetailsButton" layoutX="312.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#viewMeetingDetailsButtonClicked" prefHeight="32.0" prefWidth="144.0" text="View Details" />
                     </children>
                 </AnchorPane>
             </content>

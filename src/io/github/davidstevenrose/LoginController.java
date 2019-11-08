@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class loginController {
+public class LoginController {
 
   @FXML private PasswordField passwordField;
 
@@ -40,7 +40,7 @@ public class loginController {
     String username = usernameField.getText();
     String password = passwordField.getText();
     users.add(new User("example", "pass", "example@example.net")); // remove when done testing
-    users.add(new User("","","")); // remove after testing
+    users.add(new User("", "", "")); // remove after testing
 
     // Creating user to hold login user
     User userToLogIn = new User();
