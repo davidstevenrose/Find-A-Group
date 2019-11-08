@@ -302,6 +302,7 @@ public class MainScreenController {
    * Goes through the process of creating a group and saving the new group data to the database.
    *
    * @param event the source of the event
+   * @author drose
    */
   @FXML
   void createGroupsButtonClicked(MouseEvent event) {
@@ -462,6 +463,7 @@ public class MainScreenController {
    * Creates a group and returns a reference to a group object.
    *
    * @return a group object reference
+   * @author drose
    */
   private Group createGroup() {
     String groupName = createGroupTextfield.getText();
@@ -488,6 +490,7 @@ public class MainScreenController {
    * may be converted to using enumerations of TagCollection. consult Cameron for further notes.
    *
    * @param tagBoxes the list of combo boxes to fill with group tags.
+   * @author drose
    */
   private void fillBoxesWithTags(ArrayList<ComboBox<String>> tagBoxes) {
     ArrayList<String> tags = new ArrayList<>();
@@ -504,6 +507,7 @@ public class MainScreenController {
    * Creates a meeting and displays it under the search meeting table of all group members.
    * Currently, there are no add/edit meeting controls, so method will be implemented with BUI in
    * mind.
+   * @author drose
    */
   private void addMeeting() {
     LocalDate meetingDate = addMeetingDatePicker.getValue();
