@@ -1,6 +1,8 @@
 # Find-A-Group
 <h4>You will create software that helps people get together and form groups. </h4>
-<p>Users  can  create  a  profile,  then search  for  interesting  groups based  on  their activities,  hobbies,  etc.  A group leader can create a group, add meetings, and add tags for users to find this group. User shall also be able to view meetings for specific dates/locations.</p>
+<p>Users  can  create  a  profile,  then search  for  interesting  groups based  on  their activities,
+  hobbies,  etc.  A group leader can create a group, add meetings, and add tags for users to find this
+   group. User shall also be able to view meetings for specific dates/locations.</p>
 
 
 <h5>Adding and Editing Meetings</h5>
@@ -20,3 +22,10 @@ and <u>description</u>. The user will then select up to four tags to attribute t
 The tags will be provided by the system. When the user is finished with the page, the
 new group will be created and the user will become the group leader. The system will
 display to the user that the group was created successfully.</p>
+
+<h5>View Meeting Details/Sign Up for Meeting:</h5>
+<p> The Close button will exit the program. The 
+Attend Meeting button will display a message to the console that says the meeting has been attended.
+The Cancel Attendance button will display a unique message if it is clicked when the user hasn't 
+attended the meeting, and will display a message confirming their cancellation if they have already
+ clicked the Attend Meeting button.</p>
