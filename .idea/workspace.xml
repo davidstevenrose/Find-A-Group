@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fa85185-f9d8-4f4c-b9f2-df611e61caaa" name="Default Changelist" comment="">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added code from Jackson's MeetingDetails screen.&#10;Added additional methods and functionality to MeetingDetails screen.&#10;Added method in MainScreenController to switch to MeetingDetails&#10;screen.">
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,13 +16,63 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -26,22 +81,47 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
-  <component name="ProjectId" id="1TDkqyhYZqexP3bDUazrrWbafmR" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\cam12\Fundementals\FindAGroup\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectId" id="1RYpnYOa83BmMuvPmPNlUShyhfw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/io/github/davidstevenrose" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OOP/ProductionLineTrackerGUI" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nchansen7678\OneDrive - Florida Gulf Coast University\IDEA Projects\Find-A-Group\src\io\github\davidstevenrose" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nchansen7678\OneDrive - Florida Gulf Coast University\IDEA Projects\Find-A-Group\src\io\github\davidstevenrose" />
+      <recent name="C:\Users\cam12\Fundementals\FindAGroup\res" />
+      <recent name="C:\Users\cam12\Fundementals\FindAGroup\src\io\github\davidstevenrose" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -56,10 +136,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.Main" />
       <module name="Find-A-Group" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.davidstevenrose.*" />
@@ -70,9 +169,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="Find-A-Group" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -81,40 +235,131 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1fa85185-f9d8-4f4c-b9f2-df611e61caaa" name="Default Changelist" comment="" />
-      <created>1573001800463</created>
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573001800463</updated>
-      <workItem from="1573001801831" duration="445000" />
-      <workItem from="1573002248881" duration="10728000" />
-      <workItem from="1573015092218" duration="2697000" />
-      <workItem from="1573076156992" duration="4240000" />
-      <workItem from="1573094109251" duration="14332000" />
-      <workItem from="1573153409824" duration="3176000" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1569854052256" duration="47000" />
+      <workItem from="1570124407562" duration="6981000" />
+      <workItem from="1571094373762" duration="13935000" />
+      <workItem from="1571165151448" duration="34314000" />
+      <workItem from="1571348990088" duration="4859000" />
+      <workItem from="1571422378205" duration="1386000" />
+      <workItem from="1571684702909" duration="7710000" />
+      <workItem from="1571863238094" duration="19000" />
+      <workItem from="1571938842629" duration="5904000" />
+      <workItem from="1572289023955" duration="3532000" />
+      <workItem from="1572543328656" duration="4532000" />
+      <workItem from="1572977594367" duration="8030000" />
     </task>
-    <task id="LOCAL-00001" summary="Current Version of Master with some CSS and JAVAFX edits.&#10;Files Changed:&#10;PrimaryScreen.fxml&#10;Style.Css">
-      <created>1573083105252</created>
+    <task id="LOCAL-00001" summary="Creating new branch">
+      <created>1570126820853</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1573083105252</updated>
+      <updated>1570126820853</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added the edit profile screen with some methods!&#10;What all else is new:&#10;* Primary screen got some new layout changes that keep it fresh&#10;* CSS sheet updated&#10;* Edit profile tab displays your current username! :)&#10;* First tab you open to is the new profile tab, which will display username, and groups you are currently a member of. (Table still needs to be populated)&#10;* Edited a bit of the MainScreenController to look cleaner">
-      <created>1573153718662</created>
+    <task id="LOCAL-00002" summary="added login screen fxml and controller, added primary screen fxml">
+      <created>1571107646107</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1573153718662</updated>
+      <updated>1571107646108</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added the edit profile screen with some methods!&#10;What all else is new:&#10;* Primary screen got some new layout changes that keep it fresh&#10;* CSS sheet updated&#10;* Edit profile tab displays your current username! :)&#10;* First tab you open to is the new profile tab, which will display username, and groups you are currently a member of. (Table still needs to be populated)&#10;* Edited a bit of the MainScreenController to look cleaner">
-      <created>1573154500794</created>
+    <task id="LOCAL-00003" summary="Added some logic to the code and made it transfer between screens. Added&#10;CSS file and some styling.">
+      <created>1571155758599</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1573154500794</updated>
+      <updated>1571155758599</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added create account screen">
+      <created>1571258048900</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571258048900</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added functionality for creating and editing accounts. Allowed&#10;for meetings to be displayed, but not filtered yet.">
+      <created>1571332740869</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571332740869</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added new tab for create account and edit account. Fixed logic to &#10;work with new tab.">
+      <created>1571341397741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571341397741</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed search for meetings demo functionality">
+      <created>1571346830562</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571346830562</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed minor issues">
+      <created>1571347707078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571347707078</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixed minor issues">
+      <created>1571350850169</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1571350850169</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed bug in edit groups method">
+      <created>1571351947395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571351947395</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added comments to specify where database will be queried when searching &#10;for groups and meetings.">
+      <created>1571951636792</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571951636792</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed the name of some files">
+      <created>1572289272988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572289272988</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated to agreed upon naming conventions">
+      <created>1572548404612</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572548404612</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added a check box to search for groups with all tags or with only one &#10;or more of the tags selected">
+      <created>1572656889679</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572656889679</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added javadoc comments for joinGroupButtonClick,&#10;searchMeetingsButtonClicked, and searchGroupsButtonClicked methods.&#10;&#10;Fixed the null user account bug.">
+      <created>1572753222762</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572753222762</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,23 +368,6 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="1">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="range">
-                    <value>
-                      <list>
-                        <option value="HEAD..origin/Nicholas-H" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -151,8 +379,23 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Current Version of Master with some CSS and JAVAFX edits.&#10;Files Changed:&#10;PrimaryScreen.fxml&#10;Style.Css" />
-    <MESSAGE value="Added the edit profile screen with some methods!&#10;What all else is new:&#10;* Primary screen got some new layout changes that keep it fresh&#10;* CSS sheet updated&#10;* Edit profile tab displays your current username! :)&#10;* First tab you open to is the new profile tab, which will display username, and groups you are currently a member of. (Table still needs to be populated)&#10;* Edited a bit of the MainScreenController to look cleaner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the edit profile screen with some methods!&#10;What all else is new:&#10;* Primary screen got some new layout changes that keep it fresh&#10;* CSS sheet updated&#10;* Edit profile tab displays your current username! :)&#10;* First tab you open to is the new profile tab, which will display username, and groups you are currently a member of. (Table still needs to be populated)&#10;* Edited a bit of the MainScreenController to look cleaner" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Creating new branch" />
+    <MESSAGE value="added login screen fxml and controller, added primary screen fxml" />
+    <MESSAGE value="Added some logic to the code and made it transfer between screens. Added&#10;CSS file and some styling." />
+    <MESSAGE value="Added create account screen" />
+    <MESSAGE value="Added functionality for creating and editing accounts. Allowed&#10;for meetings to be displayed, but not filtered yet." />
+    <MESSAGE value="Added new tab for create account and edit account. Fixed logic to &#10;work with new tab." />
+    <MESSAGE value="Fixed search for meetings demo functionality" />
+    <MESSAGE value="Fixed minor issues" />
+    <MESSAGE value="Fixed bug in edit groups method" />
+    <MESSAGE value="Added comments to specify where database will be queried when searching &#10;for groups and meetings." />
+    <MESSAGE value="Changed the name of some files" />
+    <MESSAGE value="Updated to agreed upon naming conventions" />
+    <MESSAGE value="Added a check box to search for groups with all tags or with only one &#10;or more of the tags selected" />
+    <MESSAGE value="Added javadoc comments for joinGroupButtonClick,&#10;searchMeetingsButtonClicked, and searchGroupsButtonClicked methods.&#10;&#10;Fixed the null user account bug." />
+    <MESSAGE value="Added code from Jackson's MeetingDetails screen.&#10;Added additional methods and functionality to MeetingDetails screen.&#10;Added method in MainScreenController to switch to MeetingDetails&#10;screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added code from Jackson's MeetingDetails screen.&#10;Added additional methods and functionality to MeetingDetails screen.&#10;Added method in MainScreenController to switch to MeetingDetails&#10;screen." />
   </component>
 </project>

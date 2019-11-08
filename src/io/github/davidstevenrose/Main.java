@@ -16,9 +16,6 @@ import javafx.stage.Stage;
  * </p>
  */
 public class Main extends Application {
-
-    private String fieldOne;
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));

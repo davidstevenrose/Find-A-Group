@@ -37,7 +37,6 @@
 
 
 #errorLabel {
-    -fx-text-fill: transparent;
     -fx-font-weight: bold;
     -fx-font-size: 14pt
 }
