@@ -118,6 +118,8 @@ public class MainScreenController {
           "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies", "Art"
   };
 
+  //
+
   // Array list to store all of the groups in
   private ArrayList<Group> allGroups = new ArrayList<>();
 
@@ -127,22 +129,28 @@ public class MainScreenController {
   // The user currently using the program
   static User currentUser;
 
-  // testing remove after
-  Group exampleGroup1 =
-          new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
-  Group exampleGroup2 =
-          new Group("FGCU Running Group", "A group of FGCU students who like to get together and run");
-  Group exampleGroup3 =
-          new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
-  Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
-  Meeting exampleMeeting2 =
-          new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
-  Meeting exampleMeeting3 =
-          new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
-  // remove
 
   @FXML
   void initialize() {
+
+    // testing remove after
+    Group exampleGroup1 =
+            new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
+    Group exampleGroup2 =
+            new Group("FGCU Running Group", "A group of FGCU students who like to get together and run");
+    Group exampleGroup3 =
+            new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
+    Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
+    exampleMeeting1.addAttendee("Person 1");
+    exampleMeeting1.addAttendee("Person 2");
+    exampleMeeting1.addAttendee("Person 3");
+    exampleMeeting1.addAttendee("Person 4");
+    Meeting exampleMeeting2 =
+            new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
+    Meeting exampleMeeting3 =
+            new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
+    // remove
+
     /**
      * ------------------------------------------------------ Profile Code
      *
@@ -449,7 +457,6 @@ public class MainScreenController {
         // creating new meeting
         Meeting meeting =
                 new Meeting(meetingLocation, meetingDate, meetingTime, selectedGroup.getName(), currentUser.getUsername());
-        meeting.addAttendee(currentUser.getUsername());
         // updating all meetings and group meetings
         allMeetings.add(meeting);
         selectedGroup.addMeeting(meeting);
@@ -600,6 +607,7 @@ public class MainScreenController {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
     currentUserGroups.addAll(currentUser.getGroupLeader());
     currentUserGroups.addAll(currentUser.getGroupMember());
+    pGroupTable.getItems().clear();
     pGroupTable.getItems().addAll(currentUserGroups);
   }
 
