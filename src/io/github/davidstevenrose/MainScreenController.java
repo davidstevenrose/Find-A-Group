@@ -17,169 +17,105 @@ import java.util.ArrayList;
 
 public class MainScreenController {
 
-  @FXML
-  private CheckBox mustIncludeAllCheckBox;
+  @FXML private CheckBox mustIncludeAllCheckBox;
 
-  @FXML
-  private ChoiceBox<String> searchTag1;
+  @FXML private ChoiceBox<String> searchTag1;
 
-  @FXML
-  private ChoiceBox<String> searchTag3;
-  /**
-   * The tab to create a new group.
-   */
+  @FXML private ChoiceBox<String> searchTag3;
+  /** The tab to create a new group. */
   public Tab createGroupTab;
-  /**
-   * The button to submit user input to create a new group.
-   */
+  /** The button to submit user input to create a new group. */
   public Button createGroupsButton;
-  /**
-   * The tab to view meetings from groups the user has joined.
-   */
+  /** The tab to view meetings from groups the user has joined. */
   public Tab findMeetingsTab;
-  /**
-   * The tab to search and view groups for the user to join.
-   */
+  /** The tab to search and view groups for the user to join. */
   public Tab searchForGroupsTab;
-  /**
-   * The profile tab to allow the user to toggle between profile and group.
-   */
+  /** The profile tab to allow the user to toggle between profile and group. */
   public Tab profileTabDriver;
-  /**
-   * The label to print the user's username.
-   */
+  /** The lable to print the user's username. */
   public Label profileUserNameLab;
-  /**
-   * The first of four tag choice boxes. Located in create group tab.
-   */
-  @FXML
-  private ChoiceBox<String> addTag1;
-  /**
-   * The second of four tag choice boxes. Located in create group tab.
-   */
-  @FXML
-  private ChoiceBox<String> addTag2;
-  /**
-   * The third of four tag choice boxes. Located in create group tab.
-   */
-  @FXML
-  private ChoiceBox<String> addTag3;
-  /**
-   * The fourth of four tag choice boxes. Located in create group tab.
-   */
-  @FXML
-  private ChoiceBox<String> addTag4;
+  /** The first of four tag choice boxes. Located in create group tab. */
+  @FXML private ChoiceBox<String> addTag1;
+  /** The second of four tag choice boxes. Located in create group tab. */
+  @FXML private ChoiceBox<String> addTag2;
+  /** The third of four tag choice boxes. Located in create group tab. */
+  @FXML private ChoiceBox<String> addTag3;
+  /** The fourth of four tag choice boxes. Located in create group tab. */
+  @FXML private ChoiceBox<String> addTag4;
 
-  @FXML
-  private ChoiceBox<String> searchTag4;
+  @FXML private ChoiceBox<String> searchTag4;
 
-  @FXML
-  private ChoiceBox<String> searchTag2;
+  @FXML private ChoiceBox<String> searchTag2;
 
-  @FXML
-  private Button joinGroupsButton;
+  @FXML private Button joinGroupsButton;
 
-  @FXML
-  private TableView<Group> searchGroupTable;
+  @FXML private TableView<Group> searchGroupTable;
 
-  @FXML
-  private TableColumn<?, ?> searchGroupsGroupNameCol;
+  @FXML private TableColumn<?, ?> searchGroupsGroupNameCol;
 
-  @FXML
-  private TableColumn<?, ?> searchGroupsDescriptionCol;
+  @FXML private TableColumn<?, ?> searchGroupsDescriptionCol;
 
-  @FXML
-  private TableView<Group> pGroupTable;
+  @FXML private TableView<Group> pGroupTable;
 
-  @FXML
-  private TableColumn<?, ?> pGroupName;
+  @FXML private TableColumn<?, ?> pGroupName;
 
-  @FXML
-  private TableColumn<?, ?> pDescription;
+  @FXML private TableColumn<?, ?> pDescription;
 
-  @FXML
-  private TextField searchLocationTextbox;
+  @FXML private TextField searchLocationTextbox;
 
-  @FXML
-  private DatePicker searchDatePicker;
+  @FXML private DatePicker searchDatePicker;
 
-  @FXML
-  private Button searchMeetingsButton;
+  @FXML private Button searchMeetingsButton;
 
-  @FXML
-  private ChoiceBox<String> groupsPicker;
+  @FXML private ChoiceBox<String> groupsPicker;
 
-  @FXML
-  private TableView<Meeting> findMeetingsTable;
+  @FXML private TableView<Meeting> findMeetingsTable;
 
-  @FXML
-  private TableColumn<?, ?> meetingsGroupNameCol;
+  @FXML private TableColumn<?, ?> meetingsGroupNameCol;
 
-  @FXML
-  private TableColumn<?, ?> meetingsDateCol;
+  @FXML private TableColumn<?, ?> meetingsDateCol;
 
-  @FXML
-  private TableColumn<?, ?> meetingsTimeCol;
+  @FXML private TableColumn<?, ?> meetingsTimeCol;
 
-  @FXML
-  private TableColumn<?, ?> meetingsLocationCol;
+  @FXML private TableColumn<?, ?> meetingsLocationCol;
 
-  @FXML
-  private ChoiceBox<String> editTag1;
+  @FXML private ChoiceBox<String> editTag1;
 
-  @FXML
-  private ChoiceBox<String> editTag2;
+  @FXML private ChoiceBox<String> editTag2;
 
-  @FXML
-  private ChoiceBox<String> editTag3;
+  @FXML private ChoiceBox<String> editTag3;
 
-  @FXML
-  private ChoiceBox<String> editTag4;
+  @FXML private ChoiceBox<String> editTag4;
 
-  @FXML
-  private DatePicker addMeetingDatePicker;
+  @FXML private DatePicker addMeetingDatePicker;
 
-  @FXML
-  private TextField addMeetingLocationTextfield;
+  @FXML private TextField addMeetingLocationTextfield;
 
-  @FXML
-  private ComboBox<String> addMeetingTimePicker;
+  @FXML private ComboBox<String> addMeetingTimePicker;
 
-  @FXML
-  private ChoiceBox<String> editGroupSelector;
+  @FXML private ChoiceBox<String> editGroupSelector;
 
-  @FXML
-  private TextField createGroupTextfield;
+  @FXML private TextField createGroupTextfield;
 
-  @FXML
-  private TextArea addDescriptionTextarea;
+  @FXML private TextArea addDescriptionTextarea;
 
-  @FXML
-  private TextArea addDescriptionTextarea1;
+  @FXML private TextArea addDescriptionTextarea1;
 
-  @FXML
-  private Label savedChangesLabel;
+  @FXML private Label savedChangesLabel;
 
-  @FXML
-  private Label savedChangesLabel1;
+  @FXML private Label savedChangesLabel1;
 
-  @FXML
-  private Label joinLabel;
+  @FXML private Label joinLabel;
 
-  @FXML
-  private Tab editGroupTab;
+  @FXML private Tab editGroupTab;
 
-  @FXML
-  private TabPane tabPane;
+  @FXML private TabPane tabPane;
 
-  @FXML
-  private Label userNameLabel;
+  @FXML private Label userNameLabel;
 
-  /**
-   * A string of premade tags. This artifact is temporary, as tags will be converted to objects.
-   */
+  /** A string of premade tags. This artifact is temporary, as tags will be converted to objects. */
   private final String[] tags = {
-      "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies", "Art"
+          "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies", "Art"
   };
 
   // Array list to store all of the groups in
@@ -193,16 +129,16 @@ public class MainScreenController {
 
   // testing remove after
   Group exampleGroup1 =
-      new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
+          new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
   Group exampleGroup2 =
-      new Group("FGCU Running Group", "A group of FGCU students who like to get together and run");
+          new Group("FGCU Running Group", "A group of FGCU students who like to get together and run");
   Group exampleGroup3 =
-      new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
+          new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
   Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
   Meeting exampleMeeting2 =
-      new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
+          new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
   Meeting exampleMeeting3 =
-      new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
+          new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
   // remove
 
   @FXML
@@ -227,17 +163,34 @@ public class MainScreenController {
     ArrayList<ComboBox<String>> tagBoxes = new ArrayList<>(); // empty list
     fillBoxesWithTags(tagBoxes);
 
+    // conflicts with other method
+//    // create new group
+//    createGroupsButton.setOnMouseClicked(
+//        new EventHandler<MouseEvent>() {
+//          @Override
+//          public void handle(MouseEvent event) {
+//            Group newGroup = createGroup();
+//            groups.add(newGroup);
+//            // return to searchForGroups tab
+//            tabPane.getSelectionModel().select(searchForGroupsTab);
+//            System.out.println("New group added to database.");
+//          }
+//        });
+
+    // add meeting
+
+    // Putting values in the tags boxes
     for (String tag : tags) {
       searchTag1.getItems().add(tag);
       searchTag2.getItems().add(tag);
       searchTag3.getItems().add(tag);
       searchTag4.getItems().add(tag);
-      /*/ these lines are replaced - David======
+      // these lines are replaced - David======
       addTag1.getItems().add(tag);
       addTag2.getItems().add(tag);
       addTag3.getItems().add(tag);
       addTag4.getItems().add(tag);
-      // ======================================*/
+      // ======================================
       editTag1.getItems().add(tag);
       editTag2.getItems().add(tag);
       editTag3.getItems().add(tag);
@@ -318,7 +271,7 @@ public class MainScreenController {
       tags.add(addTag4.getValue());
     }
     String desc =
-        ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
+            ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
     return new Group(groupName, desc, tags, currentUser.getUsername());
   }
 
@@ -327,8 +280,8 @@ public class MainScreenController {
    * selected in the searchGroupTable table and adds that group to the groupMember ArrayList in the
    * user object.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
+   * @param event The mouse click event created by the user clicking on the button
    */
   @FXML
   void joinGroupButtonClick(MouseEvent event) {
@@ -351,8 +304,8 @@ public class MainScreenController {
    * selected by the user and displays groups to the searchGroupsTable based on the information that
    * the user provides.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
+   * @param event The mouse click event created by the user clicking on the button
    */
   @FXML
   void searchGroupsButtonClicked(MouseEvent event) {
@@ -370,9 +323,9 @@ public class MainScreenController {
       // Looping through the groups and selecting ones where all of the tags are present
       for (Group group : allGroups) {
         if (group.getTags().contains(tag1)
-            && group.getTags().contains(tag2)
-            && group.getTags().contains(tag3)
-            && group.getTags().contains(tag4)) {
+                && group.getTags().contains(tag2)
+                && group.getTags().contains(tag3)
+                && group.getTags().contains(tag4)) {
           foundGroups.add(group);
         }
       }
@@ -385,18 +338,18 @@ public class MainScreenController {
       String tag4 = searchTag4.getValue().equals("") ? "unused" : searchTag4.getValue();
       // Making it so that if there are no tags selected, all of the groups will be shown
       if (tag1.equals("unused")
-          && tag2.equals("unused")
-          && tag3.equals("unused")
-          && tag4.equals("unused")) {
+              && tag2.equals("unused")
+              && tag3.equals("unused")
+              && tag4.equals("unused")) {
         tag1 = "";
       }
       // looping through the groups and returning ones that contain at least one of the specified
       // tags
       for (Group group : allGroups) {
         if (group.getTags().contains(tag1)
-            || group.getTags().contains(tag2)
-            || group.getTags().contains(tag3)
-            || group.getTags().contains(tag4)) {
+                || group.getTags().contains(tag2)
+                || group.getTags().contains(tag3)
+                || group.getTags().contains(tag4)) {
           foundGroups.add(group);
         }
       }
@@ -408,23 +361,53 @@ public class MainScreenController {
 
   }
 
-  /**
-   * Goes through the process of creating a group and saving the new group data to the database.
-   *
-   * @param event the source of the event
-   * @author drose
-   */
   @FXML
   void createGroupsButtonClicked(MouseEvent event) {
-    //TODO: encapsulate some labels for exception scenarios.
-    Group newGroup = createGroup();
-    //adds new group to user's collection of groups
-    //note: for easier retrieval of group from database, we should assign the user a collection of group ID's the user owns
-    allGroups.add(newGroup);
-    //return to searchForGroups tab
-    tabPane.getSelectionModel().select(searchForGroupsTab);
-    System.out.println("New group added to database.");
+    try {
+      // Get the values they entered
+      String name = createGroupTextfield.getText();
+      String description =
+              ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
 
+      // Create an array list for the tags
+      ArrayList<String> tags = new ArrayList<>();
+      // ternary to set the tag to "" if empty instead of null
+      String tag1 = ((addTag1.getValue() == null) ? "" : addTag1.getValue());
+      String tag2 = ((addTag2.getValue() == null) ? "" : addTag2.getValue());
+      String tag3 = ((addTag3.getValue() == null) ? "" : addTag3.getValue());
+      String tag4 = ((addTag4.getValue() == null) ? "" : addTag4.getValue());
+      // Adding tags to tags array
+      tags.add(tag1);
+      tags.add(tag2);
+      tags.add(tag3);
+      tags.add(tag4);
+      // Creating new group with parameters from user
+      Group group = new Group(name, description, tags);
+      // Adding to groups ArrayList
+      allGroups.add(group);
+      // Making the current user group leader
+      currentUser.addGroupLeader(group);
+      // Updating the selectors
+      populateGroupSelectors();
+      // displaying information to the user
+      savedChangesLabel.setText("Saved Changes");
+
+      // Resetting fields
+      createGroupTextfield.clear();
+      addDescriptionTextarea.clear();
+      addTag1.setValue("");
+      addTag2.setValue("");
+      addTag3.setValue("");
+      addTag4.setValue("");
+      // Displaying the group tab
+      tabPane.getTabs().add(editGroupTab);
+
+      // Adding to profile tab
+      displayGroupsInProfile();
+
+    } catch (Exception e) {
+      savedChangesLabel.setText("Please enter all non-optional fields");
+    }
   }
 
   @FXML
@@ -457,16 +440,15 @@ public class MainScreenController {
 
       // creating a new meeting if all information entered
       if (addMeetingDatePicker.getValue() != null
-          && addMeetingLocationTextfield.getText() != null
-          && addMeetingTimePicker.getValue() != null) {
+              && addMeetingLocationTextfield.getText() != null
+              && addMeetingTimePicker.getValue() != null) {
         // getting values from user
         LocalDate meetingDate = addMeetingDatePicker.getValue();
         String meetingLocation = addMeetingLocationTextfield.getText();
         String meetingTime = addMeetingTimePicker.getValue();
         // creating new meeting
         Meeting meeting =
-            new Meeting(meetingLocation, meetingDate, meetingTime, selectedGroup.getName(),
-                currentUser.getUsername());
+                new Meeting(meetingLocation, meetingDate, meetingTime, selectedGroup.getName(), currentUser.getUsername());
         meeting.addAttendee(currentUser.getUsername());
         // updating all meetings and group meetings
         allMeetings.add(meeting);
@@ -492,8 +474,8 @@ public class MainScreenController {
    * This method runs when the searchMeetingsButton button is clicked. This method checks the
    * criteria selected by the user and provides meetings fitting those criteria.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
+   * @param event The mouse click event created by the user clicking on the button
    */
   // This method runs when the searchMeetingsButton button is clicked.
   @FXML
@@ -546,8 +528,8 @@ public class MainScreenController {
    * The button to direct the user to the meeting details page and give the selected meeting to the
    * controller for the meeting details page.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
+   * @param event The mouse click event created by the user clicking on the button
    */
   @FXML
   void viewMeetingDetailsButtonClicked(MouseEvent event) throws IOException {
@@ -621,9 +603,7 @@ public class MainScreenController {
     pGroupTable.getItems().addAll(currentUserGroups);
   }
 
-  /**
-   * @author Cameron
-   */
+  /** @author Cameron */
   private void populateGroupSelectors() {
     editGroupSelector.getItems().clear();
     groupsPicker.getItems().clear();
@@ -650,10 +630,9 @@ public class MainScreenController {
 
   /**
    * Fills the combo boxes by retrieving the current list of premade tags. The cbo uses tags, but
-   * may be converted to using enumerations of TagCollection.
+   * may be converted to using enumerations of TagCollection. consult Cameron for further notes.
    *
    * @param tagBoxes the list of combo boxes to fill with group tags.
-   * @author drose
    */
   private void fillBoxesWithTags(ArrayList<ComboBox<String>> tagBoxes) {
     ArrayList<String> tags = new ArrayList<>();
@@ -669,8 +648,6 @@ public class MainScreenController {
    * Creates a meeting and displays it under the search meeting table of all group members.
    * Currently, there are no add/edit meeting controls, so method will be implemented with BUI in
    * mind.
-   *
-   * @author drose
    */
   private void addMeeting() {
     LocalDate meetingDate = addMeetingDatePicker.getValue();
