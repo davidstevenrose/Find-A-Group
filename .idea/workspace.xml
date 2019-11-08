@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Corrected merge from branch David to Master. Method in MainScreenController.java was incorrect." />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Corrected merge from branch David to Master. Method in MainScreenController.java was incorrect.">
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-A-Group.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Find-A-Group.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/TagCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/TagCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +272,7 @@
       <workItem from="1572543328656" duration="4532000" />
       <workItem from="1572977594367" duration="8030000" />
       <workItem from="1573154757921" duration="5194000" />
+      <workItem from="1573223338107" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -404,6 +433,7 @@
     <MESSAGE value="Added list to be able to see attendees on the meeting details screen" />
     <MESSAGE value="Handled conflicts between branches" />
     <MESSAGE value="Fixed bug where all groups were always being shown when searching for&#10; groups without the &quot;must include all&quot; checkbox checked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where all groups were always being shown when searching for&#10; groups without the &quot;must include all&quot; checkbox checked" />
+    <MESSAGE value="Corrected merge from branch David to Master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected merge from branch David to Master" />
   </component>
 </project>
