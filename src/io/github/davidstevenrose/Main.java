@@ -1,6 +1,5 @@
 package io.github.davidstevenrose;
 
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,26 +8,24 @@ import javafx.stage.Stage;
 
 /**
  * The class that holds the main method.
- * <h1>Main Controller</h1>
- * <p>On application startup, this class will load the log-in fxml file and controller.
+ * <h1>Some Thoughts</h1>
+ * <p>Our SRS specifies that we must direct the client to the profile page after logon,
+ * but we have no fxml for the profile page (Statement 13). We also must revisit the 'group finding'
+ * mechanism the client will be using. I.E. should the user only search with up to four group tags?
+ *
  * </p>
  */
 public class Main extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        primaryStage.setTitle("2sday's Find A Group");
+        primaryStage.setScene(new Scene(root, 675, 600));
+        primaryStage.show();
+        
 
-  /**
-   * Field added by Cameron.
-   */
-  private String fieldOne;
-
-  @Override
-  public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
-    primaryStage.setTitle("2sday's Find A Group");
-    primaryStage.setScene(new Scene(root, 675, 600));
-    primaryStage.show();
-  }
-
-  public static void main(String[] args) {
-    launch(args);
-  }
+    }
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

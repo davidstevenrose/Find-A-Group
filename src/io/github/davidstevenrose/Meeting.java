@@ -3,6 +3,12 @@ package io.github.davidstevenrose;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * A meeting that belongs to a group. Contains information for date, time, location, status, as well
+ * as the group's name and host's name.
+ *
+ * @author drose
+ */
 public class Meeting {
 
   private LocalDate date;
@@ -29,6 +35,7 @@ public class Meeting {
     this.date = date;
     this.location = location;
     this.groupName = groupName;
+    attendees = new ArrayList<>();
   }
 
   /**
@@ -140,5 +147,13 @@ public class Meeting {
    */
   public void setStatus(MeetingStatus status) {
     this.status = status;
+  }
+
+  public void addAttendee(String attendee) {
+    attendees.add(attendee);
+  }
+
+  public ArrayList<String> getAttendees() {
+    return attendees;
   }
 }
