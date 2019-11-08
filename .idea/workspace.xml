@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Create group case is now bound to an in-line attribute in FXML file.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Handled conflicts between branches">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +20,44 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
@@ -20,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -33,10 +78,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="David" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\cam12\Fundementals\FindAGroup\.idea" />
+      </set>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1RYpnYOa83BmMuvPmPNlUShyhfw" />
@@ -67,6 +119,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="recentsLimit" value="5" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cam12\Fundementals\FindAGroup\res" />
+      <recent name="C:\Users\cam12\Fundementals\FindAGroup\src\io\github\davidstevenrose" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -79,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -94,6 +152,20 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.Main" />
+      <module name="Find-A-Group" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.davidstevenrose.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,6 +223,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -168,6 +247,14 @@
       <workItem from="1571094373762" duration="13935000" />
       <workItem from="1571165151448" duration="34314000" />
       <workItem from="1571348990088" duration="4859000" />
+      <workItem from="1571422378205" duration="1386000" />
+      <workItem from="1571684702909" duration="7710000" />
+      <workItem from="1571863238094" duration="19000" />
+      <workItem from="1571938842629" duration="5904000" />
+      <workItem from="1572289023955" duration="3532000" />
+      <workItem from="1572543328656" duration="4532000" />
+      <workItem from="1572977594367" duration="8030000" />
+      <workItem from="1573154757921" duration="5194000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -239,7 +326,49 @@
       <option name="project" value="LOCAL" />
       <updated>1571351947395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added comments to specify where database will be queried when searching &#10;for groups and meetings.">
+      <created>1571951636792</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571951636792</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed the name of some files">
+      <created>1572289272988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572289272988</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated to agreed upon naming conventions">
+      <created>1572548404612</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572548404612</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added a check box to search for groups with all tags or with only one &#10;or more of the tags selected">
+      <created>1572656889679</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572656889679</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added javadoc comments for joinGroupButtonClick,&#10;searchMeetingsButtonClicked, and searchGroupsButtonClicked methods.&#10;&#10;Fixed the null user account bug.">
+      <created>1572753222762</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572753222762</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Handled conflicts between branches">
+      <created>1573156817220</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1573156817220</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +399,14 @@
     <MESSAGE value="Fixed search for meetings demo functionality" />
     <MESSAGE value="Fixed minor issues" />
     <MESSAGE value="Fixed bug in edit groups method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in edit groups method" />
+    <MESSAGE value="Added comments to specify where database will be queried when searching &#10;for groups and meetings." />
+    <MESSAGE value="Changed the name of some files" />
+    <MESSAGE value="Updated to agreed upon naming conventions" />
+    <MESSAGE value="Added a check box to search for groups with all tags or with only one &#10;or more of the tags selected" />
+    <MESSAGE value="Added javadoc comments for joinGroupButtonClick,&#10;searchMeetingsButtonClicked, and searchGroupsButtonClicked methods.&#10;&#10;Fixed the null user account bug." />
+    <MESSAGE value="Added code from Jackson's MeetingDetails screen.&#10;Added additional methods and functionality to MeetingDetails screen.&#10;Added method in MainScreenController to switch to MeetingDetails&#10;screen." />
+    <MESSAGE value="Added list to be able to see attendees on the meeting details screen" />
+    <MESSAGE value="Handled conflicts between branches" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handled conflicts between branches" />
   </component>
 </project>

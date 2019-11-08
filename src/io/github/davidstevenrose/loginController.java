@@ -1,4 +1,4 @@
-package sample;
+package io.github.davidstevenrose;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,10 +40,8 @@ public class loginController {
     boolean validLogin = false;
     String username = usernameField.getText();
     String password = passwordField.getText();
-    System.out.println(username); // remove when done testing
-    System.out.println(password); // remove when done testing
     users.add(new User("example", "pass", "example@example.net")); // remove when done testing
-    //users.add(new User("","","")); // remove after testing
+    users.add(new User("","","")); // remove after testing
 
     // Creating user to hold login user
     User userToLogIn = new User();
@@ -51,7 +49,7 @@ public class loginController {
     for (User u : users) {
       if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
         validLogin = true;
-        // Setting userToLogIn to user logging in
+        // Setting userToLogIn to be the user logging in
         userToLogIn = u;
       }
     }
@@ -60,7 +58,7 @@ public class loginController {
       errorLabel.setText("Invalid Username or Password");
     } else {
       // setting the user in the controller
-      Controller.currentUser = userToLogIn;
+      MainScreenController.currentUser = userToLogIn;
 
       // Creating the new scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
