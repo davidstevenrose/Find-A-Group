@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa85185-f9d8-4f4c-b9f2-df611e61caaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +91,7 @@
       <workItem from="1573015092218" duration="2697000" />
       <workItem from="1573076156992" duration="4240000" />
       <workItem from="1573094109251" duration="14332000" />
-      <workItem from="1573153409824" duration="886000" />
+      <workItem from="1573153409824" duration="3176000" />
     </task>
     <task id="LOCAL-00001" summary="Current Version of Master with some CSS and JAVAFX edits.&#10;Files Changed:&#10;PrimaryScreen.fxml&#10;Style.Css">
       <created>1573083105252</created>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573153718662</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added the edit profile screen with some methods!&#10;What all else is new:&#10;* Primary screen got some new layout changes that keep it fresh&#10;* CSS sheet updated&#10;* Edit profile tab displays your current username! :)&#10;* First tab you open to is the new profile tab, which will display username, and groups you are currently a member of. (Table still needs to be populated)&#10;* Edited a bit of the MainScreenController to look cleaner">
+      <created>1573154500794</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573154500794</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
