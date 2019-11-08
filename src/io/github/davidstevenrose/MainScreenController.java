@@ -192,23 +192,11 @@ public class MainScreenController {
   @FXML
   void initialize() {
 
+    //initialize create group scenario - David
     //list of tag choice boxes
     ArrayList<ComboBox<String>> tagBoxes = new ArrayList<>();//empty list
     fillBoxesWithTags(tagBoxes);
-
-    //create new group
-    createGroupsButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-      @Override
-      public void handle(MouseEvent event) {
-        Group newGroup = createGroup();
-        groups.add(newGroup);
-        //return to searchForGroups tab
-        tabPane.getSelectionModel().select(searchForGroupsTab);
-        System.out.println("New group added to database.");
-      }
-    });
-
-    //add meeting
+    //end initialize
 
     // Putting values in the tags boxes
     for (String tag : tags) {
@@ -272,32 +260,6 @@ public class MainScreenController {
     profileUserNameLab.setText(currentUser.getUsername());
   }
 
-  /**
-   * Creates a group and returns a reference to a group object.
-   *
-   * @return a group object reference
-   */
-  private Group createGroup() {
-    String groupName = createGroupTextfield.getText();
-    ArrayList<String> tags = new ArrayList<>();
-    if (addTag1.getSelectionModel().getSelectedIndex() > 0) {
-      tags.add(addTag1.getValue());
-    }
-    if (addTag2.getSelectionModel().getSelectedIndex() > 0) {
-      tags.add(addTag2.getValue());
-    }
-    if (addTag3.getSelectionModel().getSelectedIndex() > 0) {
-      tags.add(addTag3.getValue());
-    }
-    if (addTag4.getSelectionModel().getSelectedIndex() > 0) {
-      tags.add(addTag4.getValue());
-    }
-    String desc = ((addDescriptionTextarea.getText() == null) ? ""
-        : addDescriptionTextarea.getText());
-    return new Group(groupName, desc, tags, currentUser.getUsername());
-  }
-
-
   @FXML
   void joinGroupButtonClick(MouseEvent event) {
     // Getting selected group from table
@@ -337,54 +299,20 @@ public class MainScreenController {
   }
 
   /**
-   * Prototype method, method now handled from a listener - David
+   * Goes through the process of creating a group and saving the new group data to the database.
    *
-   * @param event
-   * @deprecated
+   * @param event the source of the event
    */
   @FXML
   void createGroupsButtonClicked(MouseEvent event) {
-    try {
-      // Get the values they entered
-      String name = createGroupTextfield.getText();
-      String description =
-          ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
-
-      // Create an array list for the tags
-      ArrayList<String> tags = new ArrayList<>();
-      // ternary to set the tag to "" if empty instead of null
-      String tag1 = ((addTag1.getValue() == null) ? "" : addTag1.getValue());
-      String tag2 = ((addTag2.getValue() == null) ? "" : addTag2.getValue());
-      String tag3 = ((addTag3.getValue() == null) ? "" : addTag3.getValue());
-      String tag4 = ((addTag4.getValue() == null) ? "" : addTag4.getValue());
-      // Adding tags to tags array
-      tags.add(tag1);
-      tags.add(tag2);
-      tags.add(tag3);
-      tags.add(tag4);
-      // Creating new group with parameters from user
-      Group group = new Group(name, description, tags);
-      // Adding to groups ArrayList
-      groups.add(group);
-      // Making the current user group leader
-      currentUser.addGroupLeader(group);
-      // Updating the selectors
-      populateGroupSelectors();
-      // displaying information to the user
-      savedChangesLabel.setText("Saved Changes");
-
-      // Resetting fields
-      createGroupTextfield.clear();
-      addDescriptionTextarea.clear();
-      addTag1.setValue("");
-      addTag2.setValue("");
-      addTag3.setValue("");
-      addTag4.setValue("");
-      // Displaying the group tab
-      tabPane.getTabs().add(editGroupTab);
-    } catch (Exception e) {
-      savedChangesLabel.setText("Please enter all non-optional fields");
-    }
+    //TODO: encapsulate some labels for exception scenarios.
+    Group newGroup = createGroup();
+    //adds new group to user's collection of groups
+    //note: for easier retrieval of group from database, we should assign the user a collection of group ID's the user owns
+    groups.add(newGroup);
+    //return to searchForGroups tab
+    tabPane.getSelectionModel().select(searchForGroupsTab);
+    System.out.println("New group added to database.");
   }
 
   @FXML
@@ -531,6 +459,31 @@ public class MainScreenController {
   }
 
   /**
+   * Creates a group and returns a reference to a group object.
+   *
+   * @return a group object reference
+   */
+  private Group createGroup() {
+    String groupName = createGroupTextfield.getText();
+    ArrayList<String> tags = new ArrayList<>();
+    if (addTag1.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag1.getValue());
+    }
+    if (addTag2.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag2.getValue());
+    }
+    if (addTag3.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag3.getValue());
+    }
+    if (addTag4.getSelectionModel().getSelectedIndex() > 0) {
+      tags.add(addTag4.getValue());
+    }
+    String desc = ((addDescriptionTextarea.getText() == null) ? ""
+        : addDescriptionTextarea.getText());
+    return new Group(groupName, desc, tags, currentUser.getUsername());
+  }
+
+  /**
    * Fills the combo boxes by retrieving the current list of premade tags. The cbo uses tags, but
    * may be converted to using enumerations of TagCollection. consult Cameron for further notes.
    *
@@ -558,7 +511,7 @@ public class MainScreenController {
     String meetingTime = addMeetingTimePicker.getSelectionModel().getSelectedItem();
     meetingTime = "12:00PM";
     String meetingLoc = addMeetingLocationTextfield.getText();
-    Meeting newMeeting = new Meeting(meetingLoc,meetingDate,meetingTime, "driver group", "Tom");
+    Meeting newMeeting = new Meeting(meetingLoc, meetingDate, meetingTime, "driver group", "Tom");
     //add meeting to list of meetings for that meeting's group
 
   }
