@@ -1,7 +1,7 @@
 package io.github.davidstevenrose;
 
 /**
- * List of premade tags
+ * List of pre-made tags
  * @author drose
  */
 public enum TagCollection {
