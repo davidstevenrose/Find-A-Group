@@ -2,6 +2,12 @@ package io.github.davidstevenrose;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * A meeting that belongs to a group. Contains information for date, time, location, status, as well
+ * as the group's name and host's name.
+ *
+ * @author drose
+ */
 public class Meeting {
 
   private LocalDate date;

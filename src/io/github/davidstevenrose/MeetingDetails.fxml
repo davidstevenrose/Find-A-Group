@@ -46,9 +46,8 @@
                 </GridPane>
                 <!---<Label layoutX="161.0" layoutY="200.0" text="Description" />-->
                 <!---<TextArea editable="false" layoutX="92.0" layoutY="217.0" prefHeight="79.0" prefWidth="200.0" />-->
-                <Button fx:id="attendMeetingButton" layoutX="14.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#attendMeetingClicked" text="Attend Meeting" />
-                <Button fx:id="cancelAttendanceButton" layoutX="392.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#cancelAttendanceClicked" text="Cancel Attendance" />
-                <Button fx:id="viewRosterButton" layoutX="212.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#viewAttendeesClicked" text="View Roster" />
+                <Button fx:id="attendMeetingButton" layoutX="85.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#attendMeetingClicked" text="Attend Meeting" />
+                <Button fx:id="cancelAttendanceButton" layoutX="307.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#cancelAttendanceClicked" text="Cancel Attendance" />
             <Hyperlink fx:id="backButton" layoutX="33.0" layoutY="431.0" onMouseClicked="#backButtonClicked" prefHeight="27.0" prefWidth="86.0" text="Back" />
             <Label fx:id="userMessageLabel" layoutX="311.0" layoutY="422.0" prefHeight="19.0" prefWidth="219.0" />
             <ListView fx:id="attendeesList" layoutX="307.0" layoutY="80.0" prefHeight="210.0" prefWidth="220.0" />

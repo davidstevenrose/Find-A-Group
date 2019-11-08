@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 /**
  * The blueprint for a Group
- * <p>file authored by David as of 11/7</p>
  *
  * @author drose
  */
@@ -131,7 +130,7 @@ public class Group {
   /**
    * Replaces the group's list of meetings with an entirely new list
    *
-   * @param meetings
+   * @param meetings the new list of meetings
    */
   public void replaceMeetings(ArrayList<Meeting> meetings) {
     this.meetings = meetings;
