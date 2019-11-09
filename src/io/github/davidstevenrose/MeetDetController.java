@@ -52,14 +52,6 @@ public class MeetDetController {
   void initialize() {
     // Getting the attendees for the meeting
     observableAttendees.addAll(currentMeeting.getAttendees());
-
-    // Values for testing remove after
-    observableAttendees.add("Person 1");
-    observableAttendees.add("Person 2");
-    observableAttendees.add("Person 3");
-    observableAttendees.add("Person 4");
-    // Remove
-
     groupNameLabel.setText(currentMeeting.getGroupName());
     dateLabel.setText(currentMeeting.getDate().toString());
     timeLabel.setText(currentMeeting.getTime());

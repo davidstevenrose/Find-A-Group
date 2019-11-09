@@ -41,7 +41,7 @@ public class LoginController {
     String username = usernameField.getText();
     String password = passwordField.getText();
     users.add(new User("example", "pass", "example@example.net")); // remove when done testing
-    users.add(new User("", "", "")); // remove after testing
+    //users.add(new User("", "", "")); // remove after testing
 
     // Creating user to hold login user
     User userToLogIn = new User();

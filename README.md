@@ -3,7 +3,12 @@
 <p>Users  can  create  a  profile,  then search  for  interesting  groups based  on  their activities,
   hobbies,  etc.  A group leader can create a group, add meetings, and add tags for users to find this
    group. User shall also be able to view meetings for specific dates/locations.</p>
-
+   
+ <h4>Video of our prototype version 2</h4>
+ https://drive.google.com/open?id=1iIhLd-eEtenOl1DvdrbSVVC0pSbXJBFf
+ 
+ <h4>Video of our first prototype</h4>
+ https://drive.google.com/open?id=1J9skrwGJoFsHFXFezunjVMN1rDOmV4FK
 
 <h5>Adding and Editing Meetings</h5>
 <p>The group leader will add a meeting from the group dashboard page. The user will be 
