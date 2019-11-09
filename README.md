@@ -29,3 +29,11 @@ Attend Meeting button will display a message to the console that says the meetin
 The Cancel Attendance button will display a unique message if it is clicked when the user hasn't 
 attended the meeting, and will display a message confirming their cancellation if they have already
  clicked the Attend Meeting button.</p>
+ 
+ <h5>Prototype 2 Deltas</h5>
+ <ul>
+    <li>Added profile tab with most features and functionality</li>
+    <li>Edit account now has functionality</li>
+    <li>Added feature to sign-up for meeting</li>
+    <li>Added features to edit user's profile with functionality</li>
+ </ul>
