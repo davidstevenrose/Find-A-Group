@@ -155,8 +155,6 @@ public class MainScreenController {
     // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
     // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
 
-    // Current Groups and Description
-
     // --------------------------------------------------------
 
     // list of tag choice boxes
@@ -552,7 +550,7 @@ public class MainScreenController {
   }
 
   /**
-   * This takes you to the edit profile screen.
+   * This takes you from the Primary to the edit profile screen.
    *
    * @param event click the button to engage
    * @throws IOException
@@ -560,7 +558,7 @@ public class MainScreenController {
    */
   @FXML
   void editProfile(MouseEvent event) throws IOException {
-    // Goin to the edit profile page! Yeah!
+    // Going to the edit profile page! Yeah!
     Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("editProfile.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);
 
@@ -594,13 +592,14 @@ public class MainScreenController {
   /**
    * This method displays the groups the user is in to the table view in the profile tab.
    *
-   * @author Cameron
+   * @author Cameron + Darian
    */
   private void displayGroupsInProfile() {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
     currentUserGroups.addAll(currentUser.getGroupLeader());
     currentUserGroups.addAll(currentUser.getGroupMember());
-    pGroupTable.getItems().addAll(currentUserGroups);
+    //setAll removes repeated current groups in table view
+    pGroupTable.getItems().setAll(currentUserGroups);
   }
 
   /** @author Cameron */
