@@ -3,13 +3,15 @@ package io.github.davidstevenrose;
 import java.util.ArrayList;
 
 public class User {
+
   private String username;
   private String password;
   private String email;
   private ArrayList<Group> groupMember = new ArrayList<>();
   private ArrayList<Group> groupLeader = new ArrayList<>();
 
-  public User() {}
+  public User() {
+  }
 
   public User(String username, String password, String email) {
     this.username = username;

@@ -162,4 +162,23 @@ public class Group {
   public String getGroupLeaderName() {
     return groupLeaderName;
   }
+
+  /**
+   * Gets a string representation for a Group object. Represented by the group's name
+   *
+   * @return the name of the group
+   */
+  @Override
+  public String toString() {
+    return getName();
+  }
+
+  /**
+   * Compares two Group objects by name of group.
+   * @param group the other group to compare to
+   * @return true if the group names are the same, false otherwise
+   */
+  public boolean isEqualTo(Group group){
+    return getName().equals(group.getName());
+  }
 }

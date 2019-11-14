@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.MainScreenController">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.MainScreenController">
     <tabs>
         <Tab fx:id="profileTab" text="Profile">
             <content>
@@ -100,7 +100,7 @@
                 </AnchorPane>
             </content>
         </Tab>
-        <Tab text="Create Group">
+        <Tab fx:id="createGroupTab" text="Create Group">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
@@ -109,7 +109,7 @@
                         <ChoiceBox fx:id="addTag2" layoutX="173.0" layoutY="125.0" prefWidth="150.0" stylesheets="@Style.css" />
                         <ChoiceBox fx:id="addTag3" layoutX="333.0" layoutY="125.0" prefWidth="150.0" stylesheets="@Style.css" />
                         <ChoiceBox fx:id="addTag4" layoutX="492.0" layoutY="125.0" prefWidth="150.0" stylesheets="@Style.css" />
-                        <Button fx:id="createGroupsButton" layoutX="492.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#createGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
+                        <Button fx:id="createGroupsButton" layoutX="492.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#createGroupsButtonClicked" stylesheets="@Style.css" text="Create Group" />
                         <TextArea fx:id="addDescriptionTextarea" layoutX="14.0" layoutY="178.0" prefHeight="213.0" prefWidth="652.0" promptText="Add Description (optional)" stylesheets="@Style.css" />
                         <TextField fx:id="createGroupTextfield" layoutX="11.0" layoutY="49.0" prefHeight="31.0" prefWidth="325.0" promptText="Enter Group Name Here" stylesheets="@Style.css" />
                         <Label layoutX="11.0" layoutY="21.0" stylesheets="@Style.css" text="Create New Group" />
@@ -125,7 +125,7 @@
         </Tab>
         <Tab fx:id="editGroupTab" text="Edit Group">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="602.0" prefWidth="676.0">
                     <children>
                         <ChoiceBox fx:id="editGroupSelector" layoutX="11.0" layoutY="47.0" prefWidth="325.0" stylesheets="@Style.css" />
                         <Label layoutX="11.0" layoutY="21.0" prefHeight="21.0" prefWidth="135.0" stylesheets="@Style.css" text="Edit Group" />
@@ -136,16 +136,24 @@
                         <Label layoutX="11.0" layoutY="98.0" prefHeight="21.0" prefWidth="158.0" stylesheets="@Style.css" text="Add or Remove Tags" />
                         <TextArea fx:id="addDescriptionTextarea1" layoutX="14.0" layoutY="178.0" prefHeight="213.0" prefWidth="652.0" promptText="Edit Description" stylesheets="@Style.css" />
                         <Label layoutX="21.0" layoutY="411.0" prefHeight="21.0" prefWidth="139.0" stylesheets="@Style.css" text="Add Meetings" />
-                        <DatePicker fx:id="addMeetingDatePicker" layoutX="14.0" layoutY="442.0" prefHeight="31.0" prefWidth="184.0" promptText="Select Date" stylesheets="@Style.css" />
-                        <TextField fx:id="addMeetingLocationTextfield" layoutX="348.0" layoutY="442.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
-                        <ComboBox fx:id="addMeetingTimePicker" layoutX="198.0" layoutY="442.0" prefWidth="150.0" promptText="Select Time" stylesheets="@Style.css" />
-                        <Button fx:id="EditGroupsButton" layoutX="492.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#editGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
-                        <Hyperlink fx:id="logOut11" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
+                        <DatePicker fx:id="addMeetingDatePicker" layoutX="21.0" layoutY="471.0" prefHeight="31.0" prefWidth="209.0" promptText="Select Date" stylesheets="@Style.css" />
+                        <TextField fx:id="addMeetingLocationTextfield" layoutX="21.0" layoutY="440.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
+                        <ComboBox fx:id="addMeetingTimePicker" editable="true" layoutX="505.0" layoutY="524.0" prefWidth="150.0" promptText="Obsolete - David" stylesheets="@Style.css" />
+                        <Button fx:id="EditGroupsButton" layoutX="490.0" layoutY="557.0" mnemonicParsing="false" onMouseClicked="#editGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
+                        <Hyperlink fx:id="logOut11" layoutX="51.0" layoutY="558.0" onMouseClicked="#logoutClicked" text="Log out" />
                         <Label fx:id="savedChangesLabel1" alignment="CENTER" layoutX="213.0" layoutY="523.0" text="      ">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Label>
+                  <TextField fx:id="selectTimeTxt" layoutX="21.0" layoutY="502.0" prefHeight="31.0" prefWidth="160.0" promptText="Select Time" stylesheets="@Style.css" />
+                  <ChoiceBox fx:id="meridiemBox" layoutX="181.0" layoutY="502.0" prefHeight="31.0" prefWidth="50.0" />
+                  <Button fx:id="addMeetingButton" layoutX="471.0" layoutY="440.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="109.0" text="Add Meeting" onMouseClicked="#addMeetingButtonClicked"/>
+                  <Label fx:id="messageLabelEGT" layoutX="419.0" layoutY="487.0" prefHeight="25.0" prefWidth="158.0" text="error message">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
             </content>
