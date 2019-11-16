@@ -1,9 +1,6 @@
 package io.github.davidstevenrose;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,6 +15,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * This is the controller class for the meeting details screen.
+ *
+ * @author Cameron and Jackson
+ */
 public class MeetDetController {
 
   // Need to make the program able to go to the Meeting Details Screen.
@@ -122,10 +124,7 @@ public class MeetDetController {
    * @author Jackson
    */
   @FXML
-  public void viewAttendeesClicked(MouseEvent mouseEvent) {
-
-
-  }
+  public void viewAttendeesClicked(MouseEvent mouseEvent) {}
 
   /**
    * This method allows the MainScreenController to set the Meeting object that this controller will

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Commented out blank test account in LoginController">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Created TextFileManager class with methods to add users, groups, and &#10;meetings to text files. Added comment to User class to clarify use of no&#10;argument constructor. Fixed suspected typo in Meeting class comment. &#10;Added Javadoc comment for MeetDetController class and removed unused &#10;imports. Made the change that Darian requested on the discord in the &#10;MainScreenController.">
+      <change afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +78,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Cameron" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -181,6 +186,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TextFileManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.TextFileManager" />
+      <module name="Find-A-Group" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.davidstevenrose.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -221,6 +240,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TextFileManager" />
       </list>
     </recent_temporary>
   </component>
@@ -396,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573245295743</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed a bug where the group leader was added to the attendees list twice&#10;when creating a meeting.">
+      <created>1573250700661</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1573250700661</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,6 +466,8 @@
     <MESSAGE value="Fixed a bug on the edit profile screen where it would say that &#10;not all of the fields were complete even when they were complete." />
     <MESSAGE value="Reverted to previous version of the MainScreenController class" />
     <MESSAGE value="Commented out blank test account in LoginController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commented out blank test account in LoginController" />
+    <MESSAGE value="Fixed a bug where the group leader was added to the attendees list twice&#10;when creating a meeting." />
+    <MESSAGE value="Created TextFileManager class with methods to add users, groups, and &#10;meetings to text files. Added comment to User class to clarify use of no&#10;argument constructor. Fixed suspected typo in Meeting class comment. &#10;Added Javadoc comment for MeetDetController class and removed unused &#10;imports. Made the change that Darian requested on the discord in the &#10;MainScreenController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created TextFileManager class with methods to add users, groups, and &#10;meetings to text files. Added comment to User class to clarify use of no&#10;argument constructor. Fixed suspected typo in Meeting class comment. &#10;Added Javadoc comment for MeetDetController class and removed unused &#10;imports. Made the change that Darian requested on the discord in the &#10;MainScreenController." />
   </component>
 </project>

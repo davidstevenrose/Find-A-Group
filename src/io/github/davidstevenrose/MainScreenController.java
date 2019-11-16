@@ -295,8 +295,10 @@ public class MainScreenController {
   void joinGroupButtonClick(MouseEvent event) {
     // Getting selected group from table
     Group group = searchGroupTable.getSelectionModel().getSelectedItem();
+
     // Adding user to group
     currentUser.addGroupMember(group);
+
     // Updating the selectors
     populateGroupSelectors();
 
@@ -607,8 +609,7 @@ public class MainScreenController {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
     currentUserGroups.addAll(currentUser.getGroupLeader());
     currentUserGroups.addAll(currentUser.getGroupMember());
-    pGroupTable.getItems().clear();
-    pGroupTable.getItems().addAll(currentUserGroups);
+    pGroupTable.getItems().setAll(currentUserGroups);
   }
 
   /** @author Cameron */

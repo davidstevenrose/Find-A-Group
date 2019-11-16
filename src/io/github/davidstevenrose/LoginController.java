@@ -50,7 +50,7 @@ public class LoginController {
       if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
         validLogin = true;
         // Setting userToLogIn to be the user logging in
-        userToLogIn = u;
+         userToLogIn = u;
       }
     }
     if (validLogin == false) {

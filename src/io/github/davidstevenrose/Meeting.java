@@ -23,7 +23,7 @@ public class Meeting {
   private ArrayList<String> attendees;
 
   /**
-   * Creates a meeting with a meeting data, location, time, and name of host group
+   * Creates a meeting with a meeting date, location, time, and name of host group.
    *
    * @param date      the date
    * @param location  the location
@@ -57,6 +57,7 @@ public class Meeting {
     this.status = MeetingStatus.ACTIVE;
     this.attendees = new ArrayList<>();
     attendees.add(hostName);
+    status = MeetingStatus.ACTIVE;
   }
 
   /**
