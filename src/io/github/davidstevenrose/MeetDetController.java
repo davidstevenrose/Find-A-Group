@@ -18,6 +18,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ *
+ * @author Cameron, Jackson
+ */
 public class MeetDetController {
 
   // Need to make the program able to go to the Meeting Details Screen.
@@ -70,6 +74,9 @@ public class MeetDetController {
     }
     // Adding them all to the list view
     attendeesList.setItems(observableAttendees);
+
+    //if the group leader is editing the meeting
+
   }
 
   /** @author Jackson and Cameron */
@@ -145,4 +152,5 @@ public class MeetDetController {
   public static void setMeeting(Meeting meeting) {
     currentMeeting = meeting;
   }
+
 }

@@ -1,9 +1,9 @@
 package io.github.davidstevenrose;
 
-import com.sun.org.apache.bcel.internal.ExceptionConstants;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,13 +25,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class MainScreenController {
 
-  //String in format XX:XX. supports military time, and ten's place digit in hour may be omitted.
-  public static final String TIMEREGEX = "^([01]?\\d|2[0-3]):[0-5]\\d\n$";
+  //String in format XX:XX. Does not support military time, and ten's place digit in hour may be omitted.
+  public static final String TIMEREGEX = "^([0]?\\d|1[0-2]):[0-5]\\d\n$";
 
   //String in format w+@w+.[a-zA-Z]+
   public static final String EMAILREGEX = "^\\w+@\\w+.[a-zA-Z]+$";
@@ -199,7 +200,7 @@ public class MainScreenController {
   private TextArea addDescriptionTextarea;
 
   @FXML
-  private TextArea addDescriptionTextarea1;
+  private TextArea editDescriptionTextArea;
 
   @FXML
   private Label savedChangesLabel;
@@ -212,6 +213,9 @@ public class MainScreenController {
 
   @FXML
   private Tab editGroupTab;
+
+  @FXML
+  private TableView<Meeting> editMeetingTable;
 
   @FXML
   private TabPane tabPane;
@@ -231,6 +235,10 @@ public class MainScreenController {
 
   @FXML
   void initialize() {
+    //instantiate a listener to whenever the edit group choice box selects a group
+    editGroupSelector.getSelectionModel().selectedItemProperty()
+        .addListener((v, oldVal, newVal) -> fillEditGroupTab());
+
     /*
      * ------------------------------------------------------ Profile Code
      *
@@ -494,6 +502,25 @@ public class MainScreenController {
   }
 
   /**
+   * Fills the edit group tab with information of the selected group to edit.
+   */
+  private void fillEditGroupTab() {
+    editMeetingTable.getItems().clear();
+    Group selectedGroup = editGroupSelector.getValue();
+    List<String> tags = selectedGroup.getTags();
+    try {
+      editTag1.setValue(tags.get(0));
+      editTag1.setValue(tags.get(1));
+      editTag1.setValue(tags.get(2));
+      editTag1.setValue(tags.get(3));
+    } catch (IndexOutOfBoundsException e) {
+      System.out.println("The group had less than 4 tags");
+    }
+    editDescriptionTextArea.setText(selectedGroup.getDescription());
+    editMeetingTable.getItems().addAll(selectedGroup.getMeetings());
+  }
+
+  /**
    * Edits the group selected from the choice box.
    *
    * @author Nick + David
@@ -508,7 +535,7 @@ public class MainScreenController {
         }
       }
       // updating description
-      selectedGroup.setDescription(addDescriptionTextarea1.getText());
+      selectedGroup.setDescription(editDescriptionTextArea.getText());
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -545,7 +572,7 @@ public class MainScreenController {
       savedChangesLabel1.setText("Saved Changes");
 
       // Resetting fields
-      addDescriptionTextarea1.clear();
+      editDescriptionTextArea.clear();
       editTag1.setValue("");
       editTag2.setValue("");
       editTag3.setValue("");
@@ -686,7 +713,7 @@ public class MainScreenController {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
     currentUserGroups.addAll(currentUser.getGroupLeader());
     currentUserGroups.addAll(currentUser.getGroupMember());
-    pGroupTable.getItems().addAll(currentUserGroups);
+    pGroupTable.getItems().setAll(currentUserGroups);
   }
 
   /**
@@ -761,10 +788,12 @@ public class MainScreenController {
           editGroupSelector.getValue().addMeeting(newMeeting);
           addMeetingLocationTextfield.clear();
           addMeetingTimePicker.getSelectionModel().clearSelection();
+          //reset edit group tab
+          fillEditGroupTab();
           //confirm add meeting
           messageLabelEGT.setText("Meeting added");
-          //set style of message to passing
-          updateMeetings();
+          //send message to text file to update group meeting data
+          //TextFileManager.addMeetingToGroup(group, meeting);
         } else {
           //invalid time input, handle error
           messageLabelEGT.setText("Invalid time. Please try again.");
@@ -777,6 +806,36 @@ public class MainScreenController {
     } else {
       //group not selected, handle error
       messageLabelEGT.setText("Please select a group to edit.");
+    }
+  }
+
+  /**
+   * Begin editing a meeting. The event works on the double-click of a selected element in the
+   * related table. Opens a pop-up box similar to the view meeting detail scene, but with editable
+   * features.
+   *
+   * @param mouseEvent a passed event
+   */
+  @FXML
+  private void editMeetingEvent(MouseEvent mouseEvent) throws IOException {
+    if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
+      if (mouseEvent.getClickCount() == 2) {
+        if (!editMeetingTable.getSelectionModel().isEmpty()) {
+          int index = editMeetingTable.getSelectionModel().getSelectedIndex();
+          //get a reference to a meeting in the group's list of meeitngs
+          Meeting selectedMeeting = editGroupSelector.getSelectionModel().getSelectedItem()
+              .getMeetings().get(index);
+          // Make that the selected meeting in the MeetDetController class
+          EditableMeetDetController.setMeeting(selectedMeeting);
+          // switch to the edit meeting scene
+          Parent primaryScreenParent = FXMLLoader
+              .load(getClass().getResource("EditableMeetingDetails.fxml"));
+          Scene primaryScreen = new Scene(primaryScreenParent);
+          Stage window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+          window.setScene(primaryScreen);
+          window.show();
+        }
+      }
     }
   }
 }
