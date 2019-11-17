@@ -9,6 +9,10 @@ public class User {
   private ArrayList<Group> groupMember = new ArrayList<>();
   private ArrayList<Group> groupLeader = new ArrayList<>();
 
+  /**
+   * This is a no argument constructor for the User class used in the LoginController class.
+   * @author Cameron
+   */
   public User() {}
 
   public User(String username, String password, String email) {

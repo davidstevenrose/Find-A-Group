@@ -12,11 +12,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
 import java.io.IOException;
 
 /**
  * This is the controller class for the edit profile screen
+ *
  * @author Nicholas Hansen + Darian
  */
 public class EditProfileController {
@@ -90,7 +90,6 @@ public class EditProfileController {
       newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
     }
     if (oldPassword.getText().equals(MainScreenController.currentUser.getPassword())
-        && confirmPassword.getText().equals(MainScreenController.currentUser.getPassword())
         && !newPassword.getText().isEmpty()
         && !editUsernameField.getText().isEmpty()
         && !userEmail.getText().isEmpty()) {
