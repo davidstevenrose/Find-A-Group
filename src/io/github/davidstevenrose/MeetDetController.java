@@ -1,9 +1,6 @@
 package io.github.davidstevenrose;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,8 +16,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
+ * This is the controller class for the meeting details screen.
  *
- * @author Cameron, Jackson
+ * @author Cameron and Jackson
  */
 public class MeetDetController {
 
@@ -56,14 +54,6 @@ public class MeetDetController {
   void initialize() {
     // Getting the attendees for the meeting
     observableAttendees.addAll(currentMeeting.getAttendees());
-
-    // Values for testing remove after
-    observableAttendees.add("Person 1");
-    observableAttendees.add("Person 2");
-    observableAttendees.add("Person 3");
-    observableAttendees.add("Person 4");
-    // Remove
-
     groupNameLabel.setText(currentMeeting.getGroupName());
     dateLabel.setText(currentMeeting.getDate().toString());
     timeLabel.setText(currentMeeting.getTime());
@@ -74,9 +64,6 @@ public class MeetDetController {
     }
     // Adding them all to the list view
     attendeesList.setItems(observableAttendees);
-
-    //if the group leader is editing the meeting
-
   }
 
   /** @author Jackson and Cameron */
@@ -137,10 +124,7 @@ public class MeetDetController {
    * @author Jackson
    */
   @FXML
-  public void viewAttendeesClicked(MouseEvent mouseEvent) {
-
-
-  }
+  public void viewAttendeesClicked(MouseEvent mouseEvent) {}
 
   /**
    * This method allows the MainScreenController to set the Meeting object that this controller will
@@ -152,5 +136,4 @@ public class MeetDetController {
   public static void setMeeting(Meeting meeting) {
     currentMeeting = meeting;
   }
-
 }
