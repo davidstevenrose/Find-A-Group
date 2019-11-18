@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="io.github.davidstevenrose.MainScreenController">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.MainScreenController">
     <tabs>
         <Tab fx:id="profileTab" text="Profile">
             <content>
@@ -119,6 +119,7 @@
                             </font>
                         </Label>
                         <Hyperlink fx:id="logOut2" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
+                  <Label fx:id="createGroupErrorMsg" visible="false" layoutX="483.0" layoutY="567.0" text="Please enter a group name or at least one group tag." />
                     </children>
                 </AnchorPane>
             </content>
@@ -154,7 +155,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="editMeetingTable" onMouseClicked="#editMeetingEvent" layoutX="22.0" layoutY="585.0" prefHeight="117.0" prefWidth="636.0">
+                  <TableView fx:id="editMeetingTable" layoutX="22.0" layoutY="585.0" onMouseClicked="#editMeetingEvent" prefHeight="117.0" prefWidth="636.0">
                     <columns>
                       <TableColumn prefWidth="105.0" text="Date" />
                       <TableColumn prefWidth="101.0" text="Time" />
