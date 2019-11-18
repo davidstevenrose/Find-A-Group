@@ -37,6 +37,9 @@ public class MainScreenController {
   //String in format w+@w+.[a-zA-Z]+
   public static final String EMAILREGEX = "^\\w+@\\w+.[a-zA-Z]+$";
 
+  //The password must conform to shall statement 9
+  public static final String PWORDREGEX = "^\\w{7,}$";
+
   /**
    * The AM\PM picker
    */
