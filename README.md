@@ -29,3 +29,10 @@ Attend Meeting button will display a message to the console that says the meetin
 The Cancel Attendance button will display a unique message if it is clicked when the user hasn't 
 attended the meeting, and will display a message confirming their cancellation if they have already
  clicked the Attend Meeting button.</p>
+ 
+<h5>View Profile:</h5>
+<p> The user's profile is used to display the user's name and what group they are in. When the user 
+joins a group or multiple groups, the program should display to the user the current groups they are in. 
+The program also allows the user to have access to the edit profile scene where the user can change their 
+password. </p>
+

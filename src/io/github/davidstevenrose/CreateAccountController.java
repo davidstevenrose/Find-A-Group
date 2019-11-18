@@ -44,8 +44,8 @@ public class CreateAccountController {
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
     } else if (!usernameField.getText().isEmpty()
-        && !passwordField.getText().isEmpty()
-        && !emailField.getText().isEmpty()) {
+            && !passwordField.getText().isEmpty()
+            && !emailField.getText().isEmpty()) {
       // write to database later
       LoginController.users.add(new User(username, password, email));
 
