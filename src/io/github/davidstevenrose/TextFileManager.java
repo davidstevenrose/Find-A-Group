@@ -5,7 +5,8 @@ import java.io.PrintWriter;
 
 
 /**
- * This class is used to manage all of the reading and writing of the text files that are used by this project.
+ * This class is used to manage all of the reading and writing of the text files that are used by
+ * this project.
  *
  * @author Cameron
  */
@@ -17,7 +18,7 @@ public class TextFileManager {
    * @param group The group to be added.
    * @author Cameron
    */
-  public static void addGroupToFile (Group group) {
+  public static void addGroupToFile(Group group) {
     try {
       // Opening file stream
       FileWriter writer = new FileWriter("res/groups.txt", true);

@@ -1,7 +1,7 @@
 package io.github.davidstevenrose;
 
 /**
- * List of pre-made tags
+ * List of pre-made tags.
  * @author drose
  */
 public enum TagCollection {
@@ -21,7 +21,7 @@ public enum TagCollection {
   }
 
   /**
-   * Gets the label in CamelCase
+   * Gets the label in CamelCase.
    * @return the name
    */
   public String getName() {

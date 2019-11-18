@@ -1,4 +1,5 @@
 package io.github.davidstevenrose;
+
 import java.util.ArrayList;
 
 /**
@@ -34,7 +35,7 @@ public class User {
   }
 
   /**
-   * Gets the username of the account
+   * Gets the username of the account.
    *
    * @return the username
    */
@@ -43,7 +44,7 @@ public class User {
   }
 
   /**
-   * Sets the username of the account
+   * Sets the username of the account.
    *
    * @param username the new username
    */
@@ -52,7 +53,7 @@ public class User {
   }
 
   /**
-   * Gets the password of the account
+   * Gets the password of the account.
    *
    * @return the password
    */
@@ -61,7 +62,7 @@ public class User {
   }
 
   /**
-   * Sets the password of the account
+   * Sets the password of the account.
    *
    * @param password the new password
    */
@@ -70,7 +71,7 @@ public class User {
   }
 
   /**
-   * Gets the email of the account
+   * Gets the email of the account.
    *
    * @return the email
    */
@@ -79,7 +80,7 @@ public class User {
   }
 
   /**
-   * Sets the email of the account
+   * Sets the email of the account.
    *
    * @param email the new email
    */

@@ -23,23 +23,32 @@ import javafx.stage.Stage;
 public class MeetDetController {
 
   // Need to make the program able to go to the Meeting Details Screen.
-  @FXML private Label groupNameLabel;
+  @FXML
+  private Label groupNameLabel;
 
-  @FXML private Label timeLabel;
+  @FXML
+  private Label timeLabel;
 
-  @FXML private Label dateLabel;
+  @FXML
+  private Label dateLabel;
 
-  @FXML private Label locationLabel;
+  @FXML
+  private Label locationLabel;
 
-  @FXML private Label userMessageLabel;
+  @FXML
+  private Label userMessageLabel;
 
-  @FXML private Button attendMeetingButton;
+  @FXML
+  private Button attendMeetingButton;
 
-  @FXML private Button cancelAttendanceButton;
+  @FXML
+  private Button cancelAttendanceButton;
 
-  @FXML private Hyperlink backButton;
+  @FXML
+  private Hyperlink backButton;
 
-  @FXML private ListView<String> attendeesList;
+  @FXML
+  private ListView<String> attendeesList;
 
   private boolean meetingAttend = false;
   ObservableList<String> observableAttendees = FXCollections.observableArrayList();
@@ -66,7 +75,9 @@ public class MeetDetController {
     attendeesList.setItems(observableAttendees);
   }
 
-  /** @author Jackson and Cameron */
+  /**
+   * @author Jackson and Cameron
+   */
   @FXML
   public void attendMeetingClicked(MouseEvent mouseEvent) {
     if (meetingAttend == false) {
@@ -124,7 +135,8 @@ public class MeetDetController {
    * @author Jackson
    */
   @FXML
-  public void viewAttendeesClicked(MouseEvent mouseEvent) {}
+  public void viewAttendeesClicked(MouseEvent mouseEvent) {
+  }
 
   /**
    * This method allows the MainScreenController to set the Meeting object that this controller will

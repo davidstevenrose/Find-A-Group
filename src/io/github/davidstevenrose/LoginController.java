@@ -1,4 +1,7 @@
 package io.github.davidstevenrose;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,27 +13,31 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import java.io.IOException;
-import java.util.ArrayList;
+
 
 public class LoginController {
 
-  @FXML private PasswordField passwordField;
+  @FXML
+  private PasswordField passwordField;
 
-  @FXML private TextField usernameField;
+  @FXML
+  private TextField usernameField;
 
-  @FXML private Button loginButton;
+  @FXML
+  private Button loginButton;
 
-  @FXML private Button createAccountButton;
+  @FXML
+  private Button createAccountButton;
 
-  @FXML private Label errorLabel;
+  @FXML
+  private Label errorLabel;
 
   // fix later with database after testing
   public static ArrayList<User> users = new ArrayList<>();
 
   /**
    * This method allows the user to log into their account and will change the scene to the primary
-   * scene
+   * scene.
    *
    * @param event The mouse click event
    */
@@ -49,7 +56,7 @@ public class LoginController {
       if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
         validLogin = true;
         // Setting userToLogIn to be the user logging in
-         userToLogIn = u;
+        userToLogIn = u;
       }
     }
     if (validLogin == false) {

@@ -4,9 +4,21 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Merged branch Darian into David">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added regex for password.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetDetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/TagCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/TagCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/User.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +280,7 @@
       <workItem from="1574018925044" duration="681000" />
       <workItem from="1574090701011" duration="3149000" />
       <workItem from="1574095334382" duration="2416000" />
-      <workItem from="1574098561774" duration="1352000" />
+      <workItem from="1574098561774" duration="4296000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -403,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574098721198</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added regex for password.">
+      <created>1574100241548</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574100241548</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,6 +467,7 @@
     <MESSAGE value="Corrected merge from branch David to Master" />
     <MESSAGE value="Added override methods in Group class. Edited fxml for add meeting module. Completed add meeting module and ready for testing. Also added gitignore." />
     <MESSAGE value="Merged branch Darian into David" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged branch Darian into David" />
+    <MESSAGE value="Added regex for password." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added regex for password." />
   </component>
 </project>

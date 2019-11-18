@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * Control to allow the group leader to edit a meeting
+ * Control to allow the group leader to edit a meeting.
  *
  * @author David
  */
@@ -83,7 +83,7 @@ public class EditableMeetDetController {
         //check input for location
         if (!locationLabel.getText().isEmpty()) {
           //check for status
-          if(statusBox.getValue()!=null) {
+          if (statusBox.getValue() != null) {
             currentMeeting.setLocation(locationLabel.getText());
             currentMeeting.setTime(timeLabel.getText());
             currentMeeting.setDate(dateLabel.getValue());

@@ -31,7 +31,8 @@ import javafx.stage.Stage;
 
 public class MainScreenController {
 
-  //String in format XX:XX. Does not support military time, and ten's place digit in hour may be omitted.
+  //String in format XX:XX. Does not support military time, and ten's place digit in hour may be
+  //omitted.
   public static final String TIMEREGEX = "^([0]?\\d|1[0-2]):[0-5]\\d\n$";
 
   //String in format w+@w+.[a-zA-Z]+
@@ -41,7 +42,7 @@ public class MainScreenController {
   public static final String PWORDREGEX = "^\\w{7,}$";
 
   /**
-   * The AM\PM picker
+   * The AM\PM picker.
    */
   @FXML
   private ChoiceBox<String> meridiemBox;
@@ -74,27 +75,33 @@ public class MainScreenController {
   /**
    * The tab to create a new group.
    */
-  public Tab createGroupTab;
+  @FXML
+  private Tab createGroupTab;
   /**
    * The button to submit user input to create a new group.
    */
-  public Button createGroupsButton;
+  @FXML
+  private Button createGroupsButton;
   /**
    * The tab to view meetings from groups the user has joined.
    */
-  public Tab findMeetingsTab;
+  @FXML
+  private Tab findMeetingsTab;
   /**
    * The tab to search and view groups for the user to join.
    */
-  public Tab searchForGroupsTab;
+  @FXML
+  private Tab searchForGroupsTab;
   /**
    * The profile tab to allow the user to toggle between profile and group.
    */
-  public Tab profileTabDriver;
+  @FXML
+  private Tab profileTabDriver;
   /**
    * The lable to print the user's username.
    */
-  public Label profileUserNameLab;
+  @FXML
+  private Label profileUserNameLab;
   /**
    * The first of four tag choice boxes. Located in create group tab.
    */
@@ -316,7 +323,7 @@ public class MainScreenController {
   }
 
   /**
-   * Driver module for testing program
+   * Driver module for testing program.
    */
   private void driverMethod() {
 
@@ -483,11 +490,10 @@ public class MainScreenController {
   /**
    * Goes through the process of creating a group and saving the new group data to the database.
    *
-   * @param event the source of the event
    * @author drose
    */
   @FXML
-  void createGroupsButtonClicked(MouseEvent event) {
+  void createGroupsButtonClicked() {
     //TODO: encapsulate some labels for exception scenarios.
     createGroupErrorMsg.setVisible(false);
     Group newGroup;
@@ -509,6 +515,7 @@ public class MainScreenController {
 
   /**
    * Fills the edit group tab with information of the selected group to edit.
+   *
    * @author drose
    */
   private void fillEditGroupTab() {
@@ -649,8 +656,8 @@ public class MainScreenController {
    * controller for the meeting details page.
    *
    * @param event The mouse click event created by the user clicking on the button
-   * @author Cameron
    * @param event The mouse click event created by the user clicking on the button
+   * @author Cameron
    */
   @FXML
   void viewMeetingDetailsButtonClicked(MouseEvent event) throws IOException {
