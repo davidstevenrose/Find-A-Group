@@ -107,6 +107,9 @@ public class MeetDetController {
    */
   @FXML
   void backButtonClicked(MouseEvent event) throws IOException {
+    // Updating meetings.txt file
+    TextFileManager.editMeeting(MainScreenController.allMeetings);
+
     // Creating the new scene
     Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
     Scene primaryScreen = new Scene(primaryScreenParent);

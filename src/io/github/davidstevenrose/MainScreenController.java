@@ -472,6 +472,9 @@ public class MainScreenController {
         // updating all meetings and group meetings
         allMeetings.add(meeting);
         selectedGroup.addMeeting(meeting);
+
+        // Adding meeting to meetings.txt file
+          TextFileManager.addMeetingToFile(meeting);
       }
 
       // Updating the groups.txt file
