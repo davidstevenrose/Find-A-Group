@@ -587,7 +587,7 @@ public class MainScreenController {
   /**
    * This method displays the groups the user is in to the table view in the profile tab.
    *
-   * @author Cameron
+   * @author Cameron + Darian
    */
   private void displayGroupsInProfile() {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
