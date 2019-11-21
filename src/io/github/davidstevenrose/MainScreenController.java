@@ -121,10 +121,10 @@ public class MainScreenController {
   //
 
   // Array list to store all of the groups in
-  private ArrayList<Group> allGroups = new ArrayList<>();
+  static ArrayList<Group> allGroups = new ArrayList<>();
 
   // Array list to store all of the meetings in
-  private ArrayList<Meeting> allMeetings = new ArrayList<>();
+  static ArrayList<Meeting> allMeetings = new ArrayList<>();
 
   // The user currently using the program
   static User currentUser;

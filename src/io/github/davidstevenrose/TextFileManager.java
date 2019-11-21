@@ -19,7 +19,7 @@ public class TextFileManager {
   /**
    * This method is used to add the details of a group to the groups text file.
    *
-   * @param group The group to be added.
+   * @param group The group to be added
    * @author Cameron
    */
   static void addGroupToFile(Group group) {
@@ -54,7 +54,7 @@ public class TextFileManager {
   /**
    * This method is used to add the details of a user to the users text file.
    *
-   * @param user The user to be added.
+   * @param user The user to be added
    * @author Cameron
    */
   static void addUserToFile(User user) {
@@ -94,7 +94,7 @@ public class TextFileManager {
   /**
    * This method is used to add the details of a meeting to the meetings text file.
    *
-   * @param meeting The meeting to be added.
+   * @param meeting The meeting to be added
    * @author Cameron
    */
   static void addMeetingToFile(Meeting meeting) {
