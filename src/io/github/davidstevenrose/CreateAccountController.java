@@ -46,8 +46,15 @@ public class CreateAccountController {
     } else if (!usernameField.getText().isEmpty()
         && !passwordField.getText().isEmpty()
         && !emailField.getText().isEmpty()) {
-      // write to database later
-      LoginController.users.add(new User(username, password, email));
+
+      // Creating user from information entered
+      User newUser = new User(username, password, email);
+
+      // Adding to the LoginScreen users ArrayList
+      LoginController.users.add(newUser);
+
+      // Adding to users.txt file
+      TextFileManager.addUserToFile(newUser);
 
       // Creating scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
