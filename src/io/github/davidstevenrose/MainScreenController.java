@@ -132,25 +132,6 @@ public class MainScreenController {
   @FXML
   void initialize() {
 
-    // testing remove after
-    Group exampleGroup1 =
-        new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
-    Group exampleGroup2 =
-        new Group(
-            "FGCU Running Group", "A group of FGCU students who like to get together and run");
-    Group exampleGroup3 =
-        new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
-    Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
-    exampleMeeting1.addAttendee("Person 1");
-    exampleMeeting1.addAttendee("Person 2");
-    exampleMeeting1.addAttendee("Person 3");
-    exampleMeeting1.addAttendee("Person 4");
-    Meeting exampleMeeting2 =
-        new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
-    Meeting exampleMeeting3 =
-        new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
-    // remove
-
     /**
      * ------------------------------------------------------ Profile Code
      *
@@ -210,19 +191,6 @@ public class MainScreenController {
       addMeetingTimePicker.getItems().add(i + ":00 AM");
       addMeetingTimePicker.getItems().add(i + ":00 PM");
     }
-
-    // values used for testing and demo, remove later
-    allMeetings.add(exampleMeeting1);
-    allMeetings.add(exampleMeeting2);
-    allMeetings.add(exampleMeeting3);
-    exampleGroup1.addTag("Gaming");
-    exampleGroup2.addTag("Fitness");
-    exampleGroup2.addTag("Sports");
-    exampleGroup3.addTag("Reading");
-    allGroups.add(exampleGroup1);
-    allGroups.add(exampleGroup2);
-    allGroups.add(exampleGroup3);
-    // remove later
 
     // Adding values to group display on startup
     // preparing columns
