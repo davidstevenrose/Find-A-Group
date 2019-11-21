@@ -29,10 +29,17 @@ public class LoginController {
   // fix later with database after testing
   static ArrayList<User> users = new ArrayList<>();
 
+  /**
+   * This method is run when the LoginScreen is loaded, it is used to load all of the users, groups,
+   * and meetings into their respective ArrayLists.
+   *
+   * @author Cameron
+   */
   @FXML
   void initialize() {
     // Load the users, allGroups, and allMeetings ArrayLists
-    TextFileManager.loadAll(users, MainScreenController.allGroups, MainScreenController.allMeetings);
+    TextFileManager.loadAll(
+        users, MainScreenController.allGroups, MainScreenController.allMeetings);
   }
 
   /**
@@ -56,7 +63,7 @@ public class LoginController {
       if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
         validLogin = true;
         // Setting userToLogIn to be the user logging in
-         userToLogIn = u;
+        userToLogIn = u;
       }
     }
     if (validLogin == false) {

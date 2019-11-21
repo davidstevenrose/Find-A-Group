@@ -115,7 +115,7 @@ public class MainScreenController {
 
   /** A string of premade tags. This artifact is temporary, as tags will be converted to objects. */
   private final String[] tags = {
-          "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies", "Art"
+    "", "Gaming", "Sports", "Fitness", "Reading", "Study", "Fun", "Movies", "Art"
   };
 
   //
@@ -129,26 +129,26 @@ public class MainScreenController {
   // The user currently using the program
   static User currentUser;
 
-
   @FXML
   void initialize() {
 
     // testing remove after
     Group exampleGroup1 =
-            new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
+        new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
     Group exampleGroup2 =
-            new Group("FGCU Running Group", "A group of FGCU students who like to get together and run");
+        new Group(
+            "FGCU Running Group", "A group of FGCU students who like to get together and run");
     Group exampleGroup3 =
-            new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
+        new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
     Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
     exampleMeeting1.addAttendee("Person 1");
     exampleMeeting1.addAttendee("Person 2");
     exampleMeeting1.addAttendee("Person 3");
     exampleMeeting1.addAttendee("Person 4");
     Meeting exampleMeeting2 =
-            new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
+        new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
     Meeting exampleMeeting3 =
-            new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
+        new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
     // remove
 
     /**
@@ -172,18 +172,18 @@ public class MainScreenController {
     fillBoxesWithTags(tagBoxes);
 
     // conflicts with other method
-//    // create new group
-//    createGroupsButton.setOnMouseClicked(
-//        new EventHandler<MouseEvent>() {
-//          @Override
-//          public void handle(MouseEvent event) {
-//            Group newGroup = createGroup();
-//            groups.add(newGroup);
-//            // return to searchForGroups tab
-//            tabPane.getSelectionModel().select(searchForGroupsTab);
-//            System.out.println("New group added to database.");
-//          }
-//        });
+    //    // create new group
+    //    createGroupsButton.setOnMouseClicked(
+    //        new EventHandler<MouseEvent>() {
+    //          @Override
+    //          public void handle(MouseEvent event) {
+    //            Group newGroup = createGroup();
+    //            groups.add(newGroup);
+    //            // return to searchForGroups tab
+    //            tabPane.getSelectionModel().select(searchForGroupsTab);
+    //            System.out.println("New group added to database.");
+    //          }
+    //        });
 
     // add meeting
 
@@ -279,7 +279,7 @@ public class MainScreenController {
       tags.add(addTag4.getValue());
     }
     String desc =
-            ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
+        ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
     return new Group(groupName, desc, tags, currentUser.getUsername());
   }
 
@@ -298,6 +298,9 @@ public class MainScreenController {
 
     // Adding user to group
     currentUser.addGroupMember(group);
+
+    // Updating the users.txt file
+    TextFileManager.editUser(LoginController.users);
 
     // Updating the selectors
     populateGroupSelectors();
@@ -318,7 +321,7 @@ public class MainScreenController {
    * @param event The mouse click event created by the user clicking on the button
    */
   @FXML
-  void searchGroupsButtonClicked(MouseEvent event) {
+  public void searchGroupsButtonClicked(MouseEvent event) {
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
@@ -333,9 +336,9 @@ public class MainScreenController {
       // Looping through the groups and selecting ones where all of the tags are present
       for (Group group : allGroups) {
         if (group.getTags().contains(tag1)
-                && group.getTags().contains(tag2)
-                && group.getTags().contains(tag3)
-                && group.getTags().contains(tag4)) {
+            && group.getTags().contains(tag2)
+            && group.getTags().contains(tag3)
+            && group.getTags().contains(tag4)) {
           foundGroups.add(group);
         }
       }
@@ -348,18 +351,18 @@ public class MainScreenController {
       String tag4 = searchTag4.getValue().equals("") ? "unused" : searchTag4.getValue();
       // Making it so that if there are no tags selected, all of the groups will be shown
       if (tag1.equals("unused")
-              && tag2.equals("unused")
-              && tag3.equals("unused")
-              && tag4.equals("unused")) {
+          && tag2.equals("unused")
+          && tag3.equals("unused")
+          && tag4.equals("unused")) {
         tag1 = "";
       }
       // looping through the groups and returning ones that contain at least one of the specified
       // tags
       for (Group group : allGroups) {
         if (group.getTags().contains(tag1)
-                || group.getTags().contains(tag2)
-                || group.getTags().contains(tag3)
-                || group.getTags().contains(tag4)) {
+            || group.getTags().contains(tag2)
+            || group.getTags().contains(tag3)
+            || group.getTags().contains(tag4)) {
           foundGroups.add(group);
         }
       }
@@ -377,7 +380,7 @@ public class MainScreenController {
       // Get the values they entered
       String name = createGroupTextfield.getText();
       String description =
-              ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
+          ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -395,6 +398,8 @@ public class MainScreenController {
       Group group = new Group(name, description, tags);
       // Adding to groups ArrayList
       allGroups.add(group);
+      // Adding to the groups.txt file
+      TextFileManager.addGroupToFile(group);
       // Making the current user group leader
       currentUser.addGroupLeader(group);
       // Updating the selectors
@@ -450,19 +455,27 @@ public class MainScreenController {
 
       // creating a new meeting if all information entered
       if (addMeetingDatePicker.getValue() != null
-              && addMeetingLocationTextfield.getText() != null
-              && addMeetingTimePicker.getValue() != null) {
+          && addMeetingLocationTextfield.getText() != null
+          && addMeetingTimePicker.getValue() != null) {
         // getting values from user
         LocalDate meetingDate = addMeetingDatePicker.getValue();
         String meetingLocation = addMeetingLocationTextfield.getText();
         String meetingTime = addMeetingTimePicker.getValue();
         // creating new meeting
         Meeting meeting =
-                new Meeting(meetingLocation, meetingDate, meetingTime, selectedGroup.getName(), currentUser.getUsername());
+            new Meeting(
+                meetingLocation,
+                meetingDate,
+                meetingTime,
+                selectedGroup.getName(),
+                currentUser.getUsername());
         // updating all meetings and group meetings
         allMeetings.add(meeting);
         selectedGroup.addMeeting(meeting);
       }
+
+      // Updating the groups.txt file
+      TextFileManager.editGroup(allGroups);
 
       // displaying information to the user
       savedChangesLabel1.setText("Saved Changes");

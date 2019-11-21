@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added the loadAll method to the LoginController class in the initialize&#10;method. Made the ArrayLists allGroups and allMeetings in the &#10;MainScreenController class static.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +265,7 @@
       <workItem from="1573154757921" duration="5194000" />
       <workItem from="1574131451195" duration="6198000" />
       <workItem from="1574285328591" duration="57000" />
-      <workItem from="1574349885128" duration="917000" />
+      <workItem from="1574349885128" duration="2364000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -437,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574135820247</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added the loadAll method to the LoginController class in the initialize&#10;method. Made the ArrayLists allGroups and allMeetings in the &#10;MainScreenController class static.">
+      <created>1574351067916</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1574351067916</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,6 +488,7 @@
     <MESSAGE value="Fixed a bug where the group leader was added to the attendees list twice&#10;when creating a meeting." />
     <MESSAGE value="Created TextFileManager class with methods to add users, groups, and &#10;meetings to text files. Added comment to User class to clarify use of no&#10;argument constructor. Fixed suspected typo in Meeting class comment. &#10;Added Javadoc comment for MeetDetController class and removed unused &#10;imports. Made the change that Darian requested on the discord in the &#10;MainScreenController." />
     <MESSAGE value="Added editUser, editGroup, editMeeting, and loadAll methods to the &#10;TextFileManager class. Removed unnecessary imports and public modifiers&#10;from existing methods in the TextFileManager class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added editUser, editGroup, editMeeting, and loadAll methods to the &#10;TextFileManager class. Removed unnecessary imports and public modifiers&#10;from existing methods in the TextFileManager class." />
+    <MESSAGE value="Added the loadAll method to the LoginController class in the initialize&#10;method. Made the ArrayLists allGroups and allMeetings in the &#10;MainScreenController class static." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the loadAll method to the LoginController class in the initialize&#10;method. Made the ArrayLists allGroups and allMeetings in the &#10;MainScreenController class static." />
   </component>
 </project>
