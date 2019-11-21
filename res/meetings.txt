@@ -1,0 +1,3 @@
+2019-11-21,FGCU,5:00 PM,FGCU Games Group,userA,Person 1,Person 2,Person 3,Person 4,
+2019-10-20,FGCU,5:00 PM,FGCU Running Group,userA,
+2019-10-25,not FGCU,5:00 PM,FGCU Book Club,userA,
