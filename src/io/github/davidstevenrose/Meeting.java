@@ -23,7 +23,7 @@ public class Meeting {
   private ArrayList<String> attendees;
 
   /**
-   * Creates a meeting with a meeting data, location, time, and name of host group
+   * Creates a meeting with a meeting date, location, time, and name of host group.
    *
    * @param date      the date
    * @param location  the location
@@ -40,7 +40,7 @@ public class Meeting {
 
   /**
    * Creates a meeting with a meeting data, location, time, name of host group, and the name of the
-   * host user to sign up on the roster
+   * host user to sign up on the roster.
    *
    * @param location      the location
    * @param date          the data
@@ -57,10 +57,11 @@ public class Meeting {
     this.status = MeetingStatus.ACTIVE;
     this.attendees = new ArrayList<>();
     attendees.add(hostName);
+    status = MeetingStatus.ACTIVE;
   }
 
   /**
-   * Gets the date of the meeting
+   * Gets the date of the meeting.
    *
    * @return the data
    */
@@ -69,7 +70,7 @@ public class Meeting {
   }
 
   /**
-   * Set the date of the meeting
+   * Set the date of the meeting.
    *
    * @param date the new date
    */
@@ -78,7 +79,7 @@ public class Meeting {
   }
 
   /**
-   * Gets the location of the meeting
+   * Gets the location of the meeting.
    *
    * @return the meeting location
    */
@@ -87,7 +88,7 @@ public class Meeting {
   }
 
   /**
-   * Sets the location of the meeting
+   * Sets the location of the meeting.
    *
    * @param location the meeting location
    */
@@ -96,7 +97,7 @@ public class Meeting {
   }
 
   /**
-   * Gets the time of the meeting
+   * Gets the time of the meeting.
    *
    * @return the time
    */
@@ -105,7 +106,7 @@ public class Meeting {
   }
 
   /**
-   * Sets the time of the meeting
+   * Sets the time of the meeting.
    *
    * @param time the time
    */
@@ -114,7 +115,7 @@ public class Meeting {
   }
 
   /**
-   * Gets the name of the host group
+   * Gets the name of the host group.
    *
    * @return the name of group
    */
@@ -123,7 +124,7 @@ public class Meeting {
   }
 
   /**
-   * Gets the name of the host
+   * Gets the name of the host.
    *
    * @return name of host
    */
@@ -132,7 +133,7 @@ public class Meeting {
   }
 
   /**
-   * Gets the status of the meeting
+   * Gets the status of the meeting.
    *
    * @return the status
    */
@@ -141,7 +142,7 @@ public class Meeting {
   }
 
   /**
-   * Sets the status of the meeting
+   * Sets the status of the meeting.
    *
    * @param status the new status
    */

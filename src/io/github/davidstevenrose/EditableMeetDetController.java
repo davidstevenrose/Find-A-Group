@@ -8,104 +8,95 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * This is the controller class for the meeting details screen.
+ * Control to allow the group leader to edit a meeting.
  *
- * @author Cameron and Jackson
+ * @author David
  */
-public class MeetDetController {
+public class EditableMeetDetController {
 
-  // Need to make the program able to go to the Meeting Details Screen.
   @FXML
   private Label groupNameLabel;
 
   @FXML
-  private Label timeLabel;
+  private TextField timeLabel;
 
   @FXML
-  private Label dateLabel;
+  private DatePicker dateLabel;
 
   @FXML
-  private Label locationLabel;
+  private TextField locationLabel;
 
   @FXML
   private Label userMessageLabel;
 
   @FXML
-  private Button attendMeetingButton;
-
-  @FXML
-  private Button cancelAttendanceButton;
-
-  @FXML
-  private Hyperlink backButton;
+  private ChoiceBox<MeetingStatus> statusBox;
 
   @FXML
   private ListView<String> attendeesList;
 
-  private boolean meetingAttend = false;
-  ObservableList<String> observableAttendees = FXCollections.observableArrayList();
+  private ObservableList<String> observableAttendees = FXCollections.observableArrayList();
+  //a reference to the current meeting to edit
   private static Meeting currentMeeting;
 
   /**
    * This method runs when the user switches to this screen and initializes all of the values.
-   *
-   * @author Cameron
    */
   @FXML
   void initialize() {
     // Getting the attendees for the meeting
     observableAttendees.addAll(currentMeeting.getAttendees());
+
     groupNameLabel.setText(currentMeeting.getGroupName());
-    dateLabel.setText(currentMeeting.getDate().toString());
+    dateLabel.setChronology(currentMeeting.getDate().getChronology());
     timeLabel.setText(currentMeeting.getTime());
     locationLabel.setText(currentMeeting.getLocation());
-    // If the current user is already attending the meeting
-    if (currentMeeting.getAttendees().contains(MainScreenController.currentUser.getUsername())) {
-      meetingAttend = true;
-    }
-    // Adding them all to the list view
+    statusBox.getItems().addAll(MeetingStatus.values());
+    statusBox.setValue(currentMeeting.getStatus());
+    // Adding attendees all to the list view
     attendeesList.setItems(observableAttendees);
   }
 
   /**
-   * @author Jackson and Cameron
+   * This method attempts to edit the referenced meeting, then returns the user to the primary
+   * screen.
+   *
+   * @param event The mouse event created by the user clicking on the button
+   * @throws IOException An exception that can occur if the fxml file is not found
    */
   @FXML
-  public void attendMeetingClicked(MouseEvent mouseEvent) {
-    if (meetingAttend == false) {
-      meetingAttend = true;
-      currentMeeting.addAttendee(MainScreenController.currentUser.getUsername());
-      observableAttendees.add(MainScreenController.currentUser.getUsername());
-      System.out.println("Meeting Attended");
-      userMessageLabel.setText("Marked Attending");
-
-    } else {
-      System.out.println("You are already attending this meeting");
+  private void saveEditsClicked(MouseEvent event) throws IOException {
+    //check input for date
+    boolean badInput = true;
+    if (dateLabel.getValue() != null) {
+      //check input for time
+      if (timeLabel.getText().matches(MainScreenController.TIMEREGEX)) {
+        //check input for location
+        if (!locationLabel.getText().isEmpty()) {
+          //check for status
+          if (statusBox.getValue() != null) {
+            currentMeeting.setLocation(locationLabel.getText());
+            currentMeeting.setTime(timeLabel.getText());
+            currentMeeting.setDate(dateLabel.getValue());
+            badInput = false;
+          }
+        }
+      }
     }
-  }
-
-  /**
-   * @param mouseEvent
-   * @author Jackson and Cameron
-   */
-  @FXML
-  public void cancelAttendanceClicked(MouseEvent mouseEvent) {
-    if (meetingAttend == true) {
-      meetingAttend = false;
-      observableAttendees.remove(MainScreenController.currentUser.getUsername());
-      System.out.println("Attendance Canceled");
-      userMessageLabel.setText("No Longer Attending");
+    if (badInput) {
+      userMessageLabel.setText("Invalid input or missing required fields; please try again.");
+      userMessageLabel.setVisible(true);
     } else {
-      userMessageLabel.setText("You Are Not Attending");
-      System.out.println("You cannot cancel attendance to a meeting you aren't already attending");
+      backButtonClicked(event);
     }
   }
 
@@ -131,14 +122,6 @@ public class MeetDetController {
   }
 
   /**
-   * @param mouseEvent
-   * @author Jackson
-   */
-  @FXML
-  public void viewAttendeesClicked(MouseEvent mouseEvent) {
-  }
-
-  /**
    * This method allows the MainScreenController to set the Meeting object that this controller will
    * be operating on.
    *
@@ -148,4 +131,5 @@ public class MeetDetController {
   public static void setMeeting(Meeting meeting) {
     currentMeeting = meeting;
   }
+
 }

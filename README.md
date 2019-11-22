@@ -3,12 +3,7 @@
 <p>Users  can  create  a  profile,  then search  for  interesting  groups based  on  their activities,
   hobbies,  etc.  A group leader can create a group, add meetings, and add tags for users to find this
    group. User shall also be able to view meetings for specific dates/locations.</p>
-   
- <h4>Video of our prototype version 2</h4>
- https://drive.google.com/open?id=1iIhLd-eEtenOl1DvdrbSVVC0pSbXJBFf
- 
- <h4>Video of our first prototype</h4>
- https://drive.google.com/open?id=1J9skrwGJoFsHFXFezunjVMN1rDOmV4FK
+
 
 <h5>Adding and Editing Meetings</h5>
 <p>The group leader will add a meeting from the group dashboard page. The user will be 
@@ -35,10 +30,9 @@ The Cancel Attendance button will display a unique message if it is clicked when
 attended the meeting, and will display a message confirming their cancellation if they have already
  clicked the Attend Meeting button.</p>
  
- <h5>Prototype 2 Deltas</h5>
- <ul>
-    <li>Added profile tab with most features and functionality</li>
-    <li>Edit account now has functionality</li>
-    <li>Added feature to sign-up for meeting</li>
-    <li>Added features to edit user's profile with functionality</li>
- </ul>
+<h5>View Profile:</h5>
+<p> The user's profile is used to display the user's name and what group they are in. When the user 
+joins a group or multiple groups, the program should display to the user the current groups they are in. 
+The program also allows the user to have access to the edit profile scene where the user can change their 
+password. </p>
+
