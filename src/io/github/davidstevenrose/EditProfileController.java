@@ -97,6 +97,9 @@ public class EditProfileController {
       MainScreenController.currentUser.setEmail(userEmail.getText());
       MainScreenController.currentUser.setUsername(editUsernameField.getText());
 
+      // Saving the changes to users.txt file
+      TextFileManager.editUser(LoginController.users);
+
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
       Scene primaryScreen = new Scene(primaryScreenParent);
 

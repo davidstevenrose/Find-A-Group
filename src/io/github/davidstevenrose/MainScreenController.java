@@ -263,7 +263,6 @@ public class MainScreenController {
   // The user currently using the program
   static User currentUser;
 
-
   @FXML
   void initialize() {
     //instantiate a listener to whenever the edit group choice box selects a group
@@ -271,6 +270,7 @@ public class MainScreenController {
         .addListener((v, oldVal, newVal) -> fillEditGroupTab());
 
     /*
+    /**
      * ------------------------------------------------------ Profile Code
      *
      * @author Darian + Nicholas Hansen
@@ -281,6 +281,8 @@ public class MainScreenController {
 
     // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
     // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
+
+    // Current Groups and Description
 
     // --------------------------------------------------------
 
@@ -432,6 +434,9 @@ public class MainScreenController {
     // Adding user to group
     currentUser.addGroupMember(group);
 
+    // Updating the users.txt file
+    TextFileManager.editUser(LoginController.users);
+
     // Updating the selectors
     populateGroupSelectors();
 
@@ -451,7 +456,7 @@ public class MainScreenController {
    * @author Cameron
    */
   @FXML
-  void searchGroupsButtonClicked(MouseEvent event) {
+  public void searchGroupsButtonClicked(MouseEvent event) {
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
@@ -684,7 +689,7 @@ public class MainScreenController {
   }
 
   /**
-   * This takes you from the Primary to the edit profile screen.
+   * This takes you to the edit profile screen.
    *
    * @param event click the button to engage
    * @throws IOException
@@ -732,7 +737,6 @@ public class MainScreenController {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
     currentUserGroups.addAll(currentUser.getGroupLeader());
     currentUserGroups.addAll(currentUser.getGroupMember());
-    //setAll removes repeated current groups in table view
     pGroupTable.getItems().setAll(currentUserGroups);
   }
 

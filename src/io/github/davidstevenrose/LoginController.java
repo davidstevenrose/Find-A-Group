@@ -33,7 +33,20 @@ public class LoginController {
   private Label errorLabel;
 
   // fix later with database after testing
-  public static ArrayList<User> users = new ArrayList<>();
+  static ArrayList<User> users = new ArrayList<>();
+
+  /**
+   * This method is run when the LoginScreen is loaded, it is used to load all of the users, groups,
+   * and meetings into their respective ArrayLists.
+   *
+   * @author Cameron
+   */
+  @FXML
+  void initialize() {
+    // Load the users, allGroups, and allMeetings ArrayLists
+    TextFileManager.loadAll(
+        users, MainScreenController.allGroups, MainScreenController.allMeetings);
+  }
 
   /**
    * This method allows the user to log into their account and will change the scene to the primary
@@ -46,8 +59,7 @@ public class LoginController {
     boolean validLogin = false;
     String username = usernameField.getText();
     String password = passwordField.getText();
-    users.add(new User("example", "pass", "example@example.net")); // remove when done testing
-    //users.add(new User("", "", "")); // remove after testing
+
 
     // Creating user to hold login user
     User userToLogIn = new User();

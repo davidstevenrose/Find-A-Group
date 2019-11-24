@@ -87,7 +87,7 @@ public class EditableMeetDetController {
     boolean badInput = true;
     if (!dateLabel.getValue().toString().isEmpty()) {
       //check input for time
-      if (timeLabel.getText().matches(MainScreenController.TIMEREGEX)) {
+      if (timeLabel.getText().matches(MainScreenController.TIME_REGEX)) {
         //check input for location
         if (!locationLabel.getText().isEmpty()) {
           //check for status

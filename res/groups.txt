@@ -1,0 +1,4 @@
+FGCU Games Group,A group of FGCU students who like to play video games,userA,,Gaming,,
+FGCU Running Group,A group of FGCU students who like to get together and run,userA,,Fitness,Sports,,
+FGCU Book Club,A group of FGCU students who like to get together and read,userA,,Reading,,
+

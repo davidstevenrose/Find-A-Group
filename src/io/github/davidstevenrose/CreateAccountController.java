@@ -1,6 +1,5 @@
 package io.github.davidstevenrose;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 
 public class CreateAccountController {
 
@@ -44,11 +44,17 @@ public class CreateAccountController {
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
     } else if (!usernameField.getText().isEmpty()
-            && !passwordField.getText().isEmpty()
-            && !emailField.getText().isEmpty()){
-      //reusing the regex: passwordField.getText().matches(MainScreenController.P_WORD_REGEX
-      // write to database later
-      LoginController.users.add(new User(username, password, email));
+        && !passwordField.getText().isEmpty()
+        && !emailField.getText().isEmpty()) {
+
+      // Creating user from information entered
+      User newUser = new User(username, password, email);
+
+      // Adding to the LoginScreen users ArrayList
+      LoginController.users.add(newUser);
+
+      // Adding to users.txt file
+      TextFileManager.addUserToFile(newUser);
 
       // Creating scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));

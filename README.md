@@ -4,7 +4,6 @@
   hobbies,  etc.  A group leader can create a group, add meetings, and add tags for users to find this
    group. User shall also be able to view meetings for specific dates/locations.</p>
 
-
 <h5>Adding and Editing Meetings</h5>
 <p>The group leader will add a meeting from the group dashboard page. The user will be 
 directed to a meeting dialogue to add the meeting <u style="text-underline-color: firebrick;">details</u>. The meeting status
