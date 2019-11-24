@@ -45,23 +45,31 @@ public class EditableMeetDetController {
   private ListView<String> attendeesList;
 
   private ObservableList<String> observableAttendees = FXCollections.observableArrayList();
-  //a reference to the current meeting to edit
-  private static Meeting currentMeeting;
+  //a attribute of a reference to the current meeting to edit
+  private Meeting localCurrentMeeting;
+
+  /**
+   * Set the pointer to the meeting to edit to the passed reference of the meeting to edit.
+   * @param m a reference to the meeting to edit
+   */
+  void setCurrentMeeting(Meeting m){
+    localCurrentMeeting = m;
+    init();
+  }
 
   /**
    * This method runs when the user switches to this screen and initializes all of the values.
    */
-  @FXML
-  void initialize() {
+  private void init() {
     // Getting the attendees for the meeting
-    observableAttendees.addAll(currentMeeting.getAttendees());
+    observableAttendees.addAll(localCurrentMeeting.getAttendees());
 
-    groupNameLabel.setText(currentMeeting.getGroupName());
-    dateLabel.setChronology(currentMeeting.getDate().getChronology());
-    timeLabel.setText(currentMeeting.getTime());
-    locationLabel.setText(currentMeeting.getLocation());
+    groupNameLabel.setText(localCurrentMeeting.getGroupName());
+    dateLabel.setChronology(localCurrentMeeting.getDate().getChronology());
+    timeLabel.setText(localCurrentMeeting.getTime());
+    locationLabel.setText(localCurrentMeeting.getLocation());
     statusBox.getItems().addAll(MeetingStatus.values());
-    statusBox.setValue(currentMeeting.getStatus());
+    statusBox.setValue(localCurrentMeeting.getStatus());
     // Adding attendees all to the list view
     attendeesList.setItems(observableAttendees);
   }
@@ -77,16 +85,17 @@ public class EditableMeetDetController {
   private void saveEditsClicked(MouseEvent event) throws IOException {
     //check input for date
     boolean badInput = true;
-    if (dateLabel.getValue() != null) {
+    if (!dateLabel.getValue().toString().isEmpty()) {
       //check input for time
       if (timeLabel.getText().matches(MainScreenController.TIMEREGEX)) {
         //check input for location
         if (!locationLabel.getText().isEmpty()) {
           //check for status
           if (statusBox.getValue() != null) {
-            currentMeeting.setLocation(locationLabel.getText());
-            currentMeeting.setTime(timeLabel.getText());
-            currentMeeting.setDate(dateLabel.getValue());
+            localCurrentMeeting.setLocation(locationLabel.getText());
+            localCurrentMeeting.setTime(timeLabel.getText());
+            localCurrentMeeting.setDate(dateLabel.getValue());
+            localCurrentMeeting.setStatus(statusBox.getValue());
             badInput = false;
           }
         }
@@ -119,17 +128,6 @@ public class EditableMeetDetController {
     // Setting stage
     window.setScene(primaryScreen);
     window.show();
-  }
-
-  /**
-   * This method allows the MainScreenController to set the Meeting object that this controller will
-   * be operating on.
-   *
-   * @param meeting The meeting that will be used by this screen
-   * @author Cameron
-   */
-  public static void setMeeting(Meeting meeting) {
-    currentMeeting = meeting;
   }
 
 }

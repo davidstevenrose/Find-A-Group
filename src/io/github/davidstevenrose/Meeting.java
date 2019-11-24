@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class Meeting {
 
   private LocalDate date;
+  private String stringDate;
   private String location;
   private String time;
   private final String groupName;
@@ -23,7 +24,8 @@ public class Meeting {
   private ArrayList<String> attendees;
 
   /**
-   * Creates a meeting with a meeting date, location, time, and name of host group.
+   * Creates a meeting with a meeting date, location, time, and name of host group. Sets the meeting
+   * status to active.
    *
    * @param date      the date
    * @param location  the location
@@ -36,11 +38,13 @@ public class Meeting {
     this.location = location;
     this.groupName = groupName;
     attendees = new ArrayList<>();
+    status = MeetingStatus.ACTIVE;
+    stringDate = this.date.toString();
   }
 
   /**
    * Creates a meeting with a meeting data, location, time, name of host group, and the name of the
-   * host user to sign up on the roster.
+   * host user to sign up on the roster. Sets the meeting status to active.
    *
    * @param location      the location
    * @param date          the data
@@ -57,7 +61,8 @@ public class Meeting {
     this.status = MeetingStatus.ACTIVE;
     this.attendees = new ArrayList<>();
     attendees.add(hostName);
-    status = MeetingStatus.ACTIVE;
+    stringDate = this.date.toString();
+
   }
 
   /**
@@ -70,12 +75,23 @@ public class Meeting {
   }
 
   /**
+   * Gets the date of the meeting as a string. Calls the toString method of the type LocalDate
+   *
+   * @return the meeting's date as a string
+   */
+  public String getStringDate() {
+    return stringDate;
+  }
+
+  /**
    * Set the date of the meeting.
    *
    * @param date the new date
    */
   public void setDate(LocalDate date) {
     this.date = date;
+    stringDate = this.date.toString();
+
   }
 
   /**
@@ -156,5 +172,16 @@ public class Meeting {
 
   public ArrayList<String> getAttendees() {
     return attendees;
+  }
+
+  /**
+   * The string representation of a meeting.
+   *
+   * @return the location @ date @ time for groupName is meetingStatus
+   */
+  @Override
+  public String toString() {
+    return location + " @ " + (date.toString()) + " @ " + time + " for " + groupName + " is "
+        + status;
   }
 }

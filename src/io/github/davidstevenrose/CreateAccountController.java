@@ -45,7 +45,8 @@ public class CreateAccountController {
       errorLabel.setText("Emails do not match");
     } else if (!usernameField.getText().isEmpty()
             && !passwordField.getText().isEmpty()
-            && !emailField.getText().isEmpty()) {
+            && !emailField.getText().isEmpty()){
+      //reusing the regex: passwordField.getText().matches(MainScreenController.P_WORD_REGEX
       // write to database later
       LoginController.users.add(new User(username, password, email));
 

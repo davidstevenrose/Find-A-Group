@@ -157,9 +157,9 @@
                   </Label>
                   <TableView fx:id="editMeetingTable" layoutX="22.0" layoutY="585.0" onMouseClicked="#editMeetingEvent" prefHeight="117.0" prefWidth="636.0">
                     <columns>
-                      <TableColumn prefWidth="105.0" text="Date" />
-                      <TableColumn prefWidth="101.0" text="Time" />
-                        <TableColumn prefWidth="429.0" text="Location" />
+                      <TableColumn fx:id="editMeetingDateCol" prefWidth="105.0" text="Date" />
+                      <TableColumn fx:id="editMeetingTimeCol" prefWidth="101.0" text="Time" />
+                        <TableColumn fx:id="editMeetingPlaceCol" prefWidth="429.0" text="Location" />
                     </columns>
                   </TableView>
                   <Label layoutX="22.0" layoutY="550.0" text="Edit Meetings" />

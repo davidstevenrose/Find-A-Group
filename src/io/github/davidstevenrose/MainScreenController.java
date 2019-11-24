@@ -15,7 +15,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -33,13 +32,37 @@ public class MainScreenController {
 
   //String in format XX:XX. Does not support military time, and ten's place digit in hour may be
   //omitted.
-  public static final String TIMEREGEX = "^([0]?\\d|1[0-2]):[0-5]\\d\n$";
+  public static final String TIME_REGEX = "^([0]?\\d|1[0-2]):[0-5]\\d$";
 
   //String in format w+@w+.[a-zA-Z]+
-  public static final String EMAILREGEX = "^\\w+@\\w+.[a-zA-Z]+$";
+  public static final String EMAIL_REGEX = "^\\w+@\\w+.[a-zA-Z]+$";
 
   //The password must conform to shall statement 9
-  public static final String PWORDREGEX = "^\\w{7,}$";
+  public static final String P_WORD_REGEX = "^\\w{7,}$";
+
+  /**
+   * The meeting location column in edit meeting table
+   */
+  @FXML
+  private TableColumn editMeetingPlaceCol;
+
+  /**
+   * The meeting time column in edit meeting table
+   */
+  @FXML
+  private TableColumn editMeetingTimeCol;
+
+  /**
+   * The meeting date column in edit meeting table
+   */
+  @FXML
+  private TableColumn editMeetingDateCol;
+
+  /**
+   * The text field for choosing the time of a meeting.
+   */
+  @FXML
+  private TextField selectTimeTxt;
 
   /**
    * The AM\PM picker.
@@ -195,9 +218,6 @@ public class MainScreenController {
   @FXML
   private TextField addMeetingLocationTextfield;
 
-  @FXML
-  private ComboBox<String> addMeetingTimePicker;
-
   /**
    * The choice box in the edit group tab that is populated with the groups the current user owns.
    */
@@ -284,14 +304,6 @@ public class MainScreenController {
     //the list of boxes are now filled
     fillBoxesWithTags(tagBoxes);
 
-    // Putting values in the add meeting time picker
-    //testing, remove later
-    for (int i = 1; i < 13; i++) {
-      addMeetingTimePicker.getItems().add(i + ":00 AM");
-      addMeetingTimePicker.getItems().add(i + ":00 PM");
-    }
-    //end remove
-
     // Adding values to group display on startup
     // preparing columns
     searchGroupsGroupNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -312,13 +324,18 @@ public class MainScreenController {
     meetingsLocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
     findMeetingsTable.setItems(FXCollections.observableArrayList(allMeetings));
 
-    driverMethod();
+    //preparing the editMeeting table
+    //preparing columns
+    editMeetingPlaceCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+    editMeetingDateCol.setCellValueFactory(new PropertyValueFactory<>("stringDate"));
+    editMeetingTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
+
+    //driverMethod();
 
     //clear error message labels - David
     //label in edit group tab
     //TODO: configure style of label
     messageLabelEGT.setText("");
-
 
   }
 
@@ -509,6 +526,7 @@ public class MainScreenController {
     //return to searchForGroups tab
     tabPane.getSelectionModel().select(searchForGroupsTab);
     TextFileManager.addGroupToFile(newGroup);
+    populateGroupSelectors();
     System.out.println("New group added to database.");
     createGroupTextfield.clear();
   }
@@ -568,19 +586,6 @@ public class MainScreenController {
       selectedGroup.replaceTags(tags);
 
       // creating a new meeting if all information entered
-
-      // getting values from user
-       /* LocalDate meetingDate = addMeetingDatePicker.getValue();
-        String meetingLocation = addMeetingLocationTextfield.getText();
-        String meetingTime = addMeetingTimePicker.getValue();
-        // creating new meeting
-        Meeting meeting =
-            new Meeting(meetingLocation, meetingDate, meetingTime, selectedGroup.getName(),
-                currentUser.getUsername());
-        meeting.addAttendee(currentUser.getUsername());
-        // updating all meetings and group meetings
-        allMeetings.add(meeting);
-        selectedGroup.addMeeting(meeting);*/
 
       // displaying information to the user
       savedChangesLabel1.setText("Saved Changes");
@@ -655,7 +660,6 @@ public class MainScreenController {
    * The button to direct the user to the meeting details page and give the selected meeting to the
    * controller for the meeting details page.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
@@ -751,20 +755,6 @@ public class MainScreenController {
   }
 
   /**
-   * The tables should be updated every time the user clicks on the respective tab.
-   *
-   * @deprecated
-   */
-  void updateMeetings() {
-    // adding all of the meetings into the all meetings array
-    for (Group g : allGroups) {
-      for (Meeting m : g.getMeetings()) {
-        allMeetings.add(m);
-      }
-    }
-  }
-
-  /**
    * Fills the combo boxes by retrieving the current list of pre-made tags. The cbo uses tags, but
    * may be converted to using enumerations of TagCollection.
    *
@@ -788,28 +778,31 @@ public class MainScreenController {
    */
   @FXML
   private void addMeetingButtonClicked() {
-    if (editGroupSelector.getSelectionModel().isEmpty()) {
-      if (addMeetingDatePicker.getValue() != null
-          && addMeetingLocationTextfield.getText() != null
-          && addMeetingTimePicker.getValue() != null) {
+    if (!editGroupSelector.getSelectionModel().isEmpty()) {
+      if (!(addMeetingDatePicker.getValue().toString().length() == 0
+          && addMeetingLocationTextfield.getText().length() == 0
+          && selectTimeTxt.getText().isEmpty())) {
 
         LocalDate meetingDate = addMeetingDatePicker.getValue();
         String meetingLoc = addMeetingLocationTextfield.getText();
         // replace combo box with string regex
-        String meetingTime = addMeetingTimePicker.getSelectionModel().getSelectedItem();
-        if (Pattern.matches(TIMEREGEX, meetingTime)) {
+        String meetingTime = selectTimeTxt.getText();
+        if (Pattern.matches(TIME_REGEX, meetingTime)) {
           meetingTime = meetingTime.concat(meridiemBox.getValue());
           Meeting newMeeting = new Meeting(meetingDate, meetingLoc, meetingTime,
               editGroupSelector.getValue().getName());
           editGroupSelector.getValue().addMeeting(newMeeting);
           addMeetingLocationTextfield.clear();
-          addMeetingTimePicker.getSelectionModel().clearSelection();
+          selectTimeTxt.clear();
           //reset edit group tab
           fillEditGroupTab();
           //confirm add meeting
           messageLabelEGT.setText("Meeting added");
           //send message to text file to update group meeting data
+          //TODO:
+          //should this message be sent when the user logs off? I need to access Cameron's seq. diag
           TextFileManager.addMeetingToFile(newMeeting);
+          System.out.println(newMeeting.toString());
         } else {
           //invalid time input, handle error
           messageLabelEGT.setText("Invalid time. Please try again.");
@@ -839,14 +832,16 @@ public class MainScreenController {
       if (mouseEvent.getClickCount() == 2) {
         if (!editMeetingTable.getSelectionModel().isEmpty()) {
           int index = editMeetingTable.getSelectionModel().getSelectedIndex();
-          //get a reference to a meeting in the group's list of meeitngs
+          //get a reference to a meeting in the group's list of meetings
           Meeting selectedMeeting = editGroupSelector.getSelectionModel().getSelectedItem()
               .getMeetings().get(index);
-          // Make that the selected meeting in the MeetDetController class
-          EditableMeetDetController.setMeeting(selectedMeeting);
           // switch to the edit meeting scene
-          Parent primaryScreenParent = FXMLLoader
-              .load(getClass().getResource("EditableMeetingDetails.fxml"));
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("EditableMeetingDetails.fxml"));
+          Parent primaryScreenParent = loader.load();
+          EditableMeetDetController c = loader.getController();
+          // Make that the selected meeting in the MeetDetController class
+          c.setCurrentMeeting(selectedMeeting);
+
           Scene primaryScreen = new Scene(primaryScreenParent);
           Stage window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
           window.setScene(primaryScreen);
