@@ -1,5 +1,6 @@
 package io.github.davidstevenrose;
 
+import com.sun.xml.internal.ws.handler.HandlerException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -81,11 +82,6 @@ public class MainScreenController {
    */
   @FXML
   private Label messageLabelEGT;
-  /**
-   * adds meeting to selected group in edit group tab.
-   */
-  @FXML
-  private Button addMeetingButton;
 
   @FXML
   private CheckBox mustIncludeAllCheckBox;
@@ -96,35 +92,10 @@ public class MainScreenController {
   @FXML
   private ChoiceBox<String> searchTag3;
   /**
-   * The tab to create a new group.
-   */
-  @FXML
-  private Tab createGroupTab;
-  /**
-   * The button to submit user input to create a new group.
-   */
-  @FXML
-  private Button createGroupsButton;
-  /**
-   * The tab to view meetings from groups the user has joined.
-   */
-  @FXML
-  private Tab findMeetingsTab;
-  /**
    * The tab to search and view groups for the user to join.
    */
   @FXML
   private Tab searchForGroupsTab;
-  /**
-   * The profile tab to allow the user to toggle between profile and group.
-   */
-  @FXML
-  private Tab profileTabDriver;
-  /**
-   * The lable to print the user's username.
-   */
-  @FXML
-  private Label profileUserNameLab;
   /**
    * The first of four tag choice boxes. Located in create group tab.
    */
@@ -151,9 +122,6 @@ public class MainScreenController {
 
   @FXML
   private ChoiceBox<String> searchTag2;
-
-  @FXML
-  private Button joinGroupsButton;
 
   @FXML
   private TableView<Group> searchGroupTable;
@@ -227,6 +195,9 @@ public class MainScreenController {
   @FXML
   private TextField createGroupTextfield;
 
+  /**
+   * The description area in the create group tab
+   */
   @FXML
   private TextArea addDescriptionTextarea;
 
@@ -234,16 +205,10 @@ public class MainScreenController {
   private TextArea editDescriptionTextArea;
 
   @FXML
-  private Label savedChangesLabel;
-
-  @FXML
   private Label savedChangesLabel1;
 
   @FXML
   private Label joinLabel;
-
-  @FXML
-  private Tab editGroupTab;
 
   @FXML
   private TableView<Meeting> editMeetingTable;
@@ -255,10 +220,10 @@ public class MainScreenController {
   private Label userNameLabel;
 
   // Array list to store all of the groups in
-  private ArrayList<Group> allGroups = new ArrayList<>();
+  static ArrayList<Group> allGroups = new ArrayList<>();
 
   // Array list to store all of the meetings in
-  private ArrayList<Meeting> allMeetings = new ArrayList<>();
+  static ArrayList<Meeting> allMeetings = new ArrayList<>();
 
   // The user currently using the program
   static User currentUser;
@@ -269,6 +234,10 @@ public class MainScreenController {
     editGroupSelector.getSelectionModel().selectedItemProperty()
         .addListener((v, oldVal, newVal) -> fillEditGroupTab());
 
+    //the date picker is not editable
+    addMeetingDatePicker.setEditable(false);
+    //fill the edit group selector
+    populateGroupSelectors();
     /*
     /**
      * ------------------------------------------------------ Profile Code
@@ -332,60 +301,11 @@ public class MainScreenController {
     editMeetingDateCol.setCellValueFactory(new PropertyValueFactory<>("stringDate"));
     editMeetingTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
 
-    //driverMethod();
-
     //clear error message labels - David
     //label in edit group tab
     //TODO: configure style of label
     messageLabelEGT.setText("");
 
-  }
-
-  /**
-   * Driver module for testing program.
-   */
-  private void driverMethod() {
-
-    // testing remove after
-    Group exampleGroup1 =
-        new Group("FGCU Games Group", "A group of FGCU students who like to play video games");
-    Group exampleGroup2 =
-        new Group("FGCU Running Group",
-            "A group of FGCU students who like to get together and run");
-    Group exampleGroup3 =
-        new Group("FGCU Book Club", "A group of FGCU students who like to get together and read");
-    Meeting exampleMeeting1 = new Meeting(LocalDate.now(), "FGCU", "5:00 PM", "FGCU Games Group");
-    Meeting exampleMeeting2 =
-        new Meeting(LocalDate.of(2019, 10, 20), "FGCU", "5:00 PM", "FGCU Running Group");
-    Meeting exampleMeeting3 =
-        new Meeting(LocalDate.of(2019, 10, 25), "not FGCU", "5:00 PM", "FGCU Book Club");
-    // remove
-    // values used for testing and demo, remove later
-    allMeetings.add(exampleMeeting1);
-    allMeetings.add(exampleMeeting2);
-    allMeetings.add(exampleMeeting3);
-    exampleGroup1.addTag("Gaming");
-    exampleGroup2.addTag("Fitness");
-    exampleGroup2.addTag("Sports");
-    exampleGroup3.addTag("Reading");
-    allGroups.add(exampleGroup1);
-    allGroups.add(exampleGroup2);
-    allGroups.add(exampleGroup3);
-    // remove later
-
-    // Hiding the editGroupsTab on startup
-    //temporary comment out artifact from master branch
-    //if (currentUser.getGroupLeader().size() == 0) {
-    // tabPane.getTabs().remove(editGroupTab);
-    //}
-
-    // Setting the first element as selected
-    searchGroupTable.getSelectionModel().selectFirst();
-    findMeetingsTable.getSelectionModel().selectFirst();
-    searchTag1.getSelectionModel().selectFirst();
-    searchTag2.getSelectionModel().selectFirst();
-    searchTag3.getSelectionModel().selectFirst();
-    searchTag4.getSelectionModel().selectFirst();
   }
 
   /**
@@ -398,22 +318,25 @@ public class MainScreenController {
   private Group createGroup() throws Exception {
     String groupName = createGroupTextfield.getText();
     ArrayList<String> tags = new ArrayList<>();
-    if (addTag1.getSelectionModel().getSelectedIndex() > 0) {
+    if (addTag1.getSelectionModel().getSelectedItem() != null) {
       tags.add(addTag1.getValue());
     }
-    if (addTag2.getSelectionModel().getSelectedIndex() > 0) {
+    if (addTag2.getSelectionModel().getSelectedItem() != null) {
       tags.add(addTag2.getValue());
     }
-    if (addTag3.getSelectionModel().getSelectedIndex() > 0) {
+    if (addTag3.getSelectionModel().getSelectedItem() != null) {
       tags.add(addTag3.getValue());
     }
-    if (addTag4.getSelectionModel().getSelectedIndex() > 0) {
+    if (addTag4.getSelectionModel().getSelectedItem() != null) {
       tags.add(addTag4.getValue());
     }
     String desc =
         ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
     if (tags.size() == 0 || groupName.isEmpty()) {
       throw new Exception();
+    }
+    for (String s : tags) {
+      System.out.println(s);
     }
     return new Group(groupName, desc, tags, currentUser.getUsername());
   }
@@ -516,7 +439,6 @@ public class MainScreenController {
    */
   @FXML
   void createGroupsButtonClicked() {
-    //TODO: encapsulate some labels for exception scenarios.
     createGroupErrorMsg.setVisible(false);
     Group newGroup;
     try {
@@ -528,12 +450,16 @@ public class MainScreenController {
     //adds new group to user's collection of groups
     currentUser.addGroupLeader(newGroup);
     allGroups.add(newGroup);
-    //return to searchForGroups tab
+    //return to searchForGroups tab (broken)
     tabPane.getSelectionModel().select(searchForGroupsTab);
+    //add group to text file
     TextFileManager.addGroupToFile(newGroup);
+    //update user information with new group
+    TextFileManager.editUser(LoginController.users);
     populateGroupSelectors();
     System.out.println("New group added to database.");
     createGroupTextfield.clear();
+    addDescriptionTextarea.clear();
   }
 
   /**
@@ -544,6 +470,9 @@ public class MainScreenController {
   private void fillEditGroupTab() {
     editMeetingTable.getItems().clear();
     Group selectedGroup = editGroupSelector.getValue();
+    if(selectedGroup==null){
+      return;
+    }
     List<String> tags = selectedGroup.getTags();
     try {
       editTag1.setValue(tags.get(0));
@@ -564,47 +493,39 @@ public class MainScreenController {
    */
   @FXML
   void editGroupsButtonClicked() {
-    try {
-      Group selectedGroup = new Group("error", "error"); // only if broken will happen
-      for (Group g : currentUser.getGroupLeader()) {
-        if (g.isEqualTo(editGroupSelector.getValue())) {
-          selectedGroup = g;
-        }
-      }
-      // updating description
-      selectedGroup.setDescription(editDescriptionTextArea.getText());
+    Group selectedGroup = editGroupSelector.getValue();
+    if (selectedGroup == null) {
+      savedChangesLabel1.setText("Please select a group.");
+      return;
+    }
+    // updating description
+    selectedGroup.setDescription(editDescriptionTextArea.getText());
 
-      // Create an array list for the tags
-      ArrayList<String> tags = new ArrayList<>();
-      // ternary to set the tag to "" if empty instead of null
-      String tag1 = ((editTag1.getValue() == null) ? "" : editTag1.getValue());
-      String tag2 = ((editTag2.getValue() == null) ? "" : editTag2.getValue());
-      String tag3 = ((editTag3.getValue() == null) ? "" : editTag3.getValue());
-      String tag4 = ((editTag4.getValue() == null) ? "" : editTag4.getValue());
-      // Adding tags to tags array
-      tags.add(tag1);
-      tags.add(tag2);
-      tags.add(tag3);
-      tags.add(tag4);
+    // Create an array list for the tags
+    ArrayList<String> tags = new ArrayList<>();
+    // ternary to set the tag to "" if empty instead of null
+    String tag1 = ((editTag1.getValue() == null) ? "" : editTag1.getValue());
+    String tag2 = ((editTag2.getValue() == null) ? "" : editTag2.getValue());
+    String tag3 = ((editTag3.getValue() == null) ? "" : editTag3.getValue());
+    String tag4 = ((editTag4.getValue() == null) ? "" : editTag4.getValue());
+    // Adding tags to tags array
+    tags.add(tag1);
+    tags.add(tag2);
+    tags.add(tag3);
+    tags.add(tag4);
 
-      // setting the tags to the selected ones
-      selectedGroup.replaceTags(tags);
+    // setting the tags to the selected ones
+    selectedGroup.replaceTags(tags);
 
-      // creating a new meeting if all information entered
+    // displaying information to the user
+    savedChangesLabel1.setText("Saved Changes");
 
-      // displaying information to the user
-      savedChangesLabel1.setText("Saved Changes");
-
-      // Resetting fields
+      /*/ Resetting fields, do these really need to be cleared?
       editDescriptionTextArea.clear();
       editTag1.setValue("");
       editTag2.setValue("");
       editTag3.setValue("");
-      editTag4.setValue("");
-
-    } catch (Exception e) {
-      System.out.println("Please enter all non-optional fields");
-    }
+      editTag4.setValue("");*/
   }
 
   /**
@@ -692,7 +613,7 @@ public class MainScreenController {
    * This takes you to the edit profile screen.
    *
    * @param event click the button to engage
-   * @throws IOException
+   * @throws IOException if the FXMLLoader could not load the resource
    * @author Darian + Nicholas Hansen
    */
   @FXML
@@ -756,6 +677,8 @@ public class MainScreenController {
     for (Group g : currentUser.getGroupMember()) {
       groupsPicker.getItems().add(g.getName());
     }
+    editGroupSelector.getItems().add(null);
+    groupsPicker.getItems().add(null);
   }
 
   /**
@@ -772,6 +695,7 @@ public class MainScreenController {
     }
     for (ChoiceBox<String> cho : tagBoxes) {
       cho.getItems().addAll(tags);
+      cho.getItems().add(null);
     }
   }
 
@@ -783,7 +707,7 @@ public class MainScreenController {
   @FXML
   private void addMeetingButtonClicked() {
     if (!editGroupSelector.getSelectionModel().isEmpty()) {
-      if (!(addMeetingDatePicker.getValue().toString().length() == 0
+      if (!(addMeetingDatePicker.getValue() == null
           && addMeetingLocationTextfield.getText().length() == 0
           && selectTimeTxt.getText().isEmpty())) {
 
@@ -793,11 +717,13 @@ public class MainScreenController {
         String meetingTime = selectTimeTxt.getText();
         if (Pattern.matches(TIME_REGEX, meetingTime)) {
           meetingTime = meetingTime.concat(meridiemBox.getValue());
-          Meeting newMeeting = new Meeting(meetingDate, meetingLoc, meetingTime,
-              editGroupSelector.getValue().getName());
+          Meeting newMeeting = new Meeting(meetingLoc, meetingDate, meetingTime,
+              editGroupSelector.getValue().getName(),
+              editGroupSelector.getValue().getGroupLeaderName());
           editGroupSelector.getValue().addMeeting(newMeeting);
           addMeetingLocationTextfield.clear();
           selectTimeTxt.clear();
+          addMeetingDatePicker.setValue(null);
           //reset edit group tab
           fillEditGroupTab();
           //confirm add meeting

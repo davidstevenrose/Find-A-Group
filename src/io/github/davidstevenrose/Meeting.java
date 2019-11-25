@@ -24,13 +24,12 @@ public class Meeting {
   private ArrayList<String> attendees;
 
   /**
-   * Creates a meeting with a meeting date, location, time, and name of host group. Sets the meeting
-   * status to active.
-   *
    * @param date      the date
    * @param location  the location
    * @param time      the time
    * @param groupName the name of the host group
+   * @deprecated no way to get name of host from name of group Creates a meeting with a meeting
+   * date, location, time, and name of host group. Sets the meeting status to active.
    */
   Meeting(LocalDate date, String location, String time, String groupName) {
     this.time = time;

@@ -1,6 +1,8 @@
 package io.github.davidstevenrose;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,6 +24,9 @@ import javafx.stage.Stage;
  * @author David
  */
 public class EditableMeetDetController {
+
+  @FXML
+  private ChoiceBox<String> meridiumEditBox;
 
   @FXML
   private Label groupNameLabel;
@@ -50,9 +55,10 @@ public class EditableMeetDetController {
 
   /**
    * Set the pointer to the meeting to edit to the passed reference of the meeting to edit.
+   *
    * @param m a reference to the meeting to edit
    */
-  void setCurrentMeeting(Meeting m){
+  void setCurrentMeeting(Meeting m) {
     localCurrentMeeting = m;
     init();
   }
@@ -61,12 +67,25 @@ public class EditableMeetDetController {
    * This method runs when the user switches to this screen and initializes all of the values.
    */
   private void init() {
+    //add content to meridium box
+    meridiumEditBox.getItems().addAll("AM", "PM");
     // Getting the attendees for the meeting
     observableAttendees.addAll(localCurrentMeeting.getAttendees());
 
     groupNameLabel.setText(localCurrentMeeting.getGroupName());
+    dateLabel.setEditable(false);
     dateLabel.setChronology(localCurrentMeeting.getDate().getChronology());
-    timeLabel.setText(localCurrentMeeting.getTime());
+    dateLabel.setValue(localCurrentMeeting.getDate());
+    String time = localCurrentMeeting.getTime()
+        .substring(0, localCurrentMeeting.getTime().length() - 2);
+    String med = localCurrentMeeting.getTime()
+        .substring(localCurrentMeeting.getTime().length() - 2);
+    timeLabel.setText(time);
+    if (med.equals("AM")) {
+      meridiumEditBox.setValue("AM");
+    } else {
+      meridiumEditBox.setValue("PM");
+    }
     locationLabel.setText(localCurrentMeeting.getLocation());
     statusBox.getItems().addAll(MeetingStatus.values());
     statusBox.setValue(localCurrentMeeting.getStatus());
@@ -85,11 +104,12 @@ public class EditableMeetDetController {
   private void saveEditsClicked(MouseEvent event) throws IOException {
     //check input for date
     boolean badInput = true;
-    if (!dateLabel.getValue().toString().isEmpty()) {
+    if (dateLabel.getValue() != null && !dateLabel.getValue().toString().isEmpty()) {
       //check input for time
-      if (timeLabel.getText().matches(MainScreenController.TIME_REGEX)) {
+      if (timeLabel.getText() != null && timeLabel.getText()
+          .matches(MainScreenController.TIME_REGEX)) {
         //check input for location
-        if (!locationLabel.getText().isEmpty()) {
+        if (locationLabel.getText() != null && !locationLabel.getText().isEmpty()) {
           //check for status
           if (statusBox.getValue() != null) {
             localCurrentMeeting.setLocation(locationLabel.getText());
