@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added method call to add new meeting to file in MainScreenController&#10;editGroupsButtonClicked method. Added method call to edit meetings to &#10;MeetDetController backButtonClicked method.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Users now save groups that they create. Moved some UI elements because they were being obscured.">
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +61,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -113,8 +115,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="recentsLimit" value="5" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="java.lang" />
+      <recent name="io.github.davidstevenrose" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cam12\Fundementals\FindAGroup\res" />
       <recent name="C:\Users\cam12\Fundementals\FindAGroup\src\io\github\davidstevenrose" />
@@ -132,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -181,20 +189,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextFileManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.TextFileManager" />
-      <module name="Find-A-Group" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.davidstevenrose.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -235,7 +229,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.TextFileManager" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -263,11 +258,23 @@
       <workItem from="1572543328656" duration="4532000" />
       <workItem from="1572977594367" duration="8030000" />
       <workItem from="1573154757921" duration="5194000" />
-      <workItem from="1574131451195" duration="6198000" />
-      <workItem from="1574285328591" duration="57000" />
-      <workItem from="1574349885128" duration="9749000" />
-      <workItem from="1574450547833" duration="1427000" />
-      <workItem from="1574712180355" duration="841000" />
+      <workItem from="1573223338107" duration="1549000" />
+      <workItem from="1573506948269" duration="3926000" />
+      <workItem from="1573605904498" duration="5654000" />
+      <workItem from="1573699154896" duration="708000" />
+      <workItem from="1573837933176" duration="270000" />
+      <workItem from="1574003669197" duration="1975000" />
+      <workItem from="1574006000439" duration="10346000" />
+      <workItem from="1574018925044" duration="681000" />
+      <workItem from="1574090701011" duration="3149000" />
+      <workItem from="1574095334382" duration="2416000" />
+      <workItem from="1574098561774" duration="4296000" />
+      <workItem from="1574463059703" duration="9584000" />
+      <workItem from="1574547039296" duration="23000" />
+      <workItem from="1574625721225" duration="287000" />
+      <workItem from="1574626688996" duration="4902000" />
+      <workItem from="1574632004617" duration="7306000" />
+      <workItem from="1574640218674" duration="1564000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -388,105 +395,42 @@
       <option name="project" value="LOCAL" />
       <updated>1573184968469</updated>
     </task>
-    <task id="LOCAL-00018" summary="Fixed a bug on the edit profile screen where it would say that &#10;not all of the fields were complete even when they were complete.">
-      <created>1573187914230</created>
+    <task id="LOCAL-00018" summary="Added override methods in Group class. Edited fxml for add meeting module. Completed add meeting module and ready for testing. Also added gitignore.">
+      <created>1573699533463</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1573187914230</updated>
+      <updated>1573699533463</updated>
     </task>
-    <task id="LOCAL-00019" summary="Fixed a bug on the edit profile screen where it would say that &#10;not all of the fields were complete even when they were complete.">
-      <created>1573234338567</created>
+    <task id="LOCAL-00019" summary="Merged branch Darian into David">
+      <created>1574098721198</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1573234338567</updated>
+      <updated>1574098721198</updated>
     </task>
-    <task id="LOCAL-00020" summary="Reverted to previous version of the MainScreenController class">
-      <created>1573236736986</created>
+    <task id="LOCAL-00020" summary="Added regex for password.">
+      <created>1574100241548</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1573236736986</updated>
+      <updated>1574100241548</updated>
     </task>
-    <task id="LOCAL-00021" summary="Commented out blank test account in LoginController">
-      <created>1573245295743</created>
+    <task id="LOCAL-00021" summary="Merge from Darian">
+      <created>1574626770470</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1573245295743</updated>
+      <updated>1574626770470</updated>
     </task>
-    <task id="LOCAL-00022" summary="Fixed a bug where the group leader was added to the attendees list twice&#10;when creating a meeting.">
-      <created>1573250700661</created>
+    <task id="LOCAL-00022" summary="Users now save groups that they create. Moved some UI elements because they were being obscured.">
+      <created>1574642063672</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1573250700661</updated>
+      <updated>1574642063672</updated>
     </task>
-    <task id="LOCAL-00023" summary="Created TextFileManager class with methods to add users, groups, and &#10;meetings to text files. Added comment to User class to clarify use of no&#10;argument constructor. Fixed suspected typo in Meeting class comment. &#10;Added Javadoc comment for MeetDetController class and removed unused &#10;imports. Made the change that Darian requested on the discord in the &#10;MainScreenController.">
-      <created>1573869852183</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1573869852183</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Added editUser, editGroup, editMeeting, and loadAll methods to the &#10;TextFileManager class. Removed unnecessary imports and public modifiers&#10;from existing methods in the TextFileManager class.">
-      <created>1574135820247</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1574135820247</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Added the loadAll method to the LoginController class in the initialize&#10;method. Made the ArrayLists allGroups and allMeetings in the &#10;MainScreenController class static.">
-      <created>1574351067916</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1574351067916</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Added methods to modify appropriate text file to MainScreenController &#10;joinGroupButtonClick, createGroupsButtonClicked, and &#10;editGroupsButtonClicked methods. Added javadoc comment to LoginController&#10;initialize method.">
-      <created>1574352488451</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1574352488451</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added method to add new user to the text file in the CreateAccountController&#10;class createAccountButtonClicked method.">
-      <created>1574352665507</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1574352665507</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Added method to add new user to the text file in the EditProfileController&#10;class submitChanges method.">
-      <created>1574352828450</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1574352828450</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added method call to add new meeting to file in MainScreenController&#10;editGroupsButtonClicked method. Added method call to edit meetings to &#10;MeetDetController backButtonClicked method.">
-      <created>1574353394739</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1574353394739</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Removed demo groups and meetings from MainScreenController. They are &#10;stored in the text files now.">
-      <created>1574354002133</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1574354002133</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Added method call to add new meeting to file in MainScreenController&#10;editGroupsButtonClicked method. Added method call to edit meetings to &#10;MeetDetController backButtonClicked method.">
-      <created>1574714704282</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1574714704282</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +451,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Creating new branch" />
+    <MESSAGE value="added login screen fxml and controller, added primary screen fxml" />
+    <MESSAGE value="Added some logic to the code and made it transfer between screens. Added&#10;CSS file and some styling." />
+    <MESSAGE value="Added create account screen" />
+    <MESSAGE value="Added functionality for creating and editing accounts. Allowed&#10;for meetings to be displayed, but not filtered yet." />
     <MESSAGE value="Added new tab for create account and edit account. Fixed logic to &#10;work with new tab." />
     <MESSAGE value="Fixed search for meetings demo functionality" />
     <MESSAGE value="Fixed minor issues" />
@@ -521,18 +472,23 @@
     <MESSAGE value="Added list to be able to see attendees on the meeting details screen" />
     <MESSAGE value="Handled conflicts between branches" />
     <MESSAGE value="Fixed bug where all groups were always being shown when searching for&#10; groups without the &quot;must include all&quot; checkbox checked" />
-    <MESSAGE value="Fixed a bug on the edit profile screen where it would say that &#10;not all of the fields were complete even when they were complete." />
-    <MESSAGE value="Reverted to previous version of the MainScreenController class" />
-    <MESSAGE value="Commented out blank test account in LoginController" />
-    <MESSAGE value="Fixed a bug where the group leader was added to the attendees list twice&#10;when creating a meeting." />
-    <MESSAGE value="Created TextFileManager class with methods to add users, groups, and &#10;meetings to text files. Added comment to User class to clarify use of no&#10;argument constructor. Fixed suspected typo in Meeting class comment. &#10;Added Javadoc comment for MeetDetController class and removed unused &#10;imports. Made the change that Darian requested on the discord in the &#10;MainScreenController." />
-    <MESSAGE value="Added editUser, editGroup, editMeeting, and loadAll methods to the &#10;TextFileManager class. Removed unnecessary imports and public modifiers&#10;from existing methods in the TextFileManager class." />
-    <MESSAGE value="Added the loadAll method to the LoginController class in the initialize&#10;method. Made the ArrayLists allGroups and allMeetings in the &#10;MainScreenController class static." />
-    <MESSAGE value="Added methods to modify appropriate text file to MainScreenController &#10;joinGroupButtonClick, createGroupsButtonClicked, and &#10;editGroupsButtonClicked methods. Added javadoc comment to LoginController&#10;initialize method." />
-    <MESSAGE value="Added method to add new user to the text file in the CreateAccountController&#10;class createAccountButtonClicked method." />
-    <MESSAGE value="Added method to add new user to the text file in the EditProfileController&#10;class submitChanges method." />
-    <MESSAGE value="Removed demo groups and meetings from MainScreenController. They are &#10;stored in the text files now." />
-    <MESSAGE value="Added method call to add new meeting to file in MainScreenController&#10;editGroupsButtonClicked method. Added method call to edit meetings to &#10;MeetDetController backButtonClicked method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method call to add new meeting to file in MainScreenController&#10;editGroupsButtonClicked method. Added method call to edit meetings to &#10;MeetDetController backButtonClicked method." />
+    <MESSAGE value="Corrected merge from branch David to Master" />
+    <MESSAGE value="Added override methods in Group class. Edited fxml for add meeting module. Completed add meeting module and ready for testing. Also added gitignore." />
+    <MESSAGE value="Merged branch Darian into David" />
+    <MESSAGE value="Added regex for password." />
+    <MESSAGE value="Merge from Darian" />
+    <MESSAGE value="Users now save groups that they create. Moved some UI elements because they were being obscured." />
+    <option name="LAST_COMMIT_MESSAGE" value="Users now save groups that they create. Moved some UI elements because they were being obscured." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

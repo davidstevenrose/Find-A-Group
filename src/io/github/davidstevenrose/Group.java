@@ -3,7 +3,7 @@ package io.github.davidstevenrose;
 import java.util.ArrayList;
 
 /**
- * The blueprint for a Group
+ * The blueprint for a Group.
  *
  * @author drose
  */
@@ -16,7 +16,7 @@ public class Group {
   private ArrayList<Meeting> meetings;
 
   /**
-   * Creates a new group with a name and description
+   * Creates a new group with a name and description.
    *
    * @param name        the group name
    * @param description the group description
@@ -31,7 +31,7 @@ public class Group {
   }
 
   /**
-   * Creates a group with a name, description, and group tags
+   * Creates a group with a name, description, and group tags.
    *
    * @param name        group name
    * @param description group description
@@ -47,7 +47,7 @@ public class Group {
   }
 
   /**
-   * Creates a group with a name, description, group tags, and accepts the name of the leader
+   * Creates a group with a name, description, group tags, and accepts the name of the leader.
    *
    * @param name        group name
    * @param description group description
@@ -65,7 +65,7 @@ public class Group {
   }
 
   /**
-   * Gets the name of the group
+   * Gets the name of the group.
    *
    * @return a String name
    */
@@ -74,7 +74,7 @@ public class Group {
   }
 
   /**
-   * Set the name of the group
+   * Set the name of the group.
    *
    * @param name a name
    */
@@ -83,7 +83,7 @@ public class Group {
   }
 
   /**
-   * Get the description of the group
+   * Get the description of the group.
    *
    * @return the description (without format)
    */
@@ -92,7 +92,7 @@ public class Group {
   }
 
   /**
-   * Set the group description
+   * Set the group description.
    *
    * @param description a description
    */
@@ -101,7 +101,7 @@ public class Group {
   }
 
   /**
-   * Get the group's list of tags
+   * Get the group's list of tags.
    *
    * @return a list of tags
    */
@@ -110,7 +110,7 @@ public class Group {
   }
 
   /**
-   * Replaces the group's list of tags with an entirely new list
+   * Replaces the group's list of tags with an entirely new list.
    *
    * @param tags a new list of tags
    */
@@ -119,7 +119,7 @@ public class Group {
   }
 
   /**
-   * Add a tag to the group's list of tags
+   * Add a tag to the group's list of tags.
    *
    * @param tag a tag
    */
@@ -128,7 +128,7 @@ public class Group {
   }
 
   /**
-   * Replaces the group's list of meetings with an entirely new list
+   * Replaces the group's list of meetings with an entirely new list.
    *
    * @param meetings the new list of meetings
    */
@@ -137,7 +137,7 @@ public class Group {
   }
 
   /**
-   * Gets the group's list of meetings
+   * Gets the group's list of meetings.
    *
    * @return a list of meetings
    */
@@ -146,7 +146,7 @@ public class Group {
   }
 
   /**
-   * Adds a meeting to the group
+   * Adds a meeting to the group.
    *
    * @param meeting a new group meeting
    */
@@ -161,5 +161,25 @@ public class Group {
    */
   public String getGroupLeaderName() {
     return groupLeaderName;
+  }
+
+  /**
+   * Gets a string representation for a Group object. Represented by the group's name.
+   *
+   * @return the name of the group
+   */
+  @Override
+  public String toString() {
+    return getName();
+  }
+
+  /**
+   * Compares two Group objects by name of group.
+   *
+   * @param group the other group to compare to
+   * @return true if the group names are the same, false otherwise
+   */
+  public boolean isEqualTo(Group group) {
+    return getName().equals(group.getName());
   }
 }

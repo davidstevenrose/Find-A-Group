@@ -1,5 +1,6 @@
 package io.github.davidstevenrose;
 
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,10 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 /**
- * This is the controller class for the edit profile screen
+ * This is the controller class for the edit profile screen.
  *
  * @author Nicholas Hansen + Darian
  */
