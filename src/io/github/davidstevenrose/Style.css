@@ -36,7 +36,7 @@
 }
 
 
-#errorLabel {
+.errorLabel {
     -fx-font-weight: bold;
     -fx-font-size: 14pt
 }
@@ -60,7 +60,7 @@
 
 
 .tab-pane > .tab-header-area > .headers-region > .tab:top {
-    -fx-base: seagreen;
+    -fx-base: derive(lightseagreen, -20%);
     /*-fx-background-color: mediumpurple;*/
 }
 
@@ -71,7 +71,7 @@
 
 .tab-pane > .tab-header-area > .headers-region > .tab:selected {
     /* -fx-background-color: -fx-outer-border, purple, -fx-background;*/
-    -fx-base: derive(mediumvioletred, 40%);
+    -fx-base: derive(lightcoral, 35%);
 }
 
 .tab-pane .tab-header-area .headers-region .tab:selected .tab-container .tab-label {
@@ -155,6 +155,11 @@
     -fx-font-family: Verdana;
 }
 
+.text-label{
+    -fx-font-size: 12pt;
+}
+
+
 .hyperlink {
     -fx-background-color: derive(red, -40%);
     -fx-text-fill: gold;
@@ -174,9 +179,10 @@
 }
 
 .choice-box .label {
-    -fx-text-fill: white;
+    -fx-text-fill: darkgreen;
     -fx-font-size: 12.5;
     -fx-font-family: Verdana;
+
 }
 
 .choice-box .context-menu {
@@ -231,7 +237,8 @@
 /*Code for odd rows of cells on tables*/
 .table-row-cell:odd {
     /*-fx-base: #ee4466;*/
-    -fx-base: coral;
+    /*-fx-base: coral;*/
+    -fx-base:turquoise;
     /*-fx-background-color: #ffb871;*/
 
 }
@@ -240,17 +247,18 @@
 .table-row-cell:even {
     /*-fx-base: purple;
     -fx-background-color: #f6a2b3;*/
-    -fx-base: derive(mediumvioletred, 50%);
+    /*-fx-base: derive(mediumvioletred, 50%);*/
+    -fx-base: deepskyblue;
 }
 
 /*This changes the way the borders are colored inside of a table*/
 .table-view:row-selection, .table-view:row-selection:selected {
-    -fx-light-text-color: derive(darkblue, 40%);
+    -fx-light-text-color: black;
 }
 
 /*This changes the color of when you have a cell or row selected in a table*/
 .table-row-cell:focused, .table-row-cell:selected {
-    -fx-background-color: lightskyblue;
+    -fx-background-color: derive(lightseagreen, 30%);
 
 }
 

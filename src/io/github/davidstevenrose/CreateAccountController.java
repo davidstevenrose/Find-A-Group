@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
 public class CreateAccountController {
 
   @FXML private PasswordField confirmPasswordField;
@@ -30,22 +29,24 @@ public class CreateAccountController {
 
   @FXML private Button createAccountButton;
 
+  @FXML private Button cancelAccountButton;
+
   @FXML
   void createAccountButtonClicked(MouseEvent event) throws IOException {
-    // get user input data
+    // get user input data and set as local variables
+    errorLabel.setVisible(true);
     String username = usernameField.getText();
     String password = passwordField.getText();
     String confirmPassword = confirmPasswordField.getText();
     String email = emailField.getText();
     String confirmEmail = confirmEmailField.getText();
+
     // check if information added correctly
     if (!password.equals(confirmPassword)) {
       errorLabel.setText("Password do not match");
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
-    } else if (!usernameField.getText().isEmpty()
-            && !passwordField.getText().isEmpty()
-            && !emailField.getText().isEmpty()) {
+    } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
       // write to database later
       LoginController.users.add(new User(username, password, email));
 
@@ -60,7 +61,27 @@ public class CreateAccountController {
       window.setScene(primaryScreen);
       window.show();
     } else {
+      passwordField.setStyle("-fx-base:mediumvioletred");
+      confirmPasswordField.setStyle("-fx-base:mediumvioletred");
+      emailField.setStyle("-fx-base:mediumvioletred");
+      confirmEmailField.setStyle("-fx-base:mediumvioletred");
+      usernameField.setStyle("-fx-base:mediumvioletred");
       errorLabel.setText("Please complete all fields");
     }
+  }
+
+  @FXML
+  void cancelAccountButtonClicked(MouseEvent event) throws IOException {
+
+    // Creating scene
+    Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+    Scene primaryScreen = new Scene(primaryScreenParent);
+
+    // Getting the stage
+    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+    // Setting stage and displaying
+    window.setScene(primaryScreen);
+    window.show();
   }
 }

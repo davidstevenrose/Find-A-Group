@@ -656,7 +656,6 @@ public class MainScreenController {
    * controller for the meeting details page.
    *
    * @param event The mouse click event created by the user clicking on the button
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
