@@ -470,7 +470,7 @@ public class MainScreenController {
   private void fillEditGroupTab() {
     editMeetingTable.getItems().clear();
     Group selectedGroup = editGroupSelector.getValue();
-    if(selectedGroup==null){
+    if (selectedGroup == null) {
       return;
     }
     List<String> tags = selectedGroup.getTags();
