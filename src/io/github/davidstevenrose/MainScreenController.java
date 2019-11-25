@@ -347,8 +347,7 @@ public class MainScreenController {
     try {
       // Get the values they entered
       String name = createGroupTextfield.getText();
-      String description =
-          ((addDescriptionTextarea.getText() == null) ? "" : addDescriptionTextarea.getText());
+      String description = addDescriptionTextarea.getText();
 
       // Create an array list for the tags
       ArrayList<String> tags = new ArrayList<>();
@@ -363,7 +362,7 @@ public class MainScreenController {
       tags.add(tag3);
       tags.add(tag4);
       // Creating new group with parameters from user
-      Group group = new Group(name, description, tags);
+      Group group = new Group(name, description, tags, currentUser.getUsername());
       // Adding to groups ArrayList
       allGroups.add(group);
       // Adding to the groups.txt file
