@@ -21,7 +21,7 @@ public class Main extends Application {
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
     primaryStage.setTitle("2sday's Find A Group");
-    primaryStage.setScene(new Scene(root, 675, 600));
+    primaryStage.setScene(new Scene(root, 650, 500));
     primaryStage.show();
 
 
