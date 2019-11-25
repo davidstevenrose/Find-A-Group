@@ -1,8 +1,6 @@
 package io.github.davidstevenrose;
 
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -113,7 +111,7 @@ public class EditableMeetDetController {
           //check for status
           if (statusBox.getValue() != null) {
             localCurrentMeeting.setLocation(locationLabel.getText());
-            localCurrentMeeting.setTime(timeLabel.getText());
+            localCurrentMeeting.setTime(timeLabel.getText().trim() + meridiumEditBox.getValue());
             localCurrentMeeting.setDate(dateLabel.getValue());
             localCurrentMeeting.setStatus(statusBox.getValue());
             badInput = false;
