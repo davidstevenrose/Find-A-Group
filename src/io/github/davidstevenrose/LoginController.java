@@ -1,4 +1,5 @@
 package io.github.davidstevenrose;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -52,7 +53,6 @@ public class LoginController {
     boolean validLogin = false;
     String username = usernameField.getText();
     String password = passwordField.getText();
-
 
     // Creating user to hold login user
     User userToLogIn = new User();
