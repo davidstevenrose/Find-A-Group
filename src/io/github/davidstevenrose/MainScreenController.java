@@ -1,6 +1,5 @@
 package io.github.davidstevenrose;
 
-import com.sun.xml.internal.ws.handler.HandlerException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -148,9 +146,6 @@ public class MainScreenController {
   private DatePicker searchDatePicker;
 
   @FXML
-  private Button searchMeetingsButton;
-
-  @FXML
   private ChoiceBox<String> groupsPicker;
 
   @FXML
@@ -251,10 +246,6 @@ public class MainScreenController {
     // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
     // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
 
-    // Current Groups and Description
-
-    // --------------------------------------------------------
-
     // list of tag choice boxes
     ArrayList<ChoiceBox<String>> tagBoxes = new ArrayList<>();
     tagBoxes.add(searchTag1);
@@ -305,7 +296,6 @@ public class MainScreenController {
     //label in edit group tab
     //TODO: configure style of label
     messageLabelEGT.setText("");
-
   }
 
   /**
@@ -427,9 +417,6 @@ public class MainScreenController {
     }
     // Displaying the groups matching search criteria
     searchGroupTable.setItems(FXCollections.observableArrayList(foundGroups));
-
-    // Displaying that group in the user groups page
-
   }
 
   /**
@@ -444,6 +431,8 @@ public class MainScreenController {
     try {
       newGroup = createGroup();
     } catch (Exception e) {
+      //TODO: make msg fade away
+      createGroupErrorMsg.setStyle("-fx-text-fill: Red");
       createGroupErrorMsg.setVisible(true);
       return;
     }
@@ -495,6 +484,8 @@ public class MainScreenController {
   void editGroupsButtonClicked() {
     Group selectedGroup = editGroupSelector.getValue();
     if (selectedGroup == null) {
+      //TODO: make msg disappear
+      savedChangesLabel1.setStyle("-fx-text-fill: Green");
       savedChangesLabel1.setText("Please select a group.");
       return;
     }
@@ -518,14 +509,9 @@ public class MainScreenController {
     selectedGroup.replaceTags(tags);
 
     // displaying information to the user
+    //TODO: make message fade away after display
+    savedChangesLabel1.setStyle("-fx-text-fill: Red");
     savedChangesLabel1.setText("Saved Changes");
-
-      /*/ Resetting fields, do these really need to be cleared?
-      editDescriptionTextArea.clear();
-      editTag1.setValue("");
-      editTag2.setValue("");
-      editTag3.setValue("");
-      editTag4.setValue("");*/
   }
 
   /**
@@ -727,6 +713,7 @@ public class MainScreenController {
           //reset edit group tab
           fillEditGroupTab();
           //confirm add meeting
+          //TODO: make message fade away
           messageLabelEGT.setText("Meeting added");
           //send message to text file to update group meeting data
           TextFileManager.addMeetingToFile(newMeeting);
@@ -735,6 +722,7 @@ public class MainScreenController {
           //invalid time input, handle error
           messageLabelEGT.setText("Invalid time. Please try again.");
           //TODO: set the style of the message to error style
+
         }
       } else {
         //a required field is missing, handle error
