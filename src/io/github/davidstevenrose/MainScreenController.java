@@ -729,8 +729,6 @@ public class MainScreenController {
           //confirm add meeting
           messageLabelEGT.setText("Meeting added");
           //send message to text file to update group meeting data
-          //TODO:
-          //should this message be sent when the user logs off? I need to access Cameron's seq. diag
           TextFileManager.addMeetingToFile(newMeeting);
           System.out.println(newMeeting.toString());
         } else {
