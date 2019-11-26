@@ -15,7 +15,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * This is the controller class for the edit profile screen.
+ * This is the controller class for the edit profile screen. Haha whaaaat? In this screen, users
+ * will be able to edit their username, email, and password. This class features a lengthy if-else
+ * chain that will check to make sure that the user has not left any fields blank, as well as if the
+ * passwords are correct and match.
  *
  * @author Nicholas Hansen + Darian
  */

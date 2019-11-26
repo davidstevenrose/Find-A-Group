@@ -21,8 +21,8 @@
 .button {
     /*    -fx-background-color: linear-gradient(#0098ff, #42b3ff);*//*
         -fx-background-color: radial-gradient(center 50% 50%, radius 65%, royalblue,lightskyblue);*/
-    -fx-background-color: linear-gradient(to bottom right, royalblue,deepskyblue);
-    -fx-effect: innershadow(one-pass-box,coral,2,1,2,-1);
+    -fx-background-color: linear-gradient(to bottom right, royalblue, deepskyblue);
+    -fx-effect: innershadow(one-pass-box, coral, 2, 1, 2, -1);
     -fx-text-fill: white;
     -fx-font-weight: bold;
 
@@ -40,17 +40,20 @@
     -fx-font-weight: bold;
     -fx-font-size: 14pt
 }
-#editTitle{
+
+#editTitle {
     -fx-text-fill: midnightblue;
 }
-#password_Error{
+
+#password_Error {
     -fx-text-fill: red;
     -fx-font-weight: bold;
 }
-#userNameLabel{
+
+#userNameLabel {
     -fx-font-weight: bold;
     -fx-text-fill: darkblue;
-    -fx-effect: dropshadow(one-pass-box,white,1,2,1,1);
+    -fx-effect: dropshadow(one-pass-box, white, 1, 2, 1, 1);
 }
 
 .tab-header-background {
@@ -150,12 +153,14 @@
 
 /*******************************/
 
-.label {
+.label, .check-box {
     -fx-text-fill: brown;
     -fx-font-family: Verdana;
 }
 
-.text-label{
+/*This is a class specifically for the labels that are displaying text only.
+Meaning they are not within choice boxes, or buttons.*/
+.text-label {
     -fx-font-size: 12pt;
 }
 
@@ -179,8 +184,8 @@
 }
 
 .choice-box .label {
-    -fx-text-fill: darkgreen;
-    -fx-font-size: 12.5;
+    -fx-text-fill: #fff;
+    /*-fx-font-size: 12.5;*/
     -fx-font-family: Verdana;
 
 }
@@ -238,7 +243,7 @@
 .table-row-cell:odd {
     /*-fx-base: #ee4466;*/
     /*-fx-base: coral;*/
-    -fx-base:turquoise;
+    -fx-base: turquoise;
     /*-fx-background-color: #ffb871;*/
 
 }
@@ -290,13 +295,14 @@
 }
 
 /*This changes the color of the scrollbars within the gui*/
-.scroll-bar:vertical .thumb{
+.scroll-bar:vertical .thumb {
     -fx-base: royalblue;
     -fx-background-color: linear-gradient(deepskyblue, #add5ff, lightseagreen);
 }
-.scroll-bar:horizontal .thumb{
-    -fx-base:royalblue;
-    -fx-background-color: linear-gradient(to left, deepskyblue,#add5ff,lightseagreen);
+
+.scroll-bar:horizontal .thumb {
+    -fx-base: royalblue;
+    -fx-background-color: linear-gradient(to left, deepskyblue, #add5ff, lightseagreen);
 }
 
 .scroll-bar, .table-view .scroll-bar {
