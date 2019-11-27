@@ -3,6 +3,7 @@
 <!--@author: Nicholas Hansen + Darian
 This file pertains to the edit profile screen-->
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -12,36 +13,48 @@ This file pertains to the edit profile screen-->
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="600.0" styleClass="anchor-pane" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.EditProfileController">
-    <children>
-        <Label alignment="CENTER" layoutX="150.0" layoutY="175.0" prefHeight="25.0" prefWidth="120.0" text="Username" />
-        <Label alignment="CENTER" layoutX="150.0" layoutY="375.0" prefHeight="25.0" prefWidth="120.0" text="New Password" />
-        <PasswordField fx:id="newPassword" layoutX="300.0" layoutY="375.0" />
-        <Button fx:id="btnSubmit" layoutX="100.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#submitChanges" prefHeight="30.0" prefWidth="150.0" text="Submit" />
-        <Label id="editTitle" alignment="CENTER" layoutX="142" layoutY="37" prefHeight="21.0" prefWidth="332.0" text="Edit Profile" textFill="#151b6f">
-            <font>
-                <Font size="36.0" />
-            </font>
-            <effect>
-                <Glow level="1.0">
-                    <input>
-                        <InnerShadow blurType="ONE_PASS_BOX" color="#0156ff" height="11.0" offsetX="3.0" radius="2.25" width="0.0" />
-                    </input>
-                </Glow>
-            </effect>
-        </Label>
-        <Button fx:id="returnProfile" layoutX="350.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#cancelChanges" prefHeight="30.0" prefWidth="150.0" text="Cancel" />
-        <Label alignment="CENTER" layoutX="120.0" layoutY="310.0" prefHeight="25.0" prefWidth="150.0" text="Comfirm Password" />
-        <PasswordField fx:id="confirmPassword" layoutX="300.0" layoutY="310.0" />
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="238.0" prefHeight="25.0" prefWidth="120.0" text="Old Password" />
-        <PasswordField fx:id="oldPassword" layoutX="300.0" layoutY="238.0" />
-      <Label id="password_Error" fx:id="passwordError" alignment="CENTER" layoutX="64.0" layoutY="483.0" prefHeight="46.0" prefWidth="222.0" stylesheets="@Style.css" text="Passwords do not match!" visible="false">
-         <font>
-            <Font name="Verdana Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="150.0" layoutY="440.0" prefHeight="25.0" prefWidth="120.0" text="Email" />
-      <TextField fx:id="userEmail" layoutX="300.0" layoutY="440.0" prefHeight="23.0" prefWidth="204.0" />
-      <TextField fx:id="editUsernameField" layoutX="300.0" layoutY="175.0" />
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0"
+            prefWidth="600.0" styleClass="anchor-pane" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.EditProfileController">
+    <Label alignment="CENTER" layoutX="124.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0"
+           style="-fx-font-weight: bold;" styleClass="text-label" text="Username"/>
+    <Label alignment="CENTER" layoutX="124.0" layoutY="374.0" prefHeight="25.0" prefWidth="200.0"
+           style="-fx-font-weight: bold;" styleClass="text-label" text="New Password"/>
+    <Group fx:id="editingFields" layoutX="300.0" layoutY="175.0">
+        <PasswordField fx:id="newPassword" layoutY="200.0"/>
+        <PasswordField fx:id="confirmPassword" layoutY="135.0"/>
+        <PasswordField fx:id="oldPassword" layoutY="63.0"/>
+        <TextField fx:id="userEmail" layoutY="265.0" prefHeight="23.0" prefWidth="204.0"/>
+        <TextField fx:id="editUsernameField"/>
+    </Group>
+    <Button fx:id="btnSubmit" layoutX="100.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#submitChanges"
+            prefHeight="30.0" prefWidth="150.0" text="Submit"/>
+    <Label id="editTitle" alignment="CENTER" layoutX="142" layoutY="37" prefHeight="21.0" prefWidth="332.0"
+           text="Edit Profile" textFill="#151b6f">
+        <font>
+            <Font size="36.0"/>
+        </font>
+        <effect>
+            <Glow level="1.0">
+                <input>
+                    <InnerShadow blurType="ONE_PASS_BOX" color="#0156ff" height="11.0" offsetX="3.0" radius="2.25"
+                                 width="0.0"/>
+                </input>
+            </Glow>
+        </effect>
+    </Label>
+    <Button fx:id="returnProfile" layoutX="350.0" layoutY="530.0" mnemonicParsing="false"
+            onMouseClicked="#cancelChanges" prefHeight="30.0" prefWidth="150.0" text="Cancel"/>
+    <Label alignment="CENTER" layoutX="100.0" layoutY="306.0" prefHeight="25.0" prefWidth="200.0"
+           style="-fx-font-weight: bold;" styleClass="text-label" text="Confirm Password"/>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" layoutY="237.0" prefHeight="25.0"
+           prefWidth="200.0" style="-fx-font-weight: bold;" styleClass="text-label" text="Old Password"/>
+    <Label id="password_Error" fx:id="passwordError" alignment="CENTER" layoutX="64.0" layoutY="483.0" prefHeight="46.0"
+           prefWidth="343.0" stylesheets="@Style.css" text="Passwords do not match!" visible="false">
+        <font>
+            <Font name="Verdana Bold" size="14.0"/>
+        </font>
+    </Label>
+    <Label alignment="CENTER" layoutX="124.0" layoutY="439.0" prefHeight="25.0" prefWidth="200.0"
+           style="-fx-font-weight: bold;" styleClass="text-label" text="Email"/>
 </AnchorPane>

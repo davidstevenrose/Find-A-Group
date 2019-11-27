@@ -16,16 +16,18 @@ import javafx.stage.Stage;
  * </p>
  */
 public class Main extends Application {
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
-        primaryStage.setTitle("2sday's Find A Group");
-        primaryStage.setScene(new Scene(root, 675, 600));
-        primaryStage.show();
-        
 
-    }
-    public static void main(String[] args) {
-        launch(args);
-    }
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+    primaryStage.setTitle("2sday's Find A Group");
+    primaryStage.setScene(new Scene(root, 650, 500));
+    primaryStage.show();
+
+
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
 }
