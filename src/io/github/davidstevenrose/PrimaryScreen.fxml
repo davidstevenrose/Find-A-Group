@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -71,7 +70,7 @@
                             </columns>
                         </TableView>
                         <Hyperlink fx:id="logOut" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
-                        <Label fx:id="joinLabel" layoutX="362.0" layoutY="528.0" prefHeight="21.0" prefWidth="144.0" styleClass="text-label">
+                        <Label fx:id="joinLabel" layoutX="248.0" layoutY="528.0" prefHeight="21.0" prefWidth="265.0" styleClass="text-label">
                             <font>
                                 <Font size="18.0" />
                             </font>

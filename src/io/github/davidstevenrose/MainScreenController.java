@@ -1,5 +1,6 @@
 package io.github.davidstevenrose;
 
+import com.sun.xml.internal.ws.handler.HandlerException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -43,19 +45,19 @@ public class MainScreenController {
    * The meeting location column in edit meeting table
    */
   @FXML
-  private TableColumn<TableView<Meeting>, String> editMeetingPlaceCol;
+  private TableColumn editMeetingPlaceCol;
 
   /**
    * The meeting time column in edit meeting table
    */
   @FXML
-  private TableColumn<TableView<Meeting>, String> editMeetingTimeCol;
+  private TableColumn editMeetingTimeCol;
 
   /**
    * The meeting date column in edit meeting table
    */
   @FXML
-  private TableColumn<TableView<Meeting>, String> editMeetingDateCol;
+  private TableColumn editMeetingDateCol;
 
   /**
    * The text field for choosing the time of a meeting.
@@ -144,6 +146,9 @@ public class MainScreenController {
 
   @FXML
   private DatePicker searchDatePicker;
+
+  @FXML
+  private Button searchMeetingsButton;
 
   @FXML
   private ChoiceBox<String> groupsPicker;
@@ -344,21 +349,36 @@ public class MainScreenController {
   void joinGroupButtonClick(MouseEvent event) {
     // Getting selected group from table
     Group group = searchGroupTable.getSelectionModel().getSelectedItem();
+    // Creating variable to keep track of if the user is a member of a group already
+    boolean alreadyJoined = false;
+    for (Group g : currentUser.getGroupMember()) {
+      if (group.equals(g)) {
+        alreadyJoined = true;
+      }
+    }
+    for (Group g : currentUser.getGroupLeader()) {
+      if (group.equals(g)) {
+        alreadyJoined = true;
+      }
+    }
+    if (!alreadyJoined) {
+      // Adding user to group
+      currentUser.addGroupMember(group);
 
-    // Adding user to group
-    currentUser.addGroupMember(group);
+      // Updating the users.txt file
+      TextFileManager.editUser(LoginController.users);
 
-    // Updating the users.txt file
-    TextFileManager.editUser(LoginController.users);
+      // Updating the selectors
+      populateGroupSelectors();
 
-    // Updating the selectors
-    populateGroupSelectors();
+      // Adding to profile tab
+      displayGroupsInProfile();
 
-    // Adding to profile tab
-    displayGroupsInProfile();
-
-    // Displaying result for the user
-    joinLabel.setText("Join Successful");
+      // Displaying result for the user
+      joinLabel.setText("Join Successful");
+    } else {
+      joinLabel.setText("You are already in that group");
+    }
   }
 
   /**
