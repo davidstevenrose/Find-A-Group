@@ -491,7 +491,13 @@ public class MainScreenController {
 
     // Creating ArrayList to hold meetings and giving it all the meetings
     ArrayList<Meeting> foundMeetings = new ArrayList<>();
-    foundMeetings.addAll(allMeetings);
+    for (Group g : currentUser.getGroupLeader()) {
+      foundMeetings.addAll(g.getMeetings());
+    }
+    for (Group g : currentUser.getGroupMember()) {
+      foundMeetings.addAll(g.getMeetings());
+    }
+
     ArrayList<Meeting> meetingsToRemove = new ArrayList<>();
     // Later all of these will be replaced with a database search
     // If there is a date selected
