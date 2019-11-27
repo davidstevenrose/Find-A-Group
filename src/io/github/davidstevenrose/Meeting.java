@@ -59,7 +59,8 @@ public class Meeting {
     this.hostName = hostName;
     this.status = MeetingStatus.ACTIVE;
     this.attendees = new ArrayList<>();
-    attendees.add(hostName);
+    //commented out because text file manager automatically adds host to attendees list
+    //attendees.add(hostName);
     stringDate = this.date.toString();
 
   }
@@ -165,10 +166,30 @@ public class Meeting {
     this.status = status;
   }
 
+  /**
+   * Adds a group member to the meeting's list of attendees.
+   *
+   * @param attendee the group member
+   */
   public void addAttendee(String attendee) {
     attendees.add(attendee);
   }
 
+  /**
+   * Removes a group member from the meeting's list of attendees. Removes the first instance of the
+   * attendee
+   *
+   * @param attendee the group member
+   */
+  public void removeAttendee(String attendee) {
+    attendees.remove(attendee);
+  }
+
+  /**
+   * Gets the names of the group members who are attending a meeting.
+   *
+   * @return an array list of names
+   */
   public ArrayList<String> getAttendees() {
     return attendees;
   }

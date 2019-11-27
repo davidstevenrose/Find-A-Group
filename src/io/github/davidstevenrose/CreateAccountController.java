@@ -15,22 +15,37 @@ import javafx.stage.Stage;
 
 public class CreateAccountController {
 
-  @FXML private PasswordField confirmPasswordField;
+  @FXML
+  private PasswordField confirmPasswordField;
 
-  @FXML private PasswordField passwordField;
+  @FXML
+  private PasswordField passwordField;
 
-  @FXML private TextField usernameField;
+  @FXML
+  private TextField usernameField;
 
-  @FXML private TextField emailField;
+  @FXML
+  private TextField emailField;
 
-  @FXML private TextField confirmEmailField;
+  @FXML
+  private TextField confirmEmailField;
 
-  @FXML private Label errorLabel;
+  @FXML
+  private Label errorLabel;
 
-  @FXML private Button createAccountButton;
+  @FXML
+  private Button createAccountButton;
 
-  @FXML private Button cancelAccountButton;
+  @FXML
+  private Button cancelAccountButton;
 
+  /**
+   * Creates a new User object and saves it to the text file.
+   *
+   * @param event the event that called this method
+   * @throws IOException thrown when fxml file to be loaded is not found
+   * @author drose
+   */
   @FXML
   void createAccountButtonClicked(MouseEvent event) throws IOException {
     // get user input data and set as local variables
@@ -47,8 +62,12 @@ public class CreateAccountController {
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
     } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
-      // write to database later
-      LoginController.users.add(new User(username, password, email));
+      // write to database
+      TextFileManager.addUserToFile(new User(username, password, email));
+
+      //this stub is obsolete because the static field 'users' is
+      // initialized to an empty list every time the scene changes. - David
+      //LoginController.users.add(new User(username, password, email));
 
       // Creating scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));

@@ -49,7 +49,7 @@ public class EditableMeetDetController {
 
   private ObservableList<String> observableAttendees = FXCollections.observableArrayList();
   //a attribute of a reference to the current meeting to edit
-  private Meeting localCurrentMeeting;
+  private Meeting currentMeeting;
 
   /**
    * Set the pointer to the meeting to edit to the passed reference of the meeting to edit.
@@ -57,7 +57,7 @@ public class EditableMeetDetController {
    * @param m a reference to the meeting to edit
    */
   void setCurrentMeeting(Meeting m) {
-    localCurrentMeeting = m;
+    currentMeeting = m;
     init();
   }
 
@@ -68,25 +68,27 @@ public class EditableMeetDetController {
     //add content to meridium box
     meridiumEditBox.getItems().addAll("AM", "PM");
     // Getting the attendees for the meeting
-    observableAttendees.addAll(localCurrentMeeting.getAttendees());
+    //append group leader name to front of list
+    observableAttendees.add(currentMeeting.getHostName());
+    observableAttendees.addAll(currentMeeting.getAttendees());
 
-    groupNameLabel.setText(localCurrentMeeting.getGroupName());
+    groupNameLabel.setText(currentMeeting.getGroupName());
     dateLabel.setEditable(false);
-    dateLabel.setChronology(localCurrentMeeting.getDate().getChronology());
-    dateLabel.setValue(localCurrentMeeting.getDate());
-    String time = localCurrentMeeting.getTime()
-        .substring(0, localCurrentMeeting.getTime().length() - 2);
-    String med = localCurrentMeeting.getTime()
-        .substring(localCurrentMeeting.getTime().length() - 2);
+    dateLabel.setChronology(currentMeeting.getDate().getChronology());
+    dateLabel.setValue(currentMeeting.getDate());
+    String time = currentMeeting.getTime()
+        .substring(0, currentMeeting.getTime().length() - 2);
+    String med = currentMeeting.getTime()
+        .substring(currentMeeting.getTime().length() - 2);
     timeLabel.setText(time);
     if (med.equals("AM")) {
       meridiumEditBox.setValue("AM");
     } else {
       meridiumEditBox.setValue("PM");
     }
-    locationLabel.setText(localCurrentMeeting.getLocation());
+    locationLabel.setText(currentMeeting.getLocation());
     statusBox.getItems().addAll(MeetingStatus.values());
-    statusBox.setValue(localCurrentMeeting.getStatus());
+    statusBox.setValue(currentMeeting.getStatus());
     // Adding attendees all to the list view
     attendeesList.setItems(observableAttendees);
   }
@@ -110,10 +112,10 @@ public class EditableMeetDetController {
         if (locationLabel.getText() != null && !locationLabel.getText().isEmpty()) {
           //check for status
           if (statusBox.getValue() != null) {
-            localCurrentMeeting.setLocation(locationLabel.getText());
-            localCurrentMeeting.setTime(timeLabel.getText().trim() + meridiumEditBox.getValue());
-            localCurrentMeeting.setDate(dateLabel.getValue());
-            localCurrentMeeting.setStatus(statusBox.getValue());
+            currentMeeting.setLocation(locationLabel.getText());
+            currentMeeting.setTime(timeLabel.getText().trim() + meridiumEditBox.getValue());
+            currentMeeting.setDate(dateLabel.getValue());
+            currentMeeting.setStatus(statusBox.getValue());
             badInput = false;
           }
         }

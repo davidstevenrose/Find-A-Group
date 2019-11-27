@@ -43,19 +43,19 @@ public class MainScreenController {
    * The meeting location column in edit meeting table
    */
   @FXML
-  private TableColumn editMeetingPlaceCol;
+  private TableColumn<TableView<Meeting>, String> editMeetingPlaceCol;
 
   /**
    * The meeting time column in edit meeting table
    */
   @FXML
-  private TableColumn editMeetingTimeCol;
+  private TableColumn<TableView<Meeting>, String> editMeetingTimeCol;
 
   /**
    * The meeting date column in edit meeting table
    */
   @FXML
-  private TableColumn editMeetingDateCol;
+  private TableColumn<TableView<Meeting>, String> editMeetingDateCol;
 
   /**
    * The text field for choosing the time of a meeting.
@@ -294,8 +294,9 @@ public class MainScreenController {
 
     //clear error message labels - David
     //label in edit group tab
-    //TODO: configure style of label
     messageLabelEGT.setText("");
+    //label in create group tab
+    createGroupErrorMsg.setVisible(false);
   }
 
   /**
@@ -306,7 +307,7 @@ public class MainScreenController {
    * @author drose
    */
   private Group createGroup() throws Exception {
-    String groupName = createGroupTextfield.getText();
+    String groupName = createGroupTextfield.getText().trim();
     ArrayList<String> tags = new ArrayList<>();
     if (addTag1.getSelectionModel().getSelectedItem() != null) {
       tags.add(addTag1.getValue());
@@ -393,10 +394,11 @@ public class MainScreenController {
     } else {
       // Getting the tags
       // if tag is unselected don't include in search criteria
-      String tag1 = searchTag1.getValue().equals("") ? "unused" : searchTag1.getValue();
-      String tag2 = searchTag2.getValue().equals("") ? "unused" : searchTag2.getValue();
-      String tag3 = searchTag3.getValue().equals("") ? "unused" : searchTag3.getValue();
-      String tag4 = searchTag4.getValue().equals("") ? "unused" : searchTag4.getValue();
+      //made hot fix for null pointer exception - David
+      String tag1 = searchTag1.getValue() == null ? "unused" : searchTag1.getValue();
+      String tag2 = searchTag2.getValue() == null ? "unused" : searchTag2.getValue();
+      String tag3 = searchTag3.getValue() == null ? "unused" : searchTag3.getValue();
+      String tag4 = searchTag4.getValue() == null ? "unused" : searchTag4.getValue();
       // Making it so that if there are no tags selected, all of the groups will be shown
       if (tag1.equals("unused")
           && tag2.equals("unused")
@@ -426,15 +428,24 @@ public class MainScreenController {
    */
   @FXML
   void createGroupsButtonClicked() {
-    createGroupErrorMsg.setVisible(false);
     Group newGroup;
     try {
       newGroup = createGroup();
     } catch (Exception e) {
-      //TODO: make msg fade away
       createGroupErrorMsg.setStyle("-fx-text-fill: Red");
+      createGroupErrorMsg.setText("Please enter a group name or at least one group tag");
       createGroupErrorMsg.setVisible(true);
+      Main.fadeAway(createGroupErrorMsg);
       return;
+    }
+    //check to see if group name already exists
+    for (Group g: allGroups) {
+      if(g.getName().equals(newGroup.getName())){
+        createGroupErrorMsg.setText("Group \""+g.getName()+"\" already exists.");
+        createGroupErrorMsg.setVisible(true);
+        Main.fadeAway(createGroupErrorMsg);
+        return;
+      }
     }
     //adds new group to user's collection of groups
     currentUser.addGroupLeader(newGroup);
@@ -458,6 +469,10 @@ public class MainScreenController {
    */
   private void fillEditGroupTab() {
     editMeetingTable.getItems().clear();
+    editTag1.setValue(null);
+    editTag2.setValue(null);
+    editTag3.setValue(null);
+    editTag4.setValue(null);
     Group selectedGroup = editGroupSelector.getValue();
     if (selectedGroup == null) {
       return;
@@ -465,9 +480,9 @@ public class MainScreenController {
     List<String> tags = selectedGroup.getTags();
     try {
       editTag1.setValue(tags.get(0));
-      editTag1.setValue(tags.get(1));
-      editTag1.setValue(tags.get(2));
-      editTag1.setValue(tags.get(3));
+      editTag2.setValue(tags.get(1));
+      editTag3.setValue(tags.get(2));
+      editTag4.setValue(tags.get(3));
     } catch (IndexOutOfBoundsException e) {
       System.out.println("The group had less than 4 tags");
     }
@@ -484,44 +499,55 @@ public class MainScreenController {
   void editGroupsButtonClicked() {
     Group selectedGroup = editGroupSelector.getValue();
     if (selectedGroup == null) {
-      //TODO: make msg disappear
-      savedChangesLabel1.setStyle("-fx-text-fill: Green");
+      savedChangesLabel1.setStyle("-fx-text-fill: Red");
       savedChangesLabel1.setText("Please select a group.");
+      Main.fadeAway(savedChangesLabel1);
       return;
     }
     // updating description
     selectedGroup.setDescription(editDescriptionTextArea.getText());
 
     // Create an array list for the tags
-    ArrayList<String> tags = new ArrayList<>();
-    // ternary to set the tag to "" if empty instead of null
-    String tag1 = ((editTag1.getValue() == null) ? "" : editTag1.getValue());
-    String tag2 = ((editTag2.getValue() == null) ? "" : editTag2.getValue());
-    String tag3 = ((editTag3.getValue() == null) ? "" : editTag3.getValue());
-    String tag4 = ((editTag4.getValue() == null) ? "" : editTag4.getValue());
-    // Adding tags to tags array
-    tags.add(tag1);
-    tags.add(tag2);
-    tags.add(tag3);
-    tags.add(tag4);
+    ArrayList<String> tags = new ArrayList<>(0);
+    //add new tags to group's list of tags
+    if(editTag1.getValue()!=null){
+      tags.add(editTag1.getValue());
+    }
+    if(editTag2.getValue()!=null){
+      tags.add(editTag2.getValue());
+    }
+    if(editTag3.getValue()!=null){
+      tags.add(editTag3.getValue());
+    }
+    if(editTag4.getValue()!=null){
+      tags.add(editTag4.getValue());
+    }
+    //if no tags were selected
+    if(tags.get(0).isEmpty()){
+      savedChangesLabel1.setStyle("-fx-text-fill: Red");
+      savedChangesLabel1.setText("Please select at least one tag.");
+      Main.fadeAway(savedChangesLabel1);
+      return;
+    }
 
     // setting the tags to the selected ones
     selectedGroup.replaceTags(tags);
 
     // displaying information to the user
-    //TODO: make message fade away after display
-    savedChangesLabel1.setStyle("-fx-text-fill: Red");
+    savedChangesLabel1.setStyle("-fx-text-fill: Black");
     savedChangesLabel1.setText("Saved Changes");
+    Main.fadeAway(savedChangesLabel1);
   }
 
   /**
    * This method runs when the searchMeetingsButton button is clicked. This method checks the
    * criteria selected by the user and provides meetings fitting those criteria.
    *
+   * <p>This method runs when the searchMeetingsButton button is clicked.</p>
+   *
    * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
-  // This method runs when the searchMeetingsButton button is clicked.
   @FXML
   void searchMeetingsButtonClicked(MouseEvent event) {
 
@@ -693,10 +719,9 @@ public class MainScreenController {
   @FXML
   private void addMeetingButtonClicked() {
     if (!editGroupSelector.getSelectionModel().isEmpty()) {
-      if (!(addMeetingDatePicker.getValue() == null
-          && addMeetingLocationTextfield.getText().length() == 0
-          && selectTimeTxt.getText().isEmpty())) {
-
+      if (addMeetingDatePicker.getValue() != null
+          && !addMeetingLocationTextfield.getText().isEmpty()
+          && !selectTimeTxt.getText().isEmpty()) {
         LocalDate meetingDate = addMeetingDatePicker.getValue();
         String meetingLoc = addMeetingLocationTextfield.getText();
         // replace combo box with string regex
@@ -713,24 +738,29 @@ public class MainScreenController {
           //reset edit group tab
           fillEditGroupTab();
           //confirm add meeting
-          //TODO: make message fade away
+          messageLabelEGT.setStyle("-fx-text-fill: Black");
           messageLabelEGT.setText("Meeting added");
+          Main.fadeAway(messageLabelEGT);
           //send message to text file to update group meeting data
           TextFileManager.addMeetingToFile(newMeeting);
           System.out.println(newMeeting.toString());
         } else {
           //invalid time input, handle error
+          messageLabelEGT.setStyle("-fx-text-fill: Red");
           messageLabelEGT.setText("Invalid time. Please try again.");
-          //TODO: set the style of the message to error style
-
+          Main.fadeAway(messageLabelEGT);
         }
       } else {
         //a required field is missing, handle error
+        messageLabelEGT.setStyle("-fx-text-fill: Red");
         messageLabelEGT.setText("Please fill out all fields.");
+        Main.fadeAway(messageLabelEGT);
       }
     } else {
       //group not selected, handle error
+      messageLabelEGT.setStyle("-fx-text-fill: Red");
       messageLabelEGT.setText("Please select a group to edit.");
+      Main.fadeAway(messageLabelEGT);
     }
   }
 

@@ -60,4 +60,42 @@ password. </p>
  </ul>
 
 #Author
-David Rose
+David Rose, et.al.
+
+#Test Cases
+<h3>Normal scenarios</h3>
+* Create an account: Click the create account button and provide a username, password, and email. 
+When the passwords and emails are confirmed, you are redirected to the login page and must log in
+for the first time. On success, you will be on the profile tab.
+* Create a group: Click on the create group tab. Enter your group name and select at least one group tag 
+from the top row of choice boxes. It is optional to add a description for your group. Click on the
+ create group button. You will be taken to the search group tab.
+* Add a meeting to your group: Click on the edit group tab. Select the group you want to add the
+meeting to in the group selector choice box. The group's details should automatically fill. Navigate
+to the add meeting section and enter a location, date and time (non-military). Click add meeting. The
+new meeting should be added to the table below.
+* Edit a meeting: Click on the edit group tab. Select the group you want to add the
+meeting to in the group selector choice box. The meeting table should be populated with the group's 
+meetings. Double click a row in the table to open the edit meeting dialogue. Change location, date,
+and time for the new meeting and click save changes. Under the edit group tab, you will see your
+updated meeting.
+* Edit your account: Click on the profile tab. Click edit profile and a new dialogue will open. Enter
+your old password, a new password, and a new email. Once these fields are confirmed, press the save 
+button and you will be taken back to the profile tab.
+* Join a group: Click on the join group tab. Enter some search criteria and click search. You do not
+need to choose any group tags to search. Select a row from the table of results and click the join
+button. This group is now displayed in the profile tab.
+* Search a group: In the join group tab, select up to four tags. Click the search button to search
+for groups that contain those tags. To search for groups that contain only those tags, select must
+include all and click search.
+* Search for a meeting: Click on the view meetings tab. Specify a date, location, and host group in
+the search criteria. Click the search button. The results of the query will be shown in the table below.
+* View a meeting: After performing a search, select a row from the table of meetings. Click the view
+meeting button. A dialogue box will open with the meeting's details and roster. Click the back button
+to return to the previous scene.
+* Sign-up for meeting: Return to the view meeting dialogue. Click the attend meeting button to add
+your name to the roster. Click the cancel attendance button to remove your name from the roster. Click
+the back button when you are finished.
+* Edit a group: Go to the edit group tab. Select a group you own from the choice box. Change your group
+tags or remove some, but the group must have at least one group tag. Change the group description or
+remove it. Click the save changes button when you are done. 

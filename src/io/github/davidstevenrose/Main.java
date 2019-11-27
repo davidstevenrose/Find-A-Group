@@ -41,7 +41,7 @@ public class Main extends Application {
    * @param node the node which you wish to have the fade to transparent animation applied to
    * @author Nicholas Hansen
    */
-  public static void fadeAway(Node node) {
+  static void fadeAway(Node node) {
     FadeTransition fadeTransition = new FadeTransition();
     fadeTransition.setNode(node);
     fadeTransition.setDuration(seconds(6));

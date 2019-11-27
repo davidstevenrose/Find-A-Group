@@ -62,6 +62,9 @@ public class MeetDetController {
   @FXML
   void initialize() {
     // Getting the attendees for the meeting
+    //since the group leader is automatically an attendee, we'll
+    // append the leader to front of list - David
+    observableAttendees.add(currentMeeting.getHostName());
     observableAttendees.addAll(currentMeeting.getAttendees());
     groupNameLabel.setText(currentMeeting.getGroupName());
     dateLabel.setText(currentMeeting.getDate().toString());
@@ -76,10 +79,20 @@ public class MeetDetController {
   }
 
   /**
+   * Marks the group member as an attendee and places the user object in the list of meeting
+   * attendees.
+   * <p>If the user is the group leader of the meeting, the system will tell the leader he/she is
+   * unable to change their attendance.</p>
+   *
    * @author Jackson and Cameron
    */
   @FXML
   public void attendMeetingClicked(MouseEvent mouseEvent) {
+    //TODO: display to user the error message
+    if (MainScreenController.currentUser.getUsername().equals(currentMeeting.getHostName())) {
+      System.out.println("You are group leader; cannot change attendance");
+      return;
+    }
     if (meetingAttend == false) {
       meetingAttend = true;
       currentMeeting.addAttendee(MainScreenController.currentUser.getUsername());
@@ -93,14 +106,24 @@ public class MeetDetController {
   }
 
   /**
-   * @param mouseEvent
-   * @author Jackson and Cameron
+   * Removes the group member from the meeting roster.
+   * <p>If the user is the meeting's group leader, he/she will be unable to remove the self from the
+   * roster.</p>
+   *
+   * @param mouseEvent the object that called this method
+   * @author Jackson and Cameron and drose
    */
   @FXML
   public void cancelAttendanceClicked(MouseEvent mouseEvent) {
+    //TODO: display to user the error message
+    if (MainScreenController.currentUser.getUsername().equals(currentMeeting.getHostName())) {
+      System.out.println("You are group leader; cannot change attendance");
+      return;
+    }
     if (meetingAttend == true) {
       meetingAttend = false;
       observableAttendees.remove(MainScreenController.currentUser.getUsername());
+      currentMeeting.removeAttendee(MainScreenController.currentUser.getUsername());
       System.out.println("Attendance Canceled");
       userMessageLabel.setText("No Longer Attending");
     } else {
