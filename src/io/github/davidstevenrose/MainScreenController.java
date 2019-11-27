@@ -308,8 +308,10 @@ public class MainScreenController {
 
       // Displaying result for the user
       joinLabel.setText("Join Successful");
+      Main.fadeAway(joinLabel);
     } else {
       joinLabel.setText("You are already in that group");
+      Main.fadeAway(joinLabel);
     }
   }
 
