@@ -1,6 +1,5 @@
 package io.github.davidstevenrose;
 
-import com.sun.xml.internal.ws.handler.HandlerException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
