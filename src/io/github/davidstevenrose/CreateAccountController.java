@@ -47,8 +47,8 @@ public class CreateAccountController {
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
     } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
-      // write to database later
-      LoginController.users.add(new User(username, password, email));
+      // write to text file
+      TextFileManager.addUserToFile(new User(username, password, email));
 
       // Creating scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
