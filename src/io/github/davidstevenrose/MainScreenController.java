@@ -420,11 +420,10 @@ public class MainScreenController {
     } else {
       // Getting the tags
       // if tag is unselected don't include in search criteria
-      //made hot fix for null pointer exception - David
-      String tag1 = searchTag1.getValue() == null ? "unused" : searchTag1.getValue();
-      String tag2 = searchTag2.getValue() == null ? "unused" : searchTag2.getValue();
-      String tag3 = searchTag3.getValue() == null ? "unused" : searchTag3.getValue();
-      String tag4 = searchTag4.getValue() == null ? "unused" : searchTag4.getValue();
+      String tag1 = searchTag1.getValue().equals("") ? "unused" : searchTag1.getValue();
+      String tag2 = searchTag2.getValue().equals("") ? "unused" : searchTag2.getValue();
+      String tag3 = searchTag3.getValue().equals("") ? "unused" : searchTag3.getValue();
+      String tag4 = searchTag4.getValue().equals("") ? "unused" : searchTag4.getValue();
       // Making it so that if there are no tags selected, all of the groups will be shown
       if (tag1.equals("unused")
           && tag2.equals("unused")
@@ -465,9 +464,9 @@ public class MainScreenController {
       return;
     }
     //check to see if group name already exists
-    for (Group g: allGroups) {
-      if(g.getName().equals(newGroup.getName())){
-        createGroupErrorMsg.setText("Group \""+g.getName()+"\" already exists.");
+    for (Group g : allGroups) {
+      if (g.getName().equals(newGroup.getName())) {
+        createGroupErrorMsg.setText("Group \"" + g.getName() + "\" already exists.");
         createGroupErrorMsg.setVisible(true);
         Main.fadeAway(createGroupErrorMsg);
         return;
@@ -536,20 +535,20 @@ public class MainScreenController {
     // Create an array list for the tags
     ArrayList<String> tags = new ArrayList<>(0);
     //add new tags to group's list of tags
-    if(editTag1.getValue()!=null){
+    if (editTag1.getValue() != null) {
       tags.add(editTag1.getValue());
     }
-    if(editTag2.getValue()!=null){
+    if (editTag2.getValue() != null) {
       tags.add(editTag2.getValue());
     }
-    if(editTag3.getValue()!=null){
+    if (editTag3.getValue() != null) {
       tags.add(editTag3.getValue());
     }
-    if(editTag4.getValue()!=null){
+    if (editTag4.getValue() != null) {
       tags.add(editTag4.getValue());
     }
     //if no tags were selected
-    if(tags.get(0).isEmpty()){
+    if (tags.get(0).isEmpty()) {
       savedChangesLabel1.setStyle("-fx-text-fill: Red");
       savedChangesLabel1.setText("Please select at least one tag.");
       Main.fadeAway(savedChangesLabel1);
@@ -727,7 +726,8 @@ public class MainScreenController {
 
   /**
    * Fills the combo boxes by retrieving the current list of pre-made tags. The cbo uses tags, but
-   * may be converted to using enumerations of TagCollection.
+   * may be converted to using enumerations of TagCollection. Method is now compatible with the
+   * search group module by adding an empty string instead of null for the not-selected option.
    *
    * @param tagBoxes the list of combo boxes to fill with group tags.
    * @author drose
