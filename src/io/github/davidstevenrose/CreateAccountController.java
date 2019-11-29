@@ -62,12 +62,8 @@ public class CreateAccountController {
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
     } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
-      // write to database
+      // write to text file
       TextFileManager.addUserToFile(new User(username, password, email));
-
-      //this stub is obsolete because the static field 'users' is
-      // initialized to an empty list every time the scene changes. - David
-      //LoginController.users.add(new User(username, password, email));
 
       // Creating scene
       Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));

@@ -346,37 +346,44 @@ public class MainScreenController {
    */
   @FXML
   void joinGroupButtonClick(MouseEvent event) {
-    // Getting selected group from table
-    Group group = searchGroupTable.getSelectionModel().getSelectedItem();
-    // Creating variable to keep track of if the user is a member of a group already
-    boolean alreadyJoined = false;
-    for (Group g : currentUser.getGroupMember()) {
-      if (group.equals(g)) {
-        alreadyJoined = true;
+    try {
+      // Getting selected group from table
+      Group group = searchGroupTable.getSelectionModel().getSelectedItem();
+      // Creating variable to keep track of if the user is a member of a group already
+      boolean alreadyJoined = false;
+      for (Group g : currentUser.getGroupMember()) {
+        if (group.equals(g)) {
+          alreadyJoined = true;
+        }
       }
-    }
-    for (Group g : currentUser.getGroupLeader()) {
-      if (group.equals(g)) {
-        alreadyJoined = true;
+      for (Group g : currentUser.getGroupLeader()) {
+        if (group.equals(g)) {
+          alreadyJoined = true;
+        }
       }
-    }
-    if (!alreadyJoined) {
-      // Adding user to group
-      currentUser.addGroupMember(group);
+      if (!alreadyJoined) {
+        // Adding user to group
+        currentUser.addGroupMember(group);
 
-      // Updating the users.txt file
-      TextFileManager.editUser(LoginController.users);
+        // Updating the users.txt file
+        TextFileManager.editUser(LoginController.users);
 
-      // Updating the selectors
-      populateGroupSelectors();
+        // Updating the selectors
+        populateGroupSelectors();
 
-      // Adding to profile tab
-      displayGroupsInProfile();
+        // Adding to profile tab
+        displayGroupsInProfile();
 
-      // Displaying result for the user
-      joinLabel.setText("Join Successful");
-    } else {
-      joinLabel.setText("You are already in that group");
+        // Displaying result for the user
+        joinLabel.setText("Join Successful");
+        Main.fadeAway(joinLabel);
+      } else {
+        joinLabel.setText("You are already in that group");
+        Main.fadeAway(joinLabel);
+      }
+    } catch (NullPointerException npe) {
+      joinLabel.setText("Please select a group to join");
+      Main.fadeAway(joinLabel);
     }
   }
 
@@ -572,7 +579,13 @@ public class MainScreenController {
 
     // Creating ArrayList to hold meetings and giving it all the meetings
     ArrayList<Meeting> foundMeetings = new ArrayList<>();
-    foundMeetings.addAll(allMeetings);
+    for (Group g : currentUser.getGroupLeader()) {
+      foundMeetings.addAll(g.getMeetings());
+    }
+    for (Group g : currentUser.getGroupMember()) {
+      foundMeetings.addAll(g.getMeetings());
+    }
+
     ArrayList<Meeting> meetingsToRemove = new ArrayList<>();
     // Later all of these will be replaced with a database search
     // If there is a date selected
@@ -725,8 +738,9 @@ public class MainScreenController {
       tags.add(tag.getName());
     }
     for (ChoiceBox<String> cho : tagBoxes) {
+      cho.getItems().add("");
       cho.getItems().addAll(tags);
-      cho.getItems().add(null);
+      cho.getSelectionModel().selectFirst();
     }
   }
 
