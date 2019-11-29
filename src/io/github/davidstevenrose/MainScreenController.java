@@ -648,8 +648,9 @@ public class MainScreenController {
       tags.add(tag.getName());
     }
     for (ChoiceBox<String> cho : tagBoxes) {
+      cho.getItems().add("");
       cho.getItems().addAll(tags);
-      cho.getItems().add(null);
+      cho.getSelectionModel().selectFirst();
     }
   }
 
