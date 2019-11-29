@@ -108,10 +108,9 @@ public class TextFileManager {
       String loc = meeting.getLocation();
       String time = meeting.getTime();
       String groupName = meeting.getGroupName();
-      String host = meeting.getHostName();
 
       // Writing to file
-      print.write(date + "," + loc + "," + time + "," + groupName + "," + host + ",");
+      print.write(date + "," + loc + "," + time + "," + groupName + "," );
       for (String attendee : meeting.getAttendees()) {
         print.write(attendee + ",");
       }
