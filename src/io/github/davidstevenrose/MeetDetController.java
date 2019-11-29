@@ -86,6 +86,7 @@ public class MeetDetController {
       observableAttendees.add(MainScreenController.currentUser.getUsername());
       System.out.println("Meeting Attended");
       userMessageLabel.setText("Marked Attending");
+      TextFileManager.editMeeting(MainScreenController.allMeetings);
 
     } else {
       System.out.println("You are already attending this meeting");
@@ -101,8 +102,10 @@ public class MeetDetController {
     if (meetingAttend == true) {
       meetingAttend = false;
       observableAttendees.remove(MainScreenController.currentUser.getUsername());
+      currentMeeting.getAttendees().remove(MainScreenController.currentUser.getUsername());
       System.out.println("Attendance Canceled");
       userMessageLabel.setText("No Longer Attending");
+      TextFileManager.editMeeting(MainScreenController.allMeetings);
     } else {
       userMessageLabel.setText("You Are Not Attending");
       System.out.println("You cannot cancel attendance to a meeting you aren't already attending");
@@ -118,8 +121,6 @@ public class MeetDetController {
    */
   @FXML
   void backButtonClicked(MouseEvent event) throws IOException {
-    // Updating meetings.txt file
-    TextFileManager.editMeeting(MainScreenController.allMeetings);
 
     // Creating the new scene
     Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
