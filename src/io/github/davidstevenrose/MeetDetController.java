@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -84,12 +86,14 @@ public class MeetDetController {
    * <p>If the user is the group leader of the meeting, the system will tell the leader he/she is
    * unable to change their attendance.</p>
    *
-   * @author Jackson and Cameron
+   * @author Jackson and Cameron, display labels by drose
    */
   @FXML
-  public void attendMeetingClicked(MouseEvent mouseEvent) {
-    //TODO: display to user the error message
+  public void attendMeetingClicked() {
     if (MainScreenController.currentUser.getUsername().equals(currentMeeting.getHostName())) {
+      Alert displayMsg = new Alert(AlertType.ERROR,
+          "You are group leader; cannot change attendance");
+      displayMsg.show();
       System.out.println("You are group leader; cannot change attendance");
       return;
     }
@@ -99,24 +103,29 @@ public class MeetDetController {
       observableAttendees.add(MainScreenController.currentUser.getUsername());
       System.out.println("Meeting Attended");
       userMessageLabel.setText("Marked Attending");
-
+      Main.fadeAway(userMessageLabel);
     } else {
+      userMessageLabel.setText("You are already attending.");
+      Main.fadeAway(userMessageLabel);
       System.out.println("You are already attending this meeting");
     }
   }
 
   /**
    * Removes the group member from the meeting roster.
-   * <p>If the user is the meeting's group leader, he/she will be unable to remove the self from the
+   * <p>If the user is the meeting's group leader, he/she will be unable to remove the self from
+   * the
    * roster.</p>
    *
    * @param mouseEvent the object that called this method
-   * @author Jackson and Cameron and drose
+   * @author Jackson and Cameron, display labels by drose
    */
   @FXML
   public void cancelAttendanceClicked(MouseEvent mouseEvent) {
-    //TODO: display to user the error message
     if (MainScreenController.currentUser.getUsername().equals(currentMeeting.getHostName())) {
+      Alert displayMsg = new Alert(AlertType.ERROR,
+          "You are group leader; cannot change attendance");
+      displayMsg.show();
       System.out.println("You are group leader; cannot change attendance");
       return;
     }
@@ -126,8 +135,10 @@ public class MeetDetController {
       currentMeeting.removeAttendee(MainScreenController.currentUser.getUsername());
       System.out.println("Attendance Canceled");
       userMessageLabel.setText("No Longer Attending");
+      Main.fadeAway(userMessageLabel);
     } else {
-      userMessageLabel.setText("You Are Not Attending");
+      userMessageLabel.setText("You Are Not On The Roster");
+      Main.fadeAway(userMessageLabel);
       System.out.println("You cannot cancel attendance to a meeting you aren't already attending");
     }
   }

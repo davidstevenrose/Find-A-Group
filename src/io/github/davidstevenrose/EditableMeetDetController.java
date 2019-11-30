@@ -123,7 +123,7 @@ public class EditableMeetDetController {
     }
     if (badInput) {
       userMessageLabel.setText("Invalid input or missing required fields; please try again.");
-      userMessageLabel.setVisible(true);
+      Main.fadeAway(userMessageLabel);
     } else {
       backButtonClicked(event);
     }

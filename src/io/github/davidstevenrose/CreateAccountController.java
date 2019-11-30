@@ -55,13 +55,34 @@ public class CreateAccountController {
     String confirmPassword = confirmPasswordField.getText();
     String email = emailField.getText();
     String confirmEmail = confirmEmailField.getText();
-
+    //hot fix - David
+    if (!password.matches(MainScreenController.P_WORD_REGEX)) {
+      errorLabel.setText("Your password needs at least 7 characters");
+      Main.fadeAway(errorLabel);
+      return;
+    }
+    if (!email.matches(MainScreenController.EMAIL_REGEX)) {
+      errorLabel.setText("Your email is an invalid address");
+      Main.fadeAway(errorLabel);
+      return;
+    }
+    //Stub code ===============================
     // check if information added correctly
     if (!password.equals(confirmPassword)) {
       errorLabel.setText("Password do not match");
+      Main.fadeAway(errorLabel);
     } else if (!email.equals(confirmEmail)) {
       errorLabel.setText("Emails do not match");
+      Main.fadeAway(errorLabel);
     } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
+      //if username is taken - David
+      for(User u: LoginController.users){
+        if(u.getUsername().equals(username)){
+          errorLabel.setText("That username is already taken");
+          Main.fadeAway(errorLabel);
+          return;
+        }
+      }
       // write to text file
       TextFileManager.addUserToFile(new User(username, password, email));
 
@@ -82,7 +103,9 @@ public class CreateAccountController {
       confirmEmailField.setStyle("-fx-base:mediumvioletred");
       usernameField.setStyle("-fx-base:mediumvioletred");
       errorLabel.setText("Please complete all fields");
+      Main.fadeAway(errorLabel);
     }
+    //end stub code =========================
   }
 
   @FXML

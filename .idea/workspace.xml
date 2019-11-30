@@ -4,7 +4,19 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Users now save groups that they create. Moved some UI elements because they were being obscured." />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added display messages to meeting details file.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/CreateAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/CreateAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetDetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetDetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/meetings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/meetings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetDetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetDetController.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,6 +293,7 @@
       <workItem from="1574870055166" duration="10903000" />
       <workItem from="1574883160092" duration="8928000" />
       <workItem from="1575043052457" duration="1151000" />
+      <workItem from="1575138327295" duration="3182000" />
     </task>
     <task id="LOCAL-00001" summary="Creating new branch">
       <created>1570126820853</created>
@@ -457,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574894485380</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Merge from Cameron">
+      <created>1575044744138</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1575044744138</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +518,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Added some logic to the code and made it transfer between screens. Added&#10;CSS file and some styling." />
     <MESSAGE value="Added create account screen" />
     <MESSAGE value="Added functionality for creating and editing accounts. Allowed&#10;for meetings to be displayed, but not filtered yet." />
     <MESSAGE value="Added new tab for create account and edit account. Fixed logic to &#10;work with new tab." />
@@ -523,6 +542,7 @@
     <MESSAGE value="Merged branch Nick. Unable to merge some style edits due to interruption of flow of data." />
     <MESSAGE value="Removed some todos" />
     <MESSAGE value="Optimized import" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimized import" />
+    <MESSAGE value="Merge from Cameron" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge from Cameron" />
   </component>
 </project>

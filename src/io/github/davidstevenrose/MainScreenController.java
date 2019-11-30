@@ -32,31 +32,31 @@ public class MainScreenController {
 
   //String in format XX:XX. Does not support military time, and ten's place digit in hour may be
   //omitted.
-  public static final String TIME_REGEX = "^([0]?\\d|1[0-2]):[0-5]\\d$";
+  static final String TIME_REGEX = "^([0]?\\d|1[0-2]):[0-5]\\d$";
 
   //String in format w+@w+.[a-zA-Z]+
-  public static final String EMAIL_REGEX = "^\\w+@\\w+.[a-zA-Z]+$";
+  static final String EMAIL_REGEX = "^\\w+@\\w+.[a-zA-Z]+$";
 
   //The password must conform to shall statement 9
-  public static final String P_WORD_REGEX = "^\\w{7,}$";
+  static final String P_WORD_REGEX = "^\\w{7,}$";
 
   /**
    * The meeting location column in edit meeting table
    */
   @FXML
-  private TableColumn editMeetingPlaceCol;
+  private TableColumn<TableView<Meeting>, String> editMeetingPlaceCol;
 
   /**
    * The meeting time column in edit meeting table
    */
   @FXML
-  private TableColumn editMeetingTimeCol;
+  private TableColumn<TableView<Meeting>, String> editMeetingTimeCol;
 
   /**
    * The meeting date column in edit meeting table
    */
   @FXML
-  private TableColumn editMeetingDateCol;
+  private TableColumn<TableView<Meeting>, String> editMeetingDateCol;
 
   /**
    * The text field for choosing the time of a meeting.
@@ -636,7 +636,10 @@ public class MainScreenController {
   void viewMeetingDetailsButtonClicked(MouseEvent event) throws IOException {
     // Get selected meeting
     Meeting selectedMeeting = findMeetingsTable.getSelectionModel().getSelectedItem();
-
+    //make sure the user selected a row from the table - David
+    if (selectedMeeting == null) {
+      return;
+    }
     // Make that the selected meeting in the MeetDetController class
     MeetDetController.setMeeting(selectedMeeting);
 
