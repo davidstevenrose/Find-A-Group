@@ -104,6 +104,8 @@ public class MeetDetController {
       System.out.println("Meeting Attended");
       userMessageLabel.setText("Marked Attending");
       Main.fadeAway(userMessageLabel);
+      TextFileManager.editMeeting(MainScreenController.allMeetings);
+
     } else {
       userMessageLabel.setText("You are already attending.");
       Main.fadeAway(userMessageLabel);
@@ -136,6 +138,7 @@ public class MeetDetController {
       System.out.println("Attendance Canceled");
       userMessageLabel.setText("No Longer Attending");
       Main.fadeAway(userMessageLabel);
+      TextFileManager.editMeeting(MainScreenController.allMeetings);
     } else {
       userMessageLabel.setText("You Are Not On The Roster");
       Main.fadeAway(userMessageLabel);
@@ -152,8 +155,6 @@ public class MeetDetController {
    */
   @FXML
   void backButtonClicked(MouseEvent event) throws IOException {
-    // Updating meetings.txt file
-    TextFileManager.editMeeting(MainScreenController.allMeetings);
 
     // Creating the new scene
     Parent primaryScreenParent = FXMLLoader.load(getClass().getResource("PrimaryScreen.fxml"));
