@@ -63,4 +63,5 @@ password. </p>
 David Rose, et.al.
 
 # Requirements
-* Java SE 8 needs to be installed on your computer. 
+* Java SE 8 needs to be installed on your computer.
+* Product works best with a keyboard and mouse.
