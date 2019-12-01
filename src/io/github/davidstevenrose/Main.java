@@ -1,5 +1,7 @@
 package io.github.davidstevenrose;
 
+import static javafx.util.Duration.seconds;
+
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,8 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import static javafx.util.Duration.seconds;
 
 /**
  * The class that holds the main method.

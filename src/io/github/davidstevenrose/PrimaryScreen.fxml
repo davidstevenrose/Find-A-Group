@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.MainScreenController">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="676.0" stylesheets="@Style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.davidstevenrose.MainScreenController">
     <tabs>
         <Tab fx:id="profileTab" text="Profile">
             <content>
@@ -29,10 +29,10 @@
                                 <Font name="Verdana" size="14.0" />
                             </font>
                         </Text>
-                        <TableView fx:id="pGroupTable" layoutX="13.0" layoutY="85.0" prefHeight="333.0" prefWidth="649.0" stylesheets="@Style.css">
+                        <TableView fx:id="ptGroupTable" layoutX="13.0" layoutY="85.0" prefHeight="333.0" prefWidth="649.0" stylesheets="@Style.css">
                             <columns>
-                                <TableColumn fx:id="pGroupName" prefWidth="136.0" text="Group Name" />
-                                <TableColumn fx:id="pDescription" prefWidth="505.0" text="Description" />
+                                <TableColumn fx:id="ptGroupName" prefWidth="136.0" text="Group Name" />
+                                <TableColumn fx:id="ptDescription" prefWidth="505.0" text="Description" />
                             </columns>
                         </TableView>
                         <Hyperlink fx:id="editPro" layoutX="534.0" layoutY="516.0" onMouseClicked="#editProfile" text="Edit Profile" />
@@ -133,11 +133,6 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                        <Label fx:id="savedChangesLabel" alignment="CENTER" layoutX="168.0" layoutY="523.0" prefHeight="30.0" prefWidth="150.0" styleClass="text-label" text="  ">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                        </Label>
                         <Hyperlink fx:id="logOut2" layoutX="53.0" layoutY="524.0" onMouseClicked="#logoutClicked" text="Log out" />
                   <Label fx:id="createGroupErrorMsg" layoutX="284.0" layoutY="481.0" prefHeight="34.0" prefWidth="348.0" styleClass="text-label" text=" " visible="false" />
                     </children>
@@ -170,7 +165,7 @@
                         <TextField fx:id="addMeetingLocationTextfield" layoutX="21.0" layoutY="440.0" prefHeight="31.0" prefWidth="318.0" promptText="Enter Location" stylesheets="@Style.css" />
                         <Button fx:id="EditGroupsButton" layoutX="487.0" layoutY="732.0" mnemonicParsing="false" onMouseClicked="#editGroupsButtonClicked" stylesheets="@Style.css" text="Save Changes" />
                         <Hyperlink fx:id="logOut11" layoutX="48.0" layoutY="733.0" onMouseClicked="#logoutClicked" text="Log out" />
-                        <Label fx:id="savedChangesLabel1" alignment="CENTER" layoutX="248.0" layoutY="521.0" styleClass="text-label" text="      ">
+                        <Label fx:id="savedChangesLabel" alignment="CENTER" layoutX="248.0" layoutY="521.0" styleClass="text-label" text="      ">
                             <font>
                                 <Font size="18.0" />
                             </font>
@@ -178,7 +173,7 @@
                   <TextField fx:id="selectTimeTxt" layoutX="21.0" layoutY="502.0" prefHeight="31.0" prefWidth="160.0" promptText="Select Time" stylesheets="@Style.css" />
                   <ChoiceBox fx:id="meridiemBox" layoutX="181.0" layoutY="502.0" prefHeight="31.0" prefWidth="50.0" />
                   <Button fx:id="addMeetingButton" layoutX="423.0" layoutY="440.0" mnemonicParsing="false" onMouseClicked="#addMeetingButtonClicked" prefHeight="30.0" prefWidth="150.0" text="Add Meeting" />
-                  <Label fx:id="messageLabelEGT" layoutX="344.0" layoutY="489.0" prefHeight="26.0" prefWidth="249.0" styleClass="text-label" text="error message">
+                  <Label fx:id="messageLabelEditGroup" layoutX="344.0" layoutY="489.0" prefHeight="26.0" prefWidth="249.0" styleClass="text-label" text="error message">
                      <font>
                         <Font size="16.0" />
                      </font>

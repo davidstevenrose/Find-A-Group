@@ -76,8 +76,8 @@ public class CreateAccountController {
       Main.fadeAway(errorLabel);
     } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
       //if username is taken - David
-      for(User u: LoginController.users){
-        if(u.getUsername().equals(username)){
+      for (User u : LoginController.users) {
+        if (u.getUsername().equals(username)) {
           errorLabel.setText("That username is already taken");
           Main.fadeAway(errorLabel);
           return;

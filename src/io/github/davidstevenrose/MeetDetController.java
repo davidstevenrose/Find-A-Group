@@ -169,14 +169,6 @@ public class MeetDetController {
   }
 
   /**
-   * @param mouseEvent
-   * @author Jackson
-   */
-  @FXML
-  public void viewAttendeesClicked(MouseEvent mouseEvent) {
-  }
-
-  /**
    * This method allows the MainScreenController to set the Meeting object that this controller will
    * be operating on.
    *
