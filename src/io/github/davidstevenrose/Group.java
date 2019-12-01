@@ -173,13 +173,4 @@ public class Group {
     return getName();
   }
 
-  /**
-   * Compares two Group objects by name of group.
-   *
-   * @param group the other group to compare to
-   * @return true if the group names are the same, false otherwise
-   */
-  public boolean isEqualTo(Group group) {
-    return getName().equals(group.getName());
-  }
 }

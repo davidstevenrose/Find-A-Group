@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -32,12 +31,6 @@ public class CreateAccountController {
 
   @FXML
   private Label errorLabel;
-
-  @FXML
-  private Button createAccountButton;
-
-  @FXML
-  private Button cancelAccountButton;
 
   /**
    * Creates a new User object and saves it to the text file.

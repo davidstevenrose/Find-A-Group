@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class Meeting {
 
   private LocalDate date;
-  private String stringDate;
   private String location;
   private String time;
   private final String groupName;
@@ -40,7 +39,6 @@ public class Meeting {
     this.groupName = groupName;
     attendees = new ArrayList<>();
     status = MeetingStatus.ACTIVE;
-    stringDate = this.date.toString();
   }
 
   /**
@@ -63,7 +61,6 @@ public class Meeting {
     this.attendees = new ArrayList<>();
     //commented out because text file manager automatically adds host to attendees list
     //attendees.add(hostName);
-    stringDate = this.date.toString();
 
   }
 
@@ -77,22 +74,12 @@ public class Meeting {
   }
 
   /**
-   * Gets the date of the meeting as a string. Calls the toString method of the type LocalDate
-   *
-   * @return the meeting's date as a string
-   */
-  public String getStringDate() {
-    return stringDate;
-  }
-
-  /**
    * Set the date of the meeting.
    *
    * @param date the new date
    */
   public void setDate(LocalDate date) {
     this.date = date;
-    stringDate = this.date.toString();
 
   }
 

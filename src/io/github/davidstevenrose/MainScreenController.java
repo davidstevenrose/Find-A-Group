@@ -12,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -147,9 +146,6 @@ public class MainScreenController {
   private DatePicker searchDatePicker;
 
   @FXML
-  private Button searchMeetingsButton;
-
-  @FXML
   private ChoiceBox<String> groupsPicker;
 
   @FXML
@@ -247,9 +243,6 @@ public class MainScreenController {
 
     userNameLabel.setText(currentUser.getUsername() + "!");
 
-    // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
-    // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
-
     // list of tag choice boxes
     ArrayList<ChoiceBox<String>> tagBoxes = new ArrayList<>();
     tagBoxes.add(searchTag1);
@@ -293,7 +286,7 @@ public class MainScreenController {
     //preparing the editMeeting table
     //preparing columns
     editMeetingPlaceCol.setCellValueFactory(new PropertyValueFactory<>("location"));
-    editMeetingDateCol.setCellValueFactory(new PropertyValueFactory<>("stringDate"));
+    editMeetingDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
     editMeetingTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
 
     //clear error message labels - David
@@ -341,11 +334,10 @@ public class MainScreenController {
    * selected in the searchGroupTable table and adds that group to the groupMember ArrayList in the
    * user object.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
-  void joinGroupButtonClick(MouseEvent event) {
+  void joinGroupButtonClick() {
     try {
       // Getting selected group from table
       Group group = searchGroupTable.getSelectionModel().getSelectedItem();
@@ -392,11 +384,10 @@ public class MainScreenController {
    * selected by the user and displays groups to the searchGroupsTable based on the information that
    * the user provides.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
-  public void searchGroupsButtonClicked(MouseEvent event) {
+  public void searchGroupsButtonClicked() {
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
@@ -570,11 +561,10 @@ public class MainScreenController {
    *
    * <p>This method runs when the searchMeetingsButton button is clicked.</p>
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
-  void searchMeetingsButtonClicked(MouseEvent event) {
+  void searchMeetingsButtonClicked() {
 
     // Creating ArrayList to hold meetings and giving it all the meetings
     ArrayList<Meeting> foundMeetings = new ArrayList<>();

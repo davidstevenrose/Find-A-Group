@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -22,12 +21,6 @@ public class LoginController {
 
   @FXML
   private TextField usernameField;
-
-  @FXML
-  private Button loginButton;
-
-  @FXML
-  private Button createAccountButton;
 
   @FXML
   private Label errorLabel;
@@ -71,7 +64,7 @@ public class LoginController {
         userToLogIn = u;
       }
     }
-    if (validLogin == false) {
+    if (!validLogin) {
       // Displaying message for user
       errorLabel.setText("Invalid Username or Password");
       Main.fadeAway(errorLabel);
