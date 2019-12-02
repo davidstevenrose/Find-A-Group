@@ -4,32 +4,13 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Here's what's new in this expansion pack, Hoss.&#10;[]Added the fadeAway method to Main.&#10;- This method will take in a node and apply the fadeTransition to it,&#10;making the node go from 100% opaque to completely transparent.&#10;[]Added more jdocs to the methods/classes I worked on.&#10;-Because I was requested to do so.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="What's new in this push:&#10;[]Fixed most if not all of the weird text resizing itself issues&#10;[]Cleaned up the code so it now properly works in the edit profile screen&#10;[]Created separate highlights for each result for testing purposes&#10;[]Converted some gridpanes into anchorpanes&#10;[]Made error labels not transparent in the css file&#10;[]Added a new 'text-label' css class for any labels that are merely text.&#10;This has a universal text size, font, and color but also allows for&#10;all labels to be consistent in the program.&#10;[]Added back the style to the login screen, and the meeting details screen&#10;[]Fixed the bug on the edit profile screen and a typo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/META-INF/Find-A-Group.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/CreateAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/CreateAccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/EditProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/EditProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/editProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/groups.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/groups.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/meetings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/meetings.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetingDetails.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -564,22 +545,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="251" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575249170982" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1575249173752">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1575327739023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1575249173752">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575327739023" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1575327739023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1575249173752">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575327739023" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1575327739023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1575249173752">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575327739023" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1575327739023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575327739023" />
     <state x="349" y="154" width="968" height="610" key="IDE.errors.dialog" timestamp="1575237440687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -592,5 +573,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1575240123477" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575327867985">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575327867985" />
   </component>
 </project>
