@@ -1,4 +1,2 @@
 2019-11-22,Hoss hazing initiation hall,1:23AM,Hoss Club,example,person2,person1,
 2019-11-28,somewhere,1:23AM,Hoss Club,example,person2,person1,qwe,
-2019-12-04,444,1:00AM,fed,example,
-2019-12-10,nope,10:30AM,mae,example,,

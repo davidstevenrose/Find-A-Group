@@ -48,8 +48,6 @@ public class CreateAccountController {
    */
   @FXML
   void createAccountButtonClicked(MouseEvent event) throws IOException {
-    errorLabel.setPrefHeight(200);
-    errorLabel.setWrapText(true);
     // get user input data and set as local variables
     errorLabel.setVisible(true);
     String username = usernameField.getText();
