@@ -4,13 +4,33 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed a bug where someone added null to the tag boxes completely &#10;breaking all search functionality for searching for groups. Replaced &#10;null with &quot;&quot; in all tag boxes. Also, selected first element on tag boxes&#10;by default so users can search without using all 4 boxes.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Here's what's new in this expansion pack, Hoss.&#10;[]Added the fadeAway method to Main.&#10;- This method will take in a node and apply the fadeTransition to it,&#10;making the node go from 100% opaque to completely transparent.&#10;[]Added more jdocs to the methods/classes I worked on.&#10;-Because I was requested to do so.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetDetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetDetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/TextFileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/TextFileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/TextFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/META-INF/Find-A-Group.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/CreateAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/CreateAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/EditProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/EditProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MainScreenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/editProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find-A-Group/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find-A-Group/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/groups.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/groups.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/meetings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/meetings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/CreateAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/EditableMeetingDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MeetingDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/PrimaryScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/editProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/loginScreen.fxml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +102,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -122,7 +143,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -134,19 +155,13 @@
       <recent name="C:\Users\cam12\Fundementals\FindAGroup\src\io\github\davidstevenrose" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -158,12 +173,6 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.davidstevenrose.Main" />
@@ -239,6 +248,18 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -537,5 +558,39 @@
     <MESSAGE value="Optimized import" />
     <MESSAGE value="Merge from Cameron" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge from Cameron" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="251" y="0" key="CommitChangelistDialog2" timestamp="1575249170982">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="251" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575249170982" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1575249173752">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1575249173752">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1575249173752">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1575249173752">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575249173752" />
+    <state x="349" y="154" width="968" height="610" key="IDE.errors.dialog" timestamp="1575237440687">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="154" width="968" height="610" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1575237440687" />
+    <state x="277" y="54" key="SettingsEditor" timestamp="1575237521462">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575237521462" />
+    <state x="578" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575240123477">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1575240123477" />
   </component>
 </project>

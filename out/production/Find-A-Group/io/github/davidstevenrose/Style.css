@@ -155,19 +155,20 @@
 
 .label, .check-box {
     -fx-text-fill: brown;
-    -fx-font-family: Verdana;
+
 }
 
 /*This is a class specifically for the labels that are displaying text only.
 Meaning they are not within choice boxes, or buttons.*/
 .text-label {
-    -fx-font-size: 12pt;
+    -fx-font-size: 18px;
+
 }
 
 
 .hyperlink {
-    -fx-background-color: derive(red, -40%);
-    -fx-text-fill: gold;
+    -fx-background-color: derive(darkred, -20%);
+    -fx-text-fill: derive(lightgoldenrodyellow, 20%);
     -fx-background-radius: 10 10 10 10;
     -fx-effect: dropshadow(one-pass-box, white, 2, 2, 2, 2);
     -fx-font-family: Verdana;
@@ -179,8 +180,11 @@ Meaning they are not within choice boxes, or buttons.*/
 }
 
 .choice-box {
-    -fx-base: deepskyblue;
+    -fx-base: derive(dodgerblue, -20%);
     -fx-background-radius: 2 10 2 10;
+}
+.check-box{
+    -fx-base:darkturquoise;
 }
 
 .choice-box .label {

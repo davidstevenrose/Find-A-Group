@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -39,6 +40,8 @@ public class MainScreenController {
 
   //The password must conform to shall statement 9
   static final String P_WORD_REGEX = "^\\w{7,}$";
+  public Button addMeetingButton;
+  public Tab editGroupTab;
 
   /**
    * The meeting location column in edit meeting table
@@ -80,7 +83,7 @@ public class MainScreenController {
    * error message in edit group tab.
    */
   @FXML
-  private Label messageLabelEGT;
+  private Label meetingsErrorLabelEGT;
 
   @FXML
   private CheckBox mustIncludeAllCheckBox;
@@ -298,7 +301,7 @@ public class MainScreenController {
 
     //clear error message labels - David
     //label in edit group tab
-    messageLabelEGT.setText("");
+    meetingsErrorLabelEGT.setText("");
     //label in create group tab
     createGroupErrorMsg.setVisible(false);
   }
@@ -457,8 +460,8 @@ public class MainScreenController {
     try {
       newGroup = createGroup();
     } catch (Exception e) {
-      createGroupErrorMsg.setStyle("-fx-text-fill: Red");
-      createGroupErrorMsg.setText("Please enter a group name or at least one group tag");
+      createGroupErrorMsg.setStyle("-fx-text-fill: Red; -fx-font-weight: bold");
+      createGroupErrorMsg.setText("Please enter a group name and at least one group tag");
       createGroupErrorMsg.setVisible(true);
       Main.fadeAway(createGroupErrorMsg);
       return;
@@ -524,7 +527,7 @@ public class MainScreenController {
   void editGroupsButtonClicked() {
     Group selectedGroup = editGroupSelector.getValue();
     if (selectedGroup == null) {
-      savedChangesLabel1.setStyle("-fx-text-fill: Red");
+      savedChangesLabel1.setStyle("-fx-text-fill: maroon; -fx-font-weight: bold");
       savedChangesLabel1.setText("Please select a group.");
       Main.fadeAway(savedChangesLabel1);
       return;
@@ -549,7 +552,7 @@ public class MainScreenController {
     }
     //if no tags were selected
     if (tags.get(0).isEmpty()) {
-      savedChangesLabel1.setStyle("-fx-text-fill: Red");
+      savedChangesLabel1.setStyle("-fx-text-fill: maroon; -fx-font-weight: bold");
       savedChangesLabel1.setText("Please select at least one tag.");
       Main.fadeAway(savedChangesLabel1);
       return;
@@ -774,29 +777,29 @@ public class MainScreenController {
           //reset edit group tab
           fillEditGroupTab();
           //confirm add meeting
-          messageLabelEGT.setStyle("-fx-text-fill: Black");
-          messageLabelEGT.setText("Meeting added");
-          Main.fadeAway(messageLabelEGT);
+          meetingsErrorLabelEGT.setStyle("-fx-text-fill: Black");
+          meetingsErrorLabelEGT.setText("Meeting added");
+          Main.fadeAway(meetingsErrorLabelEGT);
           //send message to text file to update group meeting data
           TextFileManager.addMeetingToFile(newMeeting);
           System.out.println(newMeeting.toString());
         } else {
           //invalid time input, handle error
-          messageLabelEGT.setStyle("-fx-text-fill: Red");
-          messageLabelEGT.setText("Invalid time. Please try again.");
-          Main.fadeAway(messageLabelEGT);
+          meetingsErrorLabelEGT.setStyle("-fx-text-fill: maroon; -fx-font-weight: bold");
+          meetingsErrorLabelEGT.setText("Invalid time. Please try again.");
+          Main.fadeAway(meetingsErrorLabelEGT);
         }
       } else {
         //a required field is missing, handle error
-        messageLabelEGT.setStyle("-fx-text-fill: Red");
-        messageLabelEGT.setText("Please fill out all fields.");
-        Main.fadeAway(messageLabelEGT);
+        meetingsErrorLabelEGT.setStyle("-fx-text-fill: maroon; -fx-font-weight: bold");
+        meetingsErrorLabelEGT.setText("Please fill out all fields.");
+        Main.fadeAway(meetingsErrorLabelEGT);
       }
     } else {
-      //group not selected, handle error
-      messageLabelEGT.setStyle("-fx-text-fill: Red");
-      messageLabelEGT.setText("Please select a group to edit.");
-      Main.fadeAway(messageLabelEGT);
+      // group not selected, handle error
+      meetingsErrorLabelEGT.setStyle("-fx-text-fill: maroon; -fx-font-weight: bold;");
+      meetingsErrorLabelEGT.setText("Please select a group to edit.");
+      Main.fadeAway(meetingsErrorLabelEGT);
     }
   }
 
@@ -830,6 +833,14 @@ public class MainScreenController {
           window.show();
         }
       }
+    }
+  }
+
+  public void resize(Event event) {
+    if(editGroupTab.isSelected()){
+      editGroupSelector.getScene().getWindow().setHeight(850);
+    }else{
+      pGroupTable.getScene().getWindow().setHeight(650);
     }
   }
 }
