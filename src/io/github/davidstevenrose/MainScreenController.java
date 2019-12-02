@@ -12,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -41,19 +40,19 @@ public class MainScreenController {
   static final String P_WORD_REGEX = "^\\w{7,}$";
 
   /**
-   * The meeting location column in edit meeting table
+   * The meeting location column in edit meeting table.
    */
   @FXML
   private TableColumn<TableView<Meeting>, String> editMeetingPlaceCol;
 
   /**
-   * The meeting time column in edit meeting table
+   * The meeting time column in edit meeting table.
    */
   @FXML
   private TableColumn<TableView<Meeting>, String> editMeetingTimeCol;
 
   /**
-   * The meeting date column in edit meeting table
+   * The meeting date column in edit meeting table.
    */
   @FXML
   private TableColumn<TableView<Meeting>, String> editMeetingDateCol;
@@ -80,7 +79,7 @@ public class MainScreenController {
    * error message in edit group tab.
    */
   @FXML
-  private Label messageLabelEGT;
+  private Label messageLabelEditGroup;
 
   @FXML
   private CheckBox mustIncludeAllCheckBox;
@@ -132,22 +131,19 @@ public class MainScreenController {
   private TableColumn<?, ?> searchGroupsDescriptionCol;
 
   @FXML
-  private TableView<Group> pGroupTable;
+  private TableView<Group> ptGroupTable;
 
   @FXML
-  private TableColumn<?, ?> pGroupName;
+  private TableColumn<?, ?> ptGroupName;
 
   @FXML
-  private TableColumn<?, ?> pDescription;
+  private TableColumn<?, ?> ptDescription;
 
   @FXML
   private TextField searchLocationTextbox;
 
   @FXML
   private DatePicker searchDatePicker;
-
-  @FXML
-  private Button searchMeetingsButton;
 
   @FXML
   private ChoiceBox<String> groupsPicker;
@@ -195,7 +191,7 @@ public class MainScreenController {
   private TextField createGroupTextfield;
 
   /**
-   * The description area in the create group tab
+   * The description area in the create group tab.
    */
   @FXML
   private TextArea addDescriptionTextarea;
@@ -204,7 +200,7 @@ public class MainScreenController {
   private TextArea editDescriptionTextArea;
 
   @FXML
-  private Label savedChangesLabel1;
+  private Label savedChangesLabel;
 
   @FXML
   private Label joinLabel;
@@ -247,9 +243,6 @@ public class MainScreenController {
 
     userNameLabel.setText(currentUser.getUsername() + "!");
 
-    // TODO: 11/7/2019 Populate the table on the profile tab with groups they are a member of.
-    // TODO: 11/7/2019 Clean up the initialize statement's foreach loops?
-
     // list of tag choice boxes
     ArrayList<ChoiceBox<String>> tagBoxes = new ArrayList<>();
     tagBoxes.add(searchTag1);
@@ -277,8 +270,8 @@ public class MainScreenController {
     searchGroupTable.setItems(FXCollections.observableArrayList(allGroups));
 
     // Preparing columns
-    pGroupName.setCellValueFactory(new PropertyValueFactory<>("name"));
-    pDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+    ptGroupName.setCellValueFactory(new PropertyValueFactory<>("name"));
+    ptDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
     // Adding value to display
     displayGroupsInProfile();
 
@@ -293,12 +286,12 @@ public class MainScreenController {
     //preparing the editMeeting table
     //preparing columns
     editMeetingPlaceCol.setCellValueFactory(new PropertyValueFactory<>("location"));
-    editMeetingDateCol.setCellValueFactory(new PropertyValueFactory<>("stringDate"));
+    editMeetingDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
     editMeetingTimeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
 
     //clear error message labels - David
     //label in edit group tab
-    messageLabelEGT.setText("");
+    messageLabelEditGroup.setText("");
     //label in create group tab
     createGroupErrorMsg.setVisible(false);
   }
@@ -341,11 +334,10 @@ public class MainScreenController {
    * selected in the searchGroupTable table and adds that group to the groupMember ArrayList in the
    * user object.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
-  void joinGroupButtonClick(MouseEvent event) {
+  void joinGroupButtonClick() {
     try {
       // Getting selected group from table
       Group group = searchGroupTable.getSelectionModel().getSelectedItem();
@@ -392,11 +384,10 @@ public class MainScreenController {
    * selected by the user and displays groups to the searchGroupsTable based on the information that
    * the user provides.
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
-  public void searchGroupsButtonClicked(MouseEvent event) {
+  public void searchGroupsButtonClicked() {
 
     // creating an array list to hold the groups that match the search criteria
     ArrayList<Group> foundGroups = new ArrayList<>();
@@ -524,9 +515,9 @@ public class MainScreenController {
   void editGroupsButtonClicked() {
     Group selectedGroup = editGroupSelector.getValue();
     if (selectedGroup == null) {
-      savedChangesLabel1.setStyle("-fx-text-fill: Red");
-      savedChangesLabel1.setText("Please select a group.");
-      Main.fadeAway(savedChangesLabel1);
+      savedChangesLabel.setStyle("-fx-text-fill: Red");
+      savedChangesLabel.setText("Please select a group.");
+      Main.fadeAway(savedChangesLabel);
       return;
     }
     // updating description
@@ -549,9 +540,9 @@ public class MainScreenController {
     }
     //if no tags were selected
     if (tags.get(0).isEmpty()) {
-      savedChangesLabel1.setStyle("-fx-text-fill: Red");
-      savedChangesLabel1.setText("Please select at least one tag.");
-      Main.fadeAway(savedChangesLabel1);
+      savedChangesLabel.setStyle("-fx-text-fill: Red");
+      savedChangesLabel.setText("Please select at least one tag.");
+      Main.fadeAway(savedChangesLabel);
       return;
     }
 
@@ -559,9 +550,9 @@ public class MainScreenController {
     selectedGroup.replaceTags(tags);
 
     // displaying information to the user
-    savedChangesLabel1.setStyle("-fx-text-fill: Black");
-    savedChangesLabel1.setText("Saved Changes");
-    Main.fadeAway(savedChangesLabel1);
+    savedChangesLabel.setStyle("-fx-text-fill: Black");
+    savedChangesLabel.setText("Saved Changes");
+    Main.fadeAway(savedChangesLabel);
   }
 
   /**
@@ -570,11 +561,10 @@ public class MainScreenController {
    *
    * <p>This method runs when the searchMeetingsButton button is clicked.</p>
    *
-   * @param event The mouse click event created by the user clicking on the button
    * @author Cameron
    */
   @FXML
-  void searchMeetingsButtonClicked(MouseEvent event) {
+  void searchMeetingsButtonClicked() {
 
     // Creating ArrayList to hold meetings and giving it all the meetings
     ArrayList<Meeting> foundMeetings = new ArrayList<>();
@@ -704,10 +694,12 @@ public class MainScreenController {
     ObservableList<Group> currentUserGroups = FXCollections.observableArrayList();
     currentUserGroups.addAll(currentUser.getGroupLeader());
     currentUserGroups.addAll(currentUser.getGroupMember());
-    pGroupTable.getItems().setAll(currentUserGroups);
+    ptGroupTable.getItems().setAll(currentUserGroups);
   }
 
   /**
+   * Fills the choice boxes that holds groups visible to the logged in user.
+   *
    * @author Cameron
    */
   private void populateGroupSelectors() {
@@ -774,29 +766,29 @@ public class MainScreenController {
           //reset edit group tab
           fillEditGroupTab();
           //confirm add meeting
-          messageLabelEGT.setStyle("-fx-text-fill: Black");
-          messageLabelEGT.setText("Meeting added");
-          Main.fadeAway(messageLabelEGT);
+          messageLabelEditGroup.setStyle("-fx-text-fill: Black");
+          messageLabelEditGroup.setText("Meeting added");
+          Main.fadeAway(messageLabelEditGroup);
           //send message to text file to update group meeting data
           TextFileManager.addMeetingToFile(newMeeting);
           System.out.println(newMeeting.toString());
         } else {
           //invalid time input, handle error
-          messageLabelEGT.setStyle("-fx-text-fill: Red");
-          messageLabelEGT.setText("Invalid time. Please try again.");
-          Main.fadeAway(messageLabelEGT);
+          messageLabelEditGroup.setStyle("-fx-text-fill: Red");
+          messageLabelEditGroup.setText("Invalid time. Please try again.");
+          Main.fadeAway(messageLabelEditGroup);
         }
       } else {
         //a required field is missing, handle error
-        messageLabelEGT.setStyle("-fx-text-fill: Red");
-        messageLabelEGT.setText("Please fill out all fields.");
-        Main.fadeAway(messageLabelEGT);
+        messageLabelEditGroup.setStyle("-fx-text-fill: Red");
+        messageLabelEditGroup.setText("Please fill out all fields.");
+        Main.fadeAway(messageLabelEditGroup);
       }
     } else {
       //group not selected, handle error
-      messageLabelEGT.setStyle("-fx-text-fill: Red");
-      messageLabelEGT.setText("Please select a group to edit.");
-      Main.fadeAway(messageLabelEGT);
+      messageLabelEditGroup.setStyle("-fx-text-fill: Red");
+      messageLabelEditGroup.setText("Please select a group to edit.");
+      Main.fadeAway(messageLabelEditGroup);
     }
   }
 

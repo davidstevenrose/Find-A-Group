@@ -60,7 +60,7 @@ password. </p>
  </ul>
 
 # Author
-David Rose, et.al.
+David Rose, Cameron Brien, Nicholas Hansen, Jackson Turner, Darian Colon
 
 # Requirements
 * Java SE 8 needs to be installed on your computer.

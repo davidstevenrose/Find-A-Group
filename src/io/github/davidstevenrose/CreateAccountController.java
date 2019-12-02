@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -32,12 +31,6 @@ public class CreateAccountController {
 
   @FXML
   private Label errorLabel;
-
-  @FXML
-  private Button createAccountButton;
-
-  @FXML
-  private Button cancelAccountButton;
 
   /**
    * Creates a new User object and saves it to the text file.
@@ -76,8 +69,8 @@ public class CreateAccountController {
       Main.fadeAway(errorLabel);
     } else if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
       //if username is taken - David
-      for(User u: LoginController.users){
-        if(u.getUsername().equals(username)){
+      for (User u : LoginController.users) {
+        if (u.getUsername().equals(username)) {
           errorLabel.setText("That username is already taken");
           Main.fadeAway(errorLabel);
           return;
