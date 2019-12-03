@@ -1,2 +1,2 @@
-2019-11-22,Hoss hazing initiation hall,1:23AM,Hoss Club,example,person2,person1,
-2019-11-28,somewhere,1:23AM,Hoss Club,example,person2,person1,qwe,
+2019-12-02,FGCU,10:00PM,FGCU Running Group,Dcolon,
+2019-11-28,FGCU,9:00PM,FGCU Games Group,Drose,
