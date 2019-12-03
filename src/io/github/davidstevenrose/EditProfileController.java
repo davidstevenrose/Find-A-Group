@@ -7,7 +7,6 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -15,18 +14,19 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * This is the controller class for the edit profile screen.
+ * This is the controller class for the edit profile screen. In this screen, users
+ * will be able to edit their username, email, and password. This class features a lengthy if-else
+ * chain that will check to make sure that the user has not left any fields blank, as well as if the
+ * passwords are correct and match.
  *
  * @author Nicholas Hansen + Darian
  */
 public class EditProfileController {
 
-  public Group editingFields;
+  @FXML
+  private Group editingFields;
+
   @FXML private PasswordField newPassword;
-
-  @FXML private Button btnSubmit;
-
-  @FXML private Button returnProfile;
 
   @FXML private PasswordField confirmPassword;
 
@@ -148,46 +148,6 @@ public class EditProfileController {
       }
       newPassword.setStyle("");
     }
-
-    /*if (oldPassword.getText().isEmpty()
-        && confirmPassword.getText().isEmpty()
-        && newPassword.getText().isEmpty()) {
-      passwordError.setText("Please input your password to continue!");
-      oldPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      confirmPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      passwordError.setVisible(true);
-    } else if (oldPassword.getText().isEmpty()
-        || confirmPassword.getText().isEmpty()
-        || newPassword.getText().isEmpty()) {
-      passwordError.setText("Fields cannot be empty");
-      passwordError.setVisible(true);
-      oldPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      confirmPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-    }
-    if (!oldPassword.getText().equals(confirmPassword.getText())) {
-      passwordError.setText("Passwords do not match!");
-      passwordError.setVisible(true);
-      oldPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      confirmPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-    }
-    if (editUsernameField.getText().isEmpty()
-        && userEmail.getText().isEmpty()
-        && newPassword.getText().isEmpty()) {
-      passwordError.setText("Fields cannot be empty");
-      passwordError.setVisible(true);
-      editUsernameField.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      userEmail.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-    } else if (editUsernameField.getText().isEmpty()
-        || userEmail.getText().isEmpty()
-        || newPassword.getText().isEmpty()) {
-      passwordError.setText("Fields cannot be empty");
-      passwordError.setVisible(true);
-      editUsernameField.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      userEmail.setStyle("-fx-border-color: red; -fx-border-width: 2");
-      newPassword.setStyle("-fx-border-color: red; -fx-border-width: 2");
-    }*/
 
     // Note that I changed equals to matches, as a=b in terms of .equals for strings.
     // Matches will force the program to compare them letter by letter due to it being a regex.
