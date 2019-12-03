@@ -69,7 +69,7 @@ David Rose, Cameron Brien, Nicholas Hansen, Jackson Turner, Darian Colon
 # Instructions
 1. Click the "Clone or download" button on this repository
 2. Select the "Download ZIP" option
-3. Extract the ZIP file
-4. Run the file named "Find-A-Group.jar"
+3. Extract the ZIP folder
+4. In the extracted folder, run the file named "Find-A-Group.jar"
 
 
