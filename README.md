@@ -66,6 +66,9 @@ David Rose, Cameron Brien, Nicholas Hansen, Jackson Turner, Darian Colon
 * Java SE 8 needs to be installed on your computer.
 * Product works best with a keyboard and mouse.
 
-#Instructions
-1. 
+# Instructions
+1. Download zip for github.
+2. Extract the jar file and res folder into the same directory.
+3. Run the jar file.
+4. Run the program.
 
