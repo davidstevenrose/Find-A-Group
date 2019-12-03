@@ -67,8 +67,9 @@ David Rose, Cameron Brien, Nicholas Hansen, Jackson Turner, Darian Colon
 * Product works best with a keyboard and mouse.
 
 # Instructions
-1. Download zip for github.
-2. Extract the jar file and res folder into the same directory.
-3. Run the jar file.
+1. Click the "Clone or download" button on this repository
+2. Select the "Download ZIP" option
+3. Extract the ZIP file
+4. Run the file named "Find-A-Group.jar"
 
 
