@@ -60,6 +60,7 @@ password. </p>
  </ul>
 
 # Author
+<b>Team 2'seday</b> <br />
 David Rose, Cameron Brien, Nicholas Hansen, Jackson Turner, Darian Colon
 
 # Requirements
