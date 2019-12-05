@@ -45,6 +45,9 @@ password. </p>
  
  # Versions
  
+  <h4>Video of our final project</h4>
+  https://drive.google.com/file/d/1GB6-PzNJBMlt0yIpji-ruoP0sNzcfCbM/view
+  
   <h4>Video of our prototype version 2</h4>
   https://drive.google.com/open?id=1iIhLd-eEtenOl1DvdrbSVVC0pSbXJBFf
   
@@ -58,6 +61,10 @@ password. </p>
     <li>Added feature to sign-up for meeting</li>
     <li>Added features to edit user's profile with functionality</li>
  </ul>
+ 
+# License
+This project is licensed under the MIT license. Available here: 
+https://github.com/davidstevenrose/Find-A-Group/blob/master/LICENSE
 
 # Author
 <b>Team 2'seday</b> <br />
