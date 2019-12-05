@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added required documents for final submission">
-      <change beforePath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/davidstevenrose/MainScreenController.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Hotfix for null pointer in edit group tag if a group is not selected." />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,8 +109,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -479,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575472420149</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Hotfix for null pointer in edit group tag if a group is not selected.">
+      <created>1575513924375</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1575513924375</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +525,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Added functionality for creating and editing accounts. Allowed&#10;for meetings to be displayed, but not filtered yet." />
     <MESSAGE value="Added new tab for create account and edit account. Fixed logic to &#10;work with new tab." />
     <MESSAGE value="Fixed search for meetings demo functionality" />
     <MESSAGE value="Fixed minor issues" />
@@ -545,6 +549,7 @@
     <MESSAGE value="Optimized import" />
     <MESSAGE value="Merge from Cameron" />
     <MESSAGE value="Added required documents for final submission" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added required documents for final submission" />
+    <MESSAGE value="Hotfix for null pointer in edit group tag if a group is not selected." />
+    <option name="LAST_COMMIT_MESSAGE" value="Hotfix for null pointer in edit group tag if a group is not selected." />
   </component>
 </project>
