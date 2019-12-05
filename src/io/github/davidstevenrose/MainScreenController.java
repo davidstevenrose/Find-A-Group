@@ -13,7 +13,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -834,12 +833,13 @@ public class MainScreenController {
    * @author Nicholas Hansen
    * @param event this listens for the changing of the tab selection. (Basically it listens for when
    *     the user selects a new tab)
+   * @apiNote  due to merge conflicts with fxml files, this artifact is still under construction
    */
   public void resize(Event event) {
-    if (editGroupTab.isSelected()) {
+    /*if (%fx:id of tab%.isSelected()) {
       editGroupSelector.getScene().getWindow().setHeight(850);
     } else {
-      pGroupTable.getScene().getWindow().setHeight(650);
-    }
+      ptGroupTable.getScene().getWindow().setHeight(650);
+    }*/
   }
 }
