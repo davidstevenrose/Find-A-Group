@@ -683,9 +683,10 @@ public class MainScreenController {
    *
    * @author drose
    */
+
   @FXML
   private void addMeetingButtonClicked() {
-    if (!editGroupSelector.getSelectionModel().isEmpty()) {
+    if ( !(editGroupSelector.getValue() == null)){
       if (addMeetingDatePicker.getValue() != null
           && !addMeetingLocationTextfield.getText().isEmpty()
           && !selectTimeTxt.getText().isEmpty()) {
