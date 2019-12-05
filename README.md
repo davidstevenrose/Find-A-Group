@@ -1,10 +1,11 @@
 # Find-A-Group
+# Intro
 <h4>Get together and form groups together. </h4>
 <p>Users  can  create  a  profile,  then search  for  interesting  groups based  on  their activities,
   hobbies,  etc.  A group leader can create a group, add meetings, and add tags for users to find this
    group. User shall also be able to view meetings for specific dates/locations.</p>
    
-
+# Functionality
 <h5>Adding and Editing Meetings</h5>
 <p>The group leader will add a meeting from the group dashboard page. The user will be 
 directed to a meeting dialogue to add the meeting <u style="text-underline-color: firebrick;">details</u>. The meeting status
@@ -42,6 +43,13 @@ password. </p>
 
 <h5>Search/view meetings:</h5>
 <p>The software allows user to search for and view meetings based on the meeting time, meeting location, and group hosting the meeting. The user can specify date, location, and host group. When the search button is clicked the controller will query the database based and return meetings that fit the parameters specified by the user. The results of the query will be used to create meeting objects, which will then be stored in an ArrayList of meetings. The meetings from this ArrayList will be displayed to the users.</p>
+
+ # Technologies
+  <ul>
+    <li>IntelliJ IDEA</li>
+    <li>SceneBuilder</li>
+    <li>.txt files</li>
+ </ul>
  
  # Versions
  
