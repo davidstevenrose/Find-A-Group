@@ -1,3 +1,4 @@
-.idea/
-out/
-res/
+/out/
+/.idea/
+/res/
+/run.bat
