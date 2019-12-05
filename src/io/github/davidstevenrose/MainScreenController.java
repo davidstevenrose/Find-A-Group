@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -746,7 +748,7 @@ public class MainScreenController {
    */
   @FXML
   private void addMeetingButtonClicked() {
-    if (!editGroupSelector.getSelectionModel().isEmpty()) {
+    if ( !(editGroupSelector.getValue() == null)){
       if (addMeetingDatePicker.getValue() != null
           && !addMeetingLocationTextfield.getText().isEmpty()
           && !selectTimeTxt.getText().isEmpty()) {
@@ -822,6 +824,22 @@ public class MainScreenController {
           window.show();
         }
       }
+    }
+  }
+
+  /**
+   * This method will resize the window while the user is viewing the edit groups tab in the tab
+   * pane.
+   *
+   * @author Nicholas Hansen
+   * @param event this listens for the changing of the tab selection. (Basically it listens for when
+   *     the user selects a new tab)
+   */
+  public void resize(Event event) {
+    if (editGroupTab.isSelected()) {
+      editGroupSelector.getScene().getWindow().setHeight(850);
+    } else {
+      pGroupTable.getScene().getWindow().setHeight(650);
     }
   }
 }
