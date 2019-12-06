@@ -1,30 +1,32 @@
 Repo: https://github.com/davidstevenrose/Find-A-Group
 
 --Log in screen--
-* Allows users to log in with  their accounts to the main menu of the program
-* Includes an option for users to access the create account screen
+* Allows users to log in with  their accounts to the main menu of the program.
+* Includes an option for users to access the create account screen.
 -- Create Account Screen --
 * Allows users to create a new account, and stores the information a user inputs into the appropriate text file.
 * Includes an option for a user to return to the Login screen without creating a new account.
 -- Profile tab --
-* Allows users to see what groups they are currently a member of
-* Includes a link to access the edit profile screen
-* Displays the username of the user currently logged in
+* Allows users to see what groups they are currently a member of.
+* Includes a link to access the edit profile screen.
+* Displays the username of the user currently logged in.
+* The user can log out from any screen in the tab view by clicking the 'log out' button.
 -- Edit Profile Screen --
-* Allows users to edit details about their own account such as the Username, Password, and Email
+* Allows users to edit details about their own account such as the Username, Password, and Email.
 * Includes an option for users to return to the profile tab of the main menu without changing their account.
 -- Find Meetings Tab --
-* Allows the user to specify a date, location, and host group in the search criteria
+* Allows the user to specify a date, location, and host group in the search criteria.
 * Allows the user to view a meeting's details and roster.
+-- View Meeting Tab --
 * Allows the user to sign up for attendance to a meeting, or cancel attendance if they have signed up.
 -- Create Group Tab --
-* Allows a user to create a new group for other users to search for
+* Allows a user to create a new group for other users to search for.
 * Designates the user of a new created group the role of group leader.
 -- Edit Group Tab --
-* Allows the leader of a group to edit the amount and type of tags that their group has, as well as edit the description of the group
-* Allows the leader of a group to add meetings to their group, and edit details about these meetings by taking the leader to an edit meeting screen
+* Allows the leader of a group to edit the amount and type of tags that their group has, as well as edit the description of the group.
+* Allows the leader of a group to add meetings to their group, and edit details about these meetings by taking the leader to an edit. meeting screen
 -- Edit Meeting Screen --
 * Allows the leader of a group to edit information regarding a meeting in their group such as:
-  - Meeting date, meeting time, meeting location, and the status of the meeting
+  - Meeting date, meeting time, meeting location, and the status of the meeting.
   - Displays to the leader the current list of attendees for a meeting that is being edited.
   - Allows the leader to return to the edit group tab of the main menu without confirming any of the edits made.
