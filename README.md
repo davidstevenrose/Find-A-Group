@@ -10,7 +10,7 @@
 <p>The group leader will add a meeting from the group dashboard page. The user will be 
 directed to a meeting dialogue to add the meeting <u style="text-underline-color: firebrick;">details</u>. The meeting status
 will automatically be set to active and the user will automatically join the meeting's
-attendees list. The meeting is then created and posted to the dashboard.</p>
+attendees list. The meeting is then created and posted to the meeting dashboard.</p>
 <p>The group leader will edit a meeting from the edit group page. The meeting information 
 will be displayed in a table. The user can edit the meeting <u style="text-underline-color: firebrick;">details</u>
  by double-clicking a row from this box. A new window will open to edit the meeting. Once the user clicks finish, the updated meeting will display in the group 
