@@ -7,14 +7,13 @@
    
 # Functionality
 <h5>Adding and Editing Meetings</h5>
-<p>The group leader will add a meeting from the group dashboard page. The user will be 
+<p>The group leader will add a meeting from the edit group page. The user will be 
 directed to a meeting dialogue to add the meeting <u style="text-underline-color: firebrick;">details</u>. The meeting status
 will automatically be set to active and the user will automatically join the meeting's
-attendees list. The meeting is then created and posted to the meeting dashboard.</p>
+attendees list. The meeting is then created and posted to the find meetings tab.</p>
 <p>The group leader will edit a meeting from the edit group page. The meeting information 
 will be displayed in a table. The user can edit the meeting <u style="text-underline-color: firebrick;">details</u>
- by double-clicking a row from this box. A new window will open to edit the meeting. Once the user clicks finish, the updated meeting will display in the group 
- dashboard page.</p>
+ by double-clicking a row from this box. A new window will open to edit the meeting. Once the user clicks finish, the updated meeting will display in the edit group screen.</p>
 
 <h5>Creating a Group</h5>
 <p>The use may create a group from the profile page. The user will then be redirected to the 
@@ -39,10 +38,10 @@ password. </p>
 
 
 <h5>Search/view groups:</h5>
-<p>The software allows users to search for and view groups based on a set of system provided tags that they can choose from. The user can select up to four tags. When the search button is clicked, the system will query the database for groups have all of the tags specified by the user. Results from the database will be stored as group objects in an ArrayList of group objects. These groups will then have their name and description displayed to a table view for the user to view</p>
+<p>The software allows users to search for and view groups based on a set of system provided tags that they can choose from. The user can select up to four tags. When the search button is clicked, the system will search for groups have all of the tags specified by the user. These groups will then have their name and description displayed to a table view for the user to view</p>
 
 <h5>Search/view meetings:</h5>
-<p>The software allows user to search for and view meetings based on the meeting time, meeting location, and group hosting the meeting. The user can specify date, location, and host group. When the search button is clicked the controller will query the database based and return meetings that fit the parameters specified by the user. The results of the query will be used to create meeting objects, which will then be stored in an ArrayList of meetings. The meetings from this ArrayList will be displayed to the users.</p>
+<p>The software allows user to search for and view meetings based on the meeting time, meeting location, and group hosting the meeting. The user can specify date, location, and host group. When the search button is clicked the controller will return meetings that fit the parameters specified by the user. The results of the query will be used to create meeting objects, which will then be stored in an ArrayList of meetings. The meetings from this ArrayList will be displayed to the users.</p>
 
  # Technologies
   <ul>
